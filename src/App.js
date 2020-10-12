@@ -1,78 +1,53 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import ProfileCard from "components/ProfileCard/ProfileCard";
+import { users, skills } from "data/info-portfolio";
+import IterateArray from "components/IterateArray/IterateArray";
+import "./App.css";
+import Skills from "components/Skills/Skills";
+import Projects from "components/Projects/Projects";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>
+        <div className="App-header-content">
+          <span className="span-hi">Hi</span>
           <div>
-            <span>Hi</span>
-            <form><input type="text"></input></form>
+            <form>
+              <input
+                type="text"
+                placeholder="please enter your name..."
+              ></input>
+            </form>
           </div>
+          <span className="span-welcome">Welcome</span>
+        </div>
+        <div className="content-date">
+          <span>4:50 pm</span>
         </div>
       </header>
       <aside className="App-aside">
-        <span>more info</span>
+        <span>more</span>
       </aside>
+
       <section className="App-main">
-      
-      <section className="App-content-profile-skills">
-        <div className="App-content-profile">
-          <div className="content-profile-avatar">
-            <img alt="" src=""/>
+        <section className="App-content-profile-skills">
+          <div className="App-content-profile">
+            <IterateArray
+              array={users}
+              Component={ProfileCard}
+              type={"userInfo"}
+            />
           </div>
-
-          <div className="content-profile-info">
-            <span className="profile-name">Alfredo Moscoso</span>
-            <span className="profile-role">Frontend Developer</span>
+          <div className="App-content-skills">
+            <IterateArray array={skills} Component={Skills} type={"skills"} />
           </div>
+        </section>
 
-          <div className="content-profile-social-media">
-            <div className="social-media github">
-
-            </div>
-            <div className="social-media linkedin">
-
-            </div>
-            <div className="social-media twitter">
-
-            </div>
-            <div className="social-media gmail">
-
-            </div>
-          </div>
-        </div>
-
-        <div className="App-content-skills">
-          <div className="skills">
-            <span>ReactJs</span>
-          </div>
-          <div className="skills">
-            <span>Javascript</span>
-          </div>
-          <div className="skills">
-            <span>Css3</span>
-          </div>
-        </div>
+        <section className="App-content-projects">
+          <Projects/>
+        </section>
       </section>
-
-      <section className="App-content-projects">
-        <div className="content-projects">
-            <div className="projects">
-              <div className="projects-img">
-                <img alt="" src=""/>
-              </div>
-              <div className="projects-info">
-                <span></span>
-              </div>
-              
-            </div>
-          </div>
-      </section>
-
-      </section>
-      
     </div>
   );
 }

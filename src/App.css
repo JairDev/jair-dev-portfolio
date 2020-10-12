@@ -1,20 +1,31 @@
 .App {
   /* text-align: center; */
-  background-color: #8b9ab8;
+  background-color: #DBDEE8;
   min-height: 100vh;
   position: relative;
 }
 
 .App-header {
-  border-bottom: 2px solid rgb(36, 226, 233);
-  height: 70px;
+  border-bottom: 2px solid rgb(27, 27, 27);
+  display: flex;
+  align-items: center;
+  height: 60px;
   padding-left: 80px;
 }
+.App-header-content {
+  border: 2px solid gold;
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+
 .App-aside {
-  border-right: 2px solid rgb(250, 48, 65);
+  border-right: 2px solid rgb(27, 27, 27);
   position: absolute;
   top: 0;
   height: 100vh;
+  width: 60px;
   display: flex;
   align-items: center;
 }
@@ -22,12 +33,12 @@
 .App-main {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding-left: 70px;
-  height: calc(100vh - 70px);
+  padding-left: 60px;
+  height: calc(100vh - 60px);
 }
 
 .App-content-profile-skills {
-  border: 2px solid darkgreen;
+  /* border: 2px solid darkgreen; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,62 +46,109 @@
 }
  
 .App-content-profile {
-  border: 2px solid orange;
+  /* border: 2px solid rgb(238, 240, 245); */
+  background-color: rgb(238, 240, 245);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 280px;
-  height: 280px;
+  /* width: 280px;
+  height: 280px; */
+  padding: 1rem 0rem;
+  width: 80%;
+}
+
+.content-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.content-profile > div  {
+  /* border: 2px solid red; */
+  margin-bottom: 1rem;
+
+}
+.content-profile > div:last-child {
+  margin-bottom: 0rem;
 }
 
 .content-profile-avatar {
-  border: 2px solid firebrick;
+  border: 2px solid rgb(42, 42, 42);
   width: 150px;
   height: 150px;
   border-radius: 50%;
 }
 
 .content-profile-info {
+  /* border: 2px solid gold; */
   display: flex;
   flex-direction: column;
-  border: 2px solid gold;
   width: 100%;
   align-items: center;
 }
 
+.profile-name {
+  margin-bottom: .5rem;
+}
+
 .content-profile-social-media {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
 .social-media {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 .App-content-skills {
-  border: 2px solid rgb(0, 255, 42);
-  width: 280px;
-  height: 280px;
+  /* border: 2px solid #EEF0F5; */
+  background-color: rgb(238, 240, 245);
+  /* width: 280px;
+  height: 280px; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  width: 80%;
+  padding: 1rem 0rem;
+}
+.App-content-skills > div {
+  margin-bottom: 1rem;
+}
+
+.App-content-skills > div:last-child {
+  margin-bottom: 0rem;
 }
 
 .skills {
   border: 2px solid black;
   width: 80%;
-  padding: 1rem;
+  /* padding: 1rem; */
+  display: flex;
+  /* justify-content: center; */
+}
+
+.content-icon-skills {
+  border-right: 2px solid rgb(27, 27, 27);
+  padding: .3rem;
+  width: 20%;
+}
+
+.skills span {
+  /* border: 2px solid red; */
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .App-content-projects {
-  border: 2px solid rgb(17, 208, 226);
+  /* border: 2px solid rgb(17, 208, 226); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,4 +158,21 @@
   border: 2px solid rgb(17, 39, 41);
   width: 600px;
   height: 400px;
+}
+
+.icon-github, .icon-twitter, .icon-linkedin, .icon-mail4 {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.icon {
+  display: inline-block;
+  width: 100%;
+  height: 2em;
+  stroke-width: 0;
+  stroke: black;
+  fill: black;
 }
