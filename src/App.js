@@ -29,16 +29,16 @@ function App() {
           </div>
 
           <div className="content-profile-social-media">
-            <div className="social-media-github">
+            <div className="social-media github">
 
             </div>
-            <div className="social-media-linkedin">
+            <div className="social-media linkedin">
 
             </div>
-            <div className="social-media-twitter">
+            <div className="social-media twitter">
 
             </div>
-            <div className="social-media-gmail">
+            <div className="social-media gmail">
 
             </div>
           </div>
@@ -46,7 +46,13 @@ function App() {
 
         <div className="App-content-skills">
           <div className="skills">
+            <span>ReactJs</span>
+          </div>
+          <div className="skills">
             <span>Javascript</span>
+          </div>
+          <div className="skills">
+            <span>Css3</span>
           </div>
         </div>
       </section>
