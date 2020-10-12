@@ -2,30 +2,54 @@
   /* text-align: center; */
   background-color: #8b9ab8;
   min-height: 100vh;
+  position: relative;
 }
 
 .App-header {
+  border-bottom: 2px solid rgb(36, 226, 233);
   height: 70px;
+  padding-left: 80px;
+}
+.App-aside {
+  border-right: 2px solid rgb(250, 48, 65);
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .App-main {
   display: grid;
-  grid-template-columns: 70px 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
+  padding-left: 70px;
+  height: calc(100vh - 70px);
+}
+
+.App-content-profile-skills {
+  border: 2px solid darkgreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
  
 .App-content-profile {
   border: 2px solid orange;
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
 }
 
 .App-content-skills {
   border: 2px solid rgb(0, 255, 42);
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
 }
 
 .App-content-projects {
   border: 2px solid rgb(17, 208, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }

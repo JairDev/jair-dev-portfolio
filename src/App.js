@@ -6,15 +6,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <span>Hi</span>
-          <form><input type="text"></input></form>
+          <div>
+            <span>Hi</span>
+            <form><input type="text"></input></form>
+          </div>
         </div>
       </header>
-      
-      <section className="App-main">
-      <aside>
+      <aside className="App-aside">
         <span>more info</span>
       </aside>
+      <section className="App-main">
+      
       <section className="App-content-profile-skills">
         <div className="App-content-profile">
           <div className="content-profile-avatar">
