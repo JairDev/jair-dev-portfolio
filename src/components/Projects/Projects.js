@@ -1,20 +1,19 @@
 import React from "react"
+import ContentProjects from "components/ContentProjects/ContentProjects"
+import IterateArray from "components/IterateArray/IterateArray"
+import useElementPosition from "hooks/useElementPosition"
+import { projects } from "data/info-portfolio";
 
-function Projects({img, projectName, projectDescription}) {
+function Projects() {
+  const {elementRef, position} = useElementPosition()
+  
   return (
-    <div className="content-projects">
-      <div className="projects">
-        <div className="projects-img">
-          <img alt="" src={img}/>
-        </div>
-        <div className="projects-info">
-          <span className="projects-name">{projectName}</span>
-          <div className="content-projects-description">
-            <span className="projects-description">{projectDescription}</span>
-          </div>
-        </div>
+    <>
+      <button onClick={position}>Click</button>
+      <div ref={elementRef} className="content-projects">
+        <IterateArray array={projects} Component={ContentProjects} type={"projects"}/>
       </div>
-    </div>
+    </>
   )
 }
 

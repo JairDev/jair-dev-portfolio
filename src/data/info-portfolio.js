@@ -22,8 +22,7 @@ export const users = [
 ]
 
 export const projects = [
-  {name: "coin-market", img: "img", description:""},
-  {name: "recipes", img: "img", description:""},
-  {name: "memory", img: "img", description:""},
-  {name: "timer", img: "img", description:""}
+  {name: "recipes", imgSrc: "img-recipe.png", description:""},
+  {name: "memory", imgSrc: "img-memory.png", description:""},
+  {name: "timer", imgSrc: "img-timer.png", description:""}
 ]

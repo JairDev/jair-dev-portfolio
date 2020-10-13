@@ -16,7 +16,7 @@ function App() {
             <form>
               <input
                 type="text"
-                placeholder="please enter your name..."
+                placeholder="Please, enter your name..."
               ></input>
             </form>
           </div>
@@ -44,8 +44,12 @@ function App() {
           </div>
         </section>
 
-        <section className="App-content-projects">
-          <Projects/>
+        <section className="App-parent-projects">
+          <div className="App-content-projects">
+            <Projects/>
+            {/* <IterateArray array={projects} Component={Projects} type={"projects"}/> */}
+          </div> 
+          
         </section>
       </section>
     </div>
