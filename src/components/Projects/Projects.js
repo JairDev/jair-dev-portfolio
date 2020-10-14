@@ -9,10 +9,11 @@ function Projects() {
   
   return (
     <>
-      <button onClick={position}>Click</button>
+      <button className="top" onClick={position}>Click</button>
       <div ref={elementRef} className="content-projects">
         <IterateArray array={projects} Component={ContentProjects} type={"projects"}/>
       </div>
+      <button className="bottom"  onClick={position}>Click</button>
     </>
   )
 }

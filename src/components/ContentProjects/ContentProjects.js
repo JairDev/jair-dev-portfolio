@@ -1,7 +1,9 @@
+import useElementPosition from "hooks/useElementPosition"
 import React from "react"
 
 function ContentProjects({img, projectName, projectDescription}) {
- 
+  // const {elementRef, position} = useElementPosition()
+
   return (
     <div className="projects">
       <div className="projects-img">

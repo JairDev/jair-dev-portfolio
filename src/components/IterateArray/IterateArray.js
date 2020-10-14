@@ -18,6 +18,7 @@ function IterateArray({array, Component, type}) {
             return <Component key={item.name} img={item.imgSrc} projectName={item.name} />
           default: console.log("error");
         }
+        
       })
   )
 }
