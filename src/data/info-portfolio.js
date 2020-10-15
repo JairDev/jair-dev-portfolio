@@ -24,5 +24,6 @@ export const users = [
 export const projects = [
   {name: "recipes", imgSrc: "img-recipe.png", description:""},
   {name: "memory", imgSrc: "img-memory.png", description:""},
-  {name: "timer", imgSrc: "img-timer.png", description:""}
+  {name: "timer", imgSrc: "img-timer.png", description:""},
+
 ]

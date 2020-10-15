@@ -15,6 +15,12 @@ function ContentProjects({img, projectName, projectDescription}) {
           <span className="projects-description">{projectDescription}</span>
         </div>
       </div>
+      <span className="more-info"></span>
+      <div className="content-overflow-img">
+        <div className="overflow-img">
+          <img alt="" src={img}/>
+        </div>
+      </div>
     </div>
   )
 }

@@ -5,15 +5,15 @@ import useElementPosition from "hooks/useElementPosition"
 import { projects } from "data/info-portfolio";
 
 function Projects() {
-  const {elementRef, position} = useElementPosition()
-  
+  const {elementRef, position, classTop, classBottom} = useElementPosition()
+
   return (
     <>
-      <button className="top" onClick={position}>Click</button>
+      <button className={classTop === "" ? "top" : `top ${classTop}`} onClick={position}>Click</button>
       <div ref={elementRef} className="content-projects">
         <IterateArray array={projects} Component={ContentProjects} type={"projects"}/>
       </div>
-      <button className="bottom"  onClick={position}>Click</button>
+      <button className={classBottom === "" ? "bottom" : `bottom ${classBottom}`}  onClick={position}>Click</button>
     </>
   )
 }

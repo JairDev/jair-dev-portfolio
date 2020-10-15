@@ -5,12 +5,19 @@
   --dark-color: #404247;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   /* text-align: center; */
   background-color: #DBDEE8;
   min-height: 100vh;
   position: relative;
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 .App-header {
@@ -51,7 +58,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding-left: 60px;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 62px);
 }
 
 .App-content-profile-skills {
@@ -188,38 +195,73 @@
   height: 100%;
 }
 
-/* .content-projects:nth-child(1) {
-  margin-top: 0rem;
-}
-.content-projects:nth-child(2) {
-  margin-top: 1600px ;
-}
-.content-projects:nth-child(3) {
-  margin-top: 3200px;
-} */
-
 .content-projects {
-  /* border: 2px solid rgb(17, 39, 41); */
+  /* outline: 2px solid rgb(17, 39, 41); */
   width: 80%;
   /* height: 400px; */
   position: absolute;
   top: calc(200px - 60px);
-  transition: all .4s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .projects {
   /* outline: 2px solid red; */
   width: 100%;
   height: 400px;
+  position: relative;
 }
 
-/* .projects:nth-child(2) {
-  padding-top: 800px;
+.projects::before {
+  content: "";
+  background-color: rgba(20, 20, 20, .3);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200
+}
+
+.projects:hover .content-overflow-img {
+  opacity: 1;
+}
+
+.content-overflow-img {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+  z-index: 100;
+}
+
+.overflow-img {
+  /* border: 5px solid red; */
+  filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.overflow-img img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+.projects:nth-child(2) {
+  margin-top: 800px;
 }
 
 .projects:nth-child(3) {
-  padding-top: 800px;
-} */
+  margin-top: 800px;
+}
+
+.projects:nth-child(4) {
+  margin-top: 800px;
+}
 
 
 .projects-img {
@@ -235,6 +277,18 @@
 
 .projects-info {
   display: none;
+}
+
+.more-info {
+  /* border: 2px solid red; */
+  background-color: rgba(14, 14, 14,.5);
+  border-radius: 50%;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  bottom: -30px;
+  left: -30px;
+  z-index: 200;
 }
 
 .icon-github, .icon-twitter, .icon-linkedin, .icon-mail4 {
@@ -261,11 +315,19 @@
   height: 30px;
   z-index: 1000;
 }
+.top.deactivate-top {
+  display: none;
+}
 
 .bottom {
+  display: none;
   position: absolute;
   bottom: 30px;
   width: 100px;
   height: 30px;
   z-index: 1000;
+}
+
+.bottom.activate-bottom{
+  display: block;
 }
