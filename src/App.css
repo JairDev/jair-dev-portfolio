@@ -46,12 +46,53 @@
 
 .App-aside {
   border-right: 2px solid rgb(27, 27, 27);
+  padding: 0 .5rem;
   position: absolute;
   top: 0;
   height: 100vh;
   width: 60px;
   display: flex;
   align-items: center;
+  z-index: 400;
+}
+
+.content-button-info {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.content-button-info button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.App-content-personal-info {
+  /* border: 2px solid red; */
+  background-color: #DBDEE8;
+  padding: 50px 50px 50px 110px;
+  margin-top: 60px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .5s ease-in-out;
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 300;
+}
+
+.App-content-personal-info p {
+  font-size: calc(1vw + 1rem);
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.App-content-personal-info.scale-info {
+  opacity: 1;
+  transform: scaleX(1.0);
 }
 
 .App-main {
@@ -59,7 +100,18 @@
   grid-template-columns: 1fr 2fr;
   padding-left: 60px;
   height: calc(100vh - 62px);
+  opacity: 1;
+  position: relative;
+  transform: scaleX(1.0);
+  transition: all .5s ease-in-out;
+  transform-origin: right;
 }
+
+.App-main.scale {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
 
 .App-content-profile-skills {
   /* border: 2px solid darkgreen; */
@@ -172,6 +224,10 @@
   width: 20%;
 }
 
+.content-icon-skills svg {
+  width: 100%;
+}
+
 .skills span {
   /* border: 2px solid red; */
   width: 100%;
@@ -200,15 +256,17 @@
   width: 80%;
   /* height: 400px; */
   position: absolute;
-  top: calc(200px - 60px);
+  top: 15vmin;
   transition: all .5s ease-in-out;
 }
 
 .projects {
   /* outline: 2px solid red; */
   width: 100%;
-  height: 400px;
+  height: 60vmin;
   position: relative;
+  transition: all .5s ease-in-out;
+  opacity: 1;
 }
 
 .projects::before {
@@ -301,33 +359,56 @@
 }
 .icon {
   display: inline-block;
-  width: 100%;
+  width: 2em;
   height: 2em;
   stroke-width: 0;
   stroke: black;
   fill: var(--dark-color);
 }
 
-.top {
+.content-button.top {
   position: absolute;
-  top: 30px;
+  top: 35px;
+}
+
+.top, .bottom {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.top {
   width: 100px;
   height: 30px;
-  z-index: 1000;
+  z-index: 200;
 }
+.top .icon-double_arrow.topSvg {
+  width: 3em;
+  height: 3em;
+  transform: rotate(-90deg);
+}
+
 .top.deactivate-top {
   display: none;
 }
 
+.content-button.bottom {
+  position: absolute;
+  bottom: 35px;
+}
+
 .bottom {
   display: none;
-  position: absolute;
-  bottom: 30px;
   width: 100px;
   height: 30px;
   z-index: 1000;
+}
+.bottom .icon-double_arrow.bottomSvg {
+  width: 3em;
+  height: 3em;
+  transform: rotate(90deg);
 }
 
 .bottom.activate-bottom{
   display: block;
 }
+

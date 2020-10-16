@@ -3,17 +3,26 @@ import ContentProjects from "components/ContentProjects/ContentProjects"
 import IterateArray from "components/IterateArray/IterateArray"
 import useElementPosition from "hooks/useElementPosition"
 import { projects } from "data/info-portfolio";
+import Button from "components/Button/Button";
 
 function Projects() {
-  const {elementRef, position, classTop, classBottom} = useElementPosition()
+  const {handleTop, handleBottom,elementRef, classTop, classBottom} = useElementPosition()
 
   return (
     <>
-      <button className={classTop === "" ? "top" : `top ${classTop}`} onClick={position}>Click</button>
+      <Button 
+        classSvg="topSvg"
+        className={classTop === "" ? "top" : `top ${classTop}`} 
+        onClick={handleTop}
+      />
       <div ref={elementRef} className="content-projects">
         <IterateArray array={projects} Component={ContentProjects} type={"projects"}/>
       </div>
-      <button className={classBottom === "" ? "bottom" : `bottom ${classBottom}`}  onClick={position}>Click</button>
+      <Button
+        classSvg="bottomSvg" 
+        className={classBottom === "" ? "bottom" : `bottom ${classBottom}`} 
+        onClick={handleBottom}
+      />
     </>
   )
 }
