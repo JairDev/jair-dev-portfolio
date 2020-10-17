@@ -21,12 +21,24 @@
 }
 
 .App-header {
-  border-bottom: 2px solid rgb(27, 27, 27);
   display: flex;
   align-items: center;
   height: 60px;
   padding-left: 80px;
+  position: relative;
 }
+
+.App-header::before {
+  content: "";
+  border-bottom: 2px solid rgb(27, 27, 27);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
 .App-header-content {
   /* border: 2px solid gold; */
   display: flex;
@@ -43,17 +55,35 @@
   font-size: .9rem;
 }
 
+.content-date {
+  background-color: #DE620C;
+  color: #DBDEE8;
+  font-size: 1.1rem;
+  /* font-weight: bold; */
+  letter-spacing: 1px;
+  position: absolute;
+  right: 5vw;
+  height: 100vh;
+  top: 0;
+  padding: 1.3rem .5rem 0 .5rem;
+}
+
 
 .App-aside {
   border-right: 2px solid rgb(27, 27, 27);
-  padding: 0 .5rem;
-  position: absolute;
+  /* border-top: 2px solid rgb(27, 27, 27);
+  background-color: #DBDEE8; */
+  padding: .5rem .5rem;
+  position: absolute; 
   top: 0;
-  height: 100vh;
-  width: 60px;
+  height: 100vh; 
+  width: 60px; 
   display: flex;
   align-items: center;
   z-index: 400;
+  /* position: fixed;
+  bottom: 0;
+  width: 100%; */
 }
 
 .content-button-info {
@@ -105,6 +135,7 @@
   transform: scaleX(1.0);
   transition: all .5s ease-in-out;
   transform-origin: right;
+  /* padding-bottom: 15vh; */
 }
 
 .App-main.scale {
@@ -120,10 +151,15 @@
   align-items: center;
   justify-content: space-around;
 }
+
+/* .App-content-profile, .App-content-skills {
+  margin-top: 2vh;
+} */
  
 .App-content-profile {
   /* border: 2px solid rgb(238, 240, 245); */
   background-color: rgb(238, 240, 245);
+  box-shadow: 0 4px 20px 4px rgba(155, 153, 164, .3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,6 +168,7 @@
   height: 280px; */
   padding: 1rem 0rem;
   width: 80%;
+  /* margin-top: 10vh; */
 }
 
 .content-profile {
@@ -193,6 +230,7 @@
 .App-content-skills {
   /* border: 2px solid #EEF0F5; */
   background-color: rgb(238, 240, 245);
+  box-shadow: 0 4px 20px 4px rgba(155, 153, 164, .3);
   /* width: 280px;
   height: 280px; */
   display: flex;
@@ -201,6 +239,7 @@
   align-items: center;
   width: 80%;
   padding: 1rem 0rem;
+  /* margin-top: 10vh; */
 }
 .App-content-skills > div {
   margin-bottom: 1rem;
@@ -258,6 +297,7 @@
   position: absolute;
   top: 15vmin;
   transition: all .5s ease-in-out;
+  /* margin-top: 20vh; */
 }
 
 .projects {
@@ -309,17 +349,23 @@
 }
 
 
-.projects:nth-child(2) {
+/* .projects:nth-child(2) {
   margin-top: 800px;
+
 }
 
 .projects:nth-child(3) {
   margin-top: 800px;
-}
 
-.projects:nth-child(4) {
+} */
+.content-projects > .projects {
   margin-top: 800px;
 }
+
+.projects:first-child {
+  margin-top: 0px;
+}
+
 
 
 .projects-img {
@@ -410,5 +456,51 @@
 
 .bottom.activate-bottom{
   display: block;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  .App {
+    overflow: initial;
+  }
+
+  .App-main {
+    grid-template-columns: 1fr;
+    height: 100%;
+    padding-left: 0px;
+    padding-bottom: 15vh;
+  }
+
+  .App-aside {
+    background-color: #DBDEE8;
+    border-top: 2px solid rgb(27, 27, 27);
+    border-right: none;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .App-content-profile, .App-content-skills {
+    margin-top: 10vh;
+  }
+
+  .App-parent-projects {
+    margin-top: 15vh;
+  }
+  .content-projects {
+    position: static;
+  }
+  .content-projects > .projects {
+    margin-top: 100px;
+  }
+  
+  .projects:first-child {
+    margin-top: 0px;
+  }
+  
+
 }
 
