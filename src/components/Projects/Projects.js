@@ -13,14 +13,19 @@ function Projects() {
       <Button 
         classSvg="topSvg"
         className={classTop === "" ? "top" : `top ${classTop}`} 
+        typeSvg={"icon-double_arrow"}
         onClick={handleTop}
       />
       <div ref={elementRef} className="content-projects">
+        <div className="title-projects">
+          <h2>Projects</h2>
+        </div>
         <IterateArray array={projects} Component={ContentProjects} type={"projects"}/>
       </div>
       <Button
         classSvg="bottomSvg" 
         className={classBottom === "" ? "bottom" : `bottom ${classBottom}`} 
+        typeSvg={"icon-double_arrow"}
         onClick={handleBottom}
       />
     </>

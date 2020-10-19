@@ -4,6 +4,7 @@ import { users, skills } from "data/info-portfolio";
 import IterateArray from "components/IterateArray/IterateArray";
 import Skills from "components/Skills/Skills";
 import Projects from "components/Projects/Projects";
+import Button from "components/Button/Button"
 
 function Home() {
   const refPersonalInfo = useRef()
@@ -17,13 +18,12 @@ function Home() {
   return(
     <>
       <aside className="App-aside">
-        <div className={"content-button-info"}>
-          <form>
-            <button onClick={handleDisplay}>
-              <svg className="icon icon-file-text"><use xlinkHref="#icon-file-text"></use></svg>
-            </button>
-          </form>
-        </div>
+        <Button 
+        classSvg="topSvg"
+        className={"content-button-info"} 
+        typeSvg={"icon-user"}
+        onClick={handleDisplay}
+      />
       </aside>
 
       <div ref={refPersonalInfo} className={`App-content-personal-info`}>

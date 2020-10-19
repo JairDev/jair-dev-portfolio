@@ -9,13 +9,17 @@ function IterateArray({array, Component, type}) {
               key={item.name}
               name={item.name}
               lastName={item.lastName}
-              userOccupation={item.occupation} />;
+              userOccupation={item.occupation}/>;
           case "socialMedia":
             return <Component key={item.iconClass} iconClass={item.iconClass} />;
           case "skills":
             return <Component key={item.name} skillName={item.name} iconClass={item.iconClass} />;
           case "projects":
-            return <Component key={item.name} img={item.imgSrc} projectName={item.name} />
+            return <Component 
+              key={item.name} 
+              img={item.imgSrc} 
+              projectName={item.name}
+              projectDescription={item.description}/>
           default: console.log("error");
         }
         
