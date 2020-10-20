@@ -17,9 +17,9 @@ function Projects() {
         onClick={handleTop}
       />
       <div ref={elementRef} className="content-projects">
-        <div className="title-projects">
+        {/* <div className="title-projects">
           <h2>Projects</h2>
-        </div>
+        </div> */}
         <IterateArray array={projects} Component={ContentProjects} type={"projects"}/>
       </div>
       <Button

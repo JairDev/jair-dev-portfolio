@@ -22,11 +22,20 @@ export const users = [
 ]
 
 export const projects = [
-  {name: "Recipes", imgSrc: "img-recipe.png", 
+  {name: "Recipes", 
+  imgSrc: "img-recipe.png", 
+  linkGit:"https://github.com/JairDev/recipe-app",
+  linkDemo:"",
   description:"Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and"},
-  {name: "Memory", imgSrc: "img-memory.png", 
+  {name: "Memory", 
+  imgSrc: "img-memory.png", 
+  linkGit:"https://github.com/JairDev/memory-game",
+  linkDemo:"",
   description:"Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and"},
-  {name: "Timer", imgSrc: "img-timer.png", 
+  {name: "Timer", 
+  imgSrc: "img-timer.png", 
+  linkGit:"https://github.com/JairDev/training-timer-and-chronometer",
+  linkDemo:"",
   description:"Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and"},
 
 ]

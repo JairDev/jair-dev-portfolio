@@ -19,7 +19,8 @@ function IterateArray({array, Component, type}) {
               key={item.name} 
               img={item.imgSrc} 
               projectName={item.name}
-              projectDescription={item.description}/>
+              projectDescription={item.description}
+              linkGit={item.linkGit}/>
           default: console.log("error");
         }
         

@@ -8,13 +8,11 @@ function useElementPosition() {
 
   const handleTop = (e) => {
     e.preventDefault()
-    console.log("top")
     setCount(prev => prev += 1)
   }
 
   const handleBottom = (e) => {
     e.preventDefault()
-    console.log("bottom")
     setCount(prev => prev -= 1)
   }
 

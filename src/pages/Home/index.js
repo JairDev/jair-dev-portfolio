@@ -58,6 +58,11 @@ function Home() {
             />
           </div>
           <div className="App-content-skills">
+            <div className="content-title-skills">
+              <div className="title-skills">
+                <h2>Skills</h2>
+              </div>
+            </div> 
             <IterateArray 
               array={skills} 
               Component={Skills} 
@@ -68,6 +73,16 @@ function Home() {
 
         <section className="App-parent-projects">
           <div className="App-content-projects">
+          <div className="content-title-projects">
+            <div className="title-projects">
+              <h2>Projects</h2>
+            </div>
+          </div> 
+          <div className="content-title-projects-top">
+            <div className="title-projects-top">
+              <h2>Projects</h2>
+            </div>
+          </div> 
             <Projects/>
           </div> 
           
