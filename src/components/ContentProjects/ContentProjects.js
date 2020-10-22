@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react"
+import React, { useRef } from "react"
+import "./ContentProjects.css"
 
 function ContentProjects({img, projectName, projectDescription, linkGit}) {
   const elementRef = useRef()
@@ -8,7 +9,6 @@ function ContentProjects({img, projectName, projectDescription, linkGit}) {
 
   return (
     <div className="projects">
-      
       <div className="projects-img">
         <img alt="" src={img}/>
       </div>
@@ -24,7 +24,7 @@ function ContentProjects({img, projectName, projectDescription, linkGit}) {
                   </a>
                 </div>
                 <div className="link-projects-all demo">
-                  <a>
+                  <a target="_blank" rel="noopener noreferrer" href={linkGit}>
                   <svg className="icon icon-new-tab"><use xlinkHref="#icon-new-tab"></use></svg>
                   </a>
                 </div>

@@ -1,0 +1,25 @@
+.skills {
+  border: 2px solid var(--dark-color);
+  width: 80%;
+  display: flex;
+}
+
+.content-icon-skills {
+  border-right: 2px solid var(--dark-color);
+  padding: .3rem;
+  width: 20%;
+}
+
+.content-icon-skills svg {
+  width: 100%;
+}
+
+.skills span {
+  /* border: 2px solid red; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--general-text-size);
+  letter-spacing: var(--letter-spacing);
+}

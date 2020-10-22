@@ -1,19 +1,20 @@
-import React, {useEffect, useRef, useState} from "react"
+import React, {useEffect, useRef} from "react"
 import ProfileCard from "components/ProfileCard/ProfileCard";
 import { users, skills } from "data/info-portfolio";
 import IterateArray from "components/IterateArray/IterateArray";
 import Skills from "components/Skills/Skills";
 import Projects from "components/Projects/Projects";
 import Button from "components/Button/Button"
+import CurrentTime from "components/CurrentTime/CurrentTime"
 import gsap from "gsap";
 
 function Home() {
   const refPersonalInfo = useRef()
   const refMain = useRef()
-  let divProfile = useRef(null)
-  let divSkills = useRef(null)
-  let divProjects = useRef(null)
-  let border = useRef(null)
+  let borderTop = useRef(null)
+  let borderLeft = useRef(null)
+  let hi = useRef(null)
+  let welcome = useRef(null)
 
   const handleDisplay = (e) => {
     refPersonalInfo.current.classList.toggle("scale-info")
@@ -21,20 +22,27 @@ function Home() {
     e.preventDefault()
   }
   useEffect(() => {
-    const a = document.querySelector(".all")
-    // gsap.from(border, {duration: 1, delay: 0.5, scaleY: 0, opacity:0})
     gsap.timeline()
-      .from(border, {duration: 1, delay: 0.5, scaleY: 0, opacity:0})
-      // .from(divProfile, {opacity:0, duration: 0.5})
-      // .from(divSkills, {opacity:0})
-      // .from(divProjects, {opacity:0})
-      .from(".all", {opacity:0, stagger: 0.2})
-    // gsap.from(refMain.current, {duration: 1, delay: 1, opacity:0})
+      .from(borderTop, {duration: 0.5, delay: 0.3, scaleX: 0, opacity:0, ease: "slow(0.7, 0.7,  false)"})
+      .from(borderLeft, {duration: 0.5, scaleY: 0, opacity:0,  ease: "slow(0.7, 0.7,  false)"}, "-=0.5")
+      .from(".span-content-date",{duration: 0.5, scaleY: 0, opacity: 0, ease: "slow(0.7, 0.7,  false)" }, "-=0.5")
+      .from(".all", {duration: 0.5, opacity:0, stagger: 0.3})
+      .from(hi, {opacity:0})
+      .from(welcome, {duration:1.5,  opacity:0})
+
   })
   return(
     <>
+      <header className="App-header">
+        <span ref={span => borderTop = span} className="border-animate"></span>
+        <div className="App-header-content">
+          <span ref={span => hi = span} className="span-hi">Hi,</span>
+          <span ref={span => welcome = span} className="span-welcome">Welcome</span>
+        </div>
+        <CurrentTime/>
+      </header>
       <aside className="App-aside">
-      <span ref={span => border = span} className="border-aside-animate"></span>
+      <span ref={span => borderLeft = span} className="border-aside-animate"></span>
         <Button 
         classSvg="topSvg"
         className={"content-button-info"} 
@@ -67,14 +75,14 @@ function Home() {
 
       <section ref={refMain} className={`App-main`}>
         <section className="App-content-profile-skills">
-          <div ref={div => divProfile = div} className="App-content-profile all">
+          <div className="App-content-profile all">
             <IterateArray
               array={users}
               Component={ProfileCard}
               type={"userInfo"}
             />
           </div>
-          <div ref={div => divSkills = div} className="App-content-skills all">
+          <div className="App-content-skills all">
             <div className="content-title-skills">
               <div className="title-skills">
                 <h2>Skills</h2>
@@ -88,7 +96,7 @@ function Home() {
           </div>
         </section>
 
-        <section ref={section => divProjects = section} className="App-parent-projects all">
+        <section className="App-parent-projects all">
           <div className="App-content-projects">
           <div className="content-title-projects">
             <div className="title-projects">

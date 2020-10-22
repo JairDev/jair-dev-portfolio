@@ -37,5 +37,6 @@ export const projects = [
   linkGit:"https://github.com/JairDev/training-timer-and-chronometer",
   linkDemo:"",
   description:"Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and"},
+  
 
 ]

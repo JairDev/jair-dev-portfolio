@@ -25,7 +25,6 @@ function useElementPosition() {
     const outSize = coords.height - realSizeElements
     const marginAdd = outSize / (node.length - 1)
     const translate = (marginAdd + nodesHeight) * count
-
     if(count >= node.length - 1) {
       setClassTop("deactivate-top")
     }else {
@@ -40,7 +39,7 @@ function useElementPosition() {
     element.style = `transform: translateY(-${translate}px)`
   }, [count])
 
-  return {handleTop, handleBottom, elementRef, classTop, classBottom}
+  return {count, handleTop, handleBottom, elementRef, classTop, classBottom}
 }
 
 export default useElementPosition

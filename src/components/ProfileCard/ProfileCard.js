@@ -3,6 +3,7 @@ import UserInfo from "components/UserInfo/UserInfo"
 import SocialMedia from "components/SocialMedia/SocialMedia"
 import IterateArray from "components/IterateArray/IterateArray"
 import {socialMedia} from "data/info-portfolio"
+import "./ProfileCard.css"
 
 function ProfileCard({name, lastName, userOccupation}) {
   return(

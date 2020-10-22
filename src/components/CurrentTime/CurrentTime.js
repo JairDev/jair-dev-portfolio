@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useCallback} from "react";
+import "./CurrentTime.css"
 
 function CurrentTime() {
   const [date, setDate] = useState(new Date())
@@ -29,7 +30,8 @@ function CurrentTime() {
   }, [currentTime])
   return (
     <div className="content-date">
-      <span>{time}</span>
+      <span className="span-content-date"></span>
+      <span className="span-time">{time}</span>
     </div>
   )
   

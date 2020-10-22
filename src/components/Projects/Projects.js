@@ -1,13 +1,21 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import ContentProjects from "components/ContentProjects/ContentProjects"
 import IterateArray from "components/IterateArray/IterateArray"
 import useElementPosition from "hooks/useElementPosition"
 import { projects } from "data/info-portfolio";
 import Button from "components/Button/Button";
+import "./Projects.css"
 
 function Projects() {
-  const {handleTop, handleBottom,elementRef, classTop, classBottom} = useElementPosition()
+  const {count, handleTop, handleBottom,elementRef, classTop, classBottom} = useElementPosition()
+  const [countProject, setCountProject] = useState(0)
 
+  useEffect(() => {
+    const element = elementRef.current
+    const node = element.childNodes
+    setCountProject(node.length)
+  }, [count, elementRef])
+  
   return (
     <>
       <Button 
@@ -16,10 +24,8 @@ function Projects() {
         typeSvg={"icon-double_arrow"}
         onClick={handleTop}
       />
+      <span className="count-projects">{`${count + 1}/${countProject}`}</span>
       <div ref={elementRef} className="content-projects">
-        {/* <div className="title-projects">
-          <h2>Projects</h2>
-        </div> */}
         <IterateArray array={projects} Component={ContentProjects} type={"projects"}/>
       </div>
       <Button
