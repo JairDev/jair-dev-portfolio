@@ -26,7 +26,7 @@ function Home() {
       .from(borderTop, {duration: 0.5, delay: 0.3, scaleX: 0, opacity:0, ease: "slow(0.7, 0.7,  false)"})
       .from(borderLeft, {duration: 0.5, scaleY: 0, opacity:0,  ease: "slow(0.7, 0.7,  false)"}, "-=0.5")
       .from(".span-content-date",{duration: 0.5, scaleY: 0, opacity: 0, ease: "slow(0.7, 0.7,  false)" }, "-=0.5")
-      .from(".all", {duration: 0.5, opacity:0, stagger: 0.3})
+      .from(".all", {duration: 0.5, opacity:0, stagger: 0.2})
       .from(hi, {opacity:0})
       .from(welcome, {duration:1.5,  opacity:0})
 
