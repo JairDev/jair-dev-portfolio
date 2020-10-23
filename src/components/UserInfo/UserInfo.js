@@ -1,5 +1,6 @@
 import React from "react"
 import UserAvatar from "components/Avatar/UserAvatar"
+import "./UserInfo.css"
 
 function UserInfo({name, lastName, userOccupation}) {
   return (

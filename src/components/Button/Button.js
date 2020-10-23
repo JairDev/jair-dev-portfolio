@@ -1,9 +1,10 @@
 import React from "react"
+import "./Button.css"
 
 function Button({className, classSvg, typeSvg, onClick, refButton}) {
 
   return(
-    <div ref={refButton} className={`content-button ${className}`}> 
+    <div ref={refButton} className={`parent-content-button ${className}`}> 
       <form>
         <button className={className} onClick={onClick}>
         <svg className={`icon ${typeSvg} ${classSvg}`}>

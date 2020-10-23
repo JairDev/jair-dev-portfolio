@@ -13,3 +13,10 @@
 .content-profile > div:last-child {
   margin-bottom: 0rem;
 }
+
+.content-profile-social-media {
+  /* border: 2px solid red; */
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}

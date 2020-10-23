@@ -21,7 +21,7 @@ function Projects() {
       <Button 
         classSvg="topSvg"
         className={classTop === "" ? "top" : `top ${classTop}`} 
-        typeSvg={"icon-double_arrow"}
+        typeSvg={"icon-long-arrow-up"}
         onClick={handleTop}
       />
       <span className="count-projects">{`${count + 1}/${countProject}`}</span>
@@ -31,7 +31,7 @@ function Projects() {
       <Button
         classSvg="bottomSvg" 
         className={classBottom === "" ? "bottom" : `bottom ${classBottom}`} 
-        typeSvg={"icon-double_arrow"}
+        typeSvg={"icon-long-arrow-down"}
         onClick={handleBottom}
       />
     </>

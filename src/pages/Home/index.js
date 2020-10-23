@@ -7,6 +7,7 @@ import Projects from "components/Projects/Projects";
 import Button from "components/Button/Button"
 import CurrentTime from "components/CurrentTime/CurrentTime"
 import gsap from "gsap";
+import "./Home.css"
 
 function Home() {
   const refPersonalInfo = useRef()
@@ -21,6 +22,7 @@ function Home() {
     refMain.current.classList.toggle("scale")
     e.preventDefault()
   }
+
   useEffect(() => {
     gsap.timeline()
       .from(borderTop, {duration: 0.5, delay: 0.3, scaleX: 0, opacity:0, ease: "slow(0.7, 0.7,  false)"})
@@ -30,7 +32,8 @@ function Home() {
       .from(hi, {opacity:0})
       .from(welcome, {duration:1.5,  opacity:0})
 
-  })
+  },[])
+
   return(
     <>
       <header className="App-header">
@@ -42,7 +45,7 @@ function Home() {
         <CurrentTime/>
       </header>
       <aside className="App-aside">
-      <span ref={span => borderLeft = span} className="border-aside-animate"></span>
+        <span ref={span => borderLeft = span} className="border-aside-animate"></span>
         <Button 
         classSvg="topSvg"
         className={"content-button-info"} 

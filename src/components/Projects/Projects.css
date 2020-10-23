@@ -6,18 +6,21 @@
   transition: all .5s ease-in-out;
 }
 .count-projects {
-  border: 1px solid white;
+  /* border: 2px solid #DE620C; */
+  background-color: rgb(238, 240, 245);
+  box-shadow: 0 4px 20px 4px rgba(155, 153, 164, .3);
   border-radius: 50%;
   color: #404247;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   width: 45px;
   height: 45px;
   position: absolute;
-  top: -54px;
+  top: calc(50vh - 45px);
+  left: 0px;
   z-index: 100;
 
 }

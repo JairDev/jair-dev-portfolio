@@ -23,3 +23,12 @@
   font-size: var(--general-text-size);
   letter-spacing: var(--letter-spacing);
 }
+
+.icon-react, .icon-javascript, .icon-css3, .icon-html-five {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  stroke-width: 0;
+  stroke: black;
+  fill: var(--dark-color);
+}

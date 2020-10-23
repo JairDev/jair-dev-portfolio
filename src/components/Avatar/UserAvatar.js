@@ -5,22 +5,24 @@ import "./UserAvatar.css"
 function UserAvatar() {
 
   return(
-    <div className="content-profile-avatar">
-       <img alt="" src=""/>
-       <Avatar
+    <>
+      <div className="content-profile-avatar">
+        <img alt="" src=""/>
+        <Avatar
           avatarStyle='Transparent'
-          topType='ShortHairShortCurly'
+          topType='ShortHairDreads02'
           accessoriesType='Blank'
           hairColor='Black'
           facialHairType='Blank'
-          clotheType='CollarSweater'
-          clotheColor='Blue02'
-          eyeType='WinkWacky'
-          eyebrowType='RaisedExcited'
+          clotheType='BlazerShirt'
+          eyeType='Happy'
+          eyebrowType='DefaultNatural'
           mouthType='Default'
           skinColor='Light'
         />
-    </div>
+      </div>
+      <span className="profile-border"></span>
+    </>
   )
 }
 
