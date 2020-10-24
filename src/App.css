@@ -22,7 +22,7 @@
   overflow: hidden;
 }
 
-.icon-github-project {
+/* .icon-github-project {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -38,7 +38,7 @@
   stroke-width: 0;
   stroke: #DBDEE8;
   fill: #DBDEE8;
-}
+} */
 
 
 @media only screen and (max-width: 760px),
@@ -47,43 +47,6 @@
   .App {
     overflow: initial;
   }
-
-  .App-main {
-    grid-template-columns: 1fr;
-    height: 100%;
-    padding-left: 0px;
-    padding-bottom: 15vh;
-  }
-
-  .App-aside {
-    background-color: #DBDEE8;
-    border-top: 2px solid rgb(27, 27, 27);
-    border-right: none;
-    position: fixed;
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-  }
-
-  .App-content-profile, .App-content-skills {
-    margin-top: 10vh;
-  }
-
-  .App-parent-projects {
-    margin-top: 15vh;
-  }
-  .content-projects {
-    position: static;
-  }
-  .content-projects > .projects {
-    margin-top: 100px;
-  }
-  
-  .projects:first-child {
-    margin-top: 0px;
-  }
-  
 
 }
 

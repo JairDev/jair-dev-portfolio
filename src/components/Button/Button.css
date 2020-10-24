@@ -43,8 +43,8 @@
 
 .icon-user {
   display: inline-block;
-  width: 2.5em;
-  height: 2.5em;
+  width: 2.1em;
+  height: 2.1em;
   stroke-width: 0;
   stroke: var(--dark-color);
   fill: var(--dark-color);

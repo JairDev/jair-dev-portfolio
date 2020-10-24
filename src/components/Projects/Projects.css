@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  font-weight: bold;
   letter-spacing: 2px;
   width: 45px;
   height: 45px;
@@ -23,4 +24,11 @@
   left: 0px;
   z-index: 100;
 
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  { 
+  .count-projects {
+    display: none;
+  }
 }

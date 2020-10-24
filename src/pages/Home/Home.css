@@ -28,7 +28,18 @@
   width: 60px; 
   display: flex;
   align-items: center;
+  justify-content: center;
   z-index: 400;
+}
+
+.App-aside::before {
+  content: "";
+  border-radius: 50%;
+  background-color: rgb(238, 240, 245);
+  box-shadow: 0 4px 20px 4px rgba(155, 153, 164, .3);
+  position: absolute;
+  width: 45px;
+  height: 45px;
 }
 
 .border-animate {
@@ -139,11 +150,12 @@
 }
 
 .title-skills {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--dark-color);
-  font-size: 2rem;
+  color: var(--dark-color);
+  /* color: transparent;
+  -webkit-text-stroke: 1px var(--dark-color); */
+  font-size: calc(2vw + 1em);
   position: absolute;
-  top: -5vmin;
+  top: -7vmin;
   left: -20px;
 }
 
@@ -168,41 +180,109 @@
   height: 100%;
 }
 
-.content-title-projects-top {
-  /* outline: 5px solid rgb(0, 255, 55); */
+.content-title-projects-top, .content-title-projects {
   position: absolute;
   top: 15vmin;
   width: 80%;
+}
+
+.content-title-projects-top {
   height: 30vmin;
   overflow: hidden;
   z-index: 1;
 }
 
-.title-projects-top {
-  /* color: rgb(238, 240, 245); */
-  color: transparent;
-  -webkit-text-stroke: 1.5px #DBDEE8;
-  font-size: 4rem;
+.title-projects-top, .title-projects {
   position: absolute;
   top: -8vmin;
   left: -75px;
+  font-size: calc(4vw + 1em);
+
+}
+
+.title-projects-top {
+  color: #DBDEE8;
+  /* color: transparent; */
+  /* -webkit-text-stroke: 1.5px #DBDEE8; */
 }
 
 .content-title-projects {
-  /* outline: 5px solid red; */
-  position: absolute;
-  top: 15vmin;
-  width: 80%;
   height: 60vmin;
-
 }
 
 .title-projects {
-  /* color: var(--dark-color); */
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--dark-color);
-  font-size: 4rem;
-  position: absolute;
-  top: -8vmin;
-  left: -75px;
+  color: var(--dark-color);
+  /* color: transparent;
+  -webkit-text-stroke: 1.5px var(--dark-color); */
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  .App {
+    overflow: initial;
+  }
+
+  .App-header {
+    padding-left: 10px;
+    position: static;
+  }
+  .border-animate {
+    height: 60px;
+  }
+
+
+  .App-main {
+    grid-template-columns: 1fr;
+    height: 100%;
+    padding-left: 0px;
+    padding-bottom: 15vh;
+  }
+
+  .App-aside {
+    background-color: #DBDEE8;
+    border-top: 1px solid rgb(27, 27, 27);
+    border-right: none;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 64px;
+    z-index: 1000;
+  }
+  .border-aside-animate {
+    border-right: none;
+    
+  }
+
+  .App-content-personal-info {
+    padding: 3rem;
+  }
+
+  .App-content-profile, .App-content-skills {
+    margin-top: 10vh;
+  }
+
+  .content-title-projects, .content-title-projects-top {
+    top: 0;
+  }
+  .title-projects-top, .title-projects {
+    top: -8vmin;
+    left: -25px;
+  }
+
+  .App-parent-projects {
+    margin-top: 15vh;
+    padding: 0;
+  }
+  .content-projects {
+    position: static;
+  }
+  .content-projects > .projects {
+    margin-top: 100px;
+  }
+  
+  .projects:first-child {
+    margin-top: 0px;
+  }
 }

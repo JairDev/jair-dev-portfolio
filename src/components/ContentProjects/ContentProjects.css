@@ -148,3 +148,75 @@
   opacity: 1;
   transform: scale(1.0);
 }
+
+.icon-github-project {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: #DBDEE8;
+  fill: #DBDEE8;
+}
+
+.icon-new-tab {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: #DBDEE8;
+  fill: #DBDEE8;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  { 
+  .more-info {
+    width: 40px;
+    height: 40px;
+    bottom: -20px;
+    left: -20px;
+  }
+  .more-info::before {
+    width: 10px;
+    height: 10px;
+  }
+
+  .projects-name, .description {
+    font-size: calc(1vw + 1em);
+  }
+
+  .projects-name {
+    margin-bottom: .5rem;
+  }
+
+  .projects-description {
+    padding: 1.2rem 1rem 1rem 1rem;
+
+  }
+
+
+  .link-projects {
+    padding-top: .5rem;
+  }
+
+  .link-projects-all {
+    padding: .1rem 1rem;
+  }
+
+  .icon-github-project {
+    display: inline-block;
+    width: .7em;
+    height: .7em;
+    stroke-width: 0;
+    stroke: #DBDEE8;
+    fill: #DBDEE8;
+  }
+  
+  .icon-new-tab {
+    display: inline-block;
+    width: .7em;
+    height: .7em;
+    stroke-width: 0;
+    stroke: #DBDEE8;
+    fill: #DBDEE8;
+  }
+}
