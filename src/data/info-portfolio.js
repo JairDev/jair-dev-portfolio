@@ -22,20 +22,25 @@ export const users = [
 ]
 
 export const projects = [
+  {name: "Coin Market App", 
+  imgSrc: "img-coin.png", 
+  linkGit:"https://github.com/JairDev/coin-market-info-",
+  linkDemo:"https://coin-market-info.vercel.app/",
+  description:"Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and"},
   {name: "Recipes", 
   imgSrc: "img-recipe.png", 
   linkGit:"https://github.com/JairDev/recipe-app",
-  linkDemo:"",
+  linkDemo:"https://tasterecipes.netlify.com/",
   description:"Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and"},
   {name: "Memory", 
   imgSrc: "img-memory.png", 
   linkGit:"https://github.com/JairDev/memory-game",
-  linkDemo:"",
+  linkDemo:"https://memorybrain.netlify.com/",
   description:"Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and"},
   {name: "Timer", 
   imgSrc: "img-timer.png", 
   linkGit:"https://github.com/JairDev/training-timer-and-chronometer",
-  linkDemo:"",
+  linkDemo:"https://trainingtimerapp.netlify.com/",
   description:"Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and"},
   
 

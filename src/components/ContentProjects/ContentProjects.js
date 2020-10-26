@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import "./ContentProjects.css"
 
-function ContentProjects({img, projectName, projectDescription, linkGit}) {
+function ContentProjects({img, projectName, projectDescription, linkGit, linkDemo}) {
   const elementRef = useRef()
   const handleClick = () => {
     elementRef.current.classList.toggle("active")
@@ -24,7 +24,7 @@ function ContentProjects({img, projectName, projectDescription, linkGit}) {
                   </a>
                 </div>
                 <div className="link-projects-all demo">
-                  <a target="_blank" rel="noopener noreferrer" href={linkGit}>
+                  <a target="_blank" rel="noopener noreferrer" href={linkDemo}>
                   <svg className="icon icon-new-tab"><use xlinkHref="#icon-new-tab"></use></svg>
                   </a>
                 </div>

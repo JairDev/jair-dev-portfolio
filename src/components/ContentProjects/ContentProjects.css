@@ -94,9 +94,10 @@
   padding-top: 5rem;
 }
 
-.link-projects-all {
+.link-projects-all a {
   border: 1px solid #DBDEE8;
   cursor: pointer;
+  display: block;
   font-size: 1.5rem;
   padding: .5rem 1.5rem;
 }
@@ -198,7 +199,8 @@
     padding-top: .5rem;
   }
 
-  .link-projects-all {
+  .link-projects-all a {
+    display: block;
     padding: .1rem 1rem;
   }
 

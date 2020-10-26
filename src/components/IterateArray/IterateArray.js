@@ -20,7 +20,8 @@ function IterateArray({array, Component, type}) {
               img={item.imgSrc} 
               projectName={item.name}
               projectDescription={item.description}
-              linkGit={item.linkGit}/>
+              linkGit={item.linkGit}
+              linkDemo={item.linkDemo}/>
           default: console.log("error");
         }
         
