@@ -1,7 +1,8 @@
 :root {
   --text-hi: calc(1rem + 1vw);
-  --general-text-size: calc(.8rem + 1vw);
-  --small-text-size: calc(.5rem + 1vw);
+  --profile-text-size: calc(.9rem + 1vw);
+  --general-text-size: calc(.5rem + 1vw);
+  --small-text-size: calc(.4rem + 1vw);
   --letter-spacing: 1px;
   --dark-color: #404247;
   --size-before-top: scaleX(1.0);

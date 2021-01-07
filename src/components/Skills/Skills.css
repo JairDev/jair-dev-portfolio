@@ -2,12 +2,15 @@
   border: 1.5px solid var(--dark-color);
   width: 80%;
   display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .content-icon-skills {
-  border-right: 1.5px solid var(--dark-color);
-  padding: .3rem;
-  width: 20%;
+  /* border-right: 1.5px solid var(--dark-color);*/
+  padding: 0.3rem;
+  width: 100%;
 }
 
 .content-icon-skills svg {
@@ -24,10 +27,15 @@
   letter-spacing: var(--letter-spacing);
 }
 
-.icon-react, .icon-javascript, .icon-css3, .icon-html-five {
+.icon-react,
+.icon-javascript,
+.icon-css3,
+.icon-html-five,
+.icon-git,
+.icon-adobephotoshop {
   display: inline-block;
-  width: 2em;
-  height: 2em;
+  width: 1.6em;
+  height: 1.6em;
   stroke-width: 0;
   stroke: black;
   fill: var(--dark-color);

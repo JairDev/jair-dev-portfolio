@@ -4,7 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/tags
+tags
+.tags
+.tags.lock
+.tags.temp
 # testing
 /coverage
 

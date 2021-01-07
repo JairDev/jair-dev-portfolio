@@ -128,20 +128,23 @@
 
 }
 
-.App-content-skills {
-  /* border: 2px solid #EEF0F5; */
+.kit-content {
   background-color: rgb(238, 240, 245);
   box-shadow: 0 4px 20px 4px rgba(155, 153, 164, .3);
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  width: 80%;
-  padding: 1rem 0rem;
+  flex-direction: row;
+  padding: 1rem 0.5rem;
   position: relative;
+  width: 80%;
 }
 
-.content-title-skills {
+.over-hidden {
+  display: flex;
+  overflow: hidden;
+}
+
+.content-title-skills, .content-title-tools {
   position: absolute;
   top: 0;
   width: 100%;
@@ -149,18 +152,18 @@
   /* z-index: 500; */
 }
 
-.title-skills {
+.title-skills, .title-tools {
   color: var(--dark-color);
   /* color: transparent;
   -webkit-text-stroke: 1px var(--dark-color); */
-  font-size: calc(2vw + 1em);
+  font-size: calc(1vw + .8em);
   position: absolute;
   top: -7vmin;
   left: -20px;
 }
 
 .App-content-skills > div {
-  margin-bottom: 1rem;
+ /* margin-bottom: 1rem;i */
 }
 
 .App-content-skills > div:last-child {
@@ -259,7 +262,7 @@
     padding: 3rem;
   }
 
-  .App-content-profile, .App-content-skills {
+  .App-content-profile, .App-content-skills, .App-content-tools {
     margin-top: 10vh;
   }
 

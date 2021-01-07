@@ -12,6 +12,11 @@ export const skills = [
   {name: "HTML5", iconClass:"icon-html-five"},
 ]
 
+export const tools = [
+  {name: "Git", iconClass: "icon-git"},
+  {name: "Photoshop", iconClass: "icon-adobephotoshop"}
+]
+
 export const users = [
   {
   name: "Alfredo", 

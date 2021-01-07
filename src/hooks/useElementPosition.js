@@ -1,45 +1,46 @@
 import { useEffect, useRef, useState } from "react";
 
 function useElementPosition() {
-  const elementRef = useRef(null)
-  const [count, setCount] = useState(0)
-  const [classTop, setClassTop] = useState("")
-  const [classBottom, setClassBottom] = useState("")
+  const elementRef = useRef(null);
+  const [count, setCount] = useState(0);
+  const [classTop, setClassTop] = useState("");
+  const [classBottom, setClassBottom] = useState("");
 
   const handleTop = (e) => {
-    e.preventDefault()
-    setCount(prev => prev += 1)
-  }
+    e.preventDefault();
+    setCount((prev) => (prev += 1));
+  };
 
   const handleBottom = (e) => {
-    e.preventDefault()
-    setCount(prev => prev -= 1)
-  }
+    e.preventDefault();
+    setCount((prev) => (prev -= 1));
+  };
 
   useEffect(() => {
-    const element = elementRef.current
-    const coords = element.getBoundingClientRect()
-    const node = element.childNodes
-    const nodesHeight = node[0].offsetHeight
-    const realSizeElements = nodesHeight * node.length
-    const outSize = coords.height - realSizeElements
-    const marginAdd = outSize / (node.length - 1)
-    const translate = (marginAdd + nodesHeight) * count
-    if(count >= node.length - 1) {
-      setClassTop("deactivate-top")
-    }else {
-      setClassTop("")
+    const element = elementRef.current;
+    const coords = element.getBoundingClientRect();
+    const nodes = element.childNodes;
+    const nodesHeight = nodes[0].offsetHeight;
+    const realSizeElements = nodesHeight * nodes.length;
+    const outSize = coords.height - realSizeElements;
+    const marginAdd = outSize / (nodes.length - 1);
+    const translate = (marginAdd + nodesHeight) * count;
+    if (count >= nodes.length - 1) {
+      setClassTop("deactivate-top");
+    } else {
+      setClassTop("");
     }
-   
-    if(count > 0) {
-      setClassBottom("activate-bottom")
-    }else {
-      setClassBottom("")
-    }
-    element.style = `transform: translateY(-${translate}px)`
-  }, [count])
 
-  return {count, handleTop, handleBottom, elementRef, classTop, classBottom}
+    if (count > 0) {
+      setClassBottom("activate-bottom");
+    } else {
+      setClassBottom("");
+    }
+    element.style = `transform: translateY(-${translate}px)`;
+  }, [count]);
+
+  return { count, handleTop, handleBottom, elementRef, classTop, classBottom };
 }
 
-export default useElementPosition
+export default useElementPosition;
+

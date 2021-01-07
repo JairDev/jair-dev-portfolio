@@ -1,7 +1,7 @@
 .content-profile-avatar {
   /* border: 1.5px solid var(--dark-color); */
   border-radius: 50%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: flex-end;
   width: 150px;
@@ -16,6 +16,7 @@
   z-index: 10;
 }
 .profile-border {
+  display: none;
   border-radius: 50%;
   background: linear-gradient(to bottom, #DE620C, transparent);
   position: absolute;

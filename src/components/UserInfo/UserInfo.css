@@ -9,7 +9,7 @@
 .profile-name {
   margin-bottom: .5rem;
   color: var(--dark-color);
-  font-size: var(--general-text-size);
+  font-size: var(--profile-text-size);
   letter-spacing: var(--letter-spacing);
 }
 
