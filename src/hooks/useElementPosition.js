@@ -25,6 +25,7 @@ function useElementPosition() {
     const outSize = coords.height - realSizeElements;
     const marginAdd = outSize / (nodes.length - 1);
     const translate = (marginAdd + nodesHeight) * count;
+    console.log(element)
     if (count >= nodes.length - 1) {
       setClassTop("deactivate-top");
     } else {

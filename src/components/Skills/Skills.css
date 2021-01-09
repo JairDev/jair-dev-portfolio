@@ -1,10 +1,13 @@
+.content-skills {
+  padding: .5rem;
+  
+}
+
 .skills {
   border: 1.5px solid var(--dark-color);
-  width: 80%;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
-  margin-left: 0.5rem;
+  padding: .5rem;
 }
 
 .content-icon-skills {
@@ -32,7 +35,8 @@
 .icon-css3,
 .icon-html-five,
 .icon-git,
-.icon-adobephotoshop {
+.icon-adobephotoshop,
+.icon-redux {
   display: inline-block;
   width: 1.6em;
   height: 1.6em;

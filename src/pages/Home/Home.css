@@ -7,6 +7,7 @@
 
 }
 
+
 .App-header-content {
   /* border: 2px solid gold; */
   display: flex;
@@ -131,18 +132,47 @@
 .kit-content {
   background-color: rgb(238, 240, 245);
   box-shadow: 0 4px 20px 4px rgba(155, 153, 164, .3);
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  padding: 1rem 0.5rem;
   position: relative;
   width: 80%;
 }
 
 .over-hidden {
-  display: flex;
   overflow: hidden;
+  position: relative;
 }
+
+.over-hidden:before {
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  filter: blur(5px);
+}
+
+.over-kit {
+  cursor: move;
+  display: flex;
+  position: relative;
+  left: 0%;
+  animation: slid 10s linear 0s infinite normal none running;
+}
+
+@keyframes slide {
+  0% {
+    left: 0%
+  }
+  100% {
+    left: -50%
+  }
+}
+
+.over-kit:hover {
+  animation: pause;
+  left: 0%;
+}
+
 
 .content-title-skills, .content-title-tools {
   position: absolute;
@@ -156,7 +186,7 @@
   color: var(--dark-color);
   /* color: transparent;
   -webkit-text-stroke: 1px var(--dark-color); */
-  font-size: calc(1vw + .8em);
+  font-size: calc(1vw + .6em);
   position: absolute;
   top: -7vmin;
   left: -20px;
@@ -169,6 +199,7 @@
 .App-content-skills > div:last-child {
   margin-bottom: 0rem;
 }
+
 
 .App-parent-projects {
   padding: 0rem 2rem;

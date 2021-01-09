@@ -7,6 +7,7 @@ import Projects from "components/Projects/Projects";
 import Button from "components/Button/Button";
 import CurrentTime from "components/CurrentTime/CurrentTime";
 import gsap from "gsap";
+import Draggable from "react-draggable";
 import "./Home.css";
 
 function Home() {
@@ -125,7 +126,15 @@ function Home() {
               </div>
             </div>
             <div className="over-hidden">
-              <IterateArray array={skills} Component={Skills} type={"skills"} />
+	      <Draggable axis="x" grid={[10, 10]}>
+                <div className="over-kit">
+                  <IterateArray
+                    array={skills}
+                    Component={Skills}
+                    type={"skills"}
+                  />
+                </div>
+              </Draggable>
             </div>
           </div>
           <div className="App-content-tools all kit-content">
@@ -135,7 +144,9 @@ function Home() {
               </div>
             </div>
             <div className="over-hidden">
-              <IterateArray array={tools} Component={Skills} type={"tools"} />
+              <div className="over-kit">
+                <IterateArray array={tools} Component={Skills} type={"tools"} />
+              </div>
             </div>
           </div>
         </section>
