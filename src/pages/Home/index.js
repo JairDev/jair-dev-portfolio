@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProfileCard from "components/ProfileCard/ProfileCard";
 import { users, skills, tools } from "data/info-portfolio";
 import IterateArray from "components/IterateArray/IterateArray";
@@ -17,6 +17,7 @@ function Home() {
   let borderLeft = useRef(null);
   let hi = useRef(null);
   let welcome = useRef(null);
+  const dragEl = useRef(null)
 
   const handleDisplay = (e) => {
     refPersonalInfo.current.classList.toggle("scale-info");
@@ -125,9 +126,9 @@ function Home() {
                 <h2>Skills</h2>
               </div>
             </div>
-            <div className="over-hidden">
-	      <Draggable axis="x" grid={[10, 10]}>
-                <div className="over-kit">
+	    <div className="over-hidden">
+	      <Draggable nodeRef={dragEl} axis={"x"}>
+                <div ref={dragEl} className="over-kit">
                   <IterateArray
                     array={skills}
                     Component={Skills}
@@ -144,7 +145,7 @@ function Home() {
               </div>
             </div>
             <div className="over-hidden">
-              <div className="over-kit">
+	      <div className="over-kit">
                 <IterateArray array={tools} Component={Skills} type={"tools"} />
               </div>
             </div>
