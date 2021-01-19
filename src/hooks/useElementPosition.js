@@ -16,7 +16,7 @@ function useElementPosition() {
     setCount((prev) => (prev -= 1));
   };
 
-  useEffect(() => {
+  const handlePosition = () => {
     const element = elementRef.current;
     const coords = element.getBoundingClientRect();
     const nodes = element.childNodes;
@@ -25,12 +25,12 @@ function useElementPosition() {
     const outSize = coords.height - realSizeElements;
     const marginAdd = outSize / (nodes.length - 1);
     const translate = (marginAdd + nodesHeight) * count;
-    console.log(element)
     if (count >= nodes.length - 1) {
       setClassTop("deactivate-top");
     } else {
       setClassTop("");
     }
+    console.log(count)
 
     if (count > 0) {
       setClassBottom("activate-bottom");
@@ -38,10 +38,13 @@ function useElementPosition() {
       setClassBottom("");
     }
     element.style = `transform: translateY(-${translate}px)`;
+  };
+
+  useEffect(() => {
+    handlePosition();
   }, [count]);
 
   return { count, handleTop, handleBottom, elementRef, classTop, classBottom };
 }
 
 export default useElementPosition;
-

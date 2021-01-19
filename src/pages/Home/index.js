@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import ProfileCard from "components/ProfileCard/ProfileCard";
 import { users, skills, tools } from "data/info-portfolio";
 import IterateArray from "components/IterateArray/IterateArray";
@@ -10,6 +10,12 @@ import gsap from "gsap";
 import Draggable from "react-draggable";
 import "./Home.css";
 
+const svgProfile = (
+  <svg className={`icon icon-user topSvg`}>
+    <use xlinkHref={`#icon-user`}></use>
+  </svg>
+);
+
 function Home() {
   const refPersonalInfo = useRef();
   const refMain = useRef();
@@ -17,11 +23,13 @@ function Home() {
   let borderLeft = useRef(null);
   let hi = useRef(null);
   let welcome = useRef(null);
-  const dragEl = useRef(null)
+  const dragEl = useRef(null);
+  let span = useRef(null);
 
   const handleDisplay = (e) => {
     refPersonalInfo.current.classList.toggle("scale-info");
     refMain.current.classList.toggle("scale");
+    span.classList.toggle("active");
     e.preventDefault();
   };
 
@@ -77,17 +85,23 @@ function Home() {
         </div>
         <CurrentTime />
       </header>
+
       <aside className="App-aside">
         <span
           ref={(span) => (borderLeft = span)}
           className="border-aside-animate"
         ></span>
+        <span
+          ref={(el) => (span = el)}
+          className="animate-span-profile active"
+        ></span>
         <Button
           classSvg="topSvg"
           className={"content-button-info"}
-          typeSvg={"icon-user"}
           onClick={handleDisplay}
-        />
+        >
+          {svgProfile}
+        </Button>
       </aside>
 
       <div ref={refPersonalInfo} className={`App-content-personal-info`}>
@@ -95,19 +109,27 @@ function Home() {
           <div>
             <img src="" alt=""></img>
           </div>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. Lorem Ipsum is simply dummy text of
-            the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type
-            specimen book. It has survived not only five centuries, but also the
-            leap into electronic typesetting, remaining essentially unchanged.
+          <h3 className="title-personal-info">¿Nos tomamos un café?</h3>
+          <span className="sub-title-personal-info">
+            ¡Sí, el título es cierto, me gustaría tomar un café contigo!
+          </span>
+          <p className="text-personal-info first">
+            Hola, mi nombre es Alfredo Moscoso, ¿Estas de acuerdo, que el
+            desarrollo web es parte fundamental de nuestras vidas? Imaginar un
+            mundo sin internet es difícil, una pagina web puede cambiar la vida
+            de una persona, encontrar el trabajo soñado, hacer realidad el viaje
+            planificado. Como desarrollador web, me satisface poder ayudar a
+            crear esa pagina web, formar parte de un equipo que lo haga posible,
+            es emocionante, eso me impulsó a tomar este camino.
           </p>
+          <p className="text-personal-info">
+            Pero no todo es tecnología, disfruto la compañía de una mascota, mi
+            pasión recién descubierta es la jardinería, en estos tiempos es una
+            actividad relajante
+          </p>
+        </div>
+        <div className="content-button-personal-info">
+          <Button className={"button-action-about-me"}>¿Te invito un café?</Button>
         </div>
       </div>
 
@@ -126,8 +148,8 @@ function Home() {
                 <h2>Skills</h2>
               </div>
             </div>
-	    <div className="over-hidden">
-	      <Draggable nodeRef={dragEl} axis={"x"}>
+            <div className="over-hidden">
+              <Draggable nodeRef={dragEl} axis={"x"}>
                 <div ref={dragEl} className="over-kit">
                   <IterateArray
                     array={skills}
@@ -145,7 +167,7 @@ function Home() {
               </div>
             </div>
             <div className="over-hidden">
-	      <div className="over-kit">
+              <div className="over-kit">
                 <IterateArray array={tools} Component={Skills} type={"tools"} />
               </div>
             </div>

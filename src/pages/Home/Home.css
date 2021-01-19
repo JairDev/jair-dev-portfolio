@@ -41,6 +41,30 @@
   height: 45px;
 }
 
+.animate-span-profile.active {
+  border: 1px solid #de620c;
+  border-radius: 50%;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  transform: scale(1);
+  animation: border 2s linear infinite;
+}
+
+@keyframes border {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
 .border-animate {
   border-bottom: 1.5px solid var(--dark-color);
   position: absolute;
@@ -68,11 +92,11 @@
 .App-content-personal-info {
   /* border: 2px solid red; */
   background-color: #dbdee8;
-  padding: 50px 50px 50px 110px;
-  margin-top: 60px;
+  /*margin-top: 60px;*/
   opacity: 0;
+  padding: 3rem 8rem;
   position: absolute;
-  top: 0;
+  /*top: 0;*/
   width: 100%;
   height: 100%;
   transition: all 0.5s ease-in-out;
@@ -81,10 +105,50 @@
   z-index: 300;
 }
 
-.App-content-personal-info p {
-  font-size: calc(1vw + 1rem);
-  line-height: 1.5;
+.title-personal-info {
+  border-bottom: 2px solid #de620c;
+  font-weight: 400;
+  font-size: calc(1vw + 0.8rem);
+  margin-bottom: 2rem;
+  padding: 0.5rem 0;
+}
+
+.sub-title-personal-info {
+  display: block;
+  font-size: calc(1vw + 0.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.text-personal-info {
+  font-size: calc(1vw + 0.6rem);
+  line-height: 1.8;
   letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.text-personal-info.first:first-letter {
+  color: #de620c;
+  font-size: calc(1vw + 1.3rem);
+}
+
+.content-button-personal-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.parent-content-button.button-action-about-me {
+  background: #de620c;
+  width: auto;
+}
+
+.button-action-about-me {
+  border: none;
+  background: none;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  padding: .5rem;
+  color: #dbdee8;
 }
 
 .App-content-personal-info.scale-info {
@@ -102,8 +166,11 @@
 }
 
 .App-main.scale {
+  /*height: 100vh;*/
   opacity: 0;
+  /*overflow: hidden;*/
   transform: translateX(100%);
+  position: absolute;
 }
 
 .App-content-profile-skills {
@@ -246,10 +313,10 @@
   -webkit-text-stroke: 1.5px var(--dark-color); */
 }
 
-@media only screen and (max-width: 760px),
+@media only screen and (max-width: 768px),
   (min-device-width: 768px) and (max-device-width: 1024px) {
   .App {
-    overflow: initial;
+    /*overflow: initial;*/
   }
 
   .App-header {
@@ -283,7 +350,8 @@
   }
 
   .App-content-personal-info {
-    padding: 3rem;
+    padding: 3rem 3rem 6rem 3rem;
+
   }
 
   .App-content-profile,

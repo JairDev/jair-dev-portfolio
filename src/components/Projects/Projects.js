@@ -6,6 +6,12 @@ import { projects } from "data/info-portfolio";
 import Button from "components/Button/Button";
 import "./Projects.css";
 
+const svgArrow = (
+  <svg className={`icon icon-long-arrow-up topSvg`}>
+    <use xlinkHref={`#icon-long-arrow-up`}></use>
+  </svg>
+);
+
 function Projects() {
   const {
     count,
@@ -29,9 +35,10 @@ function Projects() {
       <Button
         classSvg="topSvg"
         className={classTop === "" ? "top" : `top ${classTop}`}
-        typeSvg={"icon-long-arrow-up"}
         onClick={handleTop}
-      />
+      >
+        {svgArrow}
+      </Button>
       <span className="count-projects">{`${count + 1}/${countProject}`}</span>
       <div ref={elementRef} className="content-projects">
         <IterateArray
@@ -43,12 +50,12 @@ function Projects() {
       <Button
         classSvg="bottomSvg"
         className={classBottom === "" ? "bottom" : `bottom ${classBottom}`}
-        typeSvg={"icon-long-arrow-down"}
         onClick={handleBottom}
-      />
+      >
+        {svgArrow}
+      </Button>
     </>
   );
 }
-
 
 export default Projects;
