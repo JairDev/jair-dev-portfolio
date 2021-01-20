@@ -30,7 +30,23 @@ function Home() {
     refPersonalInfo.current.classList.toggle("scale-info");
     refMain.current.classList.toggle("scale");
     span.classList.toggle("active");
+    if (!refMain.current.className.includes("scale")) {
+      console.log("click hidden true");
+      refMain.current.classList.remove("hidden");
+    }
     e.preventDefault();
+  };
+
+  const handleTransition = (e) => {
+    const el = refMain.current;
+    el.classList.add("hidden");
+    console.log(el.className);
+    if (el.className.includes("scale")) {
+      console.log(true);
+      el.classList.add("hidden");
+    } else {
+      el.classList.remove("hidden");
+    }
   };
 
   useEffect(() => {
@@ -104,7 +120,11 @@ function Home() {
         </Button>
       </aside>
 
-      <div ref={refPersonalInfo} className={`App-content-personal-info`}>
+      <div
+        ref={refPersonalInfo}
+        onTransitionEnd={handleTransition}
+        className={`App-content-personal-info`}
+      >
         <div>
           <div>
             <img src="" alt=""></img>
@@ -129,7 +149,16 @@ function Home() {
           </p>
         </div>
         <div className="content-button-personal-info">
-          <Button className={"button-action-about-me"}>¿Te invito un café?</Button>
+          <div className="parent-action-link-about-me">
+            <a
+	      href="https://gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={"button-action-about-me"}
+            >
+              ¿Te invito un café?
+            </a>
+          </div>
         </div>
       </div>
 

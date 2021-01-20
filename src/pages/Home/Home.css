@@ -142,12 +142,16 @@
   width: auto;
 }
 
+.parent-action-link-about-me {
+  background: #de620c;
+  width: auto;
+}
+
 .button-action-about-me {
-  border: none;
-  background: none;
-  font-size: 1.4rem;
+  display: block;
+  font-size: calc(1vw + 1rem);
   letter-spacing: 1px;
-  padding: .5rem;
+  padding: 0.5rem 0.8rem;
   color: #dbdee8;
 }
 
@@ -171,6 +175,14 @@
   /*overflow: hidden;*/
   transform: translateX(100%);
   position: absolute;
+}
+
+.App-main.hidden {
+  display: none;
+}
+
+.App-main.block {
+  display: grid;
 }
 
 .App-content-profile-skills {
@@ -292,7 +304,7 @@
 .title-projects-top,
 .title-projects {
   position: absolute;
-  top: -10vmin;
+  top: -9vmin;
   left: -110px;
   font-size: calc(4vw + 1em);
 }
@@ -350,8 +362,8 @@
   }
 
   .App-content-personal-info {
-    padding: 3rem 3rem 6rem 3rem;
-
+    padding: 1rem 2rem 6rem 2rem;
+    height: auto;
   }
 
   .App-content-profile,
@@ -366,7 +378,7 @@
   }
   .title-projects-top,
   .title-projects {
-    top: -8vmin;
+    top: -10vmin;
     left: -25px;
   }
 
@@ -383,5 +395,18 @@
 
   .projects:first-child {
     margin-top: 0px;
+  }
+
+  .kit-content {
+    width: 80vw;
+  }
+
+  .parent-content-button.top,
+  .parent-content-button.bottom {
+    display: none;
+  }
+
+  .count-projects {
+    display: none;
   }
 }

@@ -15,7 +15,9 @@
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
-
+a {
+  text-decoration: none;
+}
 .App {
   background-color: #DBDEE8;
   min-height: 100vh;

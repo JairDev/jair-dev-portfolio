@@ -13,7 +13,7 @@ function IterateArray({ array, Component, type }) {
           />
         );
       case "socialMedia":
-        return <Component key={item.iconClass} iconClass={item.iconClass} />;
+        return <Component key={item.iconClass} iconClass={item.iconClass} source={item.source}/>;
       case "skills":
         return (
           <Component
