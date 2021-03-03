@@ -4,10 +4,15 @@
 }
 
 .skills {
-  border: 1.5px solid var(--dark-color);
+  /* border: 1.5px solid var(--dark-color); */
   display: flex;
   flex-direction: column;
-  padding: .5rem;
+  /* padding: .5rem; */
+  padding: .5rem .8rem .5rem .5rem;
+  border-right: 1.5px solid var(--dark-color);
+}
+.content-skills:last-child .skills {
+  border: none;
 }
 
 .content-icon-skills {
@@ -36,6 +41,7 @@
 .icon-html-five,
 .icon-git,
 .icon-adobephotoshop,
+.icon-sass,
 .icon-redux {
   display: inline-block;
   width: 1.6em;

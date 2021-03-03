@@ -1,8 +1,8 @@
 export const socialMedia = [
-  { name: "github", iconClass: "icon-github", source: "https://github.com/JairDev" },
-  { name: "linkedin", iconClass: "icon-linkedin", source: "https://www.linkedin.com/in/frontend-alfredo-moscoso/" },
-  { name: "twitter", iconClass: "icon-twitter", source: "https://twitter.com/JairDevep"},
-  { name: "gmail", iconClass: "icon-mail4", source: "https://gmail.com" },
+  { name: "Github", iconClass: "icon-github", source: "https://github.com/JairDev" },
+  { name: "Linkedin", iconClass: "icon-linkedin", source: "https://www.linkedin.com/in/frontend-alfredo-moscoso/" },
+  { name: "Twitter", iconClass: "icon-twitter", source: "https://twitter.com/JairDevep"},
+  { name: "Gmail", iconClass: "icon-mail4", source: "https://gmail.com" },
 ];
 
 export const skills = [
@@ -15,6 +15,7 @@ export const skills = [
 
 export const tools = [
   { name: "Git", iconClass: "icon-git" },
+  { name: "Sass", iconClass: "icon-sass" },
   { name: "Photoshop", iconClass: "icon-adobephotoshop" },
 ];
 
@@ -34,6 +35,13 @@ export const projects = [
     linkGit: "https://github.com/JairDev/coin-market-info-",
     linkDemo: "https://coin-market-info.vercel.app/",
     description: "En Coin Market App, podras visualizar los precios actuales de las criptomonedas y encontrar noticias relacionadas con la moneda de tu preferencia"
+  },
+  {
+    name: "Tasty dessert",
+    imgSrc: "img-dessert.png",
+    linkGit: "https://github.com/JairDev/hot-food-app",
+    linkDemo: "https://tastypie.netlify.app/",
+    description: "Tus postres favoritos, a precios accesibles"
   },
   {
     name: "Recipes",

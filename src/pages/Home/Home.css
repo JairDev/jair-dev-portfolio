@@ -158,13 +158,16 @@
 .App-content-personal-info.scale-info {
   opacity: 1;
   transform: translateX(0%);
+  position: relative;
 }
+
 .App-main {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding-left: 60px;
+  padding-left: 100px;
   height: calc(100vh - 62px);
-  position: relative;
+  position: absolute;
+  top: 64px;
   transition: all 0.5s ease-in-out;
   transform-origin: right;
 }
@@ -202,7 +205,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 1rem 0rem;
-  width: 80%;
+  width: 40vw;
 }
 
 .kit-content {
@@ -219,25 +222,25 @@
 
 .over-hidden::before {
   content: "";
-  background-color: rgb(76 76 76 / 30%);
+  background-color: rgb(76 76 76 / 25%);
   position: absolute;
   top: 0;
-  left: -2px;
-  width: 10px;
+  left: -6px;
+  width: 15px;
   height: 100%;
-  filter: blur(8px);
+  filter: blur(10px);
   z-index: 100;
 }
 
 .over-hidden::after {
   content: "";
-  background-color: rgb(76 76 76 / 30%);
+  background-color: rgb(76 76 76 / 25%);
   position: absolute;
   top: 0;
-  right: -2px;
-  width: 10px;
+  right: -6px;
+  width: 15px;
   height: 100%;
-  filter: blur(8px);
+  filter: blur(10px);
   z-index: 100;
 }
 

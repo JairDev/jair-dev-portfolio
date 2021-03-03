@@ -37,7 +37,7 @@ function Home() {
     e.preventDefault();
   };
 
-  const handleTransition = (e) => {
+  const handleTransition = () => {
     const el = refMain.current;
     el.classList.add("hidden");
     console.log(el.className);
@@ -134,24 +134,26 @@ function Home() {
             ¡Sí, el título es cierto, me gustaría tomar un café contigo!
           </span>
           <p className="text-personal-info first">
-            Hola, mi nombre es Alfredo Moscoso, ¿Estas de acuerdo, que el
-            desarrollo web es parte fundamental de nuestras vidas? Imaginar un
-            mundo sin internet es difícil, una pagina web puede cambiar la vida
-            de una persona, encontrar el trabajo soñado, hacer realidad el viaje
-            planificado. Como desarrollador web, me satisface poder ayudar a
-            crear esa pagina web, formar parte de un equipo que lo haga posible,
-            es emocionante, eso me impulsó a tomar este camino.
+            Soy Alfredo Moscoso, desarrollador frontend, me emociona pensar que
+            podemos crear cosas importantes, una aplicación web, un sitio web,
+            esas cosas que cambiarán la vida de una persona, formar parte de esa
+            experiencia me mantiene en constante aprendizaje, pudiendo cada día
+            mejorar mis habilidades técnicas en, JavaScript, Reactjs, Sass,
+            Html5, dispuesto a seguir aprendiendo nuevas tecnologías, trabajar
+            de la mano con un equipo y que hagamos posible ese próximo gran
+            proyecto.
           </p>
+
           <p className="text-personal-info">
-            Pero no todo es tecnología, disfruto la compañía de una mascota, mi
-            pasión recién descubierta es la jardinería, en estos tiempos es una
-            actividad relajante
+            Pero no todo es tecnología, disfruto la compañía de una mascota,
+            jugar un video juego, mi pasión recién descubierta es la
+            jardinería, en estos tiempos es una actividad relajante.
           </p>
         </div>
         <div className="content-button-personal-info">
           <div className="parent-action-link-about-me">
             <a
-	      href="https://gmail.com"
+              href="https://gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className={"button-action-about-me"}
@@ -171,7 +173,7 @@ function Home() {
               type={"userInfo"}
             />
           </div>
-          <div className="App-content-skills all kit-content">
+          {/* <div className="App-content-skills all kit-content">
             <div className="content-title-skills">
               <div className="title-skills">
                 <h2>Skills</h2>
@@ -200,7 +202,7 @@ function Home() {
                 <IterateArray array={tools} Component={Skills} type={"tools"} />
               </div>
             </div>
-          </div>
+          </div> */}
         </section>
 
         <section className="App-parent-projects all">

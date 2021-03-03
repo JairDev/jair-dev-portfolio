@@ -6,13 +6,11 @@ function Button({ className, onClick, refButton, children }) {
     <div ref={refButton} className={`parent-content-button ${className}`}>
       <form>
         <button className={className} onClick={onClick}>
-	  {children}
+          {children}
         </button>
       </form>
     </div>
   );
 }
 
-
 export default Button;
-

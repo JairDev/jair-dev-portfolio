@@ -6,7 +6,6 @@
   transition: all .5s ease-in-out;
 }
 .count-projects {
-  /* border: 2px solid #DE620C; */
   background-color: rgb(238, 240, 245);
   box-shadow: 0 4px 20px 4px rgba(155, 153, 164, .3);
   border-radius: 50%;

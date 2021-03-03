@@ -13,7 +13,14 @@ function IterateArray({ array, Component, type }) {
           />
         );
       case "socialMedia":
-        return <Component key={item.iconClass} iconClass={item.iconClass} source={item.source}/>;
+        return (
+          <Component
+            key={item.iconClass}
+            name={item.name}
+            iconClass={item.iconClass}
+            source={item.source}
+          />
+        );
       case "skills":
         return (
           <Component
@@ -23,7 +30,13 @@ function IterateArray({ array, Component, type }) {
           />
         );
       case "tools":
-	return <Component key={item.iconClass} skillName={item.name} iconClass={item.iconClass}/>;
+        return (
+          <Component
+            key={item.iconClass}
+            skillName={item.name}
+            iconClass={item.iconClass}
+          />
+        );
       case "projects":
         return (
           <Component
@@ -42,4 +55,3 @@ function IterateArray({ array, Component, type }) {
 }
 
 export default IterateArray;
-

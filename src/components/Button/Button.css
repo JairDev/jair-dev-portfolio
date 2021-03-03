@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+button:focus {
+  outline: none;
+}
+
 .icon-user {
   display: inline-block;
   width: 2.1em;
