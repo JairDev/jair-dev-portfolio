@@ -23,7 +23,7 @@
   padding: 0.5rem 0.5rem;
   position: absolute;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 60px;
   display: flex;
   align-items: center;
@@ -212,7 +212,9 @@
   background-color: rgb(238, 240, 245);
   box-shadow: 0 4px 20px 4px rgba(155, 153, 164, 0.3);
   position: relative;
-  width: 80%;
+  width: 100%;
+  margin-bottom: 10rem;
+  margin-top: 10rem;
 }
 
 .over-hidden {
@@ -220,7 +222,7 @@
   position: relative;
 }
 
-.over-hidden::before {
+/* .over-hidden::before {
   content: "";
   background-color: rgb(76 76 76 / 25%);
   position: absolute;
@@ -230,9 +232,9 @@
   height: 100%;
   filter: blur(10px);
   z-index: 100;
-}
+} */
 
-.over-hidden::after {
+/* .over-hidden::after {
   content: "";
   background-color: rgb(76 76 76 / 25%);
   position: absolute;
@@ -242,7 +244,7 @@
   height: 100%;
   filter: blur(10px);
   z-index: 100;
-}
+} */
 
 .over-kit {
   cursor: move;
@@ -267,7 +269,7 @@
   font-size: calc(1vw + 0.6em);
   position: absolute;
   top: -7vmin;
-  left: -20px;
+  /* left: -20px; */
 }
 
 .App-content-skills > div {

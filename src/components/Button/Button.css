@@ -2,8 +2,14 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  position: relative;
+  height: auto;
   z-index: 100;
+}
+
+.parent-content-button.content-button-info {
+  position: sticky;
+  /* top: 10rem; */
+  /* align-self: flex-start; */
 }
 
 .content-button-info form {

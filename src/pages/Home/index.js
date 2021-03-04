@@ -146,11 +146,42 @@ function Home() {
 
           <p className="text-personal-info">
             Pero no todo es tecnología, disfruto la compañía de una mascota,
-            jugar un video juego, mi pasión recién descubierta es la
-            jardinería, en estos tiempos es una actividad relajante.
+            jugar un video juego, mi pasión recién descubierta es la jardinería,
+            en estos tiempos es una actividad relajante.
           </p>
         </div>
-        <div className="content-button-personal-info">
+        
+        <div className="App-content-skills all kit-content">
+            <div className="content-title-skills">
+              <div className="title-skills">
+                <h2>Skills</h2>
+              </div>
+            </div>
+            <div className="over-hidden">
+              <Draggable nodeRef={dragEl} axis={"x"}>
+                <div ref={dragEl} className="over-kit">
+                  <IterateArray
+                    array={skills}
+                    Component={Skills}
+                    type={"skills"}
+                  />
+                </div>
+              </Draggable>
+            </div>
+          </div>
+          <div className="App-content-tools all kit-content">
+            <div className="content-title-tools">
+              <div className="title-tools">
+                <h2>Tools</h2>
+              </div>
+            </div>
+            <div className="over-hidden">
+              <div className="over-kit">
+                <IterateArray array={tools} Component={Skills} type={"tools"} />
+              </div>
+            </div>
+          </div>
+          <div className="content-button-personal-info">
           <div className="parent-action-link-about-me">
             <a
               href="https://gmail.com"
