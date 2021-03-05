@@ -14,7 +14,7 @@
 
 .social-media-name {
   display: block;
-  font-size: calc(1vw + .5rem)
+  font-size: calc(1vw + .3rem)
 }
 
 .icon-github, .icon-twitter, .icon-linkedin, .icon-mail4 {

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function useElementPosition() {
   const elementRef = useRef(null);
@@ -16,7 +16,7 @@ function useElementPosition() {
     setCount((prev) => (prev -= 1));
   };
 
-  const handlePosition = () => {
+  const handlePosition = useCallback( () => {
     const element = elementRef.current;
     const coords = element.getBoundingClientRect();
     const nodes = element.childNodes;
@@ -30,7 +30,6 @@ function useElementPosition() {
     } else {
       setClassTop("");
     }
-    console.log(count)
 
     if (count > 0) {
       setClassBottom("activate-bottom");
@@ -38,11 +37,11 @@ function useElementPosition() {
       setClassBottom("");
     }
     element.style = `transform: translateY(-${translate}px)`;
-  };
+  }, [count]);
 
   useEffect(() => {
     handlePosition();
-  }, [count]);
+  }, [count, handlePosition]);
 
   return { count, handleTop, handleBottom, elementRef, classTop, classBottom };
 }

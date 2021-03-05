@@ -42,7 +42,14 @@ function ContentProjects({
           </div>
         </div>
       </div>
+
       <span onClick={handleClick} className="more-info">
+        <svg className="icon icon-plus">
+          <use xlinkHref="#icon-plus"></use>
+        </svg>
+      </span>
+
+      <span className="border-more-info animate">
         <svg className="icon icon-plus">
           <use xlinkHref="#icon-plus"></use>
         </svg>

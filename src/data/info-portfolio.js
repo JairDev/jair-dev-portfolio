@@ -7,7 +7,7 @@ export const socialMedia = [
 
 export const skills = [
   { name: "ReactJs", iconClass: "icon-react" },
-  { name: "Redux", iconClass: "icon-redux" },
+  // { name: "Redux", iconClass: "icon-redux" },
   { name: "JavaScript", iconClass: "icon-javascript" },
   { name: "CSS3", iconClass: "icon-css3" },
   { name: "HTML5", iconClass: "icon-html-five" },

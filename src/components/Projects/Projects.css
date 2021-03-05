@@ -1,5 +1,4 @@
 .content-projects {
-  /* outline: 2px solid rgb(17, 39, 41); */
   width: 80%;
   position: absolute;
   top: 15vmin;
@@ -27,6 +26,9 @@
 
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  { 
+  .content-projects {
+    position: static;
+  }
   .count-projects {
     display: none;
   }

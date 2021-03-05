@@ -31,7 +31,6 @@ function Home() {
     refMain.current.classList.toggle("scale");
     span.classList.toggle("active");
     if (!refMain.current.className.includes("scale")) {
-      console.log("click hidden true");
       refMain.current.classList.remove("hidden");
     }
     e.preventDefault();
@@ -40,9 +39,7 @@ function Home() {
   const handleTransition = () => {
     const el = refMain.current;
     el.classList.add("hidden");
-    console.log(el.className);
     if (el.className.includes("scale")) {
-      console.log(true);
       el.classList.add("hidden");
     } else {
       el.classList.remove("hidden");
@@ -93,10 +90,10 @@ function Home() {
         ></span>
         <div className="App-header-content">
           <span ref={(span) => (hi = span)} className="span-hi">
-            Hi,
+            Hola,
           </span>
           <span ref={(span) => (welcome = span)} className="span-welcome">
-            Welcome
+            Bienvenido
           </span>
         </div>
         <CurrentTime />
@@ -113,7 +110,7 @@ function Home() {
         ></span>
         <Button
           classSvg="topSvg"
-          className={"content-button-info"}
+          className={"content-button-info-child"}
           onClick={handleDisplay}
         >
           {svgProfile}
@@ -150,38 +147,38 @@ function Home() {
             en estos tiempos es una actividad relajante.
           </p>
         </div>
-        
-        <div className="App-content-skills all kit-content">
-            <div className="content-title-skills">
-              <div className="title-skills">
-                <h2>Skills</h2>
-              </div>
-            </div>
-            <div className="over-hidden">
-              <Draggable nodeRef={dragEl} axis={"x"}>
-                <div ref={dragEl} className="over-kit">
-                  <IterateArray
-                    array={skills}
-                    Component={Skills}
-                    type={"skills"}
-                  />
-                </div>
-              </Draggable>
+
+        <div className="App-content-skills kit-content">
+          <div className="content-title-skills">
+            <div className="title-skills">
+              <h2>Skills</h2>
             </div>
           </div>
-          <div className="App-content-tools all kit-content">
-            <div className="content-title-tools">
-              <div className="title-tools">
-                <h2>Tools</h2>
+          <div className="over-hidden">
+            <Draggable nodeRef={dragEl} axis={"x"}>
+              <div ref={dragEl} className="over-kit">
+                <IterateArray
+                  array={skills}
+                  Component={Skills}
+                  type={"skills"}
+                />
               </div>
-            </div>
-            <div className="over-hidden">
-              <div className="over-kit">
-                <IterateArray array={tools} Component={Skills} type={"tools"} />
-              </div>
+            </Draggable>
+          </div>
+        </div>
+        <div className="App-content-tools kit-content">
+          <div className="content-title-tools">
+            <div className="title-tools">
+              <h2>Tools</h2>
             </div>
           </div>
-          <div className="content-button-personal-info">
+          <div className="over-hidden">
+            <div className="over-kit">
+              <IterateArray array={tools} Component={Skills} type={"tools"} />
+            </div>
+          </div>
+        </div>
+        <div className="content-button-personal-info">
           <div className="parent-action-link-about-me">
             <a
               href="https://gmail.com"
@@ -204,48 +201,18 @@ function Home() {
               type={"userInfo"}
             />
           </div>
-          {/* <div className="App-content-skills all kit-content">
-            <div className="content-title-skills">
-              <div className="title-skills">
-                <h2>Skills</h2>
-              </div>
-            </div>
-            <div className="over-hidden">
-              <Draggable nodeRef={dragEl} axis={"x"}>
-                <div ref={dragEl} className="over-kit">
-                  <IterateArray
-                    array={skills}
-                    Component={Skills}
-                    type={"skills"}
-                  />
-                </div>
-              </Draggable>
-            </div>
-          </div>
-          <div className="App-content-tools all kit-content">
-            <div className="content-title-tools">
-              <div className="title-tools">
-                <h2>Tools</h2>
-              </div>
-            </div>
-            <div className="over-hidden">
-              <div className="over-kit">
-                <IterateArray array={tools} Component={Skills} type={"tools"} />
-              </div>
-            </div>
-          </div> */}
         </section>
 
         <section className="App-parent-projects all">
           <div className="App-content-projects">
             <div className="content-title-projects">
               <div className="title-projects">
-                <h2>Projects</h2>
+                <h2>Proyectos</h2>
               </div>
             </div>
             <div className="content-title-projects-top">
               <div className="title-projects-top">
-                <h2>Projects</h2>
+                <h2>Proyectos</h2>
               </div>
             </div>
             <Projects />

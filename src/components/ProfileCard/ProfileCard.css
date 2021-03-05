@@ -6,10 +6,9 @@
 }
 
 .content-profile > div  {
-  /* border: 2px solid red; */
-  margin-bottom: 1rem;
-
+  margin-bottom: 3rem;
 }
+
 .content-profile > div:last-child {
   margin-bottom: 0rem;
 }
