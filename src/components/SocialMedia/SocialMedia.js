@@ -9,9 +9,11 @@ function SocialMedia({ iconClass, source, name }) {
           <svg className={`${iconClass}`}>
             <use xlinkHref={`#${iconClass}`}></use>
           </svg>
+          <span className="social-media-name">{name}</span>
+
         </a>
       </div>
-      <span className="social-media-name">{name}</span>
+      {/* <span className="social-media-name">{name}</span> */}
     </div>
   );
 }

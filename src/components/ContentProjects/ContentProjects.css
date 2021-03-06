@@ -99,12 +99,15 @@
 
 .link-projects-all {
   border: 1px solid #dbdee8;
-  padding: 0.5vh 3vw;
 }
 
 .link-projects-all a {
   cursor: pointer;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8vw;
+  height: 6vh;
 }
 
 .more-info {
