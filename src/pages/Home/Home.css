@@ -227,7 +227,6 @@
 }
 
 .over-kit {
-  cursor: move;
   display: flex;
   position: relative;
 }

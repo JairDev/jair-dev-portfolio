@@ -90,10 +90,10 @@ function Home() {
         ></span>
         <div className="App-header-content">
           <span ref={(span) => (hi = span)} className="span-hi">
-            Hola,
+            Hi,
           </span>
           <span ref={(span) => (welcome = span)} className="span-welcome">
-            Bienvenido
+            Welcome
           </span>
         </div>
         <CurrentTime />
@@ -126,25 +126,24 @@ function Home() {
           <div>
             <img src="" alt=""></img>
           </div>
-          <h3 className="title-personal-info">¿Nos tomamos un café?</h3>
+          <h3 className="title-personal-info">¿Shall we have a coffee?</h3>
           <span className="sub-title-personal-info">
-            ¡Sí, el título es cierto, me gustaría tomar un café contigo!
+            Yes, the title is true, I would like to have a coffee with you!
           </span>
           <p className="text-personal-info first">
-            Soy Alfredo Moscoso, desarrollador frontend, me emociona pensar que
-            podemos crear cosas importantes, una aplicación web, un sitio web,
-            esas cosas que cambiarán la vida de una persona, formar parte de esa
-            experiencia me mantiene en constante aprendizaje, pudiendo cada día
-            mejorar mis habilidades técnicas en, JavaScript, Reactjs, Sass,
-            Html5, dispuesto a seguir aprendiendo nuevas tecnologías, trabajar
-            de la mano con un equipo y que hagamos posible ese próximo gran
-            proyecto.
+            I am Alfredo Moscoso, frontend developer, I am excited to think that
+            we can create important things, a web application, a website, those
+            things that will change a person's life, being part of that
+            experience keeps me in constant learning, being able to improve my
+            skills all the days, technical skills in JavaScript, Reactjs, Sass,
+            Html5, willing to continue learning new technologies, work hand in
+            hand with a team and that we make that next big project possible.
           </p>
 
           <p className="text-personal-info">
-            Pero no todo es tecnología, disfruto la compañía de una mascota,
-            jugar un video juego, mi pasión recién descubierta es la jardinería,
-            en estos tiempos es una actividad relajante.
+            But not everything is technology, I enjoy the company of a pet,
+            playing a video game, my new passion is gardening, these days it is
+            a relaxing activity.
           </p>
         </div>
 
@@ -155,15 +154,9 @@ function Home() {
             </div>
           </div>
           <div className="over-hidden">
-            <Draggable nodeRef={dragEl} axis={"x"}>
-              <div ref={dragEl} className="over-kit">
-                <IterateArray
-                  array={skills}
-                  Component={Skills}
-                  type={"skills"}
-                />
-              </div>
-            </Draggable>
+            <div ref={dragEl} className="over-kit">
+              <IterateArray array={skills} Component={Skills} type={"skills"} />
+            </div>
           </div>
         </div>
         <div className="App-content-tools kit-content">
@@ -186,7 +179,7 @@ function Home() {
               rel="noopener noreferrer"
               className={"button-action-about-me"}
             >
-              ¿Te invito un café?
+              ¡ Let's have that coffee !
             </a>
           </div>
         </div>
@@ -207,12 +200,12 @@ function Home() {
           <div className="App-content-projects">
             <div className="content-title-projects">
               <div className="title-projects">
-                <h2>Proyectos</h2>
+                <h2>Projects</h2>
               </div>
             </div>
             <div className="content-title-projects-top">
               <div className="title-projects-top">
-                <h2>Proyectos</h2>
+                <h2>Projects</h2>
               </div>
             </div>
             <Projects />
