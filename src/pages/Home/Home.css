@@ -14,9 +14,9 @@
   letter-spacing: 2px;
 }
 
-.span-welcome {
+/* .span-welcome {
   margin-left: 1rem;
-}
+} */
 
 .App-aside {
   padding: 0.5rem 0.5rem;
@@ -277,12 +277,20 @@
   z-index: 1;
 }
 
-.title-projects-top,
+/* .title-projects-top,
 .title-projects {
   position: absolute;
-  top: -6vmin;
-  left: -110px;
-  font-size: calc(2vw + 1em);
+  top: -5vmin;
+  font-size: 1rem;
+} */
+
+.title-projects {
+  position: absolute;
+  top: -5vmin;
+}
+
+.title-projects h2 {
+  font-weight: 500;
 }
 
 .title-projects-top {

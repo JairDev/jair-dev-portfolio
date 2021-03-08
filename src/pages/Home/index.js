@@ -21,7 +21,6 @@ function Home() {
   const refMain = useRef();
   let borderTop = useRef(null);
   let borderLeft = useRef(null);
-  let hi = useRef(null);
   let welcome = useRef(null);
   const dragEl = useRef(null);
   let span = useRef(null);
@@ -77,8 +76,10 @@ function Home() {
         "-=0.5"
       )
       .from(".all", { duration: 0.5, opacity: 0, stagger: 0.2 })
-      .from(hi, { opacity: 0 })
-      .from(welcome, { duration: 1.5, opacity: 0 });
+      .from(welcome, { duration: 1.5, opacity: 0 })
+      .to(welcome, { duration: 1.5, opacity: 0 });
+
+
   }, []);
 
   return (
@@ -89,11 +90,8 @@ function Home() {
           className="border-animate"
         ></span>
         <div className="App-header-content">
-          <span ref={(span) => (hi = span)} className="span-hi">
-            Hi,
-          </span>
           <span ref={(span) => (welcome = span)} className="span-welcome">
-            Welcome
+            Bienvenido
           </span>
         </div>
         <CurrentTime />
@@ -126,24 +124,25 @@ function Home() {
           <div>
             <img src="" alt=""></img>
           </div>
-          <h3 className="title-personal-info">¿Shall we have a coffee?</h3>
+          <h3 className="title-personal-info">¿Tomamos un café?</h3>
           <span className="sub-title-personal-info">
-            Yes, the title is true, I would like to have a coffee with you!
+            Sí, el título es cierto, ¡me gustaría tomar un café contigo!
           </span>
           <p className="text-personal-info first">
-            I am Alfredo Moscoso, frontend developer, I am excited to think that
-            we can create important things, a web application, a website, those
-            things that will change a person's life, being part of that
-            experience keeps me in constant learning, being able to improve my
-            skills all the days, technical skills in JavaScript, Reactjs, Sass,
-            Html5, willing to continue learning new technologies, work hand in
-            hand with a team and that we make that next big project possible.
+            Soy Alfredo Moscoso, desarrollador frontend, me emociona pensar que
+            podemos crear cosas importantes, una aplicación web, un sitio web,
+            esas cosas que cambiarán la vida de una persona, ser parte de esa
+            experiencia me mantiene en constante aprendizaje, poder mejorar mis
+            habilidades todos los días, habilidades técnicas en JavaScript,
+            Reactjs, Sass, Html5, dispuesto a seguir aprendiendo nuevas
+            tecnologías, trabajar mano a mano con un equipo y que hagamos
+            posible ese próximo gran proyecto.
           </p>
 
           <p className="text-personal-info">
-            But not everything is technology, I enjoy the company of a pet,
-            playing a video game, my new passion is gardening, these days it is
-            a relaxing activity.
+            Pero no todo es tecnología, disfruto de la compañía de una mascota,
+            jugar un videojuego, mi nueva pasión es la jardinería, en estos
+            tiempos es una actividad relajante.
           </p>
         </div>
 
@@ -179,7 +178,7 @@ function Home() {
               rel="noopener noreferrer"
               className={"button-action-about-me"}
             >
-              ¡ Let's have that coffee !
+              ¡Tomemos ese café!
             </a>
           </div>
         </div>
@@ -200,12 +199,7 @@ function Home() {
           <div className="App-content-projects">
             <div className="content-title-projects">
               <div className="title-projects">
-                <h2>Projects</h2>
-              </div>
-            </div>
-            <div className="content-title-projects-top">
-              <div className="title-projects-top">
-                <h2>Projects</h2>
+                <h2>Proyectos</h2>
               </div>
             </div>
             <Projects />

@@ -35,8 +35,18 @@ button:focus {
   fill: var(--dark-color);
 }
 
-.parent-content-button.top {
+.parent-content-button.top, .parent-content-button.bottom {
+  background-color: rgb(238, 240, 245);
+  border-radius: 50%;
+  box-shadow: 0 4px 20px 4px rgb(155 153 164 / 30%);
   position: absolute;
+  width: 3em;
+  height: 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent-content-button.top {
   top: 35px;
 }
 
@@ -55,8 +65,8 @@ button:focus {
 }
 
 .icon-long-arrow-up {
-  width: 2em;
-  height: 2em;
+  width: 1.8em;
+  height: 1.8em;
 }
 
 .bottom .icon-long-arrow-up {
@@ -79,5 +89,12 @@ button:focus {
 }
 
 .bottom.activate-bottom {
-  display: block;
+  display: flex;
 }
+
+.bottom.activate-bottom button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
