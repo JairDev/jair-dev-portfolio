@@ -14,10 +14,6 @@
   letter-spacing: 2px;
 }
 
-/* .span-welcome {
-  margin-left: 1rem;
-} */
-
 .App-aside {
   padding: 0.5rem 0.5rem;
   position: fixed;
@@ -91,15 +87,11 @@
 .App-content-personal-info {
   background-color: #dbdee8;
   color: #404247;
-  opacity: 0;
-  padding: 3rem 40px 3rem 100px;
-  position: absolute;
+  padding: 3rem 6rem ;
   width: 100%;
   height: 100%;
   transition: all 0.5s ease-in-out;
   transform-origin: left;
-  transform: translateX(-100%);
-  z-index: 300;
 }
 
 .title-personal-info {
@@ -164,30 +156,30 @@
 
 .App-content-personal-info.scale-info {
   opacity: 1;
-  transform: translateX(0%);
+  /* transform: translateX(0%) scale(1.0); */
   position: relative;
 }
 
 .App-main {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding-left: 100px;
-  height: calc(100vh - 62px);
-  position: absolute;
-  top: 64px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 12rem 7rem 0rem 0rem ;
   transition: all 0.5s ease-in-out;
   transform-origin: right;
+  /* transform: scaleX(1.0); */
 }
 
 
 .App-main.scale {
   opacity: 0;
-  transform: translateX(100%);
-  position: absolute;
+  transform: translateX(100%) scaleX(0);
+  /* position: absolute; */
 }
 
+
+
 .App-main.hidden {
-  display: none;
+  /* display: none; */
 }
 
 .App-main.block {
@@ -196,9 +188,13 @@
 
 .App-content-profile-skills {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  position: fixed;
+  left: 7rem;
+}
+
+.link-profile {
+  position: relative;
+  z-index: 100;
 }
 
 .App-content-profile {
@@ -209,7 +205,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 1rem 0rem;
-  width: 40vw;
+  width: 30vw;
 }
 
 .kit-content {
@@ -253,8 +249,11 @@
 }
 
 .App-parent-projects {
-  padding: 0rem 2rem;
+  width: 40%;
+  /* padding: 0rem 2rem; */
   position: relative;
+  cursor: all-scrolla;
+  /* top: 12rem; */
 }
 
 .App-content-projects {
@@ -266,9 +265,10 @@
 
 .content-title-projects-top,
 .content-title-projects {
+  width: 100%;
   position: absolute;
-  top: 15vmin;
-  width: 80%;
+  top: -125px;
+  font-size: 2vw;
 }
 
 .content-title-projects-top {
@@ -277,16 +277,11 @@
   z-index: 1;
 }
 
-/* .title-projects-top,
 .title-projects {
+  width: 100%;
   position: absolute;
-  top: -5vmin;
-  font-size: 1rem;
-} */
-
-.title-projects {
-  position: absolute;
-  top: -5vmin;
+  text-align: center;
+  font-size: calc(2vw + 1em);
 }
 
 .title-projects h2 {

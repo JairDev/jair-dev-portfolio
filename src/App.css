@@ -15,15 +15,22 @@
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
+/* html,
+body,
+#root {
+  height: 100%;
+} */
 a {
   text-decoration: none;
+  z-index: 100;
 }
 .App {
   background-color: #DBDEE8;
   min-height: 100vh;
+  padding-bottom: 6rem;
   position: relative;
   font-family: 'Roboto', sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 @media only screen and (max-width: 760px),

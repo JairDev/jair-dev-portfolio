@@ -48,6 +48,7 @@ button:focus {
 
 .parent-content-button.top {
   top: 35px;
+  display: none;
 }
 
 .top,
@@ -74,6 +75,15 @@ button:focus {
 }
 
 .icon-long-arrow-up {
+  stroke-width: 0;
+  stroke: var(--dark-color);
+  fill: var(--dark-color);
+}
+
+.icon-home {
+  display: inline-block;
+  width: 2.1em;
+  height: 2.1em;
   stroke-width: 0;
   stroke: var(--dark-color);
   fill: var(--dark-color);

@@ -1,7 +1,7 @@
 .content-projects {
-  width: 80%;
-  position: absolute;
-  top: 15vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: all .5s ease-in-out;
 }
 .count-projects {

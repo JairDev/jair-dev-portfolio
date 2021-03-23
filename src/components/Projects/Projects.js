@@ -39,7 +39,7 @@ function Projects() {
       >
         {svgArrow}
       </Button>
-      <span className="count-projects">{`${count + 1}/${countProject}`}</span>
+      {/* <span className="count-projects">{`${count + 1}/${countProject}`}</span> */}
       <div ref={elementRef} className="content-projects">
         <IterateArray
           array={projects}
