@@ -14,7 +14,7 @@ function ContentProjects({
   };
 
   return (
-    <div className="projects">
+    <div id="projects-ref" className="projects">
       <div className="projects-img">
         <img alt="" src={img} />
       </div>

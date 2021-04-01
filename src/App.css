@@ -1,19 +1,19 @@
 :root {
   --text-hi: calc(1rem + 1vw);
-  --profile-text-size: calc(.9rem + 1vw);
-  --general-text-size: calc(.5rem + 1vw);
-  --small-text-size: calc(.4rem + 1vw);
+  --profile-text-size: calc(0.9rem + 1vw);
+  --general-text-size: calc(0.5rem + 1vw);
+  --small-text-size: calc(0.4rem + 1vw);
   --letter-spacing: 1px;
   --dark-color: #404247;
-  --size-before-top: scaleX(1.0);
-  --size-before-left: scaleX(1.0);
+  --size-before-top: scaleX(1);
+  --size-before-left: scaleX(1);
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 /* html,
 body,
@@ -25,20 +25,39 @@ a {
   z-index: 100;
 }
 .App {
-  background-color: #DBDEE8;
+  background-color: #dbdee8;
   min-height: 100vh;
-  padding-bottom: 6rem;
+  /* padding-bottom: 6rem; */
   position: relative;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   /* overflow: hidden; */
 }
 
-@media only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+/* .page-enter {
+  opacity: 0;
+  transform: translateX(-50%);
+}
 
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 400ms, transform 400ms;
+} */
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
   .App {
     overflow: initial;
   }
-
 }
-

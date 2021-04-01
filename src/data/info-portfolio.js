@@ -62,7 +62,6 @@ export const projects = [
     imgSrc: "img-timer.png",
     linkGit: "https://github.com/JairDev/training-timer-and-chronometer",
     linkDemo: "https://trainingtimerapp.netlify.com/",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum is simply dummy text of the printing and",
+    description: "App para llevar el control de tiempo y series en tus ejercicios"
   },
 ];
