@@ -9,8 +9,11 @@ import Button from "components/Button/Button";
 import CurrentTime from "components/CurrentTime/CurrentTime";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import "./Home.css";
 import Aside from "components/Aside/Aside";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
   const refMain = useRef(null);
@@ -19,8 +22,8 @@ function Home() {
   let welcome = useRef(null);
 
   useEffect(() => {
-    const element = refContentSkill.current 
-    console.log(refContentSkill)
+    const element = refContentSkill.current;
+    console.log(refContentSkill);
     // gsap.to(".trigger-h", {
     //   x: 100,
     //   duration: 2,
@@ -32,19 +35,48 @@ function Home() {
     //     start: "top top"
     //   }
     // });
+    
 
-    // const tl = gsap.timeline({
+    // gsap.from(refContentSkill.current, {
     //   scrollTrigger: {
     //     trigger: ".trigger-h",
-    //     start: "top center",
-    //     end: "center top",
+    //     pin: true,
     //     scrub: true,
-    //     markers: true
-    //   }
+    //     markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+    //     start: "top center",
+    //     end: "top top",
+    //     toggleClass: "active",
+    //   },
     // });
-    // tl.to(refContentSkill.current, {yPercent: 150, duration: 1})
+
+    const tl = gsap.timeline({
+      // scrollTrigger: {
+      //   trigger: ".trigger-h",
+      //   start: "top center",
+      //   end: "center top",
+      //   scrub: true,
+      //   markers: true
+      // }
+    });
+
+    // tl.to(refContentSkill.current, {yPercent: 100, xPercent: -100, opacity: 0, scale: 0.7, duration: 3})
+    // tl.to(refContentSkill.current, {xPercent: -100, opacity: 0, scale: 0.7, duration: 2})
+    // tl.to(refContentSkill.current, {yPercent: 300, opacity: 1, scale: 0.7, duration: 5})
     // tl.to(refContentSkill.current, {rotation: 360, duration: 3})
-    // gsap
+
+    ScrollTrigger.create({
+      animation: tl,
+      trigger: ".trigger-h",
+      // trigger: refContentSkill.current,
+      // pin: true,
+      scrub: true,
+      markers: { startColor: "green", endColor: "red", fontSize: "12px" },
+      start: "top bottom",
+      end: "top top",
+      toggleClass: "active",
+    });
+
+    
     //   .timeline()
     //   .from(borderTop, {
     //     duration: 0.5,
@@ -79,17 +111,17 @@ function Home() {
     const skill = refContentSkill.current;
     const skillTop = Math.floor(skill.getBoundingClientRect().height);
     const projects = document.getElementById("projects-ref");
-    const all = document.querySelectorAll(".projects")
+    const all = document.querySelectorAll(".projects");
     // console.log(all)
-    all.forEach(item => {
-      const t = item.getBoundingClientRect().top
-      console.log(t)
-    })
+    all.forEach((item) => {
+      const t = item.getBoundingClientRect().top;
+      // console.log(t);
+    });
     const heightProjects = Math.floor(projects.getBoundingClientRect().height);
-    const projectsTop = window.innerHeight - heightProjects 
-    const calcTop = projectsTop - skillTop
+    const projectsTop = window.innerHeight - heightProjects;
+    const calcTop = projectsTop - skillTop;
     // refMain.current.style = `padding-bottom: ${calcTop}px`
-    console.log("skills", skillTop);
+    // console.log("skills", skillTop);
     // console.log(heightProjects);
     // console.log(window.innerHeight);
     // console.log("calcTop", calcTop)
@@ -125,6 +157,7 @@ function Home() {
           </div>
         </section>
 
+        <div className="trigger-h"></div>
 
         <section className="App-parent-projects all">
           <div className="App-content-projects">
@@ -137,9 +170,6 @@ function Home() {
           </div>
         </section>
       </section>
-      {/* <div className="trigger"></div> */}
-      {/* <div className="trigger-h"></div> */}
-
     </>
   );
 }

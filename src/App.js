@@ -14,21 +14,21 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <Switch>
+        <Switch>
           <Route path="/profile">
             <About/>
           </Route>
           <Route path="/">
             <Home/>
           </Route>
-        </Switch> */}
+        </Switch>
         {/* <Route path="/profile">
           <About />
         </Route>
         <Route exact path="/">
           <Home />
         </Route> */}
-        {routes.map((route) => (
+        {/* {routes.map((route) => (
           <Route key={route.path} exact path={route.path}>
             {({match}) => (
               <CSSTransition
@@ -43,7 +43,7 @@ function App() {
               </CSSTransition>
             )}
           </Route>
-        ))}
+        ))} */}
       </div>
     </Router>
   );
