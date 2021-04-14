@@ -35,7 +35,6 @@ function Home() {
     //     start: "top top"
     //   }
     // });
-    
 
     // gsap.from(refContentSkill.current, {
     //   scrollTrigger: {
@@ -49,26 +48,25 @@ function Home() {
     //   },
     // });
 
-    const tl = gsap.timeline({
-      // scrollTrigger: {
-      //   trigger: ".trigger-h",
-      //   start: "top center",
-      //   end: "center top",
-      //   scrub: true,
-      //   markers: true
-      // }
-    });
+    const tl = gsap.timeline({});
+    const tl2 = gsap.timeline({});
 
-    // tl.to(refContentSkill.current, {yPercent: 100, xPercent: -100, opacity: 0, scale: 0.7, duration: 3})
-    // tl.to(refContentSkill.current, {xPercent: -100, opacity: 0, scale: 0.7, duration: 2})
-    // tl.to(refContentSkill.current, {yPercent: 300, opacity: 1, scale: 0.7, duration: 5})
-    // tl.to(refContentSkill.current, {rotation: 360, duration: 3})
+    tl.to(refContentSkill.current, {xPercent: -100, opacity: 0, scale: 0.7, duration: 2})
+    tl.to(refContentSkill.current, {yPercent: 100, opacity: 1, scale: 0.7, duration: 2, delay: 50, position: "sticky", top: -800})
+
+    // tl2.fromTo(
+    //   ".content-title-projects",
+    //   { y: 200, opacity: 0},
+    //   { duration: 1, y: 0, opacity: 1, scale: 1.2}
+    // );
 
     ScrollTrigger.create({
       animation: tl,
       trigger: ".trigger-h",
       // trigger: refContentSkill.current,
       // pin: true,
+      // immediateRender: false,
+      // pinType: "fixed",
       scrub: true,
       markers: { startColor: "green", endColor: "red", fontSize: "12px" },
       start: "top bottom",
@@ -76,7 +74,18 @@ function Home() {
       toggleClass: "active",
     });
 
-    
+    // ScrollTrigger.create({
+    //   animation: tl2,
+    //   trigger: ".content-title-projects",
+    //   // trigger: refContentSkill.current,
+    //   // pin: true,
+    //   scrub: true,
+    //   markers: { startColor: "green", endColor: "red", fontSize: "12px" },
+    //   start: "top bottom",
+    //   end: "top top",
+    //   toggleClass: "active",
+    // });
+
     //   .timeline()
     //   .from(borderTop, {
     //     duration: 0.5,

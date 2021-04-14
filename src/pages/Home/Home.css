@@ -165,7 +165,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12rem 0rem 60px 0px ;
+  /* padding: 12rem 0rem 60px 0px ; */
   margin-bottom: 5rem;
   transition: all 0.5s ease-in-out;
   transform-origin: right;
@@ -179,21 +179,11 @@
   /* position: absolute; */
 }
 
-
-.trigger {
-  border: 2px solid red;
-  width: 100%;
-  height: 200px;
-  /* position: absolute;   */
-  margin-top: 25rem;
-  top: 10vh;
-}
-
 .trigger-h {
   border: 2px solid red;
   width: 100%;
   height: 100px;
-  margin-top: 20rem;
+  /* margin-top: 20rem; */
   /* position: absolute;   */
   /* top: 40vh; */
 }
@@ -207,11 +197,15 @@
 }
 
 .App-content-profile-skills {
+  border: 2px solid red;
   display: flex;
+  justify-content: center;
+  align-items: center;
   /* position: absolute; */
   /* bottom: 0; */
   /* position: fixed; */
   left: 7rem;
+  min-height: calc(100vh - 60px);
 }
 
 .link-profile {
@@ -277,10 +271,11 @@
   position: relative;
   cursor: all-scrolla;
   /* top: 12rem; */
+  margin-top: 20rem;
 }
 
 .App-content-projects {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   position: relative;
   height: 100%;
@@ -289,9 +284,10 @@
 .content-title-projects-top,
 .content-title-projects {
   width: 100%;
-  position: absolute;
+  /* position: absolute; */
   top: -140px;
   font-size: calc(1vw + 1rem);
+  margin-bottom: 30rem;
 }
 
 .content-title-projects-top {
@@ -302,7 +298,7 @@
 
 .title-projects {
   width: 100%;
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
   font-size: calc(2vw + 1em);
 }
@@ -316,7 +312,7 @@
 }
 
 .content-title-projects {
-  height: 60vmin;
+  /* height: 60vmin; */
 }
 
 .title-projects {
