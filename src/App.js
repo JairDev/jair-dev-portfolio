@@ -14,14 +14,15 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
+        <div className="soon">En construccion ...</div>
+        {/* <Switch>
           <Route path="/profile">
             <About/>
           </Route>
           <Route path="/">
             <Home/>
           </Route>
-        </Switch>
+        </Switch> */}
         {/* <Route path="/profile">
           <About />
         </Route>

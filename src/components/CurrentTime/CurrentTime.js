@@ -32,8 +32,8 @@ function CurrentTime() {
   }, [currentTime]);
   return (
     <div className="content-date">
-      <span className="span-content-date"></span>
-      <span className="span-time">{time}</span>
+      {/* <span className="span-content-date"></span> */}
+      {/* <span className="span-time">{time}</span> */}
     </div>
   );
 }

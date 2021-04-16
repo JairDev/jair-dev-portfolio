@@ -15,6 +15,10 @@
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
 /* html,
 body,
 #root {
@@ -31,6 +35,14 @@ a {
   position: relative;
   font-family: "Roboto", sans-serif;
   /* overflow: hidden; */
+}
+.soon {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 5vw;
 }
 
 /* .page-enter {

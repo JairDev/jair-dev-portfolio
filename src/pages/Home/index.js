@@ -23,119 +23,83 @@ function Home() {
 
   useEffect(() => {
     const element = refContentSkill.current;
-    console.log(refContentSkill);
-    // gsap.to(".trigger-h", {
-    //   x: 100,
-    //   duration: 2,
-    //   ease: "bounce",
-    //   delay: 1,
-    //   scrollTrigger: {
-    //     trigger: ".trigger-h",
-    //     markers: true,
-    //     start: "top top"
-    //   }
+
+    const tl = gsap.timeline();
+    const tlText = gsap.timeline();
+    const tlShowProfile = gsap.timeline();
+
+    // tl.to(".App-content-profile", {
+    //   xPercent: -110,
+    //   // yPercent: 200,
+    //   scale: 0.7,
+    //   opacity: 0,
+    //   duration: 1,
+    // });
+    
+
+    // tlShowProfile.to(".App-content-profile", {
+    //   xPercent: -110,
+    //   // yPercent: 200,
+    //   scale: 0.7,
     // });
 
-    // gsap.from(refContentSkill.current, {
-    //   scrollTrigger: {
-    //     trigger: ".trigger-h",
-    //     pin: true,
-    //     scrub: true,
-    //     markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-    //     start: "top center",
-    //     end: "top top",
-    //     toggleClass: "active",
-    //   },
+    // tlShowProfile.to(".App-content-profile", {
+    //   // immediateRender: false,
+    //   xPercent: -110,
+    //   yPercent: 100,
+    //   scale: 0.7,
+    //   opacity: 0,
+    //   duration: 1,
+    //   delay: 0,
+    //   position: "fixed",
+    //   top: 0,
     // });
+    
+  
+    // tl.to(element, { opacity: 1, scale: .7, duration: 2, delay: 0 });
 
-    const tl = gsap.timeline({});
-    const tl2 = gsap.timeline({});
+    tlText.fromTo(
+      ".content-title-projects",
+      {
+        yPercent: 0,
+        // opacity: 0,
+        scale: 1.0,
+        duration: 2,
+      },
+      {
+        yPercent: -200,
+        opacity: 1,
+        scale: 1.5,
+      }
+    );
 
-    tl.to(refContentSkill.current, {xPercent: -100, opacity: 0, scale: 0.7, duration: 2})
-    tl.to(refContentSkill.current, {yPercent: 100, opacity: 1, scale: 0.7, duration: 2, delay: 50, position: "sticky", top: -800})
-
-    // tl2.fromTo(
-    //   ".content-title-projects",
-    //   { y: 200, opacity: 0},
-    //   { duration: 1, y: 0, opacity: 1, scale: 1.2}
-    // );
+    // ScrollTrigger.create({
+    //   animation: tl,
+    //   markers: true,
+    //   scrub: true,
+    //   // pin: true,
+    //   trigger: element,
+    //   start: "center center",
+    //   end: "bottom center",
+    // });
 
     ScrollTrigger.create({
-      animation: tl,
-      trigger: ".trigger-h",
-      // trigger: refContentSkill.current,
-      // pin: true,
-      // immediateRender: false,
-      // pinType: "fixed",
+      animation: tlText,
+      markers: true,
       scrub: true,
-      markers: { startColor: "green", endColor: "red", fontSize: "12px" },
+      trigger: ".content-title-projects",
       start: "top bottom",
-      end: "top top",
-      toggleClass: "active",
+      end: "bottom center",
     });
 
     // ScrollTrigger.create({
-    //   animation: tl2,
-    //   trigger: ".content-title-projects",
-    //   // trigger: refContentSkill.current,
-    //   // pin: true,
+    //   animation: tlShowProfile,
+    //   markers: true,
     //   scrub: true,
-    //   markers: { startColor: "green", endColor: "red", fontSize: "12px" },
+    //   trigger: ".content-projects",
     //   start: "top bottom",
-    //   end: "top top",
-    //   toggleClass: "active",
+    //   end: "center center",
     // });
-
-    //   .timeline()
-    //   .from(borderTop, {
-    //     duration: 0.5,
-    //     delay: 0.3,
-    //     scaleX: 0,
-    //     opacity: 0,
-    //     ease: "slow(0.7, 0.7,  false)",
-    //   })
-    //   .from(
-    //     ".border-aside-animate",
-    //     {
-    //       duration: 0.5,
-    //       scaleY: 0,
-    //       opacity: 0,
-    //       ease: "slow(0.7, 0.7,  false)",
-    //     },
-    //     "-=0.5"
-    //   )
-    //   .from(
-    //     ".span-content-date",
-    //     {
-    //       duration: 0.5,
-    //       scaleY: 0,
-    //       opacity: 0,
-    //       ease: "slow(0.7, 0.7,  false)",
-    //     },
-    //     "-=0.5"
-    //   )
-    //   .from(".all", { duration: 0.5, opacity: 0, stagger: 0.2 })
-    //   .from(welcome, { duration: 1.5, opacity: 0 })
-    //   .to(welcome, { duration: 1.5, opacity: 0 });
-    const skill = refContentSkill.current;
-    const skillTop = Math.floor(skill.getBoundingClientRect().height);
-    const projects = document.getElementById("projects-ref");
-    const all = document.querySelectorAll(".projects");
-    // console.log(all)
-    all.forEach((item) => {
-      const t = item.getBoundingClientRect().top;
-      // console.log(t);
-    });
-    const heightProjects = Math.floor(projects.getBoundingClientRect().height);
-    const projectsTop = window.innerHeight - heightProjects;
-    const calcTop = projectsTop - skillTop;
-    // refMain.current.style = `padding-bottom: ${calcTop}px`
-    // console.log("skills", skillTop);
-    // console.log(heightProjects);
-    // console.log(window.innerHeight);
-    // console.log("calcTop", calcTop)
-    // console.log("top-projects", projectsTop);
-    // console.log(projectsTop - calcTop)
   }, []);
 
   return (
@@ -150,12 +114,14 @@ function Home() {
             Bienvenido
           </span>
         </div>
-        <CurrentTime />
+        {/* <CurrentTime /> */}
       </header>
 
       <Aside />
 
       <section ref={refMain} className={`App-main`}>
+      <span className="span-content-date"></span>
+
         <section ref={refContentSkill} className="App-content-profile-skills">
           <div className="App-content-profile all">
             <IterateArray
@@ -166,7 +132,7 @@ function Home() {
           </div>
         </section>
 
-        <div className="trigger-h"></div>
+        {/* <div className="trigger-h"></div> */}
 
         <section className="App-parent-projects all">
           <div className="App-content-projects">

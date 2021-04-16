@@ -197,7 +197,7 @@
 }
 
 .App-content-profile-skills {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -287,7 +287,7 @@
   /* position: absolute; */
   top: -140px;
   font-size: calc(1vw + 1rem);
-  margin-bottom: 30rem;
+  margin-bottom: 10rem;
 }
 
 .content-title-projects-top {
@@ -318,6 +318,17 @@
 .title-projects {
   color: var(--dark-color);
 }
+
+.span-content-date {
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #DE620C, transparent);
+  position: sticky;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  transform-origin: top;
+} 
 
 @media only screen and (max-width: 768px),
   (min-device-width: 768px) and (max-device-width: 1024px) {
