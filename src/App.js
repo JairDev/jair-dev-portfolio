@@ -14,21 +14,23 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="soon">En construccion ...</div>
-        {/* <Switch>
+        {/* <div className="soon">En construccion ...</div> */}
+        <Switch>
           <Route path="/profile">
             <About/>
           </Route>
           <Route path="/">
             <Home/>
           </Route>
-        </Switch> */}
+        </Switch>
+
         {/* <Route path="/profile">
           <About />
         </Route>
         <Route exact path="/">
           <Home />
         </Route> */}
+
         {/* {routes.map((route) => (
           <Route key={route.path} exact path={route.path}>
             {({match}) => (

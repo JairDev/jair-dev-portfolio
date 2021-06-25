@@ -8,7 +8,7 @@
   top: 0;
   padding: 1.3rem .5rem 0 .5rem;
 }
-.span-content-date {
+/* .span-content-date {
   background: linear-gradient(to bottom, #DE620C, transparent);
   position: absolute;
   top: 0;
@@ -16,7 +16,7 @@
   width: 100%;
   height: 90%;
   transform-origin: top;
-} 
+}  */
 
 .span-time {
   position: relative;

@@ -1,0 +1,160 @@
+.wrapperPadding {
+  position: relative;
+  padding: 0 5vw;
+}
+
+.appContentPersonalProjectsHeader {
+  /* border: 2px solid red; */
+  padding-top: 30vh;
+}
+
+.spanWorkName {
+  font-size: 10vw;
+  font-family: var(--title-font);
+  letter-spacing: 2px;
+}
+
+.h2WorkName {
+  /* border: 2px solid rgb(0, 255, 42); */
+  font-size: 4vw;
+  font-family: var(--title-font);
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.wrapperPersonalProjects {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 20vh; */
+  padding-top: 20vh;
+}
+
+.contentPersonalProject {
+  /* border: 2px solid green; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.contentPersonalProject:first-child {
+  /* border: 2px solid brown; */
+  flex-direction: row-reverse;
+  /* margin-bottom: 10vh; */
+}
+
+.contentPersonalProjectImg {
+  display: flex;
+  justify-content: flex-end;
+  /* flex-direction: column; */
+  position: relative;
+  width: 50%;
+  /* padding: 8vh 8vw; */
+}
+
+.contentPersonalProjectImg img {
+  border-radius: 14px;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  position: relative;
+  z-index: 10;
+}
+
+.backImgPersonal {
+  display: block;
+  background-color: var(--light-prymary-color);
+  border-radius: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+}
+
+.contentPersonalProjectDescription {
+  width: 50%;
+  padding: 8vh 3vw 3vh;
+}
+
+.pDescriptionPersonal {
+  font-family: var(--title-font);
+  font-size: 16px;
+}
+
+.contentMoreLink {
+  /* border: 2px solid green; */
+  display: flex;
+  justify-content: center;
+  /* margin-top: 20vh; */
+  padding-top: 20vh;
+  position: relative;
+}
+
+.contentLinesCustomLink:hover .lineCustomLink {
+  /* border: 2px solid green; */
+  transform: translateX(15%);
+}
+
+.contentLinesCustomLink:hover .circleCustomLink {
+  /* border: 2px solid green; */
+  transform: translateX(-15%);
+}
+
+.contentLinesCustomLink {
+  /* border: 2px solid red; */
+  position: relative;
+}
+
+.lineCustomLink,
+.circleCustomLink,
+.circleCustomLinkAnimate {
+  background-color: var(--accent-color);
+  display: block;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+}
+
+.circleCustomLinkAnimate {
+  border: 2px solid red;
+}
+
+.lineCustomLink {
+  left: 30%;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+}
+
+.circleCustomLink {
+  border-radius: 50%;
+  bottom: 0;
+  left: -15%;
+  width: 60px;
+  height: 60px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.moreLink {
+  /* border: 2px solid greenyellow; */
+  color: var(--primary-text);
+  font-size: calc(1vw + .5em);
+  font-family: var(--title-font);
+  position: relative;
+  z-index: 10;
+}
+
+.contentEachLink {
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: center;
+  /* margin-top: 5vh; */
+  /* margin-bottom: 15vh; */
+  padding: 10vh 0;
+  position: relative;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  { 
+  
+}

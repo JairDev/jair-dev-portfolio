@@ -1,12 +1,14 @@
 :root {
-  --text-hi: calc(1rem + 1vw);
-  --profile-text-size: calc(0.9rem + 1vw);
-  --general-text-size: calc(0.5rem + 1vw);
-  --small-text-size: calc(0.4rem + 1vw);
-  --letter-spacing: 1px;
-  --dark-color: #404247;
-  --size-before-top: scaleX(1);
-  --size-before-left: scaleX(1);
+  --body-color: #f5f6fb;
+  --primary-color: #3f51b5;
+  --light-prymary-color: #c5cae9;
+  --dark-primary-color: #303f9f;
+  --accent-color: #7c4dff;
+  --primary-text: #212121;
+  --title-font: "Saira";
+  --sub-title-font: "Saira";
+  --letter-spacing: 2px;
+  --line-height: 140%;
 }
 
 * {
@@ -28,8 +30,13 @@ a {
   text-decoration: none;
   z-index: 100;
 }
+
+li {
+  list-style: none;
+}
+
 .App {
-  background-color: #dbdee8;
+  background-color: #eeeeee;
   min-height: 100vh;
   /* padding-bottom: 6rem; */
   position: relative;
