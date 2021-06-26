@@ -9,15 +9,16 @@
 }
 
 .spanWorkName {
-  font-size: 10vw;
+  font-size: calc(4vw + 2em);
   font-family: var(--title-font);
   letter-spacing: 2px;
 }
 
 .h2WorkName {
   /* border: 2px solid rgb(0, 255, 42); */
-  font-size: 4vw;
+  font-size: calc(4vw + 1em);
   font-family: var(--title-font);
+  font-weight: 500;
   letter-spacing: 2px;
   text-align: center;
 }
@@ -33,12 +34,13 @@
 .contentPersonalProject {
   /* border: 2px solid green; */
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
-.contentPersonalProject:first-child {
+.wrapperPersonalProjects > div:first-child > .contentPersonalProject{
   /* border: 2px solid brown; */
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
   /* margin-bottom: 10vh; */
 }
 
@@ -47,7 +49,7 @@
   justify-content: flex-end;
   /* flex-direction: column; */
   position: relative;
-  width: 50%;
+  width: 100%;
   /* padding: 8vh 8vw; */
 }
 
@@ -72,8 +74,8 @@
 }
 
 .contentPersonalProjectDescription {
-  width: 50%;
-  padding: 8vh 3vw 3vh;
+  width: 100%;
+  padding: 8vh 0 3vh;
 }
 
 .pDescriptionPersonal {
@@ -138,11 +140,21 @@
 .moreLink {
   /* border: 2px solid greenyellow; */
   color: var(--primary-text);
-  font-size: calc(1vw + .5em);
+  font-size: calc(1vw + 1.3em);
   font-family: var(--title-font);
   position: relative;
   z-index: 10;
 }
+
+.moreLinkProjects {
+  /* border: 2px solid greenyellow; */
+  color: var(--primary-text);
+  font-size: calc(1vw + .8em);
+  font-family: var(--title-font);
+  position: relative;
+  z-index: 10;
+}
+
 
 .contentEachLink {
   /* border: 2px solid blue; */

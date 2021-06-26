@@ -33,6 +33,8 @@ import githubIcon from "../../assets/github.svg";
 import linkedinIcon from "../../assets/linkedin.svg";
 import twitterIcon from "../../assets/twitter.svg";
 import telegramIcon from "../../assets/telegram.svg";
+import shadow from "../../assets/shadow-ball.png"
+import shadowBlue from "../../assets/shadow-ball-blue.png"
 
 import blurry from "../../assets/blurry.png";
 
@@ -100,8 +102,8 @@ function smoothScroll(content, viewport, smoothness) {
 
   function onResize() {
     height = content.clientHeight;
-    console.log(content);
-    console.log("onRezise", height);
+    // console.log(content);
+    // console.log("onRezise", height);
     document.body.style.height = height + "px";
   }
   onResize();
@@ -174,6 +176,8 @@ function Home() {
   const circleLinkRef = React.useRef(null);
 
   useEffect(() => {
+    const coord = animateBallHero.current.getBoundingClientRect()
+    console.log(coord.top)
     const end = document.querySelector(".gsap-marker-end")
     const start = document.querySelector(".gsap-marker-start")
     const scrollerEnd = document.querySelector(".gsap-marker-scroller-end")
@@ -182,16 +186,18 @@ function Home() {
     // start.style.display = "block"
     // scrollerEnd.style.display = "block"
     // scrollerStart.style.display = "block"
-    console.log(end)
+    // console.log(end)
     smoothScroll("#container");
 
     gsap.to(animateBallHero.current, {
       xPercent: 10,
-      yPercent: 530,
+      // yPercent: 530,
       ease: "bounce.out",
-      opacity: 0.5,
+      opacity: 1,
       duration: 1,
       delay: 0.5,
+      scale: 1.0
+      // zIndex: 10
     });
     const tlNav = gsap.timeline({
       scrollTrigger: {
@@ -217,8 +223,8 @@ function Home() {
       scrollTrigger: {
         trigger: animateBallHero.current,
         // pin: true,
-        start: "center 30%",
-        end: "top -=1300",
+        start: "center 50%",
+        end: "top -=1500",
         scrub: true,
         // markers: true,
       },
@@ -245,7 +251,7 @@ function Home() {
     const tlPhone = gsap.timeline({
       scrollTrigger: {
         trigger: phoneRef.current,
-        pin: true,
+        // pin: true,
         start: "center 50%",
         end: "top -=550",
         scrub: true,
@@ -267,7 +273,7 @@ function Home() {
         trigger: circleLinkRef.current,
         // pin: true,
         start: "center 30%",
-        end: "top -=200",
+        end: "top -=1500",
         scrub: true,
         markers: true,
       },
@@ -302,19 +308,19 @@ function Home() {
       duration: 1,
     });
     tl.to(animateBallHero.current, {
-      xPercent: 800,
+      xPercent: 750,
       yPercent: 1200,
-      scale: 1.4,
-      opacity: 0.8,
-      duration: 1,
+      // scale: 1.4,
+      // opacity: 1,
+      // duration: 1,
     });
-    tl.to(animateBallHero.current, {
-      xPercent: 1200,
-      yPercent: 1400,
-      opacity: 0.3,
-      duration: 1,
-      delay: 1,
-    });
+    // tl.to(animateBallHero.current, {
+    //   xPercent: 1200,
+    //   yPercent: 1400,
+    //   // opacity: 1,
+    //   // duration: 1,
+    //   // delay: 1,
+    // });
     tlw.to(word.current, {
       yPercent: -50,
       duration: 1,
@@ -337,19 +343,19 @@ function Home() {
     });
     tlCircleChallenge.to(circleChallenge.current, {
       xPercent: -750,
-      yPercent: 600,
-      scale: 1.4,
-      opacity: 0.8,
-      duration: 1,
-    });
-    tlCircleChallenge.to(circleChallenge.current, {
-      xPercent: -750,
-      yPercent: 850,
-      // scale: 1,
+      yPercent: 800,
+      // scale: 1.4,
       // opacity: 0.8,
-      duration: 1,
-      delay: 0.5,
+      // duration: 1,
     });
+    // tlCircleChallenge.to(circleChallenge.current, {
+    //   xPercent: -750,
+    //   yPercent: 850,
+    //   // scale: 1,
+    //   // opacity: 0.8,
+    //   duration: 1,
+    //   delay: 0.5,
+    // });
     tlCode.to(codeImgRef.current, {
       yPercent: 30,
       duration: 1,
@@ -444,11 +450,14 @@ function Home() {
                 <span className={styles.scrollBack}>
                   {/* <span ref={animateBallHero} className={styles.scrollBefore}></span> */}
                   {/* <ArrowIcon /> */}
+                  <img src={ArrowIcon} alt="arrow icon"/>
                 </span>
                 <span
                   ref={animateBallHero}
                   className={styles.scrollBefore}
-                ></span>
+                >
+                  <img src={shadow} alt="" />
+                </span>
               </div>
               {/* <span className={styles.backgroundSectionLeft}></span> */}
             </div>
@@ -498,17 +507,17 @@ function Home() {
               />
             </div>
             <div className={styles.appContentAboutMeTitle}>
-              <span id="text" className={`${styles.text} ${styles.spanName}`}>
-                Hola
-              </span>
+              <h2 id="text" className={`${styles.text} ${styles.spanName}`}>
+                Hola,
+              </h2>
               {/* <h2 className={styles.h2Name}>Alfredo</h2> */}
-              <h2
+              <h4
                 id="text"
                 ref={h2Name}
                 className={`${styles.text} ${styles.h2Name}`}
               >
                 soy Alfredo
-              </h2>
+              </h4>
             </div>
           </div>
           <div className={styles.appContentAboutMeDescription}>
@@ -606,15 +615,17 @@ function Home() {
         <section
           className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
         >
-          <span ref={circleChallenge} className={styles.circleChallenge}></span>
+          <span ref={circleChallenge} className={styles.circleChallenge}>
+            <img src={shadowBlue} alt=""/>
+          </span>
           <div className={styles.appContentChallengesHeader}>
             <div className={styles.appContentChallengesTitle}>
-              <span id="text" className={styles.spanChallengeName}>
+              <h2 id="text" className={styles.spanChallengeName}>
                 Desafíos
-              </span>
-              <h2 id="text" className={styles.h2FrontendName}>
-                Frontend
               </h2>
+              <h4 id="text" className={styles.h2FrontendName}>
+                Frontend
+              </h4>
             </div>
           </div>
 
@@ -680,7 +691,9 @@ function Home() {
               <span
                 ref={circleLinkRef}
                 className={styles.circleCustomLinkAnimate}
-              ></span>
+              >
+                <img src={shadow} alt=""/>
+              </span>
               <a className={styles.moreLink} href={"a"}>
                 Mas desafíos
               </a>
@@ -704,7 +717,7 @@ function Home() {
                 <span>Correo</span>
                 <input placeholder={"Eg. correo@JhonDoe"}></input>
                 <span>Mensaje</span>
-                <input placeholder={"Nos gustaría..."}></input>
+                <textarea placeholder={"Nos gustaría..."}/>
               </form>
               <div className={styles.contentButtonSendMsg}>
                 <form className={styles.contentButtonForm}>

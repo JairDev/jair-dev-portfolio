@@ -19,12 +19,12 @@ function Projects({title, subTitle, projectsArray}) {
     <section className={`${styles.wrapperPadding}`}>
       <div className={styles.appContentPersonalProjectsHeader}>
         <div className={styles.appContentPersonalProjectsTitle}>
-          <span id="text" className={styles.spanWorkName}>
+          <h2 id="text" className={styles.spanWorkName}>
             {title}
-          </span>
-          <h2 id="text" className={styles.h2WorkName}>
-            {subTitle}
           </h2>
+          <h4 id="text" className={styles.h2WorkName}>
+            {subTitle}
+          </h4>
         </div>
         <div className={styles.wrapperPersonalProjects}>
           {
@@ -36,15 +36,7 @@ function Projects({title, subTitle, projectsArray}) {
                     <div id="text" className={styles.contentPersonalProjectImg}>
                       <img src={work.name} alt="" />
                       <span className={styles.backImgPersonal}></span>
-                      {/* <div className={styles.contentCustomLink}>
-                    <div className={styles.contentLinesCustomLink}>
-                    <span className={styles.lineCustomLink}></span>
-                    <span className={styles.circleCustomLink}></span>
-                      <a className={styles.moreLink} href={"#"}>
-                      Ver trabajo
-                      </a>
-                      </div>
-                    </div> */}
+    
                     </div>
                     <div className={styles.contentPersonalProjectDescription}>
                       <p id="text" className={styles.pDescriptionPersonal}>
@@ -56,7 +48,7 @@ function Projects({title, subTitle, projectsArray}) {
                     <div className={styles.contentLinesCustomLink}>
                       <span className={styles.lineCustomLink}></span>
                       {/* <span className={styles.circleCustomLink}></span> */}
-                      <a className={styles.moreLink} href={"#"}>
+                      <a className={styles.moreLinkProjects} href={"#"}>
                         Ver Proyecto
                       </a>
                     </div>

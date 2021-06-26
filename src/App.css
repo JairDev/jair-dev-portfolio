@@ -4,11 +4,12 @@
   --light-prymary-color: #c5cae9;
   --dark-primary-color: #303f9f;
   --accent-color: #7c4dff;
+  --light-accent-color: #BEA6FF;
   --primary-text: #212121;
   --title-font: "Saira";
   --sub-title-font: "Saira";
   --letter-spacing: 2px;
-  --line-height: 140%;
+  --line-height: 170%;
 }
 
 * {
@@ -36,7 +37,8 @@ li {
 }
 
 .App {
-  background-color: #eeeeee;
+  background-color: #e7e8ef;
+  
   min-height: 100vh;
   /* padding-bottom: 6rem; */
   position: relative;
