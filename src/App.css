@@ -5,10 +5,14 @@
   --dark-primary-color: #303f9f;
   --accent-color: #7c4dff;
   --light-accent-color: #BEA6FF;
-  --primary-text: #212121;
+  /* --primary-text: #212121; */
+  --primary-text: #2A2A2A;
+  --title-font-size: calc(4vw + 2em);
+  --sub-title-font-size: calc(4vw + 1em);
+  --paragraph-font-size: calc(1vw + .9em);
   --title-font: "Saira";
   --sub-title-font: "Saira";
-  --letter-spacing: 2px;
+  --letter-spacing: 1px;
   --line-height: 170%;
 }
 

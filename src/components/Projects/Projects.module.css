@@ -9,14 +9,14 @@
 }
 
 .spanWorkName {
-  font-size: calc(4vw + 2em);
+  font-size: var(--title-font-size);
   font-family: var(--title-font);
-  letter-spacing: 2px;
+  letter-spacing: var(--letter-spacing);
 }
 
 .h2WorkName {
   /* border: 2px solid rgb(0, 255, 42); */
-  font-size: calc(4vw + 1em);
+  font-size: var(--sub-title-font-size);
   font-family: var(--title-font);
   font-weight: 500;
   letter-spacing: 2px;
@@ -80,7 +80,8 @@
 
 .pDescriptionPersonal {
   font-family: var(--title-font);
-  font-size: 16px;
+  font-size: var(--paragraph-font-size);
+  letter-spacing: var(--letter-spacing);
 }
 
 .contentMoreLink {
@@ -166,7 +167,23 @@
   position: relative;
 }
 
-@media only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  { 
-  
+@media only screen and (min-width: 860px) {
+  .contentPersonalProject {
+    flex-direction: row;
+  }
+
+  .wrapperPersonalProjects > div:first-child > .contentPersonalProject{
+    /* border: 2px solid brown; */
+    flex-direction: row-reverse;
+    /* margin-bottom: 10vh; */
+  }
+
+  .pDescriptionPersonal {
+    font-size: 18px;
+    padding: 4vh 4vw;
+  }
+
+  .contentEachLink {
+    padding: 15vh 0;
+  }
 }

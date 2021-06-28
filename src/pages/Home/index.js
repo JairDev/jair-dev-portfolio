@@ -14,8 +14,8 @@ import Aside from "components/Aside/Aside";
 
 // import * as styles from "./index.module.css";
 
-// import NavIcon from "../../assets/nav-bar-icon.inline.svg";
-// import NavIconClose from "../../assets/nav-bar-close.inline.svg";
+import NavIcon from "../../assets/nav-bar-icon.svg";
+import NavIconClose from "../../assets/nav-bar-close.svg";
 import phone2 from "../../assets/hero-phone2.png";
 import photoProfile from "../../assets/foto-perfil.png";
 import phoneChallenge from "../../assets/phone-challenge.png";
@@ -33,8 +33,8 @@ import githubIcon from "../../assets/github.svg";
 import linkedinIcon from "../../assets/linkedin.svg";
 import twitterIcon from "../../assets/twitter.svg";
 import telegramIcon from "../../assets/telegram.svg";
-import shadow from "../../assets/shadow-ball.png"
-import shadowBlue from "../../assets/shadow-ball-blue.png"
+import shadow from "../../assets/shadow-ball.png";
+import shadowBlue from "../../assets/shadow-ball-blue.png";
 
 import blurry from "../../assets/blurry.png";
 
@@ -72,8 +72,7 @@ gsap.registerPlugin(ScrollTrigger);
 function smoothScroll(content, viewport, smoothness) {
   content = gsap.utils.toArray(content)[0];
   smoothness = smoothness || 1;
-  // const contentHeight = content.clientHeight;
-  // console.log(content.clientHeight)
+
   gsap.set(viewport || content.parentNode, {
     overflow: "hidden",
     position: "fixed",
@@ -84,6 +83,7 @@ function smoothScroll(content, viewport, smoothness) {
     right: 0,
     bottom: 0,
   });
+  console.log("h");
   gsap.set(content, { overflow: "visible", width: "100%" });
 
   let getProp = gsap.getProperty(content),
@@ -102,8 +102,6 @@ function smoothScroll(content, viewport, smoothness) {
 
   function onResize() {
     height = content.clientHeight;
-    // console.log(content);
-    // console.log("onRezise", height);
     document.body.style.height = height + "px";
   }
   onResize();
@@ -174,29 +172,20 @@ function Home() {
   const phoneRef = React.useRef(null);
   const codeImgRef = React.useRef(null);
   const circleLinkRef = React.useRef(null);
+  const triggerButton = React.useRef(null);
+  const animatePhoto = React.useRef(null);
 
   useEffect(() => {
-    const coord = animateBallHero.current.getBoundingClientRect()
-    console.log(coord.top)
-    const end = document.querySelector(".gsap-marker-end")
-    const start = document.querySelector(".gsap-marker-start")
-    const scrollerEnd = document.querySelector(".gsap-marker-scroller-end")
-    const scrollerStart = document.querySelector(".gsap-marker-scroller-start")
-    // end.style.display = "block"
-    // start.style.display = "block"
-    // scrollerEnd.style.display = "block"
-    // scrollerStart.style.display = "block"
-    // console.log(end)
     smoothScroll("#container");
 
     gsap.to(animateBallHero.current, {
-      xPercent: 10,
-      // yPercent: 530,
-      ease: "bounce.out",
-      opacity: 1,
+      // xPercent: 25,
+      y: "101vh",
+      ease: "power4.out",
+      // opacity: 1,
       duration: 1,
-      delay: 0.5,
-      scale: 1.0
+      delay: 1,
+      scale: 1.0,
       // zIndex: 10
     });
     const tlNav = gsap.timeline({
@@ -221,12 +210,12 @@ function Home() {
     });
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: animateBallHero.current,
+        trigger: triggerButton.current,
         // pin: true,
         start: "center 50%",
         end: "top -=1500",
         scrub: true,
-        // markers: true,
+        markers: true,
       },
     });
     const tlw = gsap.timeline({
@@ -248,11 +237,21 @@ function Home() {
         // markers: true,
       },
     });
+    const tlAnimatePhoto = gsap.timeline({
+      scrollTrigger: {
+        trigger: animatePhoto.current,
+        // pin: true,
+        start: "center 50%",
+        end: "top -=1000",
+        scrub: true,
+        // markers: true,
+      },
+    });
     const tlPhone = gsap.timeline({
       scrollTrigger: {
         trigger: phoneRef.current,
-        // pin: true,
-        start: "center 50%",
+        pin: true,
+        start: "center 40%",
         end: "top -=550",
         scrub: true,
         markers: true,
@@ -308,8 +307,16 @@ function Home() {
       duration: 1,
     });
     tl.to(animateBallHero.current, {
-      xPercent: 750,
-      yPercent: 1200,
+      // xPercent: 1300,
+      // yPercent: 1000,
+      // scale: 1.4,
+      // opacity: 1,
+      // duration: 1,
+    });
+    tlAnimatePhoto.to(animatePhoto.current, {
+      // rotation: -35,
+      xPercent: -90,
+      yPercent: 300,
       // scale: 1.4,
       // opacity: 1,
       // duration: 1,
@@ -342,8 +349,8 @@ function Home() {
       });
     });
     tlCircleChallenge.to(circleChallenge.current, {
-      xPercent: -750,
-      yPercent: 800,
+      xPercent: -1000,
+      yPercent: 1000,
       // scale: 1.4,
       // opacity: 0.8,
       // duration: 1,
@@ -375,15 +382,15 @@ function Home() {
 
   const handleClick = (e) => {
     state = !state;
-    // if (state) {
-    //   menuStyle.current.classList.add(styles.show);
-    //   iconOpenRef.current.firstChild.classList.add(styles.noOpen);
-    //   iconCloseRef.current.firstChild.classList.add(styles.open);
-    // } else {
-    //   menuStyle.current.classList.remove(styles.show);
-    //   iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
-    //   iconCloseRef.current.firstChild.classList.remove(styles.open);
-    // }
+    if (state) {
+      menuStyle.current.classList.add(styles.show);
+      iconOpenRef.current.firstChild.classList.add(styles.noOpen);
+      iconCloseRef.current.firstChild.classList.add(styles.open);
+    } else {
+      menuStyle.current.classList.remove(styles.show);
+      iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
+      iconCloseRef.current.firstChild.classList.remove(styles.open);
+    }
   };
 
   return (
@@ -403,11 +410,13 @@ function Home() {
               <div ref={iconOpenRef} className={styles.parentIconOpen}>
                 {/* <NavIcon
               className={styles.iconClickOpen}
-              
+                
             /> */}
+                <img src={NavIcon} alt="" />
               </div>
               <div ref={iconCloseRef} className={styles.parentIconClose}>
                 {/* <NavIconClose className={styles.iconClickClose} /> */}
+                <img src={NavIconClose} alt="" />
               </div>
             </div>
             <div ref={menuStyle} className={styles.appContentNavLinks}>
@@ -440,7 +449,11 @@ function Home() {
             <div className={styles.appLeftContentHero}>
               <div className={styles.appLeftContentHeroRole}>
                 <h1 className={styles.role}>Desarrollador Frontend</h1>
-                <div className={styles.contentButtonContact}>
+                <div
+                  ref={triggerButton}
+                  id="trigger-button"
+                  className={styles.contentButtonContact}
+                >
                   <form className={styles.contentButtonForm}>
                     <button className={styles.contactButton}>Contáctame</button>
                   </form>
@@ -450,12 +463,9 @@ function Home() {
                 <span className={styles.scrollBack}>
                   {/* <span ref={animateBallHero} className={styles.scrollBefore}></span> */}
                   {/* <ArrowIcon /> */}
-                  <img src={ArrowIcon} alt="arrow icon"/>
+                  <img src={ArrowIcon} alt="arrow icon" />
                 </span>
-                <span
-                  ref={animateBallHero}
-                  className={styles.scrollBefore}
-                >
+                <span ref={animateBallHero} className={styles.scrollBefore}>
                   <img src={shadow} alt="" />
                 </span>
               </div>
@@ -498,11 +508,11 @@ function Home() {
           className={`${styles.wrapperPadding} ${styles.appContentAboutMe}`}
         >
           <div className={styles.appContentAboutMeHeader}>
-            <span className={styles.layerPhoto}></span>
-            <div className={styles.appContentAboutMePhoto}>
+            <div ref={animatePhoto} className={styles.appContentAboutMePhoto}>
+              {/* <span className={styles.layerPhoto}></span> */}
               <img
                 className={styles.photo}
-                // src={photoProfile}
+                src={photoProfile}
                 alt="Foto de perfil"
               />
             </div>
@@ -592,23 +602,27 @@ function Home() {
           className={`${styles.wrapperPadding} ${styles.appContentSkills}`}
           id="insert-canvas"
         >
-          <span className={styles.containBlurry}>
-            <img alt="" src={blurry} />
-          </span>
+          <div className={styles.containBlurry}>
+            <img src={blurry} />
+          </div>
+          <div className={styles.wrapperSkills}>
+            {/* <span className={styles.containBlurry}>
+            </span> */}
 
-          <h3 id="text" className={styles.h3Skills}>
-            Habilidades Actuales
-          </h3>
-          <div className={styles.contentSkills}>
-            <ul className={styles.contentItemSkills}>
-              {svgIcons.map((icon) => (
-                <li id="text" className={styles.itemSkills} key={icon.name}>
-                  {/* <icon.name /> */}
-                  <img src={icon.name} alt={icon.name} />
-                </li>
-              ))}
-              {/* <li className={styles.itemSkills}><img src={photoProfile}/></li> */}
-            </ul>
+            <h3 id="text" className={styles.h3Skills}>
+              Habilidades Actuales
+            </h3>
+            <div className={styles.contentSkills}>
+              <ul className={styles.contentItemSkills}>
+                {svgIcons.map((icon) => (
+                  <li id="text" className={styles.itemSkills} key={icon.name}>
+                    {/* <icon.name /> */}
+                    <img src={icon.name} alt={icon.name} />
+                  </li>
+                ))}
+                {/* <li className={styles.itemSkills}><img src={photoProfile}/></li> */}
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -616,7 +630,7 @@ function Home() {
           className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
         >
           <span ref={circleChallenge} className={styles.circleChallenge}>
-            <img src={shadowBlue} alt=""/>
+            <img src={shadowBlue} alt="" />
           </span>
           <div className={styles.appContentChallengesHeader}>
             <div className={styles.appContentChallengesTitle}>
@@ -675,11 +689,8 @@ function Home() {
                     className={`${styles.lineChallenge} ${styles.vertical}`}
                   ></span>
                 </div>
-                <div ref={phoneRef} className={styles.contentImgPhone} >
-                  <img
-                    src={phoneChallenge}
-                    alt=""
-                  />
+                <div ref={phoneRef} className={styles.contentImgPhone}>
+                  <img src={phoneChallenge} alt="" />
                 </div>
               </div>
             </div>
@@ -692,7 +703,7 @@ function Home() {
                 ref={circleLinkRef}
                 className={styles.circleCustomLinkAnimate}
               >
-                <img src={shadow} alt=""/>
+                <img src={shadow} alt="" />
               </span>
               <a className={styles.moreLink} href={"a"}>
                 Mas desafíos
@@ -717,7 +728,7 @@ function Home() {
                 <span>Correo</span>
                 <input placeholder={"Eg. correo@JhonDoe"}></input>
                 <span>Mensaje</span>
-                <textarea placeholder={"Nos gustaría..."}/>
+                <textarea placeholder={"Nos gustaría..."} />
               </form>
               <div className={styles.contentButtonSendMsg}>
                 <form className={styles.contentButtonForm}>
