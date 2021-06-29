@@ -1,29 +1,26 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-
-import ProfileCard from "components/ProfileCard/ProfileCard";
-import Projects from "components/Projects/Projects";
-import { users } from "data/info-portfolio";
-
 import gsap from "gsap";
+import { Icon, InlineIcon } from "@iconify/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// import * as styles from "./Home.module.css";
-import styles from "./Home.module.css";
-import Aside from "components/Aside/Aside";
+import Projects from "components/Projects/Projects";
+import Header from "components/Header/Header";
 
-// import * as styles from "./index.module.css";
+import bxlReact from "@iconify/icons-bx/bxl-react";
+import bxlJavascript from "@iconify/icons-bx/bxl-javascript";
+import bxlSass from "@iconify/icons-bx/bxl-sass";
+import bxlCss3 from "@iconify/icons-bx/bxl-css3";
+import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
+import bxlGit from "@iconify/icons-bx/bxl-git";
 
-import NavIcon from "../../assets/nav-bar-icon.svg";
-import NavIconClose from "../../assets/nav-bar-close.svg";
-import phone2 from "../../assets/hero-phone2.png";
+import phone3 from "../../assets/hero-phone3.png";
 import photoProfile from "../../assets/foto-perfil.png";
 import phoneChallenge from "../../assets/phone-challenge.png";
 import codeChallenge from "../../assets/content-creator.png";
 import workCoin from "../../assets/coin.png";
 import workDessert from "../../assets/desert.png";
 import cssIcon from "../../assets/css.svg";
-// import gitIcon from "../../assets/git.svg";
+import gitIcon from "../../assets/git.svg";
 import htmlIcon from "../../assets/html.svg";
 import jsIcon from "../../assets/js.svg";
 import reactIcon from "../../assets/react.svg";
@@ -35,16 +32,18 @@ import twitterIcon from "../../assets/twitter.svg";
 import telegramIcon from "../../assets/telegram.svg";
 import shadow from "../../assets/shadow-ball.png";
 import shadowBlue from "../../assets/shadow-ball-blue.png";
-
 import blurry from "../../assets/blurry.png";
 
+import styles from "./Home.module.css";
+import { getAllByTestId } from "@testing-library/dom";
+
 const svgIcons = [
-  { name: reactIcon },
-  { name: jsIcon },
-  { name: sassIcon },
-  { name: cssIcon },
-  { name: htmlIcon },
-  // { name: gitIcon },
+  { name: "React", svg: bxlReact },
+  { name: "Javascript", svg: bxlJavascript },
+  { name: "Sass", svg: bxlSass },
+  { name: "Css3", svg: bxlCss3 },
+  { name: "Html5", svg: bxlHtml5 },
+  { name: "Git", svg: bxlGit },
 ];
 
 const socialIcons = [
@@ -160,174 +159,128 @@ function smoothScroll(content, viewport, smoothness) {
 }
 
 function Home() {
-  let state = false;
-  const menuStyle = React.useRef(null);
-  const iconOpenRef = React.useRef(null);
-  const iconCloseRef = React.useRef(null);
-
-  const animateBallHero = React.useRef(null);
-  const word = React.useRef(null);
-  const h2Name = React.useRef(null);
-  const circleChallenge = React.useRef(null);
-  const phoneRef = React.useRef(null);
-  const codeImgRef = React.useRef(null);
-  const circleLinkRef = React.useRef(null);
-  const triggerButton = React.useRef(null);
-  const animatePhoto = React.useRef(null);
+  const animateBallHero = useRef(null);
+  const word = useRef(null);
+  const h2Name = useRef(null);
+  const circleChallenge = useRef(null);
+  const phoneRef = useRef(null);
+  const codeImgRef = useRef(null);
+  const circleLinkRef = useRef(null);
+  const triggerButton = useRef(null);
+  const animatePhoto = useRef(null);
+  const layerPhoto = useRef(null);
 
   useEffect(() => {
+    console.log("mount home")
     smoothScroll("#container");
+    const tlBallHero = gsap.timeline()
 
-    gsap.to(animateBallHero.current, {
-      // xPercent: 25,
-      y: "101vh",
+    tlBallHero.to(animateBallHero.current, {
+      y: "97vh",
+      xPercent: 15,
       ease: "power4.out",
-      // opacity: 1,
-      duration: 1,
-      delay: 1,
+      duration: 2.7,
+      delay: 0.8,
       scale: 1.0,
-      // zIndex: 10
     });
-    const tlNav = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#nav-show",
-        // pin: true,
-        start: "bottom -=100",
-        end: "top -=800",
-        scrub: true,
-        // markers: true,
-      },
-    });
+    // tlBallHero.to(animateBallHero.current, {
+    //   yPercent: 4, 
+    //   xPercent: 6,
+    // });
     const tlNavHidden = gsap.timeline({
       scrollTrigger: {
         trigger: "#nav-hidden",
-        // pin: true,
-        start: "bottom -=100",
+        start: "bottom -=50",
         end: "top -=800",
         scrub: true,
-        // markers: true,
       },
     });
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerButton.current,
-        // pin: true,
-        start: "center 50%",
-        end: "top -=1500",
-        scrub: true,
-        markers: true,
-      },
-    });
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: triggerButton.current,
+    //     start: "center 50%",
+    //     end: "top -=1500",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    // });
     const tlw = gsap.timeline({
       scrollTrigger: {
         trigger: "#text",
         start: "center 90%",
         end: "bottom center",
         scrub: true,
-        // markers: true,
       },
     });
     const tlCircleChallenge = gsap.timeline({
       scrollTrigger: {
         trigger: circleChallenge.current,
-        // pin: true,
         start: "center 50%",
         end: "top -=1200",
         scrub: true,
-        // markers: true,
       },
     });
     const tlAnimatePhoto = gsap.timeline({
       scrollTrigger: {
         trigger: animatePhoto.current,
-        // pin: true,
         start: "center 50%",
         end: "top -=1000",
         scrub: true,
-        // markers: true,
+      },
+    });
+    const tlLayerPhoto = gsap.timeline({
+      scrollTrigger: {
+        trigger: layerPhoto.current,
+        start: "top 80%",
+        end: "top -=300",
+        scrub: true,
       },
     });
     const tlPhone = gsap.timeline({
       scrollTrigger: {
         trigger: phoneRef.current,
-        pin: true,
-        start: "center 40%",
+        // pin: true,
+        start: "center 20%",
         end: "top -=550",
         scrub: true,
-        markers: true,
       },
     });
     const tlCode = gsap.timeline({
       scrollTrigger: {
         trigger: codeImgRef.current,
-        // pin: true,
         start: "center 50%",
         end: "top -=550",
         scrub: true,
-        // markers: true,
       },
     });
     const tlCircleLink = gsap.timeline({
       scrollTrigger: {
         trigger: circleLinkRef.current,
-        // pin: true,
         start: "center 30%",
         end: "top -=1500",
         scrub: true,
-        markers: true,
       },
     });
     // animations////////////////
     tlNavHidden.to("#nav-hidden", {
-      // backgroundColor: "var(--body-color)",
-      // boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
       yPercent: -100,
       opacity: 1,
       duration: 1,
-    });
-    tlNav.to("#nav-show", {
-      backgroundColor: "var(--body-color)",
-      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
-      yPercent: -100,
-      // opacity: 1,
-      duration: 1,
-    });
-    tlNav.to("#nav-show", {
-      backgroundColor: "var(--body-color)",
-      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
-      yPercent: 0,
-      opacity: 1,
-      // duration: 1,
     });
     tlNavHidden.to("#nav-hidden", {
-      // backgroundColor: "var(--body-color)",
-      // boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
+      backgroundColor: "var(--body-color)",
+      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
       yPercent: 0,
       opacity: 1,
       duration: 1,
     });
-    tl.to(animateBallHero.current, {
-      // xPercent: 1300,
-      // yPercent: 1000,
-      // scale: 1.4,
-      // opacity: 1,
-      // duration: 1,
-    });
     tlAnimatePhoto.to(animatePhoto.current, {
-      // rotation: -35,
-      xPercent: -90,
-      yPercent: 300,
-      // scale: 1.4,
-      // opacity: 1,
-      // duration: 1,
+      yPercent: 100,
     });
-    // tl.to(animateBallHero.current, {
-    //   xPercent: 1200,
-    //   yPercent: 1400,
-    //   // opacity: 1,
-    //   // duration: 1,
-    //   // delay: 1,
-    // });
+    tlLayerPhoto.to(layerPhoto.current, {
+      scaleY: 0,
+      yPercent: 100,
+    });
     tlw.to(word.current, {
       yPercent: -50,
       duration: 1,
@@ -339,108 +292,39 @@ function Home() {
           start: "top 98%",
           end: "center 80%",
           scrub: true,
-          // markers: true,
         },
       });
       tlText.from(item, {
-        // xPercent: 800,
         opacity: 0,
         yPercent: 50,
       });
     });
     tlCircleChallenge.to(circleChallenge.current, {
-      xPercent: -1000,
+      xPercent: -1300,
       yPercent: 1000,
-      // scale: 1.4,
-      // opacity: 0.8,
-      // duration: 1,
     });
-    // tlCircleChallenge.to(circleChallenge.current, {
-    //   xPercent: -750,
-    //   yPercent: 850,
-    //   // scale: 1,
-    //   // opacity: 0.8,
-    //   duration: 1,
-    //   delay: 0.5,
-    // });
     tlCode.to(codeImgRef.current, {
       yPercent: 30,
       duration: 1,
-      // delay: .5
     });
     tlCode.to(codeImgRef.current, {
-      yPercent: -10,
+      yPercent: -1,
       duration: 1,
-      // delay: .5
     });
     tlCircleLink.to(circleLinkRef.current, {
       yPercent: 800,
-      // duration: .5,
-      // delay: .5
     });
-  }, []);
 
-  const handleClick = (e) => {
-    state = !state;
-    if (state) {
-      menuStyle.current.classList.add(styles.show);
-      iconOpenRef.current.firstChild.classList.add(styles.noOpen);
-      iconCloseRef.current.firstChild.classList.add(styles.open);
-    } else {
-      menuStyle.current.classList.remove(styles.show);
-      iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
-      iconCloseRef.current.firstChild.classList.remove(styles.open);
-    }
-  };
+    return () => ScrollTrigger.getAll().forEach(ST => ST.kill());
+  }, []);
 
   return (
     <>
-      <div id="container">
-        <header id="nav-hidden" className={styles.appContentNav}>
-          <span id="nav-show" className={styles.spanStyleNav}></span>
-          <nav className={styles.appNav}>
-            <div className="app-content-nav-logo">
-              <div className="app-nav-logo">
-                <Link className={styles.logoName} to="/">
-                  Alfredo Moscoso
-                </Link>
-              </div>
-            </div>
-            <div onClick={handleClick} className={styles.iconNav}>
-              <div ref={iconOpenRef} className={styles.parentIconOpen}>
-                {/* <NavIcon
-              className={styles.iconClickOpen}
-                
-            /> */}
-                <img src={NavIcon} alt="" />
-              </div>
-              <div ref={iconCloseRef} className={styles.parentIconClose}>
-                {/* <NavIconClose className={styles.iconClickClose} /> */}
-                <img src={NavIconClose} alt="" />
-              </div>
-            </div>
-            <div ref={menuStyle} className={styles.appContentNavLinks}>
-              <ul className={styles.ulContentLinks}>
-                <li className={styles.liLink}>
-                  <Link className={styles.itemLink} to="desafios">
-                    Desafios Frontend
-                  </Link>
-                </li>
-                <li className={styles.liLink}>
-                  <Link className={styles.itemLink} to="trabajos">
-                    Trabajos Personales
-                  </Link>
-                </li>
-                <li className={styles.liLink}>
-                  <a href="a" className={styles.itemLink}>
-                    Contacto
-                  </a>
-                </li>
-              </ul>
-              <span className={styles.backMenuStyle}></span>
-            </div>
-          </nav>
-        </header>
+      {/* <Header /> */}
+      {/* <div id="container"> */}
+      <span ref={animateBallHero} className={styles.scrollBefore}>
+                  <img src={shadow} alt="" />
+                </span>
         <section
           className={`${styles.wrapperPadding} ${styles.appContentHero}`}
           id={"wrapper-padding"}
@@ -461,15 +345,12 @@ function Home() {
               </div>
               <div className={styles.appContentScrollArrow}>
                 <span className={styles.scrollBack}>
-                  {/* <span ref={animateBallHero} className={styles.scrollBefore}></span> */}
-                  {/* <ArrowIcon /> */}
                   <img src={ArrowIcon} alt="arrow icon" />
                 </span>
-                <span ref={animateBallHero} className={styles.scrollBefore}>
+                {/* <span ref={animateBallHero} className={styles.scrollBefore}>
                   <img src={shadow} alt="" />
-                </span>
+                </span> */}
               </div>
-              {/* <span className={styles.backgroundSectionLeft}></span> */}
             </div>
             <div className={styles.appRightContentHero}>
               <div className={styles.appRightContentHeroImg}>
@@ -494,7 +375,7 @@ function Home() {
                 {/* <span className={`${styles.wordsHero} ${styles.rigthMiddle}`}>Layout</span> */}
                 <img
                   className={styles.heroImg}
-                  src={phone2}
+                  src={phone3}
                   alt="teléfono con imagen"
                 />
               </div>
@@ -509,7 +390,7 @@ function Home() {
         >
           <div className={styles.appContentAboutMeHeader}>
             <div ref={animatePhoto} className={styles.appContentAboutMePhoto}>
-              {/* <span className={styles.layerPhoto}></span> */}
+              <span ref={layerPhoto} className={styles.layerPhoto}></span>
               <img
                 className={styles.photo}
                 src={photoProfile}
@@ -520,7 +401,6 @@ function Home() {
               <h2 id="text" className={`${styles.text} ${styles.spanName}`}>
                 Hola,
               </h2>
-              {/* <h2 className={styles.h2Name}>Alfredo</h2> */}
               <h4
                 id="text"
                 ref={h2Name}
@@ -583,12 +463,6 @@ function Home() {
               >
                 Un gusto haberte mostrado una parte mí, saludos !
               </p>
-
-              {/* <div className={styles.contentButtonAbout}>
-                <form>
-                  <button className={styles.contactButton}>Contáctame</button>
-                </form>
-              </div> */}
               <div className={styles.contentButtonContactAbout}>
                 <form className={styles.contentButtonForm}>
                   <button className={styles.contactButton}>Contáctame</button>
@@ -603,24 +477,28 @@ function Home() {
           id="insert-canvas"
         >
           <div className={styles.containBlurry}>
-            <img src={blurry} />
+            <img src={blurry} alt="" />
           </div>
           <div className={styles.wrapperSkills}>
-            {/* <span className={styles.containBlurry}>
-            </span> */}
-
             <h3 id="text" className={styles.h3Skills}>
               Habilidades Actuales
             </h3>
             <div className={styles.contentSkills}>
               <ul className={styles.contentItemSkills}>
-                {svgIcons.map((icon) => (
-                  <li id="text" className={styles.itemSkills} key={icon.name}>
-                    {/* <icon.name /> */}
-                    <img src={icon.name} alt={icon.name} />
-                  </li>
-                ))}
-                {/* <li className={styles.itemSkills}><img src={photoProfile}/></li> */}
+                <div className={styles.flexSkills}>
+                  {svgIcons.map((icon) => (
+                    <div className={styles.contentSkillsLabel}>
+                      <li
+                        id="text"
+                        className={styles.itemSkills}
+                        key={icon.name}
+                      >
+                        {<Icon icon={icon.svg} style={{ fontSize: "64px" }} />}
+                      </li>
+                      <span className={styles.labelSkills}>{icon.name}</span>
+                    </div>
+                  ))}
+                </div>
               </ul>
             </div>
           </div>
@@ -644,7 +522,6 @@ function Home() {
           </div>
 
           <div className={styles.wrapperContentChallenge}>
-            {/* <div className={styles.wrapperContentChallenge}></div> */}
             <div className={styles.appLeftContentChallenge}>
               <div className={styles.challengesSubTitle}>
                 <h3 id="text" className={styles.h3Challenge}>
@@ -747,7 +624,7 @@ function Home() {
             </div>
           </div>
         </section>
-      </div>
+      {/* </div> */}
     </>
   );
 }

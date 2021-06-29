@@ -38,19 +38,11 @@
   justify-content: space-between;
 }
 
-.wrapperPersonalProjects > div:first-child > .contentPersonalProject{
-  /* border: 2px solid brown; */
-  /* flex-direction: row-reverse; */
-  /* margin-bottom: 10vh; */
-}
-
 .contentPersonalProjectImg {
   display: flex;
   justify-content: flex-end;
-  /* flex-direction: column; */
   position: relative;
   width: 100%;
-  /* padding: 8vh 8vw; */
 }
 
 .contentPersonalProjectImg img {
@@ -88,7 +80,6 @@
   /* border: 2px solid green; */
   display: flex;
   justify-content: center;
-  /* margin-top: 20vh; */
   padding-top: 20vh;
   position: relative;
 }
@@ -150,19 +141,16 @@
 .moreLinkProjects {
   /* border: 2px solid greenyellow; */
   color: var(--primary-text);
-  font-size: calc(1vw + .8em);
+  font-size: calc(1vw + 0.8em);
   font-family: var(--title-font);
   position: relative;
   z-index: 10;
 }
 
-
 .contentEachLink {
   /* border: 2px solid blue; */
   display: flex;
   justify-content: center;
-  /* margin-top: 5vh; */
-  /* margin-bottom: 15vh; */
   padding: 10vh 0;
   position: relative;
 }
@@ -172,10 +160,8 @@
     flex-direction: row;
   }
 
-  .wrapperPersonalProjects > div:first-child > .contentPersonalProject{
-    /* border: 2px solid brown; */
+  .wrapperPersonalProjects > div:first-child > .contentPersonalProject {
     flex-direction: row-reverse;
-    /* margin-bottom: 10vh; */
   }
 
   .pDescriptionPersonal {

@@ -1,5 +1,5 @@
 :root {
-  --body-color: #f5f6fb;
+  --body-color: #e7e8ef;
   --primary-color: #3f51b5;
   --light-prymary-color: #c5cae9;
   --dark-primary-color: #303f9f;
@@ -14,6 +14,7 @@
   --sub-title-font: "Saira";
   --letter-spacing: 1px;
   --line-height: 170%;
+
 }
 
 * {
@@ -41,7 +42,7 @@ li {
 }
 
 .App {
-  background-color: #e7e8ef;
+  background-color: var(--body-color);
   
   min-height: 100vh;
   /* padding-bottom: 6rem; */

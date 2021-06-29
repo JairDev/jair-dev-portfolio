@@ -1,73 +1,66 @@
-import React, { useEffect, useState } from "react";
-import ContentProjects from "components/ContentProjects/ContentProjects";
-import IterateArray from "components/IterateArray/IterateArray";
-import useElementPosition from "hooks/useElementPosition";
-import { projects } from "data/info-portfolio";
-import Button from "components/Button/Button";
+import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import * as styles from "./Projects.module.css";
+import { useEffect } from "react";
+import { smoothScroll } from "App";
 
-const svgArrow = (
-  <svg className={`icon icon-long-arrow-up topSvg`}>
-    <use xlinkHref={`#icon-long-arrow-up`}></use>
-  </svg>
-);
+gsap.registerPlugin(ScrollTrigger);
 
-function Projects({title, subTitle, projectsArray}) {
-  console.log(projectsArray);
+function Projects({ title, subTitle, projectsArray }) {
+  useEffect(() => {
+    // smoothScroll("#container");
+  }, []);
   return (
-
-    <section className={`${styles.wrapperPadding}`}>
-      <div className={styles.appContentPersonalProjectsHeader}>
-        <div className={styles.appContentPersonalProjectsTitle}>
-          <h2 id="text" className={styles.spanWorkName}>
-            {title}
-          </h2>
-          <h4 id="text" className={styles.h2WorkName}>
-            {subTitle}
-          </h4>
-        </div>
-        <div className={styles.wrapperPersonalProjects}>
-          {
-            projectsArray.map((work) => (
-                <div key={work.name}>
-                  <div
-                    className={styles.contentPersonalProject}
-                  >
-                    <div id="text" className={styles.contentPersonalProjectImg}>
-                      <img src={work.name} alt="" />
-                      <span className={styles.backImgPersonal}></span>
-    
-                    </div>
-                    <div className={styles.contentPersonalProjectDescription}>
-                      <p id="text" className={styles.pDescriptionPersonal}>
-                        {work.description}
-                      </p>
-                    </div>
+    // <div id="container">
+      <section className={`${styles.wrapperPadding}`}>
+        <div className={styles.appContentPersonalProjectsHeader}>
+          <div className={styles.appContentPersonalProjectsTitle}>
+            <h2 id="text" className={styles.spanWorkName}>
+              {title}
+            </h2>
+            <h4 id="text" className={styles.h2WorkName}>
+              {subTitle}
+            </h4>
+          </div>
+          <div className={styles.wrapperPersonalProjects}>
+            {projectsArray.map((work) => (
+              <div key={work.name}>
+                <div className={styles.contentPersonalProject}>
+                  <div id="text" className={styles.contentPersonalProjectImg}>
+                    <img src={work.name} alt="" />
+                    <span className={styles.backImgPersonal}></span>
                   </div>
-                  <div className={styles.contentEachLink}>
-                    <div className={styles.contentLinesCustomLink}>
-                      <span className={styles.lineCustomLink}></span>
-                      {/* <span className={styles.circleCustomLink}></span> */}
-                      <a className={styles.moreLinkProjects} href={"#"}>
-                        Ver Proyecto
-                      </a>
-                    </div>
+                  <div className={styles.contentPersonalProjectDescription}>
+                    <p id="text" className={styles.pDescriptionPersonal}>
+                      {work.description}
+                    </p>
                   </div>
                 </div>
-            ))
-          }
-        </div>
-        <div className={styles.contentMoreLink}>
-          <div className={styles.contentLinesCustomLink}>
-            <span className={styles.lineCustomLink}></span>
-            <span className={styles.circleCustomLink}></span>
-            <a className={styles.moreLink} href={"#"}>
-              Mas Proyectos
-            </a>
+                <div className={styles.contentEachLink}>
+                  <div className={styles.contentLinesCustomLink}>
+                    <span className={styles.lineCustomLink}></span>
+                    <a className={styles.moreLinkProjects} href={"#"}>
+                      Ver Proyecto
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className={styles.contentMoreLink}>
+            <div className={styles.contentLinesCustomLink}>
+              <span className={styles.lineCustomLink}></span>
+              <span className={styles.circleCustomLink}></span>
+              <a className={styles.moreLink} href={"#"}>
+                Mas Proyectos
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    // </div>
   );
 }
 
