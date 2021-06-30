@@ -1,37 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CSSTransition } from "react-transition-group";
-import "./App.css";
-import Home from "pages/Home";
-import Projects from "components/Projects/Projects";
-import workCoin from "../src/assets/coin.png";
-import workDessert from "../src/assets/desert.png";
-import Header from "components/Header/Header";
-import Layout from "pages/Layout/Layout";
-
 gsap.registerPlugin(ScrollTrigger);
 
-const routes = [
-  { path: "/", Component: Home },
-  { path: "/profile", Component: Projects },
-];
 
-const dataWork = [
-  {
-    name: workCoin,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    name: workDessert,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-];
-
-export function smoothScroll(content, viewport, smoothness) {
+function smoothScroll(content, viewport, smoothness) {
   content = gsap.utils.toArray(content)[0];
   smoothness = smoothness || 1;
 
@@ -121,57 +94,12 @@ export function smoothScroll(content, viewport, smoothness) {
   });
 }
 
-function App() {
+function Layout({ children }) {
   useEffect(() => {
-    // smoothScroll("#container")1
-    return () => ScrollTrigger.getAll().forEach(ST => ST.kill());
-  }, []);
-  return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Layout>
-          <Switch>
-            <Route path="/trabajos">
-              <Projects
-                projectsArray={dataWork}
-                title={"Proyectos"}
-                subTitle={"Personales"}
-                view={true}
-              />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </Layout>
-
-        {/* <Route path="/profile">
-          <About />
-        </Route>
-        <Route exact path="/">
-          <Home />
-        </Route> */}
-
-        {/* {routes.map((route) => (
-          <Route key={route.path} exact path={route.path}>
-            {({match}) => (
-              <CSSTransition
-                in={match != null}
-                timeout={300}
-                classNames="page"
-                unmountOnExit
-              >
-                <div className="page">
-                  <route.Component />
-                </div>
-              </CSSTransition>
-            )}
-          </Route>
-        ))} */}
-      </div>
-    </Router>
-  );
+    // smoothScroll("#container")
+    console.log("layout")
+  }, [])
+  return <div id="container">{children}</div>;
 }
 
-export default App;
+export default Layout;

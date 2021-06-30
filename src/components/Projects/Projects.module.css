@@ -51,6 +51,7 @@
   height: 80%;
   object-fit: cover;
   position: relative;
+  filter: drop-shadow(1px 5px 1px rgba(27, 16, 54, 0.144));
   z-index: 10;
 }
 
