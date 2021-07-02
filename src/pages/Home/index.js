@@ -36,6 +36,7 @@ import blurry from "../../assets/blurry.png";
 
 import styles from "./Home.module.css";
 import { getAllByTestId } from "@testing-library/dom";
+import FormContact from "components/FormContact/FormContact";
 
 const svgIcons = [
   { name: "React", svg: bxlReact },
@@ -239,8 +240,8 @@ function Home() {
     const tlPhone = gsap.timeline({
       scrollTrigger: {
         trigger: phoneRef.current,
-        // pin: true,
-        start: "center 20%",
+        pin: true,
+        start: "center 40%",
         end: "top -=550",
         scrub: true,
       },
@@ -594,7 +595,7 @@ function Home() {
           subTitle={"Personales"}
         />
         <section className={`${styles.wrapperPadding}`}>
-          <div className={styles.appContentFooterFormContact}>
+          {/* <div className={styles.appContentFooterFormContact}>
             <div className={styles.wrapperForm}>
               <div className={styles.headerContact}>
                 <h4>Trabajemos juntos</h4>
@@ -615,14 +616,14 @@ function Home() {
               <div className={styles.contentSocial}>
                 {socialIcons.map((icon) => (
                   <div key={icon.label} className={styles.socialItem}>
-                    {/* <icon.name /> */}
                     <img src={icon.name} alt={icon.name} />
                     <span className={styles.labelSocial}>{icon.label}</span>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
+          <FormContact socialIcons={socialIcons}/>
         </section>
       {/* </div> */}
     </>
