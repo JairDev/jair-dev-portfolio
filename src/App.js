@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CSSTransition } from "react-transition-group";
 import "./App.css";
 import Home from "pages/Home";
 import Projects from "components/Projects/Projects";
@@ -13,10 +12,10 @@ import Layout from "pages/Layout/Layout";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const routes = [
-  { path: "/", Component: Home },
-  { path: "/profile", Component: Projects },
-];
+// const routes = [
+//   { path: "/", Component: Home },
+//   { path: "/profile", Component: Projects },
+// ];
 
 const dataWork = [
   {

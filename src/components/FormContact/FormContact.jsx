@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useState } from "react";
 import styles from "./FormatContact.module.css";
 
@@ -7,7 +7,7 @@ import styles from "./FormatContact.module.css";
 function FormContact({ socialIcons }) {
   const [name, setName] = useState("")
   const [mail, setMail] = useState("")
-  const spanRequired = useRef(null)
+  // const spanRequired = useRef(null)
 
   const handleClick = (e) => {
     console.log(e.target)

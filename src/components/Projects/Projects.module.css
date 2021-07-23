@@ -25,7 +25,7 @@
 
 .wrapperPersonalProjects {
   /* border: 2px solid red; */
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   /* margin-top: 20vh; */
   padding-top: 20vh;
@@ -41,6 +41,7 @@
 .contentPersonalProjectImg {
   display: flex;
   justify-content: flex-end;
+  align-self: flex-start;
   position: relative;
   width: 100%;
 }
@@ -68,7 +69,7 @@
 
 .contentPersonalProjectDescription {
   width: 100%;
-  padding: 8vh 0 3vh;
+  padding: 4vh 4vw;
 }
 
 .pDescriptionPersonal {
@@ -156,9 +157,36 @@
   position: relative;
 }
 
+.personalProjectsExternalLink {
+  /* border: 2px solid red; */
+  /* background-color: navajowhite; */
+  position: absolute;
+  top: 90%;
+  left: 90%;
+  z-index: 100;
+  
+}
+
+.contentIconExLinkProjects, .contentIconGithubProjects {
+  border-radius: 8px;
+  padding: .8rem;
+}
+.contentIconGithubProjects {
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 80%;
+  right: -10%;
+  margin-left: 2vw;
+}
+
+.contentIconExLinkProjects {
+  background-color: var(--accent-color);
+  margin-right: 2vw;
+}
+
 @media only screen and (min-width: 860px) {
   .contentPersonalProject {
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 
   .wrapperPersonalProjects > div:first-child > .contentPersonalProject {
@@ -167,7 +195,7 @@
 
   .pDescriptionPersonal {
     font-size: 18px;
-    padding: 4vh 4vw;
+    padding: 4vh 0vw;
   }
 
   .contentEachLink {

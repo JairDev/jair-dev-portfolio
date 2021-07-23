@@ -5,19 +5,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as styles from "./Projects.module.css";
 import { useEffect } from "react";
 import { smoothScroll } from "App";
+import githubIcon from "../../assets/github.svg";
+import { Icon, InlineIcon } from '@iconify/react';
+import linkOut from '@iconify/icons-akar-icons/link-out';
+import githubFill from '@iconify/icons-akar-icons/github-fill';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Projects({ title, subTitle, projectsArray, view = false }) {
+  const twoProjects = projectsArray.slice(0, 2);
+
   useEffect(() => {
-    if(view) {
+    if (view) {
       smoothScroll("#container");
-      console.log("projects view")
     }
     return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
   }, [view]);
+
   return (
-    // <div id="container">
     <section className={`${styles.wrapperPadding}`}>
       <div className={styles.appContentPersonalProjectsHeader}>
         <div className={styles.appContentPersonalProjectsTitle}>
@@ -29,16 +34,40 @@ function Projects({ title, subTitle, projectsArray, view = false }) {
           </h4>
         </div>
         <div className={styles.wrapperPersonalProjects}>
-          {projectsArray.map((work) => (
-            <div key={work.name}>
-              <div className={styles.contentPersonalProject}>
-                <div id="text" className={styles.contentPersonalProjectImg}>
-                  <img src={work.name} alt="" />
-                  <span className={styles.backImgPersonal}></span>
+          {twoProjects.map((work) => (
+            // <div key={work.name}>
+            <>
+              <div key={work.name} className={styles.contentPersonalProject}>
+                <div
+                  id="code-project-img"
+                  className={styles.contentPersonalProjectImg}
+                >
+                  <img src={work.imgSrc} alt="" />
+                  {/* <span className={styles.backImgPersonal}></span> */}
+                  <div className={styles.personalProjectsExternalLink}>
+                    <div className={styles.contentIconGithubProjects}>
+                      <Icon icon={githubFill} style={{fontSize: '24px', color: "#ffffff"}} />
+                    </div>
+                    <div className={styles.contentIconExLinkProjects}>
+                      <Icon icon={linkOut} style={{fontSize: '24px', color: "#ffffff"}} />
+                    </div>
+                  </div>
                 </div>
                 <div className={styles.contentPersonalProjectDescription}>
                   <p id="text" className={styles.pDescriptionPersonal}>
-                    {work.description}
+                    {work.paragraph1}
+                  </p>
+                  <p className={styles.pDescriptionPersonal}>
+                    {work.paragraph2}
+                  </p>
+                  <p className={styles.pDescriptionPersonal}>
+                    {work.paragraph3}
+                  </p>
+                  <div className={styles.codeImgPersonalProjects}>
+                    <img src={work.imgCode} alt="" />
+                  </div>
+                  <p className={styles.pDescriptionPersonal}>
+                    {work.paragraph4}
                   </p>
                 </div>
               </div>
@@ -50,7 +79,8 @@ function Projects({ title, subTitle, projectsArray, view = false }) {
                   </a>
                 </div>
               </div>
-            </div>
+            </>
+            // </div>
           ))}
         </div>
         <div className={styles.contentMoreLink}>
@@ -64,7 +94,6 @@ function Projects({ title, subTitle, projectsArray, view = false }) {
         </div>
       </div>
     </section>
-    // </div>
   );
 }
 
