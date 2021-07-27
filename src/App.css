@@ -24,6 +24,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+#container {
+  overflow: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }

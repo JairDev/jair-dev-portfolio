@@ -1,5 +1,5 @@
 import workCoin from "../assets/coin.png";
-import imgCode from "../assets/personal-projects-code.png"
+import imgCode from "../assets/personal-projects-code.png";
 import workDessert from "../assets/desert.png";
 
 export const socialMedia = [
@@ -62,10 +62,11 @@ export const personalProjects = [
     el estado de este componente es la fuente de verdad para ese formulario, tomo ese valor y mediante 
     el evento submit paso esos datos a una función en otro componente para hacer la busqueda de una moneda.`,
     paragraph4: `
-    Lo que hacemos entonces es determinar que el estado de React sea la unica "fuente de verdad", de esta manera los componentes que rendericen un formulario,
-    tienen el control sobre lo que pasa en ese formulario. El atributo value del elemento input, al tener el valor del estado
-    este siempre mostrará el valor de ese estado, por ende el estado de React siempre será la "fuente de verdad", el beneficio 
-    de esto es que podemos pasar ese valor a otros componentes, elementos de la interfaz, etc. 
+    Lo que hacemos entonces es determinar que el estado de React sea la unica "fuente de verdad", 
+    de esta manera los componentes que rendericen un formulario, tienen el control sobre lo que pasa 
+    en ese formulario. El atributo value del elemento input, al tener como valor la variable de estado "value",
+    el valor del input estará controlado por el estado de React, pudiendo así pasar ese valor a otros componentes
+    u otros elementos de nuestra interfaz. 
     `,
   },
   {
@@ -73,7 +74,23 @@ export const personalProjects = [
     imgSrc: workDessert,
     linkGit: "https://github.com/JairDev/hot-food-app",
     linkDemo: "https://tastypie.netlify.app/",
-    description: "Tus postres favoritos, a precios accesibles",
+    paragraph1: `Realizando esta app, pude ver algunas particularidades de React, por ejemplo, el trabajar
+    con formularios y entradas de usuario. La mayoría de las veces cuando trabajamos con formularios
+    y entradas del usuario, queremos hacer algo con esos datos (valores), enviar un correo, mostrar algo
+    en nuestra interfaz, etc.`,
+    paragraph2: `Para esto React nos proporciona una técnica llamada "componentes controlados",
+    recordemos que en React para actualizar algún elemento de la interfaz, lo hacemos mediante el estado setState()
+    React al "notar" un cambio en el estado actualiza la interfaz en consecuencia.`,
+    paragraph3: `Como pueden ver en este fragmento, este componente está renderizando un formulario, 
+    el estado de este componente es la fuente de verdad para ese formulario, tomo ese valor y mediante 
+    el evento submit paso esos datos a una función en otro componente para hacer la busqueda de una moneda.`,
+    paragraph4: `
+    Lo que hacemos entonces es determinar que el estado de React sea la unica "fuente de verdad", 
+    de esta manera los componentes que rendericen un formulario, tienen el control sobre lo que pasa 
+    en ese formulario. El atributo value del elemento input, al tener como valor la variable de estado "value",
+    el valor del input estará controlado por el estado de React, pudiendo así pasar ese valor a otros componentes
+    u otros elementos de nuestra interfaz. 
+    `,
   },
   {
     name: "Recipes",

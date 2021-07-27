@@ -28,18 +28,20 @@
   /* display: flex; */
   flex-direction: column;
   /* margin-top: 20vh; */
-  padding-top: 20vh;
+  /* padding-top: 20vh; */
 }
 
 .contentPersonalProject {
   /* border: 2px solid green; */
+  border-bottom: 1px solid var(--accent-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 10vh;
 }
 
 .contentPersonalProjectImg {
-  display: flex;
+  /* display: flex; */
   justify-content: flex-end;
   align-self: flex-start;
   position: relative;
@@ -48,8 +50,8 @@
 
 .contentPersonalProjectImg img {
   border-radius: 14px;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   position: relative;
   filter: drop-shadow(1px 5px 1px rgba(27, 16, 54, 0.144));
@@ -69,13 +71,25 @@
 
 .contentPersonalProjectDescription {
   width: 100%;
-  padding: 4vh 4vw;
+  padding: 10vh 4vw;
 }
 
 .pDescriptionPersonal {
   font-family: var(--title-font);
   font-size: var(--paragraph-font-size);
   letter-spacing: var(--letter-spacing);
+}
+
+.pDescriptionPersonal:not(.pDescriptionPersonal:first-child) {
+  /* border: 2px solid green; */
+  padding-top: 5vh;
+}
+.codeImgPersonalProjects {
+  padding-top: 5vh;
+}
+
+.codeImgPersonalProjects img {
+  width: 100%;
 }
 
 .contentMoreLink {
@@ -159,16 +173,16 @@
 
 .personalProjectsExternalLink {
   /* border: 2px solid red; */
-  /* background-color: navajowhite; */
   position: absolute;
-  top: 90%;
-  left: 90%;
+  top: 100%;
+  right: 0;
   z-index: 100;
   
 }
 
 .contentIconExLinkProjects, .contentIconGithubProjects {
   border-radius: 8px;
+  cursor: pointer;
   padding: .8rem;
 }
 .contentIconGithubProjects {
@@ -191,11 +205,12 @@
 
   .wrapperPersonalProjects > div:first-child > .contentPersonalProject {
     flex-direction: row-reverse;
+    padding-top: 20vh;
   }
 
   .pDescriptionPersonal {
     font-size: 18px;
-    padding: 4vh 0vw;
+    padding: 0vh 0vw;
   }
 
   .contentEachLink {

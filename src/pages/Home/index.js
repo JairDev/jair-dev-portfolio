@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Icon } from "@iconify/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 import Projects from "components/Projects/Projects";
 
@@ -12,12 +13,13 @@ import bxlCss3 from "@iconify/icons-bx/bxl-css3";
 import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
 import bxlGit from "@iconify/icons-bx/bxl-git";
 
-import phone3 from "../../assets/hero-phone3.png";
+// import phone3 from "../../assets/hero-phone3.png";
+import phone3 from "../../assets/hero-phone4.png";
 import photoProfile from "../../assets/foto-perfil.png";
 import phoneChallenge from "../../assets/phone-challenge.png";
 import codeChallenge from "../../assets/content-creator.png";
-import workCoin from "../../assets/coin.png";
-import workDessert from "../../assets/desert.png";
+import "../../assets/coin.png";
+import "../../assets/desert.png";
 import "../../assets/css.svg";
 import "../../assets/git.svg";
 import "../../assets/html.svg";
@@ -25,17 +27,28 @@ import "../../assets/js.svg";
 import "../../assets/react.svg";
 import "../../assets/sass.svg";
 import ArrowIcon from "../../assets/arrow.svg";
+//social icons
+
+import githubFill from "@iconify/icons-akar-icons/github-fill";
+import linkedinFill from "@iconify/icons-akar-icons/linkedin-fill";
+import twitterFill from "@iconify/icons-akar-icons/twitter-fill";
+import telegramFill from "@iconify/icons-akar-icons/telegram-fill";
+
 import githubIcon from "../../assets/github.svg";
 import linkedinIcon from "../../assets/linkedin.svg";
 import twitterIcon from "../../assets/twitter.svg";
 import telegramIcon from "../../assets/telegram.svg";
+//*/
 import shadow from "../../assets/shadow-ball.png";
 import shadowBlue from "../../assets/shadow-ball-blue.png";
 import blurry from "../../assets/blurry.png";
 import { personalProjects } from "../../data/info-portfolio";
-
 import styles from "./Home.module.css";
 import FormContact from "components/FormContact/FormContact";
+import { smoothScroll } from "utils/smoothScroll";
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 const svgIcons = [
   { name: "React", svg: bxlReact },
@@ -45,118 +58,6 @@ const svgIcons = [
   { name: "Html5", svg: bxlHtml5 },
   { name: "Git", svg: bxlGit },
 ];
-
-const socialIcons = [
-  { name: githubIcon, label: "Github" },
-  { name: linkedinIcon, label: "Linkedin" },
-  { name: twitterIcon, label: "Twitter" },
-  { name: telegramIcon, label: "Telegram" },
-];
-
-const dataWork = [
-  {
-    name: workCoin,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    name: workDessert,
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-];
-
-gsap.registerPlugin(ScrollTrigger);
-
-function smoothScroll(content, viewport, smoothness) {
-  content = gsap.utils.toArray(content)[0];
-  smoothness = smoothness || 1;
-
-  gsap.set(viewport || content.parentNode, {
-    overflow: "hidden",
-    position: "fixed",
-    height: "100%",
-    width: "100%",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  });
-  console.log("h");
-  gsap.set(content, { overflow: "visible", width: "100%" });
-
-  let getProp = gsap.getProperty(content),
-    setProp = gsap.quickSetter(content, "y", "px"),
-    setScroll = ScrollTrigger.getScrollFunc(window),
-    removeScroll = () => (content.style.overflow = "visible"),
-    killScrub = (trigger) => {
-      let scrub = trigger.getTween
-        ? trigger.getTween()
-        : gsap.getTweensOf(trigger.animation)[0]; // getTween() was added in 3.6.2
-      scrub && scrub.kill();
-      trigger.animation.progress(trigger.progress);
-    },
-    height,
-    isProxyScrolling;
-
-  function onResize() {
-    height = content.clientHeight;
-    document.body.style.height = height + "px";
-  }
-  onResize();
-
-  ScrollTrigger.addEventListener("refreshInit", onResize);
-  ScrollTrigger.addEventListener("refresh", () => {
-    removeScroll();
-    requestAnimationFrame(removeScroll);
-  });
-  ScrollTrigger.defaults({ scroller: content });
-  ScrollTrigger.prototype.update = (p) => p; // works around an issue in ScrollTrigger 3.6.1 and earlier (fixed in 3.6.2, so this line could be deleted if you're using 3.6.2 or later)
-
-  ScrollTrigger.scrollerProxy(content, {
-    scrollTop(value) {
-      if (arguments.length) {
-        isProxyScrolling = true; // otherwise, if snapping was applied (or anything that attempted to SET the scroll proxy's scroll position), we'd set the scroll here which would then (on the next tick) update the content tween/ScrollTrigger which would try to smoothly animate to that new value, thus the scrub tween would impede the progress. So we use this flag to respond accordingly in the ScrollTrigger's onUpdate and effectively force the scrub to its end immediately.
-        setProp(-value);
-        setScroll(value);
-        return;
-      }
-      return -getProp("y");
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-  });
-
-  return ScrollTrigger.create({
-    animation: gsap.fromTo(
-      content,
-      { y: 0 },
-      {
-        y: () => document.documentElement.clientHeight - height,
-        ease: "none",
-        onUpdate: ScrollTrigger.update,
-      }
-    ),
-    scroller: window,
-    invalidateOnRefresh: true,
-    start: 0,
-    end: () => height - document.documentElement.clientHeight,
-    scrub: smoothness,
-    onUpdate: (self) => {
-      if (isProxyScrolling) {
-        killScrub(self);
-        isProxyScrolling = false;
-      }
-    },
-    onRefresh: killScrub, // when the screen resizes, we just want the animation to immediately go to the appropriate spot rather than animating there, so basically kill the scrub.
-  });
-}
 
 function Home() {
   const animateBallHero = useRef(null);
@@ -171,8 +72,7 @@ function Home() {
   const layerPhoto = useRef(null);
 
   useEffect(() => {
-    console.log("mount home");
-    smoothScroll("#container");
+    // smoothScroll("#container");
     const tlBallHero = gsap.timeline();
 
     tlBallHero.to(animateBallHero.current, {
@@ -183,10 +83,6 @@ function Home() {
       delay: 0.6,
       scale: 1.0,
     });
-    // tlBallHero.to(animateBallHero.current, {
-    //   yPercent: 4,
-    //   xPercent: 6,
-    // });
     const tlNavHidden = gsap.timeline({
       scrollTrigger: {
         trigger: "#nav-hidden",
@@ -195,16 +91,8 @@ function Home() {
         scrub: true,
       },
     });
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: triggerButton.current,
-    //     start: "center 50%",
-    //     end: "top -=1500",
-    //     scrub: true,
-    //     markers: true,
-    //   },
-    // });
-    const tlw = gsap.timeline({
+
+    const tlAllText = gsap.timeline({
       scrollTrigger: {
         trigger: "#text",
         start: "center 90%",
@@ -223,9 +111,10 @@ function Home() {
     const tlAnimatePhoto = gsap.timeline({
       scrollTrigger: {
         trigger: animatePhoto.current,
-        start: "center 50%",
-        end: "top -=1000",
+        start: "center 80%",
+        end: "bottom -=400",
         scrub: true,
+        // markers: true
       },
     });
     const tlLayerPhoto = gsap.timeline({
@@ -234,6 +123,7 @@ function Home() {
         start: "top 80%",
         end: "top -=300",
         scrub: true,
+        // markers: true
       },
     });
     const tlPhone = gsap.timeline({
@@ -245,16 +135,21 @@ function Home() {
         scrub: true,
       },
     });
-    const tlCodeImgProject = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#code-project-img",
-        pin: true,
-        start: "center 10%",
-        end: "top -=950",
-        scrub: true,
-        markers: true
-      },
-    });
+    if (window.innerWidth > 860) {
+      gsap.utils.toArray("div[title]").forEach((img) => {
+        const tlCodeImgProject = gsap.timeline({
+          scrollTrigger: {
+            trigger: img,
+            pin: true,
+            start: "top 10%",
+            end: "top -=550",
+            scrub: true,
+            markers: true,
+          },
+        });
+        // tlCodeImgProject.to(img, {yPercent: 200})
+      });
+    }
     const tlCode = gsap.timeline({
       scrollTrigger: {
         trigger: codeImgRef.current,
@@ -286,12 +181,13 @@ function Home() {
     });
     tlAnimatePhoto.to(animatePhoto.current, {
       yPercent: 100,
+      filter: "grayscale(0)",
     });
     tlLayerPhoto.to(layerPhoto.current, {
       scaleY: 0,
-      yPercent: 100,
+      // yPercent: 100,
     });
-    tlw.to(word.current, {
+    tlAllText.to(word.current, {
       yPercent: -50,
       duration: 1,
     });
@@ -325,7 +221,15 @@ function Home() {
       yPercent: 800,
     });
 
-    return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
+    gsap.utils.toArray("a[title]").forEach((link, i) => {
+      const scroll = link.getAttribute("href");
+      link.addEventListener("click", (e) => {
+        gsap.to(window, { duration: 0.3, scrollTo: scroll });
+        e.preventDefault();
+      });
+    });
+    // ScrollTrigger.refresh () 
+    // return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
   }, []);
 
   return (
@@ -423,8 +327,7 @@ function Home() {
               className={`${styles.text} ${styles.pDescription} ${styles.subTitleDescription}`}
               id="text"
             >
-              Vivo en la caótica y bella ciudad de Caracas-Venezuela, donde
-              estoy labrando mi futuro como desarrollador frontend.
+              Vivo en la caótica y bella ciudad de Caracas-Venezuela.
             </p>
             <p id="text" className={`${styles.text} ${styles.pDescription}`}>
               Como desarrollador de software, es emocionante pensar que podemos
@@ -446,16 +349,13 @@ function Home() {
             <p id="text" className={`${styles.text} ${styles.pDescription}`}>
               Como seres humanos necesitamos conectar con nuestras emociones,
               nuestro entorno, disfruto de la naturaleza, amo la playa (tengo
-              tiempo que no voy), me gustan las mascotas, sobre todo los perros,
-              un sueño que quiero realizar es poder ayudar a tantos perros
-              abandonados como sea posible, tener una casa con un terreno
-              inmenso que sirva de refugio para estos amigos perrunos.
+              tiempo que no voy), me gustan las mascotas, sobre todo los perros.
             </p>
             <p id="text" className={`${styles.text} ${styles.pDescription}`}>
               Cuando estoy estresado, la música despeja mi mente, en mis tiempos
-              libres me gusta pasar el rato jugando algún videojuego o modelando
-              algo 3d, es algo que encuentro muy interesante, lo hago como
-              hobby...
+              de ocio me gusta pasar el rato jugando algún videojuego o
+              modelando algo 3d, es algo que encuentro muy interesante, lo hago
+              como hobby...
             </p>
 
             <p
@@ -590,8 +490,8 @@ function Home() {
         title={"Proyectos"}
         subTitle={"Personales"}
       />
-      <section className={`${styles.wrapperPadding}`}>
-        <FormContact socialIcons={socialIcons} />
+      <section id="contact" className={`${styles.wrapperPadding}`}>
+        <FormContact />
       </section>
     </>
   );
