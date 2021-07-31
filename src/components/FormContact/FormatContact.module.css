@@ -2,6 +2,7 @@
 
 .headerContact {
   /* border: 2px solid red; */
+  color: #2A2A2A;
   text-align: center;
   padding: 3vh;
   padding-bottom: 5vh;
@@ -53,7 +54,8 @@
   border-bottom: 2px solid rgb(26, 26, 26);
   font-size: 1.1rem;
   height: 42px;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
+  
   padding-left: 1vw;
 }
 
@@ -173,7 +175,10 @@
 }
 
 .required {
-  opacity: 0;
+  /* opacity: 0; */
+  /* border: 2px solid red; */
+  color: #bf1650;
+  height: 4vh;
 }
 
 .show {

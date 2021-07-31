@@ -27,18 +27,6 @@ import "../../assets/js.svg";
 import "../../assets/react.svg";
 import "../../assets/sass.svg";
 import ArrowIcon from "../../assets/arrow.svg";
-//social icons
-
-import githubFill from "@iconify/icons-akar-icons/github-fill";
-import linkedinFill from "@iconify/icons-akar-icons/linkedin-fill";
-import twitterFill from "@iconify/icons-akar-icons/twitter-fill";
-import telegramFill from "@iconify/icons-akar-icons/telegram-fill";
-
-import githubIcon from "../../assets/github.svg";
-import linkedinIcon from "../../assets/linkedin.svg";
-import twitterIcon from "../../assets/twitter.svg";
-import telegramIcon from "../../assets/telegram.svg";
-//*/
 import shadow from "../../assets/shadow-ball.png";
 import shadowBlue from "../../assets/shadow-ball-blue.png";
 import blurry from "../../assets/blurry.png";
@@ -72,7 +60,7 @@ function Home() {
   const layerPhoto = useRef(null);
 
   useEffect(() => {
-    // smoothScroll("#container");
+    smoothScroll("#container");
     const tlBallHero = gsap.timeline();
 
     tlBallHero.to(animateBallHero.current, {
@@ -136,18 +124,21 @@ function Home() {
       },
     });
     if (window.innerWidth > 860) {
-      gsap.utils.toArray("div[title]").forEach((img) => {
-        const tlCodeImgProject = gsap.timeline({
+      const nodeParent = document.querySelectorAll("[data-height]");
+      gsap.utils.toArray("[data-img]").forEach((img, i) => {
+        const arr = [...nodeParent][i];
+        // console.log(arr.clientHeight);
+        const tlImageWork = gsap.timeline({
           scrollTrigger: {
             trigger: img,
             pin: true,
-            start: "top 10%",
-            end: "top -=550",
+            start: "center top",
+            // end: "top -=1200",
+            end: `top -=${arr.clientHeight - 300}`,
             scrub: true,
             markers: true,
           },
         });
-        // tlCodeImgProject.to(img, {yPercent: 200})
       });
     }
     const tlCode = gsap.timeline({
@@ -228,8 +219,8 @@ function Home() {
         e.preventDefault();
       });
     });
-    // ScrollTrigger.refresh () 
-    // return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
+    ScrollTrigger.refresh ()
+    return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
   }, []);
 
   return (

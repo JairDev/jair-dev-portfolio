@@ -5,8 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./App.css";
 import Home from "pages/Home";
 import Projects from "components/Projects/Projects";
-import workCoin from "../src/assets/coin.png";
-import workDessert from "../src/assets/desert.png";
+// import workCoin from "../src/assets/coin.png";
+// import workDessert from "../src/assets/desert.png";
 import Header from "components/Header/Header";
 import Layout from "pages/Layout/Layout";
 
