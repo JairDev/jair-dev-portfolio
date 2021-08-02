@@ -4,7 +4,6 @@
 }
 
 .appContentPersonalProjectsHeader {
-  /* border: 2px solid red; */
   color: var(--primary-text);
   padding-top: 30vh;
 }
@@ -16,7 +15,6 @@
 }
 
 .h2WorkName {
-  /* border: 2px solid rgb(0, 255, 42); */
   font-size: var(--sub-title-font-size);
   font-family: var(--title-font);
   font-weight: 500;
@@ -27,23 +25,19 @@
 .wrapperPersonalProjects {
   /* border: 2px solid red; */
   /* display: flex; */
-  flex-direction: column;
+  /* flex-direction: column; */
   /* margin-top: 20vh; */
   /* padding-top: 20vh; */
 }
 
 .contentPersonalProject {
-  /* border: 2px solid green; */
   border-bottom: 1px solid var(--accent-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* padding-top: 10vh; */
 }
 
 .contentTitleProject h3 {
-  /* border: 2px solid red; */
-  /* margin-top: 10vh; */
   padding: 15vh 0;
 }
 
@@ -55,11 +49,11 @@
 }
 
 .contentPersonalProjectImg {
-  /* display: flex; */
   justify-content: flex-end;
   align-self: flex-start;
   position: relative;
   width: 100%;
+  height: 30vh;
 }
 
 .contentImgCoin {
@@ -67,7 +61,6 @@
 }
 
 .contentImgTablet {
-  /* border: 2px solid red; */
   position: absolute;
   top: 0;
   left: 0;
@@ -75,19 +68,15 @@
   height: 100%;
 }
 
-
-
 .contentPersonalProjectImg img {
   border-radius: 14px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* height: 100%; */
+  /* object-fit: cover; */
   position: relative;
   filter: drop-shadow(1px 5px 1px rgba(27, 16, 54, 0.144));
   z-index: 10;
 }
-
-
 
 .backImgPersonal {
   display: block;
@@ -102,7 +91,6 @@
 
 .contentPersonalProjectDescription {
   width: 100%;
-  /* padding: 10vh 4vw 10vh 0 ; */
   padding-right: 5vw;
 }
 
@@ -113,8 +101,20 @@
 }
 
 .pDescriptionPersonal:not(.pDescriptionPersonal:first-child) {
-  /* border: 2px solid green; */
   padding-top: 5vh;
+}
+
+.fragmentCode {
+  aspect-ratio: 1/1;
+  height: 50vh;
+}
+
+.fragmentCode img {
+  /* border: 2px solid red; */
+  object-fit: cover;
+  padding-top: 10vh;
+  width: 100%;
+  /* height: 100%; */
 }
 .codeImgPersonalProjects {
   padding-top: 5vh;
@@ -125,7 +125,6 @@
 }
 
 .contentMoreLink {
-  /* border: 2px solid green; */
   display: flex;
   justify-content: center;
   padding-top: 20vh;
@@ -133,17 +132,14 @@
 }
 
 .contentLinesCustomLink:hover .lineCustomLink {
-  /* border: 2px solid green; */
   transform: translateX(15%);
 }
 
 .contentLinesCustomLink:hover .circleCustomLink {
-  /* border: 2px solid green; */
   transform: translateX(-15%);
 }
 
 .contentLinesCustomLink {
-  /* border: 2px solid red; */
   position: relative;
 }
 
@@ -178,7 +174,6 @@
 }
 
 .moreLink {
-  /* border: 2px solid greenyellow; */
   color: var(--primary-text);
   font-size: calc(1vw + 1.3em);
   font-family: var(--title-font);
@@ -187,7 +182,6 @@
 }
 
 .moreLinkProjects {
-  /* border: 2px solid greenyellow; */
   color: var(--primary-text);
   font-size: calc(1vw + 0.8em);
   font-family: var(--title-font);
@@ -196,7 +190,6 @@
 }
 
 .contentEachLink {
-  /* border: 2px solid blue; */
   display: flex;
   justify-content: center;
   padding: 10vh 0;
@@ -204,7 +197,6 @@
 }
 
 .personalProjectsExternalLink {
-  /* border: 2px solid red; */
   position: absolute;
   top: 100%;
   right: 0;
@@ -232,14 +224,11 @@
 
 @media only screen and (min-width: 860px) {
   .contentPersonalProject {
-    /* border: 2px solid red; */
     flex-direction: row-reverse;
-    /* padding-top: 25vh; */
-    padding-bottom: 20vh;
+    padding-bottom: 30vh;
   }
 
   .contentPersonalProjectDescription {
-    /* border: 2px solid red; */
     width: 50%;
   }
 
@@ -249,7 +238,6 @@
 
   .wrapperPersonalProjects > div:first-child > .contentPersonalProject {
     flex-direction: row-reverse;
-    /* padding-top: 20vh; */
   }
 
   .pDescriptionPersonal {

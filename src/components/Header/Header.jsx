@@ -53,7 +53,7 @@ function Header() {
               {/* <Link className={styles.itemLink} to="trabajos">
               Trabajos Personales
             </Link> */}
-              <a href="#personal-work" title="link" className={styles.itemLink}>
+              <a href="#personal-work" data-link="link" className={styles.itemLink}>
                 Proyectos Personales
               </a>
             </li>

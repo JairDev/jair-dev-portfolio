@@ -34,6 +34,7 @@ import { personalProjects } from "../../data/info-portfolio";
 import styles from "./Home.module.css";
 import FormContact from "components/FormContact/FormContact";
 import { smoothScroll } from "utils/smoothScroll";
+import { gsapAnimations } from "utils/gsapAnimations/gsapAnimations";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -48,184 +49,48 @@ const svgIcons = [
 ];
 
 function Home() {
-  const animateBallHero = useRef(null);
-  const word = useRef(null);
-  const h2Name = useRef(null);
-  const circleChallenge = useRef(null);
-  const phoneRef = useRef(null);
-  const codeImgRef = useRef(null);
-  const circleLinkRef = useRef(null);
-  const triggerButton = useRef(null);
-  const animatePhoto = useRef(null);
-  const layerPhoto = useRef(null);
+  // const animateBallHero = useRef(null);
+  // const word = useRef(null);
+  // const h2Name = useRef(null);
+  // const circleChallenge = useRef(null);
+  // const phoneRef = useRef(null);
+  // const codeImgRef = useRef(null);
+  // const circleLinkRef = useRef(null);
+  // const triggerButton = useRef(null);
+  // const animatePhoto = useRef(null);
+  // const layerPhoto = useRef(null);
+
+  const objRef = {
+    animateBallHero: useRef(null),
+    word: useRef(null),
+    h2Name: useRef(null),
+    circleChallenge: useRef(null),
+    phoneRef: useRef(null),
+    codeImgRef: useRef(null),
+    circleLinkRef: useRef(null),
+    triggerButton: useRef(null),
+    animatePhoto: useRef(null),
+    layerPhoto: useRef(null)
+  }
 
   useEffect(() => {
     smoothScroll("#container");
-    const tlBallHero = gsap.timeline();
-
-    tlBallHero.to(animateBallHero.current, {
-      y: "97vh",
-      xPercent: 15,
-      ease: "power4.out",
-      duration: 2.7,
-      delay: 0.6,
-      scale: 1.0,
-    });
-    const tlNavHidden = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#nav-hidden",
-        start: "bottom -=50",
-        end: "top -=800",
-        scrub: true,
-      },
-    });
-
-    const tlAllText = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#text",
-        start: "center 90%",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
-    const tlCircleChallenge = gsap.timeline({
-      scrollTrigger: {
-        trigger: circleChallenge.current,
-        start: "center 50%",
-        end: "top -=1200",
-        scrub: true,
-      },
-    });
-    const tlAnimatePhoto = gsap.timeline({
-      scrollTrigger: {
-        trigger: animatePhoto.current,
-        start: "center 80%",
-        end: "bottom -=400",
-        scrub: true,
-        // markers: true
-      },
-    });
-    const tlLayerPhoto = gsap.timeline({
-      scrollTrigger: {
-        trigger: layerPhoto.current,
-        start: "top 80%",
-        end: "top -=300",
-        scrub: true,
-        // markers: true
-      },
-    });
-    const tlPhone = gsap.timeline({
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        pin: true,
-        start: "center 30%",
-        end: "top -=550",
-        scrub: true,
-      },
-    });
-    if (window.innerWidth > 860) {
-      const nodeParent = document.querySelectorAll("[data-height]");
-      gsap.utils.toArray("[data-img]").forEach((img, i) => {
-        const arr = [...nodeParent][i];
-        // console.log(arr.clientHeight);
-        const tlImageWork = gsap.timeline({
-          scrollTrigger: {
-            trigger: img,
-            pin: true,
-            start: "center top",
-            // end: "top -=1200",
-            end: `top -=${arr.clientHeight - 300}`,
-            scrub: true,
-            markers: true,
-          },
-        });
-      });
-    }
-    const tlCode = gsap.timeline({
-      scrollTrigger: {
-        trigger: codeImgRef.current,
-        start: "center 50%",
-        end: "top -=550",
-        scrub: true,
-      },
-    });
-    const tlCircleLink = gsap.timeline({
-      scrollTrigger: {
-        trigger: circleLinkRef.current,
-        start: "center 30%",
-        end: "top -=1500",
-        scrub: true,
-      },
-    });
-    // animations////////////////
-    tlNavHidden.to("#nav-hidden", {
-      yPercent: -100,
-      opacity: 1,
-      duration: 1,
-    });
-    tlNavHidden.to("#nav-hidden", {
-      backgroundColor: "var(--body-color)",
-      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
-      yPercent: 0,
-      opacity: 1,
-      duration: 1,
-    });
-    tlAnimatePhoto.to(animatePhoto.current, {
-      yPercent: 100,
-      filter: "grayscale(0)",
-    });
-    tlLayerPhoto.to(layerPhoto.current, {
-      scaleY: 0,
-      // yPercent: 100,
-    });
-    tlAllText.to(word.current, {
-      yPercent: -50,
-      duration: 1,
-    });
-    gsap.utils.toArray("#text").forEach((item) => {
-      const tlText = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: "top 98%",
-          end: "center 80%",
-          scrub: true,
-        },
-      });
-      tlText.from(item, {
-        opacity: 0,
-        yPercent: 50,
-      });
-    });
-    tlCircleChallenge.to(circleChallenge.current, {
-      xPercent: -1300,
-      yPercent: 1000,
-    });
-    tlCode.to(codeImgRef.current, {
-      yPercent: 30,
-      duration: 1,
-    });
-    tlCode.to(codeImgRef.current, {
-      yPercent: -1,
-      duration: 1,
-    });
-    tlCircleLink.to(circleLinkRef.current, {
-      yPercent: 800,
-    });
-
-    gsap.utils.toArray("a[title]").forEach((link, i) => {
+    gsapAnimations(objRef)
+  
+    gsap.utils.toArray("[data-link]").forEach((link) => {
       const scroll = link.getAttribute("href");
       link.addEventListener("click", (e) => {
         gsap.to(window, { duration: 0.3, scrollTo: scroll });
         e.preventDefault();
       });
     });
-    ScrollTrigger.refresh ()
-    return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
-  }, []);
+    // ScrollTrigger.refresh();
+    // return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
+  }, [objRef]);
 
   return (
     <>
-      <span ref={animateBallHero} className={styles.scrollBefore}>
+      <span ref={objRef.animateBallHero} className={styles.scrollBefore}>
         <img src={shadow} alt="" />
       </span>
       <section
@@ -237,7 +102,7 @@ function Home() {
             <div className={styles.appLeftContentHeroRole}>
               <h1 className={styles.role}>Desarrollador Frontend</h1>
               <div
-                ref={triggerButton}
+                ref={objRef.triggerButton}
                 id="trigger-button"
                 className={styles.contentButtonContact}
               >
@@ -267,7 +132,7 @@ function Home() {
                 Interaction
               </span>
               <span
-                ref={word}
+                ref={objRef.word}
                 className={`${styles.wordsHero} ${styles.bottomLeft}`}
               >
                 Web
@@ -288,8 +153,8 @@ function Home() {
         className={`${styles.wrapperPadding} ${styles.appContentAboutMe}`}
       >
         <div className={styles.appContentAboutMeHeader}>
-          <div ref={animatePhoto} className={styles.appContentAboutMePhoto}>
-            <span ref={layerPhoto} className={styles.layerPhoto}></span>
+          <div ref={objRef.animatePhoto} className={styles.appContentAboutMePhoto}>
+            <span ref={objRef.layerPhoto} className={styles.layerPhoto}></span>
             <img
               className={styles.photo}
               src={photoProfile}
@@ -302,7 +167,7 @@ function Home() {
             </h2>
             <h4
               id="text"
-              ref={h2Name}
+              ref={objRef.h2Name}
               className={`${styles.text} ${styles.h2Name}`}
             >
               soy Alfredo
@@ -395,7 +260,7 @@ function Home() {
       <section
         className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
       >
-        <span ref={circleChallenge} className={styles.circleChallenge}>
+        <span ref={objRef.circleChallenge} className={styles.circleChallenge}>
           <img src={shadowBlue} alt="" />
         </span>
         <div className={styles.appContentChallengesHeader}>
@@ -426,7 +291,7 @@ function Home() {
             </div>
             <div className={styles.challengeCodeImg}>
               <div className={styles.wrapperCodeImg}>
-                <img ref={codeImgRef} src={codeChallenge} alt="" />
+                <img ref={objRef.codeImgRef} src={codeChallenge} alt="" />
               </div>
             </div>
             <div className={styles.challengeMyExplanation}>
@@ -454,7 +319,11 @@ function Home() {
                   className={`${styles.lineChallenge} ${styles.vertical}`}
                 ></span>
               </div>
-              <div ref={phoneRef} className={styles.contentImgPhone}>
+              <div
+                data-phone="data-phone"
+                ref={objRef.phoneRef}
+                className={styles.contentImgPhone}
+              >
                 <img src={phoneChallenge} alt="" />
               </div>
             </div>
@@ -465,7 +334,7 @@ function Home() {
             <span className={styles.lineCustomLink}></span>
             <span className={styles.circleCustomLink}></span>
             <span
-              ref={circleLinkRef}
+              ref={objRef.circleLinkRef}
               className={styles.circleCustomLinkAnimate}
             >
               <img src={shadow} alt="" />

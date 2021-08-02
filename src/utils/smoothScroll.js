@@ -2,8 +2,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-
 export function smoothScroll(content, viewport, smoothness) {
+  const nodeParent = document.querySelectorAll("[data-height]");
+  // const nodeParent = document.querySelector("[data-height]");
   content = gsap.utils.toArray(content)[0];
   smoothness = smoothness || 1;
 
@@ -24,6 +25,7 @@ export function smoothScroll(content, viewport, smoothness) {
     setScroll = ScrollTrigger.getScrollFunc(window),
     removeScroll = () => (content.style.overflow = "visible"),
     killScrub = (trigger) => {
+      console.log(trigger);
       let scrub = trigger.getTween
         ? trigger.getTween()
         : gsap.getTweensOf(trigger.animation)[0]; // getTween() was added in 3.6.2
@@ -67,7 +69,41 @@ export function smoothScroll(content, viewport, smoothness) {
     },
   });
 
+  
+
+  gsap.utils.toArray("[data-img]").forEach((img, i) => {
+    const arr = [...nodeParent][i];
+    const sum  = arr.clientHeight - arr.clientHeight / 2
+    console.log(arr.clientHeight)
+    console.log(sum)
+    gsap.to(img, {
+      scrollTrigger: {
+        // refreshPriority: 1,
+        trigger: img,
+        pin: true,
+        start: "top 20%",
+        // end: `top -=${arr.clientHeight}`,
+        end: "+=" + sum,
+        scrub: true,
+        // markers: true,
+      },
+    });
+  });
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: "[data-phone]",
+      pin: true,
+      start: "center 30%",
+      end: "top -=550",
+      scrub: true,
+    },
+  });
+
+  ScrollTrigger.refresh();
+
   return ScrollTrigger.create({
+    // refreshPriority: 2,
     animation: gsap.fromTo(
       content,
       { y: 0 },

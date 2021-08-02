@@ -64,12 +64,7 @@ export const personalProjects = [
       {
         paragraph: `Para esto React nos proporciona una técnica llamada "componentes controlados",
         recordemos que en React para actualizar algún elemento de la interfaz, lo hacemos mediante el estado setState()
-        React al "notar" un cambio en el estado actualiza la interfaz en consecuencia.`
-      },
-      {
-        paragraph: `Como pueden ver en este fragmento, este componente está renderizando un formulario, 
-        el estado de este componente es la fuente de verdad para ese formulario, tomo ese valor y mediante 
-        el evento submit paso esos datos a una función en otro componente para hacer la busqueda de una moneda.`
+        React al "notar" un cambio en el estado actualiza la interfaz en consecuencia.`,
       },
       {
         paragraph: `
@@ -78,8 +73,13 @@ export const personalProjects = [
         en ese formulario. El atributo value del elemento input, al tener como valor la variable de estado "value",
         el valor del input estará controlado por el estado de React, pudiendo así pasar ese valor a otros componentes
         u otros elementos de nuestra interfaz. 
-        `
-      }
+        `,
+      },
+      {
+        paragraph: `Como pueden ver en este fragmento, este componente está renderizando un formulario, 
+        el estado de este componente es la fuente de verdad para ese formulario, tomo ese valor y mediante 
+        el evento submit paso esos datos a una función en otro componente para hacer la busqueda de una moneda.`,
+      },
     ],
   },
   {
@@ -99,13 +99,13 @@ export const personalProjects = [
       {
         paragraph: `Para esto React nos proporciona una técnica llamada "componentes controlados",
         recordemos que en React para actualizar algún elemento de la interfaz, lo hacemos mediante el estado setState()
-        React al "notar" un cambio en el estado actualiza la interfaz en consecuencia.`
+        React al "notar" un cambio en el estado actualiza la interfaz en consecuencia.`,
       },
       {
         paragraph: `Como pueden ver en este fragmento, este componente está renderizando un formulario, 
         el estado de este componente es la fuente de verdad para ese formulario, tomo ese valor y mediante 
-        el evento submit paso esos datos a una función en otro componente para hacer la busqueda de una moneda.`
-      }
+        el evento submit paso esos datos a una función en otro componente para hacer la busqueda de una moneda.`,
+      },
     ],
   },
   {

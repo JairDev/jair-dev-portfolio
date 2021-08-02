@@ -9,12 +9,13 @@ import Projects from "components/Projects/Projects";
 // import workDessert from "../src/assets/desert.png";
 import Header from "components/Header/Header";
 import Layout from "pages/Layout/Layout";
+import { smoothScroll } from "utils/smoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
-    // smoothScroll("#container")1
+    // smoothScroll("#container")
     // return () => ScrollTrigger.getAll().forEach(ST => ST.kill());
   }, []);
   return (

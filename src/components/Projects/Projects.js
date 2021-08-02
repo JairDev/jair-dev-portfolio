@@ -20,6 +20,35 @@ function Projects({ title, subTitle, projectsArray, view = false }) {
     //   // smoothScroll("#container");
     // }
     // return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
+    // const nodeParent = document.querySelector("[data-height]");
+    // const img = document.querySelector("[data-img]")
+    //    gsap.to(img, {
+    //     scrollTrigger: {
+    //       // refreshPriority: 2,
+    //       trigger: img,
+    //       pin: true,
+    //       start: "top 10%",
+    //       end: `top -=${nodeParent.clientHeight - 300}`,
+    //       scrub: true,
+    //       markers: true,
+    //     },
+    //   });
+
+    // gsap.utils.toArray("[data-img]").forEach((img, i) => {
+    //   const arr = [...nodeParent][i];
+
+    //   gsap.to(img, {
+    //     scrollTrigger: {
+    //       // refreshPriority: 2,
+    //       trigger: img,
+    //       pin: true,
+    //       start: "top 10%",
+    //       end: `top -=${arr.clientHeight - 300}`,
+    //       scrub: true,
+    //       markers: true,
+    //     },
+    //   });
+    // });
   });
 
   return (
@@ -53,6 +82,7 @@ function Projects({ title, subTitle, projectsArray, view = false }) {
 }
 
 function ProjectsCom({ work }) {
+
   return (
     <>
       <div id={work.id}>
@@ -103,6 +133,9 @@ function ProjectsCom({ work }) {
             {work.dataDescription.map((item) => (
               <p className={styles.pDescriptionPersonal}>{item.paragraph}</p>
             ))}
+            {/* <div className={styles.fragmentCode}>
+              <img src={work.imgCode} alt="" />
+            </div> */}
           </div>
         </div>
       </div>
