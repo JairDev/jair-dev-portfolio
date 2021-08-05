@@ -125,7 +125,7 @@
   border-radius: 50px;
   color: var(--body-color);
   cursor: pointer;
-  font-size: calc(1vw + 0.8em);
+  font-size: var(--text-button-big);
   font-family: var(--title-font);
   font-weight: 600;
   letter-spacing: var(--letter-spacing);
@@ -150,12 +150,20 @@
   width: 10%;
 }
 
+.socialItem a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .socialItem img {
   width: 100%;
   height: 100%;
 }
 
 .labelSocial {
+  /* border: 1px solid red; */
+  color: var(--primary-text);
   font-family: var(--title-font);
   margin-top: 1vh;
 }
@@ -185,6 +193,7 @@
   opacity: 1;
 }
 
+
 @media only screen and (min-width: 860px) {
   .wrapperPadding {
     padding: 0 5vw;
@@ -196,5 +205,9 @@
 
   .socialItem {
     width: 5%;
+  }
+
+  .contactButton {
+    font-size: var(--text-button-small);
   }
 }

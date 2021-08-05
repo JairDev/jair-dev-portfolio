@@ -84,9 +84,8 @@
   border: none;
   background: none;
   border-radius: 50px;
-  color: var(--body-color);
   cursor: pointer;
-  font-size: calc(1vw + 0.8em);
+  font-size: var(--text-button-big);
   font-family: var(--title-font);
   font-weight: 600;
   letter-spacing: var(--letter-spacing);
@@ -94,6 +93,10 @@
   padding: 0.6rem 1.8rem;
   position: relative;
   z-index: 10;
+}
+
+.contactButton a {
+  color: var(--body-color);
 }
 
 .appRightContentHero {
@@ -254,9 +257,11 @@
   /* border: 2px solid violet; */
   border-radius: 8px;
   opacity: 1;
-  width: 12vw;
+  width: 15vmax;
   filter: grayscale(1);
   overflow: hidden;
+  transform-origin: top;
+  line-height: 0;
 }
 
 .layerPhoto {
@@ -264,6 +269,8 @@
   background-color: var(--body-color);
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -274,7 +281,7 @@
 .photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .appContentAboutMeTitle {
@@ -643,7 +650,7 @@
   display: block;
   position: absolute;
   bottom: 0;
-  left: -45%;
+  left: -15%;
   top: 10%;
   width: 60px;
   height: 60px;
@@ -840,7 +847,7 @@
   }
 
   .contactButton {
-    font-size: calc(1vw + 0.3em);
+    font-size: var(--text-button-small);
   }
 
   .appRightContentHero {

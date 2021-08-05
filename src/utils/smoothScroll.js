@@ -25,7 +25,6 @@ export function smoothScroll(content, viewport, smoothness) {
     setScroll = ScrollTrigger.getScrollFunc(window),
     removeScroll = () => (content.style.overflow = "visible"),
     killScrub = (trigger) => {
-      console.log(trigger);
       let scrub = trigger.getTween
         ? trigger.getTween()
         : gsap.getTweensOf(trigger.animation)[0]; // getTween() was added in 3.6.2
@@ -69,41 +68,49 @@ export function smoothScroll(content, viewport, smoothness) {
     },
   });
 
-  
+  const setClass = (direction) => {
+    if (direction < 0 && window.scrollY <= 0) {
+      gsap.to("#nav-hidden", {
+        backgroundColor: "var(--transparent-color)",
+        boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, 0)",
+        duration: 0.5,
+      });
+    } else if (direction >= 1) {
+      gsap.to("#nav-hidden", {
+        yPercent: -200,
+        duration: 0.5,
+      });
+    } else {
+      gsap.to("#nav-hidden", {
+        backgroundColor: "var(--body-color)",
+        boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
+        yPercent: 0,
+        duration: 0.5,
+      });
+    }
+  };
 
   gsap.utils.toArray("[data-img]").forEach((img, i) => {
     const arr = [...nodeParent][i];
-    const sum  = arr.clientHeight - arr.clientHeight / 2
-    console.log(arr.clientHeight)
+    const sum = arr.clientHeight - arr.clientHeight / 3;
     console.log(sum)
-    gsap.to(img, {
-      scrollTrigger: {
-        // refreshPriority: 1,
-        trigger: img,
-        pin: true,
-        start: "top 20%",
-        // end: `top -=${arr.clientHeight}`,
-        end: "+=" + sum,
-        scrub: true,
-        // markers: true,
-      },
-    });
-  });
-
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: "[data-phone]",
-      pin: true,
-      start: "center 30%",
-      end: "top -=550",
-      scrub: true,
-    },
+    if (window.innerWidth > 860) {
+      gsap.to(img, {
+        scrollTrigger: {
+          trigger: img,
+          pin: true,
+          start: "top 20%",
+          end: "+=" + sum,
+          scrub: true,
+          // markers: true,
+        },
+      });
+    }
   });
 
   ScrollTrigger.refresh();
 
   return ScrollTrigger.create({
-    // refreshPriority: 2,
     animation: gsap.fromTo(
       content,
       { y: 0 },
@@ -119,6 +126,7 @@ export function smoothScroll(content, viewport, smoothness) {
     end: () => height - document.documentElement.clientHeight,
     scrub: smoothness,
     onUpdate: (self) => {
+      setClass(self.direction);
       if (isProxyScrolling) {
         killScrub(self);
         isProxyScrolling = false;

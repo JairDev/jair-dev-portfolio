@@ -1,55 +1,17 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import * as styles from "./Projects.module.css";
-import { useEffect } from "react";
-// import { smoothScroll } from "App";
-// import githubIcon from "../../assets/github.svg";
+
 import { Icon } from "@iconify/react";
 import linkOut from "@iconify/icons-akar-icons/link-out";
 import githubFill from "@iconify/icons-akar-icons/github-fill";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Projects({ title, subTitle, projectsArray, view = false }) {
+function Projects({ title, subTitle, projectsArray }) {
   const twoProjects = projectsArray.slice(0, 2);
-
-  useEffect(() => {
-    // if (view) {
-    //   // smoothScroll("#container");
-    // }
-    // return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
-    // const nodeParent = document.querySelector("[data-height]");
-    // const img = document.querySelector("[data-img]")
-    //    gsap.to(img, {
-    //     scrollTrigger: {
-    //       // refreshPriority: 2,
-    //       trigger: img,
-    //       pin: true,
-    //       start: "top 10%",
-    //       end: `top -=${nodeParent.clientHeight - 300}`,
-    //       scrub: true,
-    //       markers: true,
-    //     },
-    //   });
-
-    // gsap.utils.toArray("[data-img]").forEach((img, i) => {
-    //   const arr = [...nodeParent][i];
-
-    //   gsap.to(img, {
-    //     scrollTrigger: {
-    //       // refreshPriority: 2,
-    //       trigger: img,
-    //       pin: true,
-    //       start: "top 10%",
-    //       end: `top -=${arr.clientHeight - 300}`,
-    //       scrub: true,
-    //       markers: true,
-    //     },
-    //   });
-    // });
-  });
 
   return (
     <section id="personal-work" className={`${styles.wrapperPadding}`}>
@@ -64,25 +26,15 @@ function Projects({ title, subTitle, projectsArray, view = false }) {
         </div>
         <div className={styles.wrapperPersonalProjects}>
           {twoProjects.map((work) => (
-            <ProjectsCom work={work} />
+            <ProjectsCom key={work.name} work={work} />
           ))}
         </div>
-        {/* <div className={styles.contentMoreLink}>
-          <div className={styles.contentLinesCustomLink}>
-            <span className={styles.lineCustomLink}></span>
-            <span className={styles.circleCustomLink}></span>
-            <a className={styles.moreLink} href={"#"}>
-              Mas Proyectos
-            </a>
-          </div>
-        </div> */}
       </div>
     </section>
   );
 }
 
 function ProjectsCom({ work }) {
-
   return (
     <>
       <div id={work.id}>
@@ -91,17 +43,18 @@ function ProjectsCom({ work }) {
         </div>
         <div className={styles.contentPersonalProject}>
           <div className={styles.contentPersonalProjectImg}>
-            <div data-img="code-project-img" id="code-project-img">
+            <div id="code-project-img" className={styles.contentProjectImg} data-img="code-project-img">
               <div className={styles.contentImgCoin}>
                 <img src={work.imgSrcGif} alt="" />
+                {/* <video src={work.imgSrcGif} autoPlay loop width="100%"></video> */}
               </div>
-              <div className={styles.contentImgTablet}>
+              {/* <div className={styles.contentImgTablet}>
                 <img src={work.imgSrcTablet} alt="" />
-              </div>
+              </div> */}
               <div className={styles.personalProjectsExternalLink}>
                 <div className={styles.contentIconGithubProjects}>
                   <a
-                    href="https://github.com/JairDev/coin-market-info-"
+                    href={work.linkGit}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -113,7 +66,7 @@ function ProjectsCom({ work }) {
                 </div>
                 <div className={styles.contentIconExLinkProjects}>
                   <a
-                    href="https://coin-market-info.vercel.app/"
+                    href={work.linkDemo}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -130,12 +83,15 @@ function ProjectsCom({ work }) {
             data-height="parent-paragraph"
             className={styles.contentPersonalProjectDescription}
           >
-            {work.dataDescription.map((item) => (
-              <p className={styles.pDescriptionPersonal}>{item.paragraph}</p>
+            {work.dataDescription.map((text) => (
+              <p key={text.paragraph} className={styles.pDescriptionPersonal}>
+                {text.paragraph}
+              </p>
             ))}
-            {/* <div className={styles.fragmentCode}>
+
+            <div className={styles.fragmentCode}>
               <img src={work.imgCode} alt="" />
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

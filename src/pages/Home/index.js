@@ -70,13 +70,13 @@ function Home() {
     circleLinkRef: useRef(null),
     triggerButton: useRef(null),
     animatePhoto: useRef(null),
-    layerPhoto: useRef(null)
-  }
+    layerPhoto: useRef(null),
+  };
 
   useEffect(() => {
     smoothScroll("#container");
-    gsapAnimations(objRef)
-  
+    gsapAnimations(objRef);
+
     gsap.utils.toArray("[data-link]").forEach((link) => {
       const scroll = link.getAttribute("href");
       link.addEventListener("click", (e) => {
@@ -106,9 +106,15 @@ function Home() {
                 id="trigger-button"
                 className={styles.contentButtonContact}
               >
-                <form className={styles.contentButtonForm}>
-                  <button className={styles.contactButton}>Contáctame</button>
-                </form>
+                <div className={styles.contentButtonForm}>
+                  <ul>
+                    <li className={styles.contactButton}>
+                      <a href="#contact" data-link="link">
+                        Contáctame
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div className={styles.appContentScrollArrow}>
@@ -150,10 +156,14 @@ function Home() {
       </section>
 
       <section
+        id="about-me"
         className={`${styles.wrapperPadding} ${styles.appContentAboutMe}`}
       >
         <div className={styles.appContentAboutMeHeader}>
-          <div ref={objRef.animatePhoto} className={styles.appContentAboutMePhoto}>
+          <div
+            ref={objRef.animatePhoto}
+            className={styles.appContentAboutMePhoto}
+          >
             <span ref={objRef.layerPhoto} className={styles.layerPhoto}></span>
             <img
               className={styles.photo}
@@ -221,9 +231,15 @@ function Home() {
               Un gusto haberte mostrado una parte mí, saludos !
             </p>
             <div className={styles.contentButtonContactAbout}>
-              <form className={styles.contentButtonForm}>
-                <button className={styles.contactButton}>Contáctame</button>
-              </form>
+              <div className={styles.contentButtonForm}>
+                <ul>
+                  <li className={styles.contactButton}>
+                    <a href="#contact" data-link="link">
+                      Contáctame
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -258,6 +274,7 @@ function Home() {
       </section>
 
       <section
+        id="challenges"
         className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
       >
         <span ref={objRef.circleChallenge} className={styles.circleChallenge}>
@@ -278,8 +295,8 @@ function Home() {
           <div className={styles.appLeftContentChallenge}>
             <div className={styles.challengesSubTitle}>
               <h3 id="text" className={styles.h3Challenge}>
-                Busco mejorar mis habilidades como desarrollador frontend, a
-                traves de desafíos del mundo real.
+                Busco mejorar mis habilidades como desarrollador frontend, a través de la práctica, ya sea 
+                construyendo proyectos personales o participando en desafíos frontend !
               </h3>
             </div>
             <div className={styles.challengeDescription}>

@@ -12,10 +12,14 @@ import twitterFill from "@iconify/icons-akar-icons/twitter-fill";
 import telegramFill from "@iconify/icons-akar-icons/telegram-fill";
 
 const socialIcons = [
-  { name: githubFill, label: "Github" },
-  { name: linkedinFill, label: "Linkedin" },
-  { name: twitterFill, label: "Twitter" },
-  { name: telegramFill, label: "Telegram" },
+  { name: githubFill, label: "Github", url: "https://github.com/JairDev" },
+  {
+    name: linkedinFill,
+    label: "Linkedin",
+    url: "https://www.linkedin.com/in/frontend-alfredo-moscoso/",
+  },
+  { name: twitterFill, label: "Twitter", url: "https://twitter.com/JairDevep" },
+  { name: telegramFill, label: "Telegram", url: "https://t.me/jairdev" },
 ];
 
 function FormContact() {
@@ -188,10 +192,17 @@ function FormContact() {
         <div className={styles.contentSocial}>
           {socialIcons.map((icon) => (
             <div key={icon.label} className={styles.socialItem}>
-              <Icon
-                icon={icon.name}
-                style={{ fontSize: "44px", color: "#2A2A2A" }}
-              />
+              <a
+                href={icon.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon
+                  icon={icon.name}
+                  style={{ fontSize: "44px", color: "#2A2A2A" }}
+                />
+                <span className={styles.labelSocial}>{icon.label}</span>
+              </a>
             </div>
           ))}
         </div>

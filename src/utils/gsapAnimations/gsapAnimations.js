@@ -1,6 +1,5 @@
 import gsap from "gsap";
 
-
 export function gsapAnimations({
   animateBallHero,
   circleChallenge,
@@ -9,7 +8,7 @@ export function gsapAnimations({
   phoneRef,
   codeImgRef,
   circleLinkRef,
-  word
+  word,
 }) {
   const tlBallHero = gsap.timeline();
   tlBallHero.to(animateBallHero.current, {
@@ -20,11 +19,21 @@ export function gsapAnimations({
     delay: 0.6,
     scale: 1.0,
   });
-  const tlNavHidden = gsap.timeline({
+
+  const tlAnimatePhoto = gsap.timeline({
     scrollTrigger: {
-      trigger: "#nav-hidden",
-      start: "bottom -=50",
-      end: "top -=800",
+      trigger: animatePhoto.current,
+      start: "center 80%",
+      end: "bottom -=400",
+      scrub: true,
+      markers: true
+    },
+  });
+  const tlLayerPhoto = gsap.timeline({
+    scrollTrigger: {
+      trigger: layerPhoto.current,
+      start: "top 80%",
+      end: "top -=300",
       scrub: true,
     },
   });
@@ -36,6 +45,7 @@ export function gsapAnimations({
       scrub: true,
     },
   });
+
   const tlCircleChallenge = gsap.timeline({
     scrollTrigger: {
       trigger: circleChallenge.current,
@@ -44,22 +54,7 @@ export function gsapAnimations({
       scrub: true,
     },
   });
-  const tlAnimatePhoto = gsap.timeline({
-    scrollTrigger: {
-      trigger: animatePhoto.current,
-      start: "center 80%",
-      end: "bottom -=400",
-      scrub: true,
-    },
-  });
-  const tlLayerPhoto = gsap.timeline({
-    scrollTrigger: {
-      trigger: layerPhoto.current,
-      start: "top 80%",
-      end: "top -=300",
-      scrub: true,
-    },
-  });
+
   gsap.timeline({
     scrollTrigger: {
       trigger: phoneRef.current,
@@ -84,6 +79,7 @@ export function gsapAnimations({
       yPercent: 50,
     });
   });
+
   const tlCode = gsap.timeline({
     scrollTrigger: {
       trigger: codeImgRef.current,
@@ -95,28 +91,17 @@ export function gsapAnimations({
   const tlCircleLink = gsap.timeline({
     scrollTrigger: {
       trigger: circleLinkRef.current,
-      start: "center 30%",
+      start: "center 20%",
       end: "top -=1500",
       scrub: true,
     },
   });
   //animations////////////////
-  tlNavHidden.to("#nav-hidden", {
-    yPercent: -100,
-    opacity: 1,
-    duration: 1,
-  });
-  tlNavHidden.to("#nav-hidden", {
-    backgroundColor: "var(--body-color)",
-    boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
-    yPercent: 0,
-    opacity: 1,
-    duration: 1,
-  });
   tlAnimatePhoto.to(animatePhoto.current, {
-    yPercent: 100,
+    yPercent: 60,
     filter: "grayscale(0)",
   });
+
   tlLayerPhoto.to(layerPhoto.current, {
     scaleY: 0,
   });
@@ -137,6 +122,6 @@ export function gsapAnimations({
     duration: 1,
   });
   tlCircleLink.to(circleLinkRef.current, {
-    yPercent: 800,
+    yPercent: 1000,
   });
 }
