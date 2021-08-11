@@ -1,0 +1,25 @@
+.personalProjectsExternalLink {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+}
+
+.contentIconExLinkProjects,
+.contentIconGithubProjects {
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.contentIconGithubProjects {
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 80%;
+  right: -10%;
+  margin-left: 1rem;
+}
+
+.contentIconExLinkProjects {
+  background-color: var(--accent-color);
+  margin-right: 1rem;
+}

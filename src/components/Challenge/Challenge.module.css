@@ -5,7 +5,7 @@
 
 .appContentPersonalProjectsHeader {
   color: var(--primary-text);
-  padding-top: 30vh;
+  padding-top: 15vh;
 }
 
 .spanWorkName {
@@ -28,6 +28,17 @@
   /* flex-direction: column; */
   /* margin-top: 20vh; */
   /* padding-top: 20vh; */
+}
+
+.challengeDescriptionPath {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10vh;
+}
+
+.challengeDescriptionPath span {
+  font-size: 20px;
+  line-height: var(--line-height);
 }
 
 .contentPersonalProject {
@@ -252,7 +263,7 @@
   }
 
   .wrapperPersonalProjects > div:last-child > .contentPersonalProject {
-    /* flex-direction: row; */
+    flex-direction: row;
   }
 
   .pDescriptionPersonal {
@@ -262,5 +273,8 @@
 
   .contentEachLink {
     padding: 15vh 0;
+  }
+  .wrapperPadding {
+    padding-bottom: 10vh;
   }
 }

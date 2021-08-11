@@ -81,6 +81,7 @@ export function smoothScroll(content, viewport, smoothness) {
         duration: 0.5,
       });
     } else {
+      console.log("up")
       gsap.to("#nav-hidden", {
         backgroundColor: "var(--body-color)",
         boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
@@ -93,7 +94,6 @@ export function smoothScroll(content, viewport, smoothness) {
   gsap.utils.toArray("[data-img]").forEach((img, i) => {
     const arr = [...nodeParent][i];
     const sum = arr.clientHeight - arr.clientHeight / 3;
-    console.log(sum)
     if (window.innerWidth > 860) {
       gsap.to(img, {
         scrollTrigger: {
@@ -107,6 +107,7 @@ export function smoothScroll(content, viewport, smoothness) {
       });
     }
   });
+
 
   ScrollTrigger.refresh();
 

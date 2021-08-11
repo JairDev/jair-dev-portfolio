@@ -1,7 +1,7 @@
 import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import IconSocial from "components/IconSocial/IconSocial"
 import * as styles from "./Projects.module.css";
 
 import { Icon } from "@iconify/react";
@@ -43,7 +43,11 @@ function ProjectsCom({ work }) {
         </div>
         <div className={styles.contentPersonalProject}>
           <div className={styles.contentPersonalProjectImg}>
-            <div id="code-project-img" className={styles.contentProjectImg} data-img="code-project-img">
+            <div
+              id="code-project-img"
+              className={styles.contentProjectImg}
+              data-img="code-project-img"
+            >
               <div className={styles.contentImgCoin}>
                 <img src={work.imgSrcGif} alt="" />
                 {/* <video src={work.imgSrcGif} autoPlay loop width="100%"></video> */}
@@ -51,32 +55,7 @@ function ProjectsCom({ work }) {
               {/* <div className={styles.contentImgTablet}>
                 <img src={work.imgSrcTablet} alt="" />
               </div> */}
-              <div className={styles.personalProjectsExternalLink}>
-                <div className={styles.contentIconGithubProjects}>
-                  <a
-                    href={work.linkGit}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon
-                      icon={githubFill}
-                      style={{ fontSize: "24px", color: "#ffffff" }}
-                    />
-                  </a>
-                </div>
-                <div className={styles.contentIconExLinkProjects}>
-                  <a
-                    href={work.linkDemo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Icon
-                      icon={linkOut}
-                      style={{ fontSize: "24px", color: "#ffffff" }}
-                    />
-                  </a>
-                </div>
-              </div>
+              <IconSocial fontSizeIcon="24px"/>
             </div>
           </div>
           <div

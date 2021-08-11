@@ -1,10 +1,16 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
-import { Icon } from "@iconify/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
+import Header from "components/Header/Header"
+
 import Projects from "components/Projects/Projects";
+
+import { Icon } from "@iconify/react";
+import linkOut from "@iconify/icons-akar-icons/link-out";
+import githubFill from "@iconify/icons-akar-icons/github-fill";
 
 import bxlReact from "@iconify/icons-bx/bxl-react";
 import bxlJavascript from "@iconify/icons-bx/bxl-javascript";
@@ -14,9 +20,10 @@ import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
 import bxlGit from "@iconify/icons-bx/bxl-git";
 
 // import phone3 from "../../assets/hero-phone3.png";
-import phone3 from "../../assets/hero-phone4.png";
+import phone3 from "../../assets/hero-phone5.png";
+// import phone3 from "../../assets/phone-challenge-2.png";
 import photoProfile from "../../assets/foto-perfil.png";
-import phoneChallenge from "../../assets/phone-challenge.png";
+import phoneChallenge from "../../assets/phone-challenge-2.png";
 import codeChallenge from "../../assets/content-creator.png";
 import "../../assets/coin.png";
 import "../../assets/desert.png";
@@ -35,6 +42,7 @@ import styles from "./Home.module.css";
 import FormContact from "components/FormContact/FormContact";
 import { smoothScroll } from "utils/smoothScroll";
 import { gsapAnimations } from "utils/gsapAnimations/gsapAnimations";
+import IconSocial from "components/IconSocial/IconSocial";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -74,6 +82,7 @@ function Home() {
   };
 
   useEffect(() => {
+    // console.log("mount home")
     smoothScroll("#container");
     gsapAnimations(objRef);
 
@@ -86,10 +95,12 @@ function Home() {
     });
     // ScrollTrigger.refresh();
     // return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
+    // return () => smoothScroll("#container")
   }, [objRef]);
 
   return (
     <>
+      {/* <Header/> */}
       <span ref={objRef.animateBallHero} className={styles.scrollBefore}>
         <img src={shadow} alt="" />
       </span>
@@ -100,7 +111,8 @@ function Home() {
         <div className={styles.wrapperContentHero}>
           <div className={styles.appLeftContentHero}>
             <div className={styles.appLeftContentHeroRole}>
-              <h1 className={styles.role}>Desarrollador Frontend</h1>
+              <h1 className={styles.role}>Alfredo Moscoso</h1>
+              <h2 className={styles.subTitleRole}>Frontend Developer</h2>
               <div
                 ref={objRef.triggerButton}
                 id="trigger-button"
@@ -189,24 +201,23 @@ function Home() {
             <span className={styles.lineRightAbout}></span>
             <span className={styles.lineBottomAbout}></span>
             <span className={styles.lineLeftAbout}></span>
-            <p
+            {/* <p
               className={`${styles.text} ${styles.pDescription} ${styles.subTitleDescription}`}
               id="text"
             >
               Vivo en la caótica y bella ciudad de Caracas-Venezuela.
-            </p>
+            </p> */}
             <p id="text" className={`${styles.text} ${styles.pDescription}`}>
-              Como desarrollador de software, es emocionante pensar que podemos
-              crear proyectos importantes para el beneficio de otras personas,
-              una aplicación, un sitio web, esos proyectos que tendrán un
-              impacto positivo en la vida de alguien.
+              Como desarrollador, es emocionante pensar que podemos crear
+              proyectos importantes para el beneficio de otras personas, una
+              aplicación, un sitio web, esos proyectos que tendrán un impacto
+              positivo en la vida de alguien.
             </p>
             <p id="text" className={`${styles.text} ${styles.pDescription}`}>
               Poder ser parte de esa experiencia me motiva y mantiene en
               constante aprendizaje para seguir mejorando mis habilidades
               técnicas, estoy dispuesto a seguir aprendiendo nuevas tecnologías
-              y así poder adaptarme a un equipo de trabajo, trabajar juntos y
-              hacer posible ese proximo gran proyecto.
+              y así poder adaptarme a un equipo de trabajo.
             </p>
 
             <h3 id="text" className={`${styles.text} ${styles.h3Description}`}>
@@ -214,8 +225,9 @@ function Home() {
             </h3>
             <p id="text" className={`${styles.text} ${styles.pDescription}`}>
               Como seres humanos necesitamos conectar con nuestras emociones,
-              nuestro entorno, disfruto de la naturaleza, amo la playa (tengo
-              tiempo que no voy), me gustan las mascotas, sobre todo los perros.
+              nuestro entorno, disfrutar de la vida, me encanta ir a la playa,
+              hacer ejercicio al aire libre, me gustan las mascotas, sobre todo
+              los perros.
             </p>
             <p id="text" className={`${styles.text} ${styles.pDescription}`}>
               Cuando estoy estresado, la música despeja mi mente, en mis tiempos
@@ -273,95 +285,110 @@ function Home() {
         </div>
       </section>
 
-      <section
-        id="challenges"
-        className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
-      >
-        <span ref={objRef.circleChallenge} className={styles.circleChallenge}>
-          <img src={shadowBlue} alt="" />
-        </span>
-        <div className={styles.appContentChallengesHeader}>
-          <div className={styles.appContentChallengesTitle}>
-            <h2 id="text" className={styles.spanChallengeName}>
-              Desafíos
-            </h2>
-            <h4 id="text" className={styles.h2FrontendName}>
-              Frontend
-            </h4>
+      {
+        <section
+          id="challenges"
+          className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
+        >
+          <span ref={objRef.circleChallenge} className={styles.circleChallenge}>
+            <img src={shadowBlue} alt="" />
+          </span>
+          <div className={styles.appContentChallengesHeader}>
+            <div className={styles.appContentChallengesTitle}>
+              <h2 id="text" className={styles.spanChallengeName}>
+                Desafíos
+              </h2>
+              <h4 id="text" className={styles.h2FrontendName}>
+                Frontend
+              </h4>
+            </div>
           </div>
-        </div>
 
-        <div className={styles.wrapperContentChallenge}>
-          <div className={styles.appLeftContentChallenge}>
-            <div className={styles.challengesSubTitle}>
-              <h3 id="text" className={styles.h3Challenge}>
-                Busco mejorar mis habilidades como desarrollador frontend, a través de la práctica, ya sea 
-                construyendo proyectos personales o participando en desafíos frontend !
-              </h3>
-            </div>
-            <div className={styles.challengeDescription}>
-              <span id="text">
-                Desafío: Crear una aplicación de tareas pendientes
-              </span>
-              <span id="text">Dificultad: Intermedio</span>
-              <span id="text">Fuente: frontendmentor.io</span>
-            </div>
-            <div className={styles.challengeCodeImg}>
-              <div className={styles.wrapperCodeImg}>
-                <img ref={objRef.codeImgRef} src={codeChallenge} alt="" />
+          <div className={styles.wrapperContentChallenge}>
+            <div className={styles.appLeftContentChallenge}>
+              <div className={styles.challengesSubTitle}>
+                <h3 id="text" className={styles.h3Challenge}>
+                  Busco mejorar mis habilidades como desarrollador frontend, a
+                  través de la práctica, ya sea construyendo proyectos
+                  personales o participando en desafíos frontend !
+                </h3>
               </div>
+              <div className={styles.challengeDescription}>
+                <span id="text">
+                  Desafío: Crear una aplicación de tareas pendientes
+                </span>
+                <span id="text">Dificultad: Intermedio</span>
+                <span id="text">Fuente: frontendmentor.io</span>
+              </div>
+              <div className={styles.challengeMyExplanation}>
+                <p id="text" className={styles.pMyExplanation}>
+                  Encuentro estos desafíos interesantes, ya que a través de
+                  ellos, puedo mejorar mis habilidades, tratando de cumplir con
+                  los retos de la manera mas cercana posible en cuanto a diseño
+                  y funcionalidad se refiere.
+                </p>
+
+                <p id="text" className={styles.pMyExplanation}>
+                  Aplicaciones "to-do" hay muuuuchas, pero este reto llamó mi
+                  atención, porque pedía incluir una funcionalidad de "arrastrar
+                  y soltar" las tareas para intercambiar su orden, no había
+                  realizado esa funcionalidad en otros proyectos, así que tomé
+                  el reto.
+                </p>
+                <p id="text" className={styles.pMyExplanation}>
+                  En el proceso de construcción de dicha característica en la
+                  aplicación, pude conocer eventos de arrastrar y soltar como,
+                  dragstart, drop, dragover, dragend, entre otros, eventos que
+                  permiten de forma nativa poder arrastrar, soltar y reordenar
+                  elementos en el DOM.
+                </p>
+              </div>
+              {/* <div className={styles.challengeCodeImg}>
+                <div className={styles.wrapperCodeImg}>
+                  <img ref={objRef.codeImgRef} src={codeChallenge} alt="" />
+                </div>
+              </div> */}
             </div>
-            <div className={styles.challengeMyExplanation}>
-              <p id="text" className={styles.pMyExplanation}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum..
-              </p>
+            <div className={styles.appRightContentChallenge}>
+              <div className={styles.appRightContentChallengeImg}>
+                <div className={styles.contentLineChallenges}>
+                  <span
+                    className={`${styles.lineChallenge} ${styles.horizontal}`}
+                  ></span>
+                  <span
+                    className={`${styles.lineChallenge} ${styles.vertical}`}
+                  ></span>
+                </div>
+                <div
+                  data-phone="data-phone"
+                  ref={objRef.phoneRef}
+                  className={styles.contentImgPhone}
+                >
+                  <img src={phoneChallenge} alt="" />
+                  <IconSocial fontSizeIcon="23px"/> 
+                </div>
+              </div>
             </div>
           </div>
-          <div className={styles.appRightContentChallenge}>
-            <div className={styles.appRightContentChallengeImg}>
-              <div className={styles.contentLineChallenges}>
-                <span
-                  className={`${styles.lineChallenge} ${styles.horizontal}`}
-                ></span>
-                <span
-                  className={`${styles.lineChallenge} ${styles.vertical}`}
-                ></span>
-              </div>
-              <div
-                data-phone="data-phone"
-                ref={objRef.phoneRef}
-                className={styles.contentImgPhone}
+          <div className={styles.contentMoreLink}>
+            <div className={styles.contentLinesCustomLink}>
+              <span className={styles.lineCustomLink}></span>
+              <span className={styles.circleCustomLink}></span>
+              <span
+                ref={objRef.circleLinkRef}
+                className={styles.circleCustomLinkAnimate}
               >
-                <img src={phoneChallenge} alt="" />
-              </div>
+                <img src={shadow} alt="" />
+              </span>
+              <Link className={styles.moreLink} to="/desafios">
+                Mas desafíos
+              </Link>
+              {/* <a className={styles.moreLink} href={"a"}>
+              </a> */}
             </div>
           </div>
-        </div>
-        <div className={styles.contentMoreLink}>
-          <div className={styles.contentLinesCustomLink}>
-            <span className={styles.lineCustomLink}></span>
-            <span className={styles.circleCustomLink}></span>
-            <span
-              ref={objRef.circleLinkRef}
-              className={styles.circleCustomLinkAnimate}
-            >
-              <img src={shadow} alt="" />
-            </span>
-            <a className={styles.moreLink} href={"a"}>
-              Mas desafíos
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
+      }
       <Projects
         projectsArray={personalProjects}
         title={"Proyectos"}

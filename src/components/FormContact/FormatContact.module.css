@@ -48,14 +48,19 @@
   overflow: hidden;
 }
 
+.contentInput {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+
 .formContact input {
   background-color: var(--light-prymary-color);
   border: none;
   border-bottom: 2px solid rgb(26, 26, 26);
   font-size: 1.1rem;
   height: 42px;
-  margin-bottom: 2vh;
-  
+  margin-bottom: 1vh;
   padding-left: 1vw;
 }
 
@@ -183,10 +188,8 @@
 }
 
 .required {
-  /* opacity: 0; */
-  /* border: 2px solid red; */
   color: #bf1650;
-  height: 4vh;
+  height: 5vh;
 }
 
 .show {

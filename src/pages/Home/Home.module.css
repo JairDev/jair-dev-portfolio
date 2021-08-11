@@ -38,6 +38,14 @@
   letter-spacing: var(--letter-spacing);
 }
 
+.subTitleRole {
+  color: var(--primary-text);
+  font-size: var(--paragraph-font-size);
+  font-family: var(--title-font);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing);
+}
+
 .contentButtonContact {
   /* border: 2px solid green; */
   display: flex;
@@ -75,7 +83,7 @@
 }
 
 .contentButtonForm {
-  align-self: flex-end;
+  align-self: flex-start;
   position: relative;
 }
 
@@ -268,12 +276,12 @@
   /* border: 1px solid red; */
   background-color: var(--body-color);
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  /* top: 0; */
+  /* right: 0; */
+  bottom: -10%;
+  /* left: 0; */
   width: 100%;
-  height: 100%;
+  height: 110%;
   opacity: 1;
   transform-origin: bottom;
 }
@@ -581,6 +589,12 @@
   font-size: var(--paragraph-font-size);
   letter-spacing: var(--letter-spacing);
   line-height: var(--line-height);
+
+}
+
+.pMyExplanation:not(.pMyExplanation:first-child) {
+  /* border: 2px solid red; */
+  padding-top: 5vh;
 }
 
 .appRightContentChallenge {
@@ -594,6 +608,32 @@
   /* border: 2px solid red; */
   position: relative;
   width: 30%;
+}
+
+.personalProjectsExternalLink {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+}
+
+.contentIconExLinkProjects,
+.contentIconGithubProjects {
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.contentIconGithubProjects {
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 80%;
+  right: -10%;
+  margin-left: 1rem;
+}
+
+.contentIconExLinkProjects {
+  background-color: var(--accent-color);
+  margin-right: 1rem;
 }
 
 .contentLineChallenges {
@@ -612,6 +652,7 @@
   background-color: var(--accent-color);
   display: block;
   position: absolute;
+  top: -20px;
   opacity: 0.5;
 }
 

@@ -1,7 +1,12 @@
 import React from "react";
- 
+import Header from "components/Header/Header"
 function Layout({ children }) {
-  return <div id="container">{children}</div>;
+  return (
+    <>
+      <Header/>
+      <div id="container">{children}</div>
+    </>
+  );
 }
 
 export default Layout;

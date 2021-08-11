@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import NavIcon from "../../assets/nav-bar-icon.svg";
 import NavIconClose from "../../assets/nav-bar-close.svg";
 import styles from "./Header.module.css";
@@ -10,12 +10,24 @@ function Header() {
   const iconOpenRef = useRef(null);
   const iconCloseRef = useRef(null);
   const parentIcon = useRef(null);
+  const logoRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    logoRef.current.style.opacity = "0";
+    parentIcon.current.style.opacity = "1";
+    if (location.pathname === "/desafios") {
+      logoRef.current.style.opacity = "1";
+      parentIcon.current.style.opacity = "0";
+    }
+  }, [location.pathname]);
 
   const handleClick = (e) => {
     state = !state;
     const parent = e.target;
     const clickIcon = parent.closest("#parent-icon");
     const clickLinks = parent.closest("#ul-content-li");
+
     if (clickIcon) {
       if (state) {
         console.log(menuStyle.current);
@@ -42,9 +54,14 @@ function Header() {
       <nav onClick={handleClick} className={styles.appNav}>
         <div className="app-content-nav-logo">
           <div className="app-nav-logo">
-            <Link className={styles.logoName} to="/">
-              Alfredo Moscoso
+            <Link ref={logoRef} className={styles.logoName} to="/">
+              Inicio
             </Link>
+            {/* {location.pathname === "/desafios" ? (
+              <Link className={styles.logoName} to="/">
+                Inicio
+              </Link>
+            ) : null} */}
           </div>
         </div>
         <div id="parent-icon" ref={parentIcon} className={styles.iconNav}>
@@ -66,11 +83,7 @@ function Header() {
         <div ref={menuStyle} className={styles.appContentNavLinks}>
           <ul id="ul-content-li" className={styles.ulContentLinks}>
             <li className={styles.liLink}>
-              <a
-                href="#about-me"
-                data-link="link"
-                className={styles.itemLink}
-              >
+              <a href="#about-me" data-link="link" className={styles.itemLink}>
                 Conóceme
               </a>
             </li>

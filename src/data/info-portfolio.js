@@ -1,9 +1,10 @@
-import workCoin from "../assets/coin.png";
-import workDessert from "../assets/desert.png";
+import workCoin from "../assets/coin-tablet.png";
+import workDessert from "../assets/desert-tablet.png";
 import imgCode from "../assets/personal-projects-code-s.png";
 // import imgCode from "../assets/coin.mp4";
 import imgCodeHoc from "../assets/personal-projects-code-hoc.png";
 import tablet from "../assets/tablet.png";
+import room from "../assets/room-homepage.png"
 // import workCoinGif from "../assets/img-page.gif";
 // import workCoinGif from "../assets/coin.png";
 // import workCoinGif from "../assets/coin.mp4";
@@ -60,18 +61,18 @@ export const personalProjects = [
     linkDemo: "https://coin-market-info.vercel.app/",
     dataDescription: [
       {
-        paragraph: `React y otras librerías parecidas están pensadas para facilitar la creación de interfaces, aumentando
-        la productividad, al acelerar el proceso de desarrollo. En la etapa de aprendizaje de React, nos vamos topando con conceptos mas avanzados
+        paragraph: `React y otras librerías similares están pensadas para facilitar la creación de interfaces web, móvil, etc;
+        aumentando la productividad, al acelerar el proceso de desarrollo. En la etapa de aprendizaje de React, nos vamos topando con conceptos mas avanzados
         a medida que avanzamos.`,
       },
       {
-        paragraph: `En esta aplicación que consiste en, mostrar criptomonedas en tendencia, buscar 
+        paragraph: `En esta aplicación que consiste en mostrar criptomonedas en tendencia, buscar 
         criptomonedas de tu preferencia o leer noticias actualizadas referente al mundo cripto, tenía
         dos componentes similares en cuanto a funcionalidad y la manera en que dependían de un valor para
         mostrar datos en la interfaz.`,
       },
       {
-        paragraph: `Un primer componente, que renderiza la tabla con información sobre monedas, este depende de
+        paragraph: `Un primer componente, que renderiza la tabla con información sobre monedas, depende de
         la entrada del usuario y de una función que toma esos datos, actualiza una variable de estado
         y se renderiza la moneda.`,
       },
@@ -85,12 +86,14 @@ export const personalProjects = [
       {
         paragraph: `En React un componente de orden superior, es una función que recibe un componente como
         argumento y devuelve un nuevo componente. Un componente de orden superior me permite definir estos
-        datos y/o funciones en un mismo lugar para luego compartirlos con otros componentes, reutilizando
-        esa función para trabajar de una manera mas eficiente.`,
+        datos y/o funciones en un mismo lugar, para luego compartirlos con otros componentes, reutilizando
+        esa función y también poder crear flexibilidad en el código. (Todo esto ocurrió en una etapa posterior de 
+        refactorización)`,
       },
       {
         paragraph: `Como pueden ver en este fragmento, el componente de orden superior devuelve un nuevo
-        componente, transformado mediante las props que se le pasan.`,
+        componente, transformado mediante las props (propiedades) que se le pasan. En este caso, comparten
+        la misma variable de estado y la función, pero su label es diferente.`,
       },
     ],
   },
@@ -111,7 +114,7 @@ export const personalProjects = [
       },
       {
         paragraph: `Para esto React nos proporciona una técnica llamada "componentes controlados",
-        recordemos que en React para actualizar algún elemento de la interfaz, lo hacemos mediante el estado setState()
+        recordemos que en React para actualizar algún elemento de la interfaz, lo hacemos actualizando el estado,
         React al "notar" un cambio en el estado actualiza la interfaz en consecuencia.`,
       },
       {
@@ -153,5 +156,19 @@ export const personalProjects = [
     linkDemo: "https://trainingtimerapp.netlify.com/",
     description:
       "App para llevar el control de tiempo y series en tus ejercicios",
+  },
+];
+
+export const challenges = [
+  {
+    name: "Room homepage",
+    imgSrc: room,
+    linkGit: "https://github.com/JairDev/room-homepage",
+    linkDemo: "https://coolrooms.netlify.app/",
+    desafio: "Construir página de inicio de comercio electrónico",
+    dificultad: "Intermedio",
+    fuente: "https://www.frontendmentor.io/",
+    description:
+      "Encuentra las mejores recetas, guarda tu favorita o crea tu propia receta",
   },
 ];

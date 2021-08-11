@@ -26,18 +26,19 @@ export function gsapAnimations({
       start: "center 80%",
       end: "bottom -=400",
       scrub: true,
-      markers: true
+      // markers: true
     },
   });
   const tlLayerPhoto = gsap.timeline({
     scrollTrigger: {
       trigger: layerPhoto.current,
-      start: "top 80%",
-      end: "top -=300",
+      start: "top 60%",
+      end: "top -=1000",
       scrub: true,
+      // markers: true
     },
   });
-  const tlAllText = gsap.timeline({
+  const tlWordWeb = gsap.timeline({
     scrollTrigger: {
       trigger: "#text",
       start: "center 90%",
@@ -64,6 +65,7 @@ export function gsapAnimations({
       scrub: true,
     },
   });
+
   gsap.utils.toArray("#text").forEach((item) => {
     const tlText = gsap.timeline({
       scrollTrigger: {
@@ -91,22 +93,33 @@ export function gsapAnimations({
   const tlCircleLink = gsap.timeline({
     scrollTrigger: {
       trigger: circleLinkRef.current,
-      start: "center 20%",
+      start: "center 60%",
       end: "top -=1500",
       scrub: true,
+      // markers: true
     },
   });
   //animations////////////////
   tlAnimatePhoto.to(animatePhoto.current, {
     yPercent: 60,
+    // rotate: 20,
     filter: "grayscale(0)",
   });
 
   tlLayerPhoto.to(layerPhoto.current, {
-    scaleY: 0,
+    // scaleY: 0,
+    yPercent: 100,
+    duration: 1
   });
-  tlAllText.to(word.current, {
-    yPercent: -50,
+
+  // tlLayerPhoto.to(layerPhoto.current, {
+  //   // scaleY: .3,
+  //   yPercent: -100,
+  //   duration: 0
+  // });
+  
+  tlWordWeb.to(word.current, {
+    yPercent: -30,
     duration: 1,
   });
   tlCircleChallenge.to(circleChallenge.current, {
@@ -122,6 +135,6 @@ export function gsapAnimations({
     duration: 1,
   });
   tlCircleLink.to(circleLinkRef.current, {
-    yPercent: 1000,
+    yPercent: 1200,
   });
 }

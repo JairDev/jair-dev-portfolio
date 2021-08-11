@@ -10,27 +10,25 @@ import Projects from "components/Projects/Projects";
 import Header from "components/Header/Header";
 import Layout from "pages/Layout/Layout";
 import { smoothScroll } from "utils/smoothScroll";
+import { challenges } from "./data/info-portfolio";
+import Challenge from "components/Challenge/Challenge";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
+    // ScrollTrigger.refresh();
     // smoothScroll("#container")
     // return () => ScrollTrigger.getAll().forEach(ST => ST.kill());
   }, []);
   return (
     <Router>
       <div className="App">
-        <Header />
+        {/* <Header /> */}
         <Layout>
           <Switch>
-            <Route path="/trabajos">
-              <Projects
-                // projectsArray={dataWork}
-                title={"Proyectos"}
-                subTitle={"Personales"}
-                view={true}
-              />
+            <Route path="/desafios">
+              <Challenge/>
             </Route>
             <Route path="/">
               <Home />
