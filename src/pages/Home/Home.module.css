@@ -3,19 +3,16 @@
 }
 
 .appContentHero {
-  /* border: 2px solid red; */
   height: 100vh;
 }
 
 .wrapperContentHero {
-  /* border: 2px solid blue; */
   display: flex;
   position: relative;
   height: 100%;
 }
 
 .appLeftContentHero {
-  /* border: 2px solid green; */
   width: 100%;
   padding-top: 10vh;
   position: relative;
@@ -23,7 +20,6 @@
 }
 
 .appLeftContentHeroRole {
-  /* border: 2px solid blueviolet; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -47,7 +43,6 @@
 }
 
 .contentButtonContact {
-  /* border: 2px solid green; */
   display: flex;
   flex-direction: column;
   padding-bottom: 15vh;
@@ -55,9 +50,7 @@
 }
 
 .contentButtonForm {
-  /* border: 1px solid red; */
   border-radius: 50px;
-  /* box-shadow: 0px 4px 20px rgba(124, 77, 255, 0.4); */
   box-shadow: 2px 4px 12px rgb(30 19 61 / 40%);
   background-color: var(--accent-color);
   overflow: hidden;
@@ -77,7 +70,6 @@
 }
 
 .contentButtonForm:hover::before {
-  /* opacity: 1; */
   width: 200px;
   height: 200px;
 }
@@ -88,7 +80,6 @@
 }
 
 .contactButton {
-  /* border: 2px solid black; */
   border: none;
   background: none;
   border-radius: 50px;
@@ -97,7 +88,6 @@
   font-family: var(--title-font);
   font-weight: 600;
   letter-spacing: var(--letter-spacing);
-  /* text-transform: uppercase; */
   padding: 0.6rem 1.8rem;
   position: relative;
   z-index: 10;
@@ -108,7 +98,6 @@
 }
 
 .appRightContentHero {
-  /* border: 2px solid green; */
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -121,13 +110,11 @@
 }
 
 .appRightContentHeroImg {
-  /* border: 2px solid red; */
   position: relative;
   width: 85%;
 }
 
 .wordsHero {
-  /* border: 2px solid red; */
   color: var(--accent-color);
   display: block;
   font-family: var(--title-font);
@@ -167,7 +154,7 @@
 }
 
 .wordsHero.bottomLeft {
-  bottom: -60%;
+  bottom: -40%;
   left: -70%;
   font-size: calc(10vw + 1em);
   z-index: 50;
@@ -181,7 +168,6 @@
 }
 
 .appContentScrollArrow {
-  /* border: 2px solid rgb(126, 11, 30); */
   position: absolute;
   bottom: 35px;
 }
@@ -193,7 +179,6 @@
 }
 
 .scrollBack {
-  /* border: 2px solid red; */
   background-color: var(--primary-color);
   border-radius: 50%;
   color: var(--body-color);
@@ -217,7 +202,6 @@
 }
 
 .scrollBefore {
-  /* border: 2px solid red; */
   border-radius: 50%;
   color: var(--body-color);
   opacity: 1;
@@ -249,12 +233,10 @@
 /* About //////////////////*/
 
 .appContentAboutMe {
-  /* border: 2px solid red ; */
   overflow: hidden;
 }
 
 .appContentAboutMeHeader {
-  /* border: 2px solid blue; */
   display: flex;
   justify-content: space-between;
   padding-top: 20vh;
@@ -262,7 +244,6 @@
 }
 
 .appContentAboutMePhoto {
-  /* border: 2px solid violet; */
   border-radius: 8px;
   opacity: 1;
   width: 15vmax;
@@ -273,13 +254,9 @@
 }
 
 .layerPhoto {
-  /* border: 1px solid red; */
   background-color: var(--body-color);
   position: absolute;
-  /* top: 0; */
-  /* right: 0; */
   bottom: -10%;
-  /* left: 0; */
   width: 100%;
   height: 110%;
   opacity: 1;
@@ -289,11 +266,10 @@
 .photo {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+
 }
 
 .appContentAboutMeTitle {
-  /* border: 2px solid green; */
   position: relative;
   width: 50%;
   color: var(--primary-text);
@@ -321,7 +297,6 @@
 }
 
 .h2Name {
-  /* border: 2px solid rgb(0, 255, 42); */
   font-size: var(--sub-title-font-size);
   font-family: var(--title-font);
   font-weight: 500;
@@ -330,14 +305,12 @@
 }
 
 .appContentAboutMeDescription {
-  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
   padding-top: 10vh;
 }
 
 .wrapperAboutMeDescription {
-  /* border: 2px solid rgb(78, 47, 255); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -415,7 +388,6 @@
 /* skills */
 
 .appContentSkills {
-  /* border: 2px solid rgb(25, 241, 108); */
   color: var(--body-color);
   padding: 10vh 0;
   text-align: center;
@@ -423,7 +395,6 @@
 }
 
 .containBlurry {
-  /* border: 2px solid greenyellow; */
   position: absolute;
   top: 0;
   left: 0;
@@ -459,7 +430,6 @@
 }
 
 .itemSkills {
-  /* border: 1px solid rgb(0, 255, 64); */
   width: 100%;
   padding: 4vh 4vw;
 }
@@ -470,7 +440,6 @@
 }
 
 .labelSkills {
-  /* border: 1px solid var(--body-color); */
   border-radius: 50px;
   display: block;
   font-family: var(--title-font);
@@ -508,7 +477,6 @@
 }
 
 .appContentChallengesHeader {
-  /* border: 2px solid red; */
   color: var(--primary-text);
   justify-content: space-between;
   padding-top: 20vh;
@@ -521,7 +489,6 @@
 }
 
 .h2FrontendName {
-  /* border: 2px solid rgb(0, 255, 42); */
   font-size: var(--sub-title-font-size);
   font-family: var(--title-font);
   font-weight: 500;
@@ -530,19 +497,16 @@
 }
 
 .wrapperContentChallenge {
-  /* border: 2px solid red; */
   display: flex;
   padding-top: 10vh;
 }
 
 .appLeftContentChallenge {
-  /* border: 2px solid blue; */
   color: var(--primary-text);
   width: 100%;
 }
 
 .appLeftContentChallenge div:not(div.wrapperCodeImg) {
-  /* border: 2px solid green; */
   margin-top: 6vh;
 }
 
@@ -564,7 +528,6 @@
 }
 
 .challengeCodeImg {
-  /* border: 2px solid brown; */
   display: flex;
   justify-content: flex-end;
 }
@@ -593,19 +556,16 @@
 }
 
 .pMyExplanation:not(.pMyExplanation:first-child) {
-  /* border: 2px solid red; */
   padding-top: 5vh;
 }
 
 .appRightContentChallenge {
-  /* border: 2px solid rgb(11, 119, 29); */
   display: none;
   justify-content: center;
   width: 40%;
 }
 
 .appRightContentChallengeImg {
-  /* border: 2px solid red; */
   position: relative;
   width: 30%;
 }
@@ -637,7 +597,6 @@
 }
 
 .contentLineChallenges {
-  /* border: 2px solid green; */
   display: flex;
   justify-content: center;
   position: absolute;
@@ -677,7 +636,6 @@
 }
 
 .contentMoreLink {
-  /* border: 2px solid green; */
   display: flex;
   justify-content: center;
   padding-top: 20vh;
@@ -685,7 +643,6 @@
 }
 
 .circleCustomLinkAnimate {
-  /* border: 2px solid red; */
   background-color: var(--accent-color);
   border-radius: 50%;
   display: block;
@@ -697,8 +654,6 @@
   height: 60px;
   opacity: 1;
   filter: drop-shadow(1px 5px 3px rgba(27, 16, 54, 0.479));
-
-  /* filter: drop-shadow(1px 5px 3px rgba(78, 60, 128, 0.671)); */
   z-index: 15;
 }
 
@@ -708,17 +663,14 @@
 }
 
 .contentLinesCustomLink:hover .lineCustomLink {
-  /* border: 2px solid green; */
   transform: translateX(15%);
 }
 
 .contentLinesCustomLink:hover .circleCustomLink {
-  /* border: 2px solid green; */
   transform: translateX(-15%);
 }
 
 .contentLinesCustomLink {
-  /* border: 2px solid red; */
   position: relative;
 }
 
@@ -748,7 +700,6 @@
 }
 
 .moreLink {
-  /* border: 2px solid red; */
   color: var(--primary-text);
   font-size: calc(1.5vw + 1.3em);
   font-family: var(--title-font);
@@ -759,7 +710,6 @@
 /* footer ///////////////// */
 
 .headerContact {
-  /* border: 2px solid red; */
   text-align: center;
   padding: 3vh;
   padding-bottom: 5vh;
@@ -772,7 +722,6 @@
 }
 
 .appContentFooterFormContact {
-  /* border: 2px solid rgb(14, 66, 189); */
   display: flex;
   justify-content: center;
   padding: 20vh 0 10vh;
@@ -780,7 +729,6 @@
 }
 
 .wrapperForm {
-  /* border: 2px solid black ; */
   background-color: var(--light-prymary-color);
   border-radius: 14px;
   padding: 4vh 3vw;
@@ -788,7 +736,6 @@
 }
 
 .formContact {
-  /* border: 2px solid rgb(255, 0, 255); */
   display: flex;
   flex-direction: column;
   padding-bottom: 10vh;
@@ -825,13 +772,11 @@
 }
 
 .contentButtonSendMsg {
-  /* border: 2px solid red; */
   display: flex;
   justify-content: flex-end;
 }
 
 .contentSocial {
-  /* border: 2px solid red; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -913,10 +858,6 @@
 
   .wrapperSkills {
     padding: 6vh 0;
-  }
-
-  .itemSkills {
-    /* width: 18%; */
   }
 
   .contentSkillsLabel {

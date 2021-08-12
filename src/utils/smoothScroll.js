@@ -4,7 +4,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function smoothScroll(content, viewport, smoothness) {
   const nodeParent = document.querySelectorAll("[data-height]");
-  // const nodeParent = document.querySelector("[data-height]");
   content = gsap.utils.toArray(content)[0];
   smoothness = smoothness || 1;
 

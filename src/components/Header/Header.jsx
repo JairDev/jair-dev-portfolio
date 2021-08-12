@@ -57,11 +57,6 @@ function Header() {
             <Link ref={logoRef} className={styles.logoName} to="/">
               Inicio
             </Link>
-            {/* {location.pathname === "/desafios" ? (
-              <Link className={styles.logoName} to="/">
-                Inicio
-              </Link>
-            ) : null} */}
           </div>
         </div>
         <div id="parent-icon" ref={parentIcon} className={styles.iconNav}>

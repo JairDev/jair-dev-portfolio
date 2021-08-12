@@ -102,22 +102,12 @@ export function gsapAnimations({
   //animations////////////////
   tlAnimatePhoto.to(animatePhoto.current, {
     yPercent: 60,
-    // rotate: 20,
     filter: "grayscale(0)",
   });
-
   tlLayerPhoto.to(layerPhoto.current, {
-    // scaleY: 0,
     yPercent: 100,
     duration: 1
   });
-
-  // tlLayerPhoto.to(layerPhoto.current, {
-  //   // scaleY: .3,
-  //   yPercent: -100,
-  //   duration: 0
-  // });
-  
   tlWordWeb.to(word.current, {
     yPercent: -30,
     duration: 1,

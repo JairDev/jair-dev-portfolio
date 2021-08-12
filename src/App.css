@@ -35,11 +35,7 @@
 html {
   scroll-behavior: smooth;
 }
-/* html,
-body,
-#root {
-  height: 100%;
-} */
+
 a {
   text-decoration: none;
   z-index: 100;
@@ -51,21 +47,17 @@ li {
 
 .App {
   background-color: var(--body-color);
-  
   min-height: 100vh;
-  /* padding-bottom: 6rem; */
   position: relative;
   font-family: "Roboto", sans-serif;
-  /* overflow: hidden; */
 }
-.soon {
-  /* border: 2px solid red; */
+/* .soon {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-size: 5vw;
-}
+} */
 
 /* .page-enter {
   opacity: 0;

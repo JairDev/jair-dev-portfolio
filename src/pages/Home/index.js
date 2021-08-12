@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-import Header from "components/Header/Header"
+import { smoothScroll } from "utils/smoothScroll";
+import { gsapAnimations } from "utils/gsapAnimations/gsapAnimations";
+import { Icon } from "@iconify/react";
 
 import Projects from "components/Projects/Projects";
+import FormContact from "components/FormContact/FormContact";
+import IconSocial from "components/IconSocial/IconSocial";
 
-import { Icon } from "@iconify/react";
-import linkOut from "@iconify/icons-akar-icons/link-out";
-import githubFill from "@iconify/icons-akar-icons/github-fill";
+import { personalProjects } from "../../data/info-portfolio";
 
 import bxlReact from "@iconify/icons-bx/bxl-react";
 import bxlJavascript from "@iconify/icons-bx/bxl-javascript";
@@ -19,12 +20,9 @@ import bxlCss3 from "@iconify/icons-bx/bxl-css3";
 import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
 import bxlGit from "@iconify/icons-bx/bxl-git";
 
-// import phone3 from "../../assets/hero-phone3.png";
 import phone3 from "../../assets/hero-phone5.png";
-// import phone3 from "../../assets/phone-challenge-2.png";
 import photoProfile from "../../assets/foto-perfil.png";
 import phoneChallenge from "../../assets/phone-challenge-2.png";
-import codeChallenge from "../../assets/content-creator.png";
 import "../../assets/coin.png";
 import "../../assets/desert.png";
 import "../../assets/css.svg";
@@ -37,12 +35,7 @@ import ArrowIcon from "../../assets/arrow.svg";
 import shadow from "../../assets/shadow-ball.png";
 import shadowBlue from "../../assets/shadow-ball-blue.png";
 import blurry from "../../assets/blurry.png";
-import { personalProjects } from "../../data/info-portfolio";
 import styles from "./Home.module.css";
-import FormContact from "components/FormContact/FormContact";
-import { smoothScroll } from "utils/smoothScroll";
-import { gsapAnimations } from "utils/gsapAnimations/gsapAnimations";
-import IconSocial from "components/IconSocial/IconSocial";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -57,17 +50,6 @@ const svgIcons = [
 ];
 
 function Home() {
-  // const animateBallHero = useRef(null);
-  // const word = useRef(null);
-  // const h2Name = useRef(null);
-  // const circleChallenge = useRef(null);
-  // const phoneRef = useRef(null);
-  // const codeImgRef = useRef(null);
-  // const circleLinkRef = useRef(null);
-  // const triggerButton = useRef(null);
-  // const animatePhoto = useRef(null);
-  // const layerPhoto = useRef(null);
-
   const objRef = {
     animateBallHero: useRef(null),
     word: useRef(null),
@@ -82,7 +64,6 @@ function Home() {
   };
 
   useEffect(() => {
-    // console.log("mount home")
     smoothScroll("#container");
     gsapAnimations(objRef);
 
@@ -93,14 +74,10 @@ function Home() {
         e.preventDefault();
       });
     });
-    // ScrollTrigger.refresh();
-    // return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
-    // return () => smoothScroll("#container")
   }, [objRef]);
 
   return (
     <>
-      {/* <Header/> */}
       <span ref={objRef.animateBallHero} className={styles.scrollBefore}>
         <img src={shadow} alt="" />
       </span>
@@ -201,12 +178,6 @@ function Home() {
             <span className={styles.lineRightAbout}></span>
             <span className={styles.lineBottomAbout}></span>
             <span className={styles.lineLeftAbout}></span>
-            {/* <p
-              className={`${styles.text} ${styles.pDescription} ${styles.subTitleDescription}`}
-              id="text"
-            >
-              Vivo en la caótica y bella ciudad de Caracas-Venezuela.
-            </p> */}
             <p id="text" className={`${styles.text} ${styles.pDescription}`}>
               Como desarrollador, es emocionante pensar que podemos crear
               proyectos importantes para el beneficio de otras personas, una
@@ -343,11 +314,6 @@ function Home() {
                   elementos en el DOM.
                 </p>
               </div>
-              {/* <div className={styles.challengeCodeImg}>
-                <div className={styles.wrapperCodeImg}>
-                  <img ref={objRef.codeImgRef} src={codeChallenge} alt="" />
-                </div>
-              </div> */}
             </div>
             <div className={styles.appRightContentChallenge}>
               <div className={styles.appRightContentChallengeImg}>
@@ -383,8 +349,6 @@ function Home() {
               <Link className={styles.moreLink} to="/desafios">
                 Mas desafíos
               </Link>
-              {/* <a className={styles.moreLink} href={"a"}>
-              </a> */}
             </div>
           </div>
         </section>

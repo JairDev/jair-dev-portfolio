@@ -4,10 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import IconSocial from "components/IconSocial/IconSocial"
 import * as styles from "./Projects.module.css";
 
-import { Icon } from "@iconify/react";
-import linkOut from "@iconify/icons-akar-icons/link-out";
-import githubFill from "@iconify/icons-akar-icons/github-fill";
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Projects({ title, subTitle, projectsArray }) {
@@ -26,7 +22,7 @@ function Projects({ title, subTitle, projectsArray }) {
         </div>
         <div className={styles.wrapperPersonalProjects}>
           {twoProjects.map((work) => (
-            <ProjectsCom key={work.name} work={work} />
+            <ProjectsChild key={work.name} work={work} />
           ))}
         </div>
       </div>
@@ -34,7 +30,7 @@ function Projects({ title, subTitle, projectsArray }) {
   );
 }
 
-function ProjectsCom({ work }) {
+function ProjectsChild({ work }) {
   return (
     <>
       <div id={work.id}>
@@ -50,11 +46,7 @@ function ProjectsCom({ work }) {
             >
               <div className={styles.contentImgCoin}>
                 <img src={work.imgSrcGif} alt="" />
-                {/* <video src={work.imgSrcGif} autoPlay loop width="100%"></video> */}
               </div>
-              {/* <div className={styles.contentImgTablet}>
-                <img src={work.imgSrcTablet} alt="" />
-              </div> */}
               <IconSocial fontSizeIcon="24px"/>
             </div>
           </div>

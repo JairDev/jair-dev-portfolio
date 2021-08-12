@@ -1,13 +1,9 @@
 import workCoin from "../assets/coin-tablet.png";
 import workDessert from "../assets/desert-tablet.png";
 import imgCode from "../assets/personal-projects-code-s.png";
-// import imgCode from "../assets/coin.mp4";
 import imgCodeHoc from "../assets/personal-projects-code-hoc.png";
 import tablet from "../assets/tablet.png";
 import room from "../assets/room-homepage.png"
-// import workCoinGif from "../assets/img-page.gif";
-// import workCoinGif from "../assets/coin.png";
-// import workCoinGif from "../assets/coin.mp4";
 
 export const socialMedia = [
   {
@@ -168,7 +164,5 @@ export const challenges = [
     desafio: "Construir página de inicio de comercio electrónico",
     dificultad: "Intermedio",
     fuente: "https://www.frontendmentor.io/",
-    description:
-      "Encuentra las mejores recetas, guarda tu favorita o crea tu propia receta",
   },
 ];
