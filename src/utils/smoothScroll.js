@@ -80,7 +80,6 @@ export function smoothScroll(content, viewport, smoothness) {
         duration: 0.5,
       });
     } else {
-      console.log("up")
       gsap.to("#nav-hidden", {
         backgroundColor: "var(--body-color)",
         boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",

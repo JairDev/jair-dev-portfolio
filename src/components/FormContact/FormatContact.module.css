@@ -90,13 +90,41 @@
   justify-content: flex-end;
 }
 
+.wrapperButtonForm {
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  position: relative;
+}
+
 .contentButtonForm {
-  /* border: 1px solid red; */
   border-radius: 50px;
-  /* box-shadow: 0px 4px 20px rgba(124, 77, 255, 0.4); */
   box-shadow: 2px 4px 12px rgb(30 19 61 / 40%);
   background-color: var(--accent-color);
+  display: flex;
+  justify-content: center;
   overflow: hidden;
+  position: relative;
+}
+
+.statusMailSend {
+  background-color: var(--body-color);
+  border-radius: 30px;
+  color: var(--primary-text);
+  display: block;
+  font-family: var(--title-font);
+  font-size: 1.3rem;
+  font-weight: 500;
+  position: absolute;
+  width: 220px;
+  bottom: 120%;
+  opacity: 0;
+  text-align: center;
+  transition: all linear .3s;
+}
+
+.statusMailSend.send {
+  opacity: 1;
 }
 
 .contentButtonForm::before {
@@ -116,11 +144,6 @@
   /* opacity: 1; */
   width: 200px;
   height: 200px;
-}
-
-.contentButtonForm {
-  align-self: flex-end;
-  position: relative;
 }
 
 .contactButton {

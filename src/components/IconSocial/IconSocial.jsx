@@ -5,7 +5,6 @@ import githubFill from "@iconify/icons-akar-icons/github-fill";
 import styles from "./IconSocial.module.css"
 
 function IconSocial({fontSizeIcon}) {
-  console.log(fontSizeIcon)
   return (
     <div className={styles.personalProjectsExternalLink}>
       <div className={styles.contentIconGithubProjects}>

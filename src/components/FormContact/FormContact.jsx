@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./FormatContact.module.css";
 import { Icon } from "@iconify/react";
 import emailjs from "emailjs-com";
@@ -22,7 +22,10 @@ const socialIcons = [
 ];
 
 function FormContact() {
-  const formRef = useRef(null)
+  let send = false;
+  const formRef = useRef(null);
+  const spanStatusRef = useRef(null);
+  const [buttonState, setButtonState] = useState("Enviando...");
   const {
     register,
     formState: { errors },
@@ -36,15 +39,28 @@ function FormContact() {
   });
 
   const onSubmit = (e) => {
+    setButtonState("Enviando...");
+    send = !send;
+    if (send) {
+      spanStatusRef.current.classList.add(styles.send);
+    }
     emailjs.sendForm("service_g", "my_portfolio", formRef.current).then(
       function () {
-        console.log("SUCCESS!");
+        setButtonState("¡ Mensaje enviado !");
+        send = !send;
+        setTimeout(() => {
+          spanStatusRef.current.classList.remove(styles.send);
+        }, 500);
+        // console.log("SUCCESS!");
       },
       function (error) {
+        setButtonState("¡ Mensaje no enviado !");
+        setTimeout(() => {
+          spanStatusRef.current.classList.remove(styles.send);
+        }, 500);
         console.log("FAILED...", error);
       }
     );
-    console.log(formRef.current);
   };
 
   return (
@@ -132,9 +148,13 @@ function FormContact() {
               )}
             </p>
           </div>
-
-          <div className={styles.contentButtonForm}>
-            <button className={styles.contactButton}>Enviar</button>
+          <div className={styles.wrapperButtonForm}>
+            <span ref={spanStatusRef} className={styles.statusMailSend}>
+              {buttonState}
+            </span>
+            <div className={styles.contentButtonForm}>
+              <button className={styles.contactButton}>Enviar</button>
+            </div>
           </div>
         </form>
         <div className={styles.contentSocial}>
