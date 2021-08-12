@@ -626,6 +626,7 @@
 }
 
 .contentImgPhone {
+  margin-bottom: 10vh;
   position: absolute;
   z-index: 10;
 }

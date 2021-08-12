@@ -50,7 +50,7 @@ export function gsapAnimations({
   });
   const tlWordWeb = gsap.timeline({
     scrollTrigger: {
-      trigger: "#text",
+      trigger: "[data-text]",
       start: "center 90%",
       end: "bottom center",
       scrub: true,
