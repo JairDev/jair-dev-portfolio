@@ -153,11 +153,11 @@ function Home() {
             />
           </div>
           <div className={styles.appContentAboutMeTitle}>
-            <h2 id="text" className={`${styles.text} ${styles.spanName}`}>
+            <h2 data-text="text" className={`${styles.text} ${styles.spanName}`}>
               Hola,
             </h2>
             <h4
-              id="text"
+              data-text="text"
               ref={objRef.h2Name}
               className={`${styles.text} ${styles.h2Name}`}
             >
@@ -170,29 +170,29 @@ function Home() {
             <span className={styles.lineRightAbout}></span>
             <span className={styles.lineBottomAbout}></span>
             <span className={styles.lineLeftAbout}></span>
-            <p id="text" className={`${styles.text} ${styles.pDescription}`}>
+            <p data-text="text" className={`${styles.text} ${styles.pDescription}`}>
               Como desarrollador, es emocionante pensar que podemos crear
               proyectos importantes para el beneficio de otras personas, una
               aplicación, un sitio web, esos proyectos que tendrán un impacto
               positivo en la vida de alguien.
             </p>
-            <p id="text" className={`${styles.text} ${styles.pDescription}`}>
+            <p data-text="text" className={`${styles.text} ${styles.pDescription}`}>
               Poder ser parte de esa experiencia me motiva y mantiene en
               constante aprendizaje para seguir mejorando mis habilidades
               técnicas, estoy dispuesto a seguir aprendiendo nuevas tecnologías
               y así poder adaptarme a un equipo de trabajo.
             </p>
 
-            <h3 id="text" className={`${styles.text} ${styles.h3Description}`}>
+            <h3 data-text="text" className={`${styles.text} ${styles.h3Description}`}>
               Un poco más de mi
             </h3>
-            <p id="text" className={`${styles.text} ${styles.pDescription}`}>
+            <p data-text="text" className={`${styles.text} ${styles.pDescription}`}>
               Como seres humanos necesitamos conectar con nuestras emociones,
               nuestro entorno, disfrutar de la vida, me encanta ir a la playa,
               hacer ejercicio al aire libre, me gustan las mascotas, sobre todo
               los perros.
             </p>
-            <p id="text" className={`${styles.text} ${styles.pDescription}`}>
+            <p data-text="text" className={`${styles.text} ${styles.pDescription}`}>
               Cuando estoy estresado, la música despeja mi mente, en mis tiempos
               de ocio me gusta pasar el rato jugando algún videojuego o
               modelando algo 3d, es algo que encuentro muy interesante, lo hago
@@ -200,8 +200,8 @@ function Home() {
             </p>
 
             <p
+              data-text="text"
               className={`${styles.text} ${styles.pDescription} ${styles.footerDescription}`}
-              id="text"
             >
               ¡ Un gusto, saludos !
             </p>
@@ -228,7 +228,7 @@ function Home() {
           <img src={blurry} alt="" />
         </div>
         <div className={styles.wrapperSkills}>
-          <h3 id="text" className={styles.h3Skills}>
+          <h3 data-text="text" className={styles.h3Skills}>
             Habilidades Actuales
           </h3>
           <div className={styles.contentSkills}>
@@ -236,7 +236,7 @@ function Home() {
               <div className={styles.flexSkills}>
                 {svgIcons.map((icon) => (
                   <div className={styles.contentSkillsLabel} key={icon.name}>
-                    <li id="text" className={styles.itemSkills}>
+                    <li data-text="text" className={styles.itemSkills}>
                       {<Icon icon={icon.svg} style={{ fontSize: "64px" }} />}
                     </li>
                     <span className={styles.labelSkills}>{icon.name}</span>
@@ -258,10 +258,10 @@ function Home() {
           </span>
           <div className={styles.appContentChallengesHeader}>
             <div className={styles.appContentChallengesTitle}>
-              <h2 id="text" className={styles.spanChallengeName}>
+              <h2 data-text="text" className={styles.spanChallengeName}>
                 Desafíos
               </h2>
-              <h4 id="text" className={styles.h2FrontendName}>
+              <h4 data-text="text" className={styles.h2FrontendName}>
                 Frontend
               </h4>
             </div>
@@ -270,35 +270,35 @@ function Home() {
           <div className={styles.wrapperContentChallenge}>
             <div className={styles.appLeftContentChallenge}>
               <div className={styles.challengesSubTitle}>
-                <h3 id="text" className={styles.h3Challenge}>
+                <h3 data-text="text" className={styles.h3Challenge}>
                   Busco mejorar mis habilidades como desarrollador frontend, a
                   través de la práctica, ya sea construyendo proyectos
                   personales o participando en desafíos frontend !
                 </h3>
               </div>
               <div className={styles.challengeDescription}>
-                <span id="text">
+                <span data-text="text">
                   Desafío: Crear una aplicación de tareas pendientes
                 </span>
-                <span id="text">Dificultad: Intermedio</span>
-                <span id="text">Fuente: frontendmentor.io</span>
+                <span data-text="text">Dificultad: Intermedio</span>
+                <span data-text="text">Fuente: frontendmentor.io</span>
               </div>
               <div className={styles.challengeMyExplanation}>
-                <p id="text" className={styles.pMyExplanation}>
+                <p data-text="text" className={styles.pMyExplanation}>
                   Encuentro estos desafíos interesantes, ya que a través de
                   ellos, puedo mejorar mis habilidades, tratando de cumplir con
                   los retos de la manera más cercana posible en cuanto a diseño
                   y funcionalidad se refiere.
                 </p>
 
-                <p id="text" className={styles.pMyExplanation}>
+                <p data-text="text" className={styles.pMyExplanation}>
                   Aplicaciones "to-do" hay muchas, pero este reto llamó mi
                   atención, porque pedía incluir una funcionalidad de "arrastrar
                   y soltar" las tareas para intercambiar su orden, no había
                   realizado esa funcionalidad en otros proyectos, así que tomé
                   el reto.
                 </p>
-                <p id="text" className={styles.pMyExplanation}>
+                <p data-text="text" className={styles.pMyExplanation}>
                   En el proceso de construcción de dicha característica en la
                   aplicación, pude conocer eventos de arrastrar y soltar como,
                   dragstart, drop, dragover, dragend, entre otros, eventos que

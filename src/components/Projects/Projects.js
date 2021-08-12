@@ -13,10 +13,10 @@ function Projects({ title, subTitle, projectsArray }) {
     <section id="personal-work" className={`${styles.wrapperPadding}`}>
       <div className={styles.appContentPersonalProjectsHeader}>
         <div className={styles.appContentPersonalProjectsTitle}>
-          <h2 id="text" className={styles.spanWorkName}>
+          <h2 data-text="text" className={styles.spanWorkName}>
             {title}
           </h2>
-          <h4 id="text" className={styles.h2WorkName}>
+          <h4 data-text="text" className={styles.h2WorkName}>
             {subTitle}
           </h4>
         </div>
@@ -55,7 +55,7 @@ function ProjectsChild({ work }) {
             className={styles.contentPersonalProjectDescription}
           >
             {work.dataDescription.map((text) => (
-              <p key={text.paragraph} className={styles.pDescriptionPersonal}>
+              <p data-text="text" key={text.paragraph} className={styles.pDescriptionPersonal}>
                 {text.paragraph}
               </p>
             ))}

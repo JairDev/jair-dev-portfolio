@@ -20,6 +20,16 @@ export function gsapAnimations({
     scale: 1.0,
   });
 
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: phoneRef.current,
+      pin: true,
+      start: "center 30%",
+      end: "top -=550",
+      scrub: true,
+    },
+  });
+
   const tlAnimatePhoto = gsap.timeline({
     scrollTrigger: {
       trigger: animatePhoto.current,
@@ -56,17 +66,7 @@ export function gsapAnimations({
     },
   });
 
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: phoneRef.current,
-      pin: true,
-      start: "center 30%",
-      end: "top -=550",
-      scrub: true,
-    },
-  });
-
-  gsap.utils.toArray("#text").forEach((item) => {
+  gsap.utils.toArray("[data-text]").forEach((item) => {
     const tlText = gsap.timeline({
       scrollTrigger: {
         trigger: item,
@@ -78,7 +78,7 @@ export function gsapAnimations({
     });
     tlText.from(item, {
       opacity: 0,
-      yPercent: 50,
+      yPercent: 70,
     });
   });
 
