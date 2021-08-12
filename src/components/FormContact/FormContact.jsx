@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./FormatContact.module.css";
 import { Icon } from "@iconify/react";
 import emailjs from "emailjs-com";
@@ -22,6 +22,7 @@ const socialIcons = [
 ];
 
 function FormContact() {
+  const formRef = useRef(null)
   const {
     register,
     formState: { errors },
@@ -35,30 +36,15 @@ function FormContact() {
   });
 
   const onSubmit = (e) => {
-    // e.addEventListener("submit", function (event) {
-    //   event.preventDefault();
-    //   // generate a five digit number for the contact_number variable
-    //   this.contact_number.value = (Math.random() * 100000) | 0;
-    //   // these IDs from the previous steps
-    //   emailjs.sendForm("contact_service", "contact_form", this).then(
-    //     function () {
-    //       console.log("SUCCESS!");
-    //     },
-    //     function (error) {
-    //       console.log("FAILED...", error);
-    //     }
-    //   );
-    // });
-    e.preventDefault();
-    // emailjs.sendForm("service_g", "my_portfolio", e.target).then(
-    //   function () {
-    //     console.log("SUCCESS!");
-    //   },
-    //   function (error) {
-    //     console.log("FAILED...", error);
-    //   }
-    // );
-    // console.log(e.target);
+    emailjs.sendForm("service_g", "my_portfolio", formRef.current).then(
+      function () {
+        console.log("SUCCESS!");
+      },
+      function (error) {
+        console.log("FAILED...", error);
+      }
+    );
+    console.log(formRef.current);
   };
 
   return (
@@ -68,6 +54,7 @@ function FormContact() {
           <h4>Trabajemos juntos</h4>
         </div>
         <form
+          ref={formRef}
           id="contact-form"
           className={styles.formContact}
           onSubmit={handleSubmit(onSubmit)}
@@ -76,7 +63,7 @@ function FormContact() {
             <span>Nombre</span>
             <input
               placeholder={"Eg. Jhon Doe"}
-              name="from_name"
+              name="fromName"
               {...register("fromName", { required: true })}
             ></input>
             <p className={styles.required}>
@@ -101,7 +88,7 @@ function FormContact() {
             <span>Correo</span>
             <input
               placeholder={"Eg. correo@JhonDoe"}
-              name="user_email"
+              name="userEmail"
               {...register("userEmail", { required: true })}
             ></input>
             <p className={styles.required}>
