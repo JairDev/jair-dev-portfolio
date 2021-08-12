@@ -192,7 +192,7 @@ function Home() {
             </p>
 
             <h3 id="text" className={`${styles.text} ${styles.h3Description}`}>
-              Un poco mas de mi
+              Un poco más de mi
             </h3>
             <p id="text" className={`${styles.text} ${styles.pDescription}`}>
               Como seres humanos necesitamos conectar con nuestras emociones,
@@ -211,7 +211,7 @@ function Home() {
               className={`${styles.text} ${styles.pDescription} ${styles.footerDescription}`}
               id="text"
             >
-              Un gusto haberte mostrado una parte mí, saludos !
+              ¡ Un gusto, saludos !
             </p>
             <div className={styles.contentButtonContactAbout}>
               <div className={styles.contentButtonForm}>
@@ -295,12 +295,12 @@ function Home() {
                 <p id="text" className={styles.pMyExplanation}>
                   Encuentro estos desafíos interesantes, ya que a través de
                   ellos, puedo mejorar mis habilidades, tratando de cumplir con
-                  los retos de la manera mas cercana posible en cuanto a diseño
+                  los retos de la manera más cercana posible en cuanto a diseño
                   y funcionalidad se refiere.
                 </p>
 
                 <p id="text" className={styles.pMyExplanation}>
-                  Aplicaciones "to-do" hay muuuuchas, pero este reto llamó mi
+                  Aplicaciones "to-do" hay muchas, pero este reto llamó mi
                   atención, porque pedía incluir una funcionalidad de "arrastrar
                   y soltar" las tareas para intercambiar su orden, no había
                   realizado esa funcionalidad en otros proyectos, así que tomé

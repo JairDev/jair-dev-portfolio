@@ -58,12 +58,12 @@ export const personalProjects = [
     dataDescription: [
       {
         paragraph: `React y otras librerías similares están pensadas para facilitar la creación de interfaces web, móvil, etc;
-        aumentando la productividad, al acelerar el proceso de desarrollo. En la etapa de aprendizaje de React, nos vamos topando con conceptos mas avanzados
+        aumentando la productividad, al acelerar el proceso de desarrollo. En la etapa de aprendizaje de React, nos vamos topando con conceptos más avanzados
         a medida que avanzamos.`,
       },
       {
         paragraph: `En esta aplicación que consiste en mostrar criptomonedas en tendencia, buscar 
-        criptomonedas de tu preferencia o leer noticias actualizadas referente al mundo cripto, tenía
+        criptomonedas de tu preferencia o leer noticias actualizadas referente al mundo crypto, tenía
         dos componentes similares en cuanto a funcionalidad y la manera en que dependían de un valor para
         mostrar datos en la interfaz.`,
       },
@@ -73,9 +73,9 @@ export const personalProjects = [
         y se renderiza la moneda.`,
       },
       {
-        paragraph: `Un segundo componente, que renderiza las noticias actuales sobre criptomonedas, que tambien
+        paragraph: `Un segundo componente, que renderiza las noticias actuales sobre criptomonedas, que también
         depende de una entrada del usuario y la misma funcionalidad que el primer componente. En la documentación
-        de React, se habla de los componentes de orden superior, recordemos que React es una librería construída
+        de React, se habla de los componentes de orden superior, recordemos que React es una librería construida
         en JavaScript, donde existen las funciones de orden superior, (funciones que reciben otras funciones
         como argumentos)`,
       },
@@ -115,7 +115,7 @@ export const personalProjects = [
       },
       {
         paragraph: `
-        Lo que hacemos entonces es determinar que el estado de React sea la unica "fuente de verdad", 
+        Lo que hacemos entonces es determinar que el estado de React sea la única "fuente de verdad", 
         de esta manera los componentes que rendericen un formulario, tienen el control sobre lo que pasa 
         en ese formulario. El atributo value del elemento input, al tener como valor la variable de estado "value",
         el valor del input estará controlado por el estado de React, pudiendo así pasar ese valor a otros componentes
@@ -125,7 +125,7 @@ export const personalProjects = [
       {
         paragraph: `Vean aquí, este componente está renderizando un formulario, 
         el estado de este componente es la fuente de verdad para ese formulario, tomo ese valor (variable de estado)
-        actualizado por un evento onChange y mediante el evento submit paso esos datos a una función en otro componente para hacer la busqueda de un postre.`,
+        actualizado por un evento onChange y mediante el evento submit paso esos datos a una función en otro componente para hacer la búsqueda de un postre.`,
       },
     ],
   },
