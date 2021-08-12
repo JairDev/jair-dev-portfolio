@@ -89,6 +89,16 @@ export function smoothScroll(content, viewport, smoothness) {
     }
   };
 
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: ["[data-phone]"],
+      pin: true,
+      start: "center 30%",
+      end: "top -=550",
+      scrub: true,
+    },
+  });
+
   gsap.utils.toArray("[data-img]").forEach((img, i) => {
     const arr = [...nodeParent][i];
     const sum = arr.clientHeight - arr.clientHeight / 3;
@@ -105,7 +115,6 @@ export function smoothScroll(content, viewport, smoothness) {
       });
     }
   });
-
 
   ScrollTrigger.refresh();
 

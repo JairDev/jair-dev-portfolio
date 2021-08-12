@@ -20,15 +20,15 @@ export function gsapAnimations({
     scale: 1.0,
   });
 
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: phoneRef.current,
-      pin: true,
-      start: "center 30%",
-      end: "top -=550",
-      scrub: true,
-    },
-  });
+  // gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: phoneRef.current,
+  //     pin: true,
+  //     start: "center 30%",
+  //     end: "top -=550",
+  //     scrub: true,
+  //   },
+  // });
 
   const tlAnimatePhoto = gsap.timeline({
     scrollTrigger: {
