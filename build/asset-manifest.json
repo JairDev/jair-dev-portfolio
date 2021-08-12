@@ -1,22 +1,37 @@
 {
   "files": {
-    "main.css": "/static/css/main.cf7f54b9.chunk.css",
-    "main.js": "/static/js/main.f85d05db.chunk.js",
-    "main.js.map": "/static/js/main.f85d05db.chunk.js.map",
+    "main.css": "/static/css/main.ae796f50.chunk.css",
+    "main.js": "/static/js/main.b65528d6.chunk.js",
+    "main.js.map": "/static/js/main.b65528d6.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.4893279b.js",
     "runtime-main.js.map": "/static/js/runtime-main.4893279b.js.map",
-    "static/js/2.d9ddf020.chunk.js": "/static/js/2.d9ddf020.chunk.js",
-    "static/js/2.d9ddf020.chunk.js.map": "/static/js/2.d9ddf020.chunk.js.map",
+    "static/js/2.880a76f7.chunk.js": "/static/js/2.880a76f7.chunk.js",
+    "static/js/2.880a76f7.chunk.js.map": "/static/js/2.880a76f7.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.3d286821cf12d4500e78ad8f7d9b9254.js": "/precache-manifest.3d286821cf12d4500e78ad8f7d9b9254.js",
+    "precache-manifest.37161c30b9dfff66119c8ffc5c82fd2f.js": "/precache-manifest.37161c30b9dfff66119c8ffc5c82fd2f.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.cf7f54b9.chunk.css.map": "/static/css/main.cf7f54b9.chunk.css.map",
-    "static/js/2.d9ddf020.chunk.js.LICENSE.txt": "/static/js/2.d9ddf020.chunk.js.LICENSE.txt"
+    "static/css/main.ae796f50.chunk.css.map": "/static/css/main.ae796f50.chunk.css.map",
+    "static/js/2.880a76f7.chunk.js.LICENSE.txt": "/static/js/2.880a76f7.chunk.js.LICENSE.txt",
+    "static/media/arrow.svg": "/static/media/arrow.784c123c.svg",
+    "static/media/blurry.png": "/static/media/blurry.7f9e1c30.png",
+    "static/media/coin-tablet.png": "/static/media/coin-tablet.efa7c0e2.png",
+    "static/media/coin.png": "/static/media/coin.8d296aac.png",
+    "static/media/desert-tablet.png": "/static/media/desert-tablet.a98386b2.png",
+    "static/media/desert.png": "/static/media/desert.ba5b0b3a.png",
+    "static/media/foto-perfil.png": "/static/media/foto-perfil.dc97a5fa.png",
+    "static/media/hero-phone5.png": "/static/media/hero-phone5.c4723b9f.png",
+    "static/media/nav-bar-close.svg": "/static/media/nav-bar-close.43bee770.svg",
+    "static/media/nav-bar-icon.svg": "/static/media/nav-bar-icon.f396aee0.svg",
+    "static/media/personal-projects-code-hoc.png": "/static/media/personal-projects-code-hoc.886bfdb7.png",
+    "static/media/personal-projects-code-s.png": "/static/media/personal-projects-code-s.012f9de8.png",
+    "static/media/phone-challenge-2.png": "/static/media/phone-challenge-2.502f8ccd.png",
+    "static/media/room-homepage.png": "/static/media/room-homepage.871942f3.png",
+    "static/media/shadow-ball.png": "/static/media/shadow-ball.c41bd830.png"
   },
   "entrypoints": [
     "static/js/runtime-main.4893279b.js",
-    "static/js/2.d9ddf020.chunk.js",
-    "static/css/main.cf7f54b9.chunk.css",
-    "static/js/main.f85d05db.chunk.js"
+    "static/js/2.880a76f7.chunk.js",
+    "static/css/main.ae796f50.chunk.css",
+    "static/js/main.b65528d6.chunk.js"
   ]
 }
