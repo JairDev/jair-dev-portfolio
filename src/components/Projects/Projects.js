@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import IconSocial from "components/IconSocial/IconSocial"
 import * as styles from "./Projects.module.css";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,6 +25,21 @@ function Projects({ title, subTitle, projectsArray }) {
           {twoProjects.map((work) => (
             <ProjectsChild key={work.name} work={work} />
           ))}
+          <div className={styles.contentMoreLink}>
+            <div className={styles.contentLinesCustomLink}>
+              <span className={styles.lineCustomLink}></span>
+              <span className={styles.circleCustomLink}></span>
+              <span
+                // ref={objRef.circleLinkRef}
+                className={styles.circleCustomLinkAnimate}
+              >
+                {/* <img src={shadow} alt="" /> */}
+              </span>
+              <Link className={styles.moreLink} to="/desafios">
+                Mas proyectos
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
