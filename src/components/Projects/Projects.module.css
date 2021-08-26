@@ -22,8 +22,11 @@
   text-align: center;
 }
 
-.contentPersonalProject {
+.contentPersonalProject:first-child {
   border-bottom: 1px solid var(--accent-color);
+}
+
+.contentPersonalProjectFlex {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -117,7 +120,7 @@
 .contentMoreLink {
   display: flex;
   justify-content: center;
-  padding-top: 20vh;
+  /* padding-top: 10vh; */
   position: relative;
 }
 
@@ -209,7 +212,7 @@
 }
 
 @media only screen and (min-width: 860px) {
-  .contentPersonalProject {
+  .contentPersonalProjectFlex {
     flex-direction: row-reverse;
     padding-bottom: 30vh;
   }

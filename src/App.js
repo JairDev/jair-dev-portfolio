@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,7 +14,8 @@ import "./assets/js.svg";
 import "./assets/react.svg";
 import "./assets/sass.svg";
 import "./App.css";
-
+import { personalProjects, challenges } from "../src/data/info-portfolio";
+import Projects from "components/Projects/Projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,8 +25,23 @@ function App() {
       <div className="App">
         <Layout>
           <Switch>
+            <Route path="/proyectos">
+              <Challenge
+                data={personalProjects}
+                title={"Proyectos"}
+                subTitle={"Personales"}
+                sliceStart={2}
+                sliceEnd={4}
+              />
+            </Route>
             <Route path="/desafios">
-              <Challenge />
+              <Challenge
+                data={challenges}
+                title={"Desafíos"}
+                subTitle={"Frontend"}
+                sliceStart={0}
+                sliceEnd={2}
+              />
             </Route>
             <Route path="/">
               <Home />

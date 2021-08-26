@@ -1,4 +1,5 @@
 import workCoin from "../assets/coin-tablet.png";
+import memory from "../assets/memory-tablet.png";
 import workDessert from "../assets/desert-tablet.png";
 import imgCode from "../assets/personal-projects-code-s.png";
 import imgCodeHoc from "../assets/personal-projects-code-hoc.png";
@@ -50,8 +51,7 @@ export const personalProjects = [
   {
     id: "id1",
     name: "Coin Market App",
-    imgSrcTablet: tablet,
-    imgSrcGif: workCoin,
+    imgSrcApp: workCoin,
     imgCode: imgCodeHoc,
     linkGit: "https://github.com/JairDev/coin-market-info-",
     linkDemo: "https://coin-market-info.vercel.app/",
@@ -96,8 +96,7 @@ export const personalProjects = [
   {
     id: "id2",
     name: "Tasty dessert",
-    imgSrcTablet: tablet,
-    imgSrcGif: workDessert,
+    imgSrcApp: workDessert,
     imgCode: imgCode,
     linkGit: "https://github.com/JairDev/hot-food-app",
     linkDemo: "https://tastypie.netlify.app/",
@@ -129,36 +128,36 @@ export const personalProjects = [
       },
     ],
   },
-  {
-    name: "Recipes",
-    imgSrc: "img-recipe.png",
-    linkGit: "https://github.com/JairDev/recipe-app",
-    linkDemo: "https://tasterecipes.netlify.com/",
-    description:
-      "Encuentra las mejores recetas, guarda tu favorita o crea tu propia receta",
-  },
+  // {
+  //   name: "Recipes",
+  //   imgSrcApp: tablet,
+  //   linkGit: "https://github.com/JairDev/recipe-app",
+  //   linkDemo: "https://tasterecipes.netlify.com/",
+  //   description:
+  //     "Encuentra las mejores recetas, guarda tu favorita o crea tu propia receta",
+  // },
   {
     name: "Memory",
-    imgSrc: "img-memory.png",
+    imgSrcApp: memory,
     linkGit: "https://github.com/JairDev/memory-game",
     linkDemo: "https://memorybrain.netlify.com/",
     description:
       "Desafía tu memoria, con el juego de memoria mas desafiante jamas creado",
   },
-  {
-    name: "Timer",
-    imgSrc: "img-timer.png",
-    linkGit: "https://github.com/JairDev/training-timer-and-chronometer",
-    linkDemo: "https://trainingtimerapp.netlify.com/",
-    description:
-      "App para llevar el control de tiempo y series en tus ejercicios",
-  },
+  // {
+  //   name: "Timer",
+  //   imgSrcApp: tablet,
+  //   linkGit: "https://github.com/JairDev/training-timer-and-chronometer",
+  //   linkDemo: "https://trainingtimerapp.netlify.com/",
+  //   description:
+  //     "App para llevar el control de tiempo y series en tus ejercicios",
+  // },
 ];
 
 export const challenges = [
   {
     name: "Room homepage",
-    imgSrc: room,
+    imgSrcApp: room,
     linkGit: "https://github.com/JairDev/room-homepage",
     linkDemo: "https://coolrooms.netlify.app/",
     desafio: "Construir página de inicio de comercio electrónico",

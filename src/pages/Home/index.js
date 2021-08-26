@@ -349,6 +349,7 @@ function Home() {
         projectsArray={personalProjects}
         title={"Proyectos"}
         subTitle={"Personales"}
+        sliceNumber={2}
       />
       <section id="contact" className={`${styles.wrapperPadding}`}>
         <FormContact />

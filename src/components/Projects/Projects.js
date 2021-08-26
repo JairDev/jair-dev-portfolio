@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import IconSocial from "components/IconSocial/IconSocial"
+import IconSocial from "components/IconSocial/IconSocial";
 import * as styles from "./Projects.module.css";
 import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Projects({ title, subTitle, projectsArray }) {
-  const twoProjects = projectsArray.slice(0, 2);
+function Projects({ title, subTitle, projectsArray, sliceNumber }) {
+  const twoProjects = projectsArray.slice(0, sliceNumber);
+  // useEffect(() => {
+  //   ScrollTrigger.refresh();
+  //   return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
+  // }, []);
 
   return (
     <section id="personal-work" className={`${styles.wrapperPadding}`}>
@@ -35,7 +39,7 @@ function Projects({ title, subTitle, projectsArray }) {
               >
                 {/* <img src={shadow} alt="" /> */}
               </span>
-              <Link className={styles.moreLink} to="/desafios">
+              <Link className={styles.moreLink} to="/proyectos">
                 Mas proyectos
               </Link>
             </div>
@@ -49,11 +53,11 @@ function Projects({ title, subTitle, projectsArray }) {
 function ProjectsChild({ work }) {
   return (
     <>
-      <div id={work.id}>
+      <div id={work.id} className={styles.contentPersonalProject}>
         <div className={styles.contentTitleProject}>
           <h3>{work.name}</h3>
         </div>
-        <div className={styles.contentPersonalProject}>
+        <div className={styles.contentPersonalProjectFlex}>
           <div className={styles.contentPersonalProjectImg}>
             <div
               id="code-project-img"
@@ -61,9 +65,9 @@ function ProjectsChild({ work }) {
               data-img="code-project-img"
             >
               <div className={styles.contentImgCoin}>
-                <img src={work.imgSrcGif} alt="" />
+                <img src={work.imgSrcApp} alt="" />
               </div>
-              <IconSocial fontSizeIcon="24px"/>
+              <IconSocial fontSizeIcon="24px" />
             </div>
           </div>
           <div
@@ -71,7 +75,11 @@ function ProjectsChild({ work }) {
             className={styles.contentPersonalProjectDescription}
           >
             {work.dataDescription.map((text) => (
-              <p data-text="text" key={text.paragraph} className={styles.pDescriptionPersonal}>
+              <p
+                data-text="text"
+                key={text.paragraph}
+                className={styles.pDescriptionPersonal}
+              >
                 {text.paragraph}
               </p>
             ))}

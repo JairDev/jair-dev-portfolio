@@ -116,6 +116,7 @@ export function smoothScroll(content, viewport, smoothness) {
     }
   });
 
+
   ScrollTrigger.refresh();
 
   return ScrollTrigger.create({

@@ -7,7 +7,8 @@ import githubFill from "@iconify/icons-akar-icons/github-fill";
 import styles from "./Challenge.module.css";
 import FormContact from "components/FormContact/FormContact";
 
-function Challenge() {
+function Challenge({ data, title, subTitle, sliceStart, sliceEnd }) {
+  const sliceData = data.slice(sliceStart, sliceEnd);
   useEffect(() => {
     ScrollTrigger.refresh();
     return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
@@ -17,13 +18,13 @@ function Challenge() {
       <div className={styles.appContentPersonalProjectsHeader}>
         <div className={styles.appContentPersonalProjectsTitle}>
           <h2 id="text" className={styles.spanWorkName}>
-            Desafíos
+            {title}
           </h2>
           <h4 id="text" className={styles.h2WorkName}>
-            Frontend
+            {subTitle}
           </h4>
         </div>
-        {challenges.map((work) => (
+        {sliceData.map((work) => (
           <ChallengeChild key={work.name} work={work} />
         ))}
       </div>
@@ -48,7 +49,7 @@ function ChallengeChild({ work }) {
             data-img="code-project-img"
           >
             <div className={styles.contentImgCoin}>
-              <img src={work.imgSrc} alt="" />
+              <img src={work.imgSrcApp} alt="" />
             </div>
             <div className={styles.personalProjectsExternalLink}>
               <div className={styles.contentIconGithubProjects}>

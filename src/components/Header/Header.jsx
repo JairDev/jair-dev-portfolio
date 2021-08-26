@@ -16,7 +16,7 @@ function Header() {
   useEffect(() => {
     logoRef.current.style.opacity = "0";
     parentIcon.current.style.opacity = "1";
-    if (location.pathname === "/desafios") {
+    if (location.pathname === "/desafios" || location.pathname === "/proyectos") {
       logoRef.current.style.opacity = "1";
       parentIcon.current.style.opacity = "0";
     }
