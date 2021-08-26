@@ -4,7 +4,7 @@ import workDessert from "../assets/desert-tablet.png";
 import imgCode from "../assets/personal-projects-code-s.png";
 import imgCodeHoc from "../assets/personal-projects-code-hoc.png";
 import tablet from "../assets/tablet.png";
-import room from "../assets/room-homepage.png"
+import room from "../assets/room-homepage.png";
 
 export const socialMedia = [
   {
@@ -141,8 +141,9 @@ export const personalProjects = [
     imgSrcApp: memory,
     linkGit: "https://github.com/JairDev/memory-game",
     linkDemo: "https://memorybrain.netlify.com/",
-    description:
-      "Desafía tu memoria, con el juego de memoria mas desafiante jamas creado",
+    dataDescription: {
+      paragraph:`Desafía tu memoria, con el juego de memoria mas desafiante jamas creado.`,
+    },
   },
   // {
   //   name: "Timer",

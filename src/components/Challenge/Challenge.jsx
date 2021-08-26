@@ -7,7 +7,14 @@ import githubFill from "@iconify/icons-akar-icons/github-fill";
 import styles from "./Challenge.module.css";
 import FormContact from "components/FormContact/FormContact";
 
-function Challenge({ data, title, subTitle, sliceStart, sliceEnd }) {
+function Challenge({
+  data,
+  title,
+  subTitle,
+  sliceStart,
+  sliceEnd,
+  showTitle = true,
+}) {
   const sliceData = data.slice(sliceStart, sliceEnd);
   useEffect(() => {
     ScrollTrigger.refresh();
@@ -25,7 +32,7 @@ function Challenge({ data, title, subTitle, sliceStart, sliceEnd }) {
           </h4>
         </div>
         {sliceData.map((work) => (
-          <ChallengeChild key={work.name} work={work} />
+          <ChallengeChild key={work.name} work={work} showTitle={showTitle} />
         ))}
       </div>
       <section id="contact" className={`${styles.wrapperPadding}`}>
@@ -35,7 +42,7 @@ function Challenge({ data, title, subTitle, sliceStart, sliceEnd }) {
   );
 }
 
-function ChallengeChild({ work }) {
+function ChallengeChild({ work, showTitle }) {
   return (
     <div key={work.name} id={work.id}>
       <div className={styles.contentTitleProject}>
@@ -83,11 +90,17 @@ function ChallengeChild({ work }) {
           data-height="parent-paragraph"
           className={styles.contentPersonalProjectDescription}
         >
-          <div className={styles.challengeDescriptionPath}>
-            <span id="text">Desafío: {work.desafio}</span>
-            <span id="text">Dificultad: {work.dificultad}</span>
-            <span id="text">Fuente: {work.fuente}</span>
-          </div>
+          {showTitle ? (
+            <div className={styles.challengeDescriptionPath}>
+              <span id="text">Desafío: {work.desafio}</span>
+              <span id="text">Dificultad: {work.dificultad}</span>
+              <span id="text">Fuente: {work.fuente}</span>
+            </div>
+          ) : (
+            <div className={styles.challengeDescriptionPath}>
+              <span id="text">{work.dataDescription.paragraph}</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

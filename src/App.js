@@ -32,6 +32,7 @@ function App() {
                 subTitle={"Personales"}
                 sliceStart={2}
                 sliceEnd={4}
+                showTitle={false}
               />
             </Route>
             <Route path="/desafios">
