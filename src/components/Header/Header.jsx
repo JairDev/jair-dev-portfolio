@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import NavIcon from "../../assets/nav-bar-icon.svg";
 import NavIconClose from "../../assets/nav-bar-close.svg";
@@ -12,13 +12,20 @@ function Header() {
   const parentIcon = useRef(null);
   const logoRef = useRef(null);
   const location = useLocation();
+  let [showName, setShowName] = useState(true);
 
   useEffect(() => {
-    logoRef.current.style.opacity = "0";
     parentIcon.current.style.opacity = "1";
-    if (location.pathname === "/desafios" || location.pathname === "/proyectos") {
+    if (
+      location.pathname === "/desafios" ||
+      location.pathname === "/proyectos"
+    ) {
+      console.log("render");
+      setShowName(false);
       logoRef.current.style.opacity = "1";
       parentIcon.current.style.opacity = "0";
+    } else {
+      setShowName(true);
     }
   }, [location.pathname]);
 
@@ -30,7 +37,6 @@ function Header() {
 
     if (clickIcon) {
       if (state) {
-        console.log(menuStyle.current);
         menuStyle.current.classList.add(styles.show);
         iconOpenRef.current.firstChild.classList.add(styles.noOpen);
         iconCloseRef.current.firstChild.classList.add(styles.open);
@@ -55,7 +61,7 @@ function Header() {
         <div className="app-content-nav-logo">
           <div className="app-nav-logo">
             <Link ref={logoRef} className={styles.logoName} to="/">
-              Inicio
+              {showName ? "Alfredo Moscoso" : "Inicio"}
             </Link>
           </div>
         </div>
