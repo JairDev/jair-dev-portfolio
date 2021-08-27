@@ -153,7 +153,10 @@ function Home() {
             />
           </div>
           <div className={styles.appContentAboutMeTitle}>
-            <h2 data-text="text" className={`${styles.text} ${styles.spanName}`}>
+            <h2
+              data-text="text"
+              className={`${styles.text} ${styles.spanName}`}
+            >
               Hola,
             </h2>
             <h4
@@ -170,29 +173,43 @@ function Home() {
             <span className={styles.lineRightAbout}></span>
             <span className={styles.lineBottomAbout}></span>
             <span className={styles.lineLeftAbout}></span>
-            <p data-text="text" className={`${styles.text} ${styles.pDescription}`}>
-              Como desarrollador, es emocionante pensar que podemos crear
-              proyectos importantes para el beneficio de otras personas, una
-              aplicación, un sitio web, esos proyectos que tendrán un impacto
-              positivo en la vida de alguien.
+            <p
+              data-text="text"
+              className={`${styles.text} ${styles.pDescription}`}
+            >
+              Como desarrolladores, podemos crear proyectos importantes para el
+              beneficio de otras personas, una aplicación, un sitio web, esos
+              proyectos que tendrán un impacto positivo en la vida de alguien.
             </p>
-            <p data-text="text" className={`${styles.text} ${styles.pDescription}`}>
+            <p
+              data-text="text"
+              className={`${styles.text} ${styles.pDescription}`}
+            >
               Poder ser parte de esa experiencia me motiva y mantiene en
               constante aprendizaje para seguir mejorando mis habilidades
               técnicas, estoy dispuesto a seguir aprendiendo nuevas tecnologías
               y así poder adaptarme a un equipo de trabajo.
             </p>
 
-            <h3 data-text="text" className={`${styles.text} ${styles.h3Description}`}>
+            <h3
+              data-text="text"
+              className={`${styles.text} ${styles.h3Description}`}
+            >
               Un poco más de mi
             </h3>
-            <p data-text="text" className={`${styles.text} ${styles.pDescription}`}>
+            <p
+              data-text="text"
+              className={`${styles.text} ${styles.pDescription}`}
+            >
               Como seres humanos necesitamos conectar con nuestras emociones,
               nuestro entorno, disfrutar de la vida, me encanta ir a la playa,
               hacer ejercicio al aire libre, me gustan las mascotas, sobre todo
               los perros.
             </p>
-            <p data-text="text" className={`${styles.text} ${styles.pDescription}`}>
+            <p
+              data-text="text"
+              className={`${styles.text} ${styles.pDescription}`}
+            >
               Cuando estoy estresado, la música despeja mi mente, en mis tiempos
               de ocio me gusta pasar el rato jugando algún videojuego o
               modelando algo 3d, es algo que encuentro muy interesante, lo hago
@@ -323,7 +340,7 @@ function Home() {
                   className={styles.contentImgPhone}
                 >
                   <img src={phoneChallenge} alt="" />
-                  <IconSocial fontSizeIcon="23px"/> 
+                  <IconSocial fontSizeIcon="23px" />
                 </div>
               </div>
             </div>
