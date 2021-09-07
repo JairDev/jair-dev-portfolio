@@ -177,18 +177,38 @@ function Home() {
               data-text="text"
               className={`${styles.text} ${styles.pDescription}`}
             >
-              Como desarrolladores, podemos crear proyectos importantes para el
-              beneficio de otras personas, una aplicación, un sitio web, esos
-              proyectos que tendrán un impacto positivo en la vida de alguien.
+              Soy curioso por naturaleza, desde el "aparato" que de adolescente
+              desarmaba par ver que tenía por dentro, hasta preguntarme como era
+              posible la construcción de sitios web, plantearme esto, dio inicio
+              a mi camino en el mundo de la programación.
             </p>
             <p
               data-text="text"
               className={`${styles.text} ${styles.pDescription}`}
             >
-              Poder ser parte de esa experiencia me motiva y mantiene en
-              constante aprendizaje para seguir mejorando mis habilidades
-              técnicas, estoy dispuesto a seguir aprendiendo nuevas tecnologías
-              y así poder adaptarme a un equipo de trabajo.
+              Mis primeros pasos fueron con Python y Django, con este lenguaje
+              ya era posible construir algo "visual", pero quería más, siguiendo
+              con mis investigaciones descubrí la ruta de desarrollo frontend y
+              todo comenzó a tomar forma para mí, tomé un curso en codecademy
+              donde hubo una ruta clara a seguir, aprendí sobre HTML y CSS, para
+              luego iniciar con Javascript, abriendo un mundo de posibilidades y
+              poder comprender el dinamismo que este lenguaje es capaz de
+              aportar a un sitio web.
+            </p>
+
+            <p
+              data-text="text"
+              className={`${styles.text} ${styles.pDescription}`}
+            >
+              Trato de estar al día con las nuevas tecnologías, pero consciente
+              de que es un ecosistema muy grande, donde "cada día" aparece un
+              nuevo framework o librería, por eso en este momento, estoy
+              enfocado en cimentar mis conocimientos en React, partiendo de una
+              base sólida en Javascript, aunque siempre dispuesto a aprender una
+              nueva herramienta, actualmente estoy aprendiendo sobre una
+              librería de animaciones construida en Javascript llamada GSAP, que
+              me parece muy potente para darle ese toque especial a nuestros
+              sitios web.
             </p>
 
             <h3

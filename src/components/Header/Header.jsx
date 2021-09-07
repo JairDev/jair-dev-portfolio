@@ -15,6 +15,7 @@ function Header() {
   let [showName, setShowName] = useState(true);
 
   useEffect(() => {
+    logoRef.current.style.opacity = "0";
     parentIcon.current.style.opacity = "1";
     if (
       location.pathname === "/desafios" ||
@@ -61,7 +62,8 @@ function Header() {
         <div className="app-content-nav-logo">
           <div className="app-nav-logo">
             <Link ref={logoRef} className={styles.logoName} to="/">
-              {showName ? "Alfredo Moscoso" : "Inicio"}
+              Inicio
+              {/* {showName ? "Alfredo Moscoso" : "Inicio"} */}
             </Link>
           </div>
         </div>
