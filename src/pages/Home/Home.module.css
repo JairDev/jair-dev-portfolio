@@ -257,7 +257,7 @@
   display: block;
   position: absolute;
   top: 0;
-  left: -60vw;
+  left: -45vw;
   width: 100vw;
   height: 100vh;
   transform: skew(-15deg);
@@ -853,6 +853,13 @@
 }
 
 @media only screen and (min-width: 860px) {
+
+  .backgroundSectionLeft {
+
+    left: -60vw;
+
+  }
+
   .appContentNavLinks {
     width: 45%;
   }
