@@ -28,6 +28,7 @@ import shadow from "../../assets/shadow-ball.png";
 import shadowBlue from "../../assets/shadow-ball-blue.png";
 import blurry from "../../assets/blurry.png";
 import styles from "./Home.module.css";
+import Button from "components/Button/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -54,9 +55,37 @@ function Home() {
     animatePhoto: useRef(null),
     layerPhoto: useRef(null),
   };
-
+  
   useEffect(() => {
-    smoothScroll("#container");
+    const nodeParent = document.querySelectorAll("[data-height]");
+    // smoothScroll("#container");
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ["[data-phone]"],
+        pin: true,
+        start: "center 30%",
+        end: "top -=550",
+        scrub: true,
+      },
+    });
+  
+    gsap.utils.toArray("[data-img]").forEach((img, i) => {
+      const arr = [...nodeParent][i];
+      console.log(arr)
+      const sum = arr.clientHeight - arr.clientHeight / 3;
+      if (window.innerWidth > 860) {
+        gsap.to(img, {
+          scrollTrigger: {
+            trigger: img,
+            pin: true,
+            start: "top 20%",
+            end: "+=" + sum,
+            scrub: true,
+            // markers: true,
+          },
+        });
+      }
+    });
     gsapAnimations(objRef);
 
     gsap.utils.toArray("[data-link]").forEach((link) => {
@@ -70,9 +99,9 @@ function Home() {
 
   return (
     <>
-      <span ref={objRef.animateBallHero} className={styles.scrollBefore}>
+      {/* <span ref={objRef.animateBallHero} className={styles.scrollBefore}>
         <img src={shadow} alt="" />
-      </span>
+      </span> */}
       <section
         className={`${styles.wrapperPadding} ${styles.appContentHero}`}
         id={"wrapper-padding"}
@@ -211,7 +240,7 @@ function Home() {
               sitios web.
             </p>
 
-            <h3
+            {/* <h3
               data-text="text"
               className={`${styles.text} ${styles.h3Description}`}
             >
@@ -234,7 +263,7 @@ function Home() {
               de ocio me gusta pasar el rato jugando algún videojuego o
               modelando algo 3d, es algo que encuentro muy interesante, lo hago
               como hobby...
-            </p>
+            </p> */}
 
             <p
               data-text="text"
@@ -243,9 +272,9 @@ function Home() {
               ¡ Un gusto, saludos !
             </p>
             <div className={styles.contentButtonContactAbout}>
-              <div className={styles.contentButtonForm}>
+              <div className={styles.contentButtonFormAbout}>
                 <ul>
-                  <li className={styles.contactButton}>
+                  <li className={styles.contactButtonAbout}>
                     <a href="#contact" data-link="link">
                       Contáctame
                     </a>
@@ -253,6 +282,8 @@ function Home() {
                 </ul>
               </div>
             </div>
+            {/* <Button classButton={"Hero"}/> */}
+            {/* <Button classButton={"Hero"}/> */}
           </div>
         </div>
       </section>
@@ -290,9 +321,9 @@ function Home() {
           id="challenges"
           className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
         >
-          <span ref={objRef.circleChallenge} className={styles.circleChallenge}>
+          {/* <span ref={objRef.circleChallenge} className={styles.circleChallenge}>
             <img src={shadowBlue} alt="" />
-          </span>
+          </span> */}
           <div className={styles.appContentChallengesHeader}>
             <div className={styles.appContentChallengesTitle}>
               <h2 data-text="text" className={styles.spanChallengeName}>
@@ -376,7 +407,7 @@ function Home() {
                 <img src={shadow} alt="" />
               </span>
               <Link className={styles.moreLink} to="/desafios">
-                Mas desafíos
+                Más desafíos
               </Link>
             </div>
           </div>

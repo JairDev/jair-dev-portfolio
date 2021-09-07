@@ -40,7 +40,7 @@ function Projects({ title, subTitle, projectsArray, sliceNumber }) {
                 {/* <img src={shadow} alt="" /> */}
               </span>
               <Link className={styles.moreLink} to="/proyectos">
-                Mas proyectos
+                Más proyectos
               </Link>
             </div>
           </div>

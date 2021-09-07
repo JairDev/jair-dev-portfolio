@@ -33,7 +33,7 @@ export function gsapAnimations({
   const tlAnimatePhoto = gsap.timeline({
     scrollTrigger: {
       trigger: animatePhoto.current,
-      start: "center 80%",
+      start: "center 90%",
       end: "bottom -=400",
       scrub: true,
       // markers: true
@@ -42,8 +42,8 @@ export function gsapAnimations({
   const tlLayerPhoto = gsap.timeline({
     scrollTrigger: {
       trigger: layerPhoto.current,
-      start: "top 60%",
-      end: "top -=1000",
+      start: "top 90%",
+      end: "top -=300",
       scrub: true,
       // markers: true
     },
@@ -125,6 +125,6 @@ export function gsapAnimations({
     duration: 1,
   });
   tlCircleLink.to(circleLinkRef.current, {
-    yPercent: 1200,
+    yPercent: 900,
   });
 }

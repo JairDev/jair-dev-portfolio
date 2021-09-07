@@ -1,0 +1,65 @@
+.contentButtonContact {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15vh;
+  position: relative;
+}
+
+.contentButtonForm {
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  box-shadow: 2px 4px 12px rgb(30 19 61 / 40%);
+  background-color: var(--accent-color);
+  overflow: hidden;
+}
+
+.contentButtonForm::before {
+  content: "";
+  border-radius: 50px;
+  background-color: #683edb;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all ease-in 0.4s;
+}
+
+.contentButtonForm:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.contentButtonForm {
+  align-self: flex-start;
+  position: relative;
+}
+
+.contactButton {
+  border: 2px solid green;
+  border: none;
+  background: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: var(--text-button-big);
+  font-family: var(--title-font);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing);
+  padding: 0.6rem 1.8rem;
+  position: relative;
+  z-index: 10;
+}
+
+.contactButton a {
+  color: var(--body-color);
+}
+
+.contentButtonContact.About {
+  border: 2px solid red;
+}
+
+.contentButtonContact.Hero {
+  border: 2px solid rgb(0, 255, 55);
+}

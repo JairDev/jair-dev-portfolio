@@ -163,7 +163,7 @@ function FormContact() {
               <a href={icon.url} target="_blank" rel="noopener noreferrer">
                 <Icon
                   icon={icon.name}
-                  style={{ fontSize: "44px", color: "#2A2A2A" }}
+                  style={{ fontSize: "40px", color: "#2A2A2A" }}
                 />
                 <span className={styles.labelSocial}>{icon.label}</span>
               </a>

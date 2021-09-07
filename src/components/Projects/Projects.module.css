@@ -92,6 +92,10 @@
   padding-top: 5vh;
 }
 
+.pDescriptionPersonal:first-child {
+  padding-top: 8vh;
+}
+
 .contentProjectImg {
   width: 100%;
   height: 100%;
