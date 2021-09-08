@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Projects({ title, subTitle, projectsArray, sliceNumber }) {
   const twoProjects = projectsArray.slice(0, sliceNumber);
+  // console.log(twoProjects)
   // useEffect(() => {
   //   ScrollTrigger.refresh();
   //   return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
@@ -51,6 +52,7 @@ function Projects({ title, subTitle, projectsArray, sliceNumber }) {
 }
 
 function ProjectsChild({ work }) {
+  console.log(work)
   return (
     <>
       <div id={work.id} className={styles.contentPersonalProject}>
@@ -67,7 +69,7 @@ function ProjectsChild({ work }) {
               <div className={styles.contentImgCoin}>
                 <img src={work.imgSrcApp} alt="" />
               </div>
-              <IconSocial fontSizeIcon="24px" />
+              <IconSocial urlGithub={work.linkGit} urlLive={work.linkDemo} fontSizeIcon="24px" />
             </div>
           </div>
           <div

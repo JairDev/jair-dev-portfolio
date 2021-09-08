@@ -400,12 +400,12 @@ function Home() {
             <div className={styles.contentLinesCustomLink}>
               <span className={styles.lineCustomLink}></span>
               <span className={styles.circleCustomLink}></span>
-              <span
+              {/* <span
                 ref={objRef.circleLinkRef}
                 className={styles.circleCustomLinkAnimate}
               >
                 <img src={shadow} alt="" />
-              </span>
+              </span> */}
               <Link className={styles.moreLink} to="/desafios">
                 Más desafíos
               </Link>

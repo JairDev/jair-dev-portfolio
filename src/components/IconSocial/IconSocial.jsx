@@ -4,12 +4,12 @@ import linkOut from "@iconify/icons-akar-icons/link-out";
 import githubFill from "@iconify/icons-akar-icons/github-fill";
 import styles from "./IconSocial.module.css"
 
-function IconSocial({fontSizeIcon}) {
+function IconSocial({urlGithub, urlLive, fontSizeIcon}) {
   return (
     <div className={styles.personalProjectsExternalLink}>
       <div className={styles.contentIconGithubProjects}>
         <a
-          href={"https://github.com/JairDev/to-do-app"}
+          href={urlGithub}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -21,7 +21,7 @@ function IconSocial({fontSizeIcon}) {
       </div>
       <div className={styles.contentIconExLinkProjects}>
         <a
-          href={"https://todo-list-app-300dev.netlify.app/"}
+          href={urlLive}
           target="_blank"
           rel="noopener noreferrer"
         >
