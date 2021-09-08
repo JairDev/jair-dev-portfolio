@@ -203,7 +203,7 @@
 
 .appContentScrollArrow {
   position: absolute;
-  bottom: 35px;
+  bottom: 40px;
 }
 
 .scrollBack,
@@ -213,7 +213,7 @@
 }
 
 .scrollBack {
-  border: 2px solid #ffffff;
+  /* border: 2px solid #ffffff; */
   /* background-color: var(--primary-color); */
   border-radius: 50%;
   color: var(--body-color);
