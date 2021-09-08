@@ -55,7 +55,7 @@ function Home() {
     animatePhoto: useRef(null),
     layerPhoto: useRef(null),
   };
-  
+
   useEffect(() => {
     const nodeParent = document.querySelectorAll("[data-height]");
     // smoothScroll("#container");
@@ -68,10 +68,10 @@ function Home() {
         scrub: true,
       },
     });
-  
+
     gsap.utils.toArray("[data-img]").forEach((img, i) => {
       const arr = [...nodeParent][i];
-      console.log(arr)
+      console.log(arr);
       const sum = arr.clientHeight - arr.clientHeight / 3;
       if (window.innerWidth > 860) {
         gsap.to(img, {
@@ -207,9 +207,9 @@ function Home() {
               className={`${styles.text} ${styles.pDescription}`}
             >
               Soy curioso por naturaleza, desde el "aparato" que de adolescente
-              desarmaba para ver que tenía por dentro, hasta preguntarme como era
-              posible la construcción de sitios web, plantearme esto, dio inicio
-              a mi camino en el mundo de la programación.
+              desarmaba para ver que tenía por dentro, hasta preguntarme como
+              era posible la construcción de sitios web, plantearme esto, dio
+              inicio a mi camino en el mundo de la programación.
             </p>
             <p
               data-text="text"
@@ -240,31 +240,6 @@ function Home() {
               sitios web.
             </p>
 
-            {/* <h3
-              data-text="text"
-              className={`${styles.text} ${styles.h3Description}`}
-            >
-              Un poco más de mi
-            </h3>
-            <p
-              data-text="text"
-              className={`${styles.text} ${styles.pDescription}`}
-            >
-              Como seres humanos necesitamos conectar con nuestras emociones,
-              nuestro entorno, disfrutar de la vida, me encanta ir a la playa,
-              hacer ejercicio al aire libre, me gustan las mascotas, sobre todo
-              los perros.
-            </p>
-            <p
-              data-text="text"
-              className={`${styles.text} ${styles.pDescription}`}
-            >
-              Cuando estoy estresado, la música despeja mi mente, en mis tiempos
-              de ocio me gusta pasar el rato jugando algún videojuego o
-              modelando algo 3d, es algo que encuentro muy interesante, lo hago
-              como hobby...
-            </p> */}
-
             <p
               data-text="text"
               className={`${styles.text} ${styles.pDescription} ${styles.footerDescription}`}
@@ -292,9 +267,6 @@ function Home() {
         className={`${styles.wrapperPadding} ${styles.appContentSkills}`}
         id="insert-canvas"
       >
-        <div className={styles.containBlurry}>
-          <img src={blurry} alt="" />
-        </div>
         <div className={styles.wrapperSkills}>
           <h3 data-text="text" className={styles.h3Skills}>
             Habilidades Actuales
@@ -391,7 +363,11 @@ function Home() {
                   className={styles.contentImgPhone}
                 >
                   <img src={phoneChallenge} alt="" />
-                  <IconSocial fontSizeIcon="23px" />
+                  <IconSocial
+                    urlGithub={"https://github.com/JairDev/to-do-app"}
+                    urlLive={"https://todo-list-app-300dev.netlify.app"}
+                    fontSizeIcon="23px"
+                  />
                 </div>
               </div>
             </div>

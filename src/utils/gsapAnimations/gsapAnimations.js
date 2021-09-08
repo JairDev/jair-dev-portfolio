@@ -78,7 +78,7 @@ export function gsapAnimations({
     });
     tlText.from(item, {
       opacity: 0,
-      yPercent: 50,
+      yPercent: 5,
     });
   });
 

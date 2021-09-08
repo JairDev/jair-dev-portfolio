@@ -279,13 +279,14 @@
 }
 
 .appContentAboutMePhoto {
-  border-radius: 8px;
-  opacity: 1;
-  width: 15vmax;
+  /* border-radius: 8px; */
+  clip-path: polygon(20% 1%, 100% 0%, 80% 100%, 0% 100%);
   filter: grayscale(1);
   overflow: hidden;
+  opacity: 1;
   transform-origin: top;
   line-height: 0;
+  width: 15vmax;
 }
 
 .layerPhoto {
@@ -370,7 +371,7 @@
 
 .lineBottomAbout {
   right: -5%;
-  bottom: 8%;
+  bottom: 4%;
   width: 70%;
   height: 3px;
 }
@@ -419,12 +420,13 @@
 }
 
 .contentButtonContactAbout {
-  padding: 20vh;
+  padding: 10vh;
 }
 
 /* skills */
 
 .appContentSkills {
+  background-color: var(--primary-color) ;
   color: var(--body-color);
   padding: 10vh 0;
   text-align: center;

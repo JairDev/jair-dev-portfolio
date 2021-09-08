@@ -3,7 +3,7 @@ import memory from "../assets/memory-tablet.png";
 import workDessert from "../assets/desert-tablet.png";
 import imgCode from "../assets/personal-projects-code-s.png";
 import imgCodeHoc from "../assets/personal-projects-code-hoc.png";
-import tablet from "../assets/tablet.png";
+// import tablet from "../assets/tablet.png";
 import room from "../assets/room-homepage.png";
 
 export const socialMedia = [
