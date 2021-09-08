@@ -207,7 +207,7 @@ function Home() {
               className={`${styles.text} ${styles.pDescription}`}
             >
               Soy curioso por naturaleza, desde el "aparato" que de adolescente
-              desarmaba par ver que tenía por dentro, hasta preguntarme como era
+              desarmaba para ver que tenía por dentro, hasta preguntarme como era
               posible la construcción de sitios web, plantearme esto, dio inicio
               a mi camino en el mundo de la programación.
             </p>
