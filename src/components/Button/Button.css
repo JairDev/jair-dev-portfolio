@@ -1,20 +1,31 @@
 .contentButtonContact {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
-  padding-bottom: 15vh;
+  /* padding-bottom: 15vh; */
   position: relative;
 }
+.contentButtonContact.about {
+  padding: 3rem;
+}
 
-.contentButtonForm {
-  border: 2px solid #ffffff;
+.contentButton {
+  /* border: 2px solid #ffffff; */
   border-radius: 50px;
-  box-shadow: 2px 4px 12px rgb(30 19 61 / 40%);
-  background-color: var(--accent-color);
+  /* box-shadow: 2px 4px 12px rgb(30 19 61 / 40%); */
+  /* background-color: var(--accent-color); */
   overflow: hidden;
 }
 
-.contentButtonForm::before {
+.contentButton.hero {
+  border: 2px solid #ffffff;
+}
+
+.contentButton.about {
+  border: 2px solid var(--accent-color);
+}
+
+.contentButton::before {
   content: "";
   border-radius: 50px;
   background-color: #683edb;
@@ -27,23 +38,27 @@
   transition: all ease-in 0.4s;
 }
 
-.contentButtonForm:hover::before {
+.contentButton:hover::before {
   width: 200px;
   height: 200px;
 }
 
-.contentButtonForm {
+.contentButton.about:hover .link.about {
+  color: var(--body-color);
+}
+
+.contentButton {
   align-self: flex-start;
   position: relative;
 }
 
-.contactButton {
+.button {
   border: 2px solid green;
   border: none;
   background: none;
   border-radius: 50px;
   cursor: pointer;
-  font-size: var(--text-button-big);
+  font-size: var(--text-button-small);
   font-family: var(--title-font);
   font-weight: 600;
   letter-spacing: var(--letter-spacing);
@@ -52,14 +67,17 @@
   z-index: 10;
 }
 
-.contactButton a {
+/* .button a {
+  color: var(--body-color);
+} */
+
+.link {
+  transition: all ease-in 0.4s;
+}
+.link.hero {
   color: var(--body-color);
 }
 
-.contentButtonContact.About {
-  border: 2px solid red;
-}
-
-.contentButtonContact.Hero {
-  border: 2px solid rgb(0, 255, 55);
+.link.about {
+  color: var(--accent-color);
 }

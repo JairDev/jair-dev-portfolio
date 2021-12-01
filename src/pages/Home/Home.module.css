@@ -47,7 +47,7 @@
 .contentButtonContact {
   display: flex;
   flex-direction: column;
-  padding-bottom: 15vh;
+  /* padding-bottom: 15vh; */
   position: relative;
 }
 
@@ -203,7 +203,8 @@
 
 .appContentScrollArrow {
   position: absolute;
-  bottom: 40px;
+  /* bottom: 40px; */
+  top: 90vh;
 }
 
 .scrollBack,

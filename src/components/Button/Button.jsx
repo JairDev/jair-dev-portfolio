@@ -1,20 +1,18 @@
 import React from "react";
-import "./Button.css"
+import "./Button.css";
 
-function Button({classButton}) {
+function Button({ classButton }) {
   return (
     <div className={`contentButtonContact ${classButton}`}>
-      <div className="contentButtonForm">
-        <ul>
-          <li className="contactButton">
-            <a href="#contact" data-link="link">
-              Contáctame
-            </a>
-          </li>
-        </ul>
+      <div className={`contentButton ${classButton}`}>
+        <div className="button">
+          <a className={`link ${classButton}`} href="#contact" data-link="link">
+            Contáctame
+          </a>
+        </div>
       </div>
     </div>
   );
 }
 
-export default Button
+export default Button;

@@ -25,7 +25,7 @@ import phone3 from "../../assets/hero-phone5.png";
 import phoneChallenge from "../../assets/phone-challenge-2.png";
 import ArrowIcon from "../../assets/arrow.svg";
 import styles from "./Home.module.css";
-// import Button from "components/Button/Button";
+import Button from "components/Button/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -110,15 +110,14 @@ function Home() {
                 id="trigger-button"
                 className={styles.contentButtonContact}
               >
-                <div className={styles.contentButtonForm}>
-                  <ul>
-                    <li className={styles.contactButton}>
-                      <a href="#contact" data-link="link">
-                        Contáctame
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                {/* <div className={styles.contentButtonForm}>
+                  <div className={styles.contactButton}>
+                    <a href="#contact" data-link="link">
+                      Contáctame
+                    </a>
+                  </div>
+                </div> */}
+                <Button classButton="hero" />
               </div>
             </div>
             <div className={styles.appContentScrollArrow}>
@@ -164,17 +163,6 @@ function Home() {
         className={`${styles.wrapperPadding} ${styles.appContentAboutMe}`}
       >
         <div className={styles.appContentAboutMeHeader}>
-          {/* <div
-            ref={objRef.animatePhoto}
-            className={styles.appContentAboutMePhoto}
-          >
-            <span ref={objRef.layerPhoto} className={styles.layerPhoto}></span>
-            <img
-              className={styles.photo}
-              src={photoProfile}
-              alt="Foto de perfil"
-            />
-          </div> */}
           <div className={styles.appContentAboutMeTitle}>
             <h2
               data-text="text"
@@ -200,8 +188,9 @@ function Home() {
               data-text="text"
               className={`${styles.text} ${styles.pDescription}`}
             >
-              Hola me llamo Alfredo Moscoso, tengo conocimientos en tecnologías para el desarrollo
-              web como ReactJs, Javascript, Sass, Css3, Html5.
+              Hola me llamo Alfredo Moscoso, tengo conocimientos en tecnologías
+              para el desarrollo web como ReactJs, Javascript, Sass, Css3,
+              Html5.
             </p>
             <p
               data-text="text"
@@ -214,63 +203,7 @@ function Home() {
               base sólida en Javascript, pero siempre dispuesto a aprender una
               nueva herramienta.
             </p>
-            {/* <p
-              data-text="text"
-              className={`${styles.text} ${styles.pDescription}`}
-            >
-              Soy curioso por naturaleza, desde el "aparato" que de adolescente
-              desarmaba para ver que tenía por dentro, hasta preguntarme como
-              era posible la construcción de sitios web, plantearme esto, dio
-              inicio a mi camino en el mundo de la programación.
-            </p>
-            <p
-              data-text="text"
-              className={`${styles.text} ${styles.pDescription}`}
-            >
-              Mis primeros pasos fueron con Python y Django, con este lenguaje
-              ya era posible construir algo "visual", pero quería más, siguiendo
-              con mis investigaciones descubrí la ruta de desarrollo frontend y
-              todo comenzó a tomar forma para mí, tomé un curso en codecademy
-              donde hubo una ruta clara a seguir, aprendí sobre HTML y CSS, para
-              luego iniciar con Javascript, abriendo un mundo de posibilidades y
-              poder comprender el dinamismo que este lenguaje es capaz de
-              aportar a un sitio web.
-            </p>
-
-            <p
-              data-text="text"
-              className={`${styles.text} ${styles.pDescription}`}
-            >
-              Trato de estar al día con las nuevas tecnologías, pero consciente
-              de que es un ecosistema muy grande, donde "cada día" aparece un
-              nuevo framework o librería, por eso en este momento, estoy
-              enfocado en cimentar mis conocimientos en React, partiendo de una
-              base sólida en Javascript, aunque siempre dispuesto a aprender una
-              nueva herramienta, actualmente estoy aprendiendo sobre una
-              librería de animaciones construida en Javascript llamada GSAP, que
-              me parece muy potente para darle ese toque especial a nuestros
-              sitios web.
-            </p>
-
-            <p
-              data-text="text"
-              className={`${styles.text} ${styles.pDescription} ${styles.footerDescription}`}
-            >
-              ¡ Un gusto, saludos !
-            </p> */}
-            <div className={styles.contentButtonContactAbout}>
-              <div className={styles.contentButtonFormAbout}>
-                <ul>
-                  <li className={styles.contactButtonAbout}>
-                    <a href="#contact" data-link="link">
-                      Contáctame
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            {/* <Button classButton={"Hero"}/> */}
-            {/* <Button classButton={"Hero"}/> */}
+            <Button classButton="about" />
           </div>
         </div>
       </section>
