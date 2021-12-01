@@ -54,6 +54,7 @@ export function gsapAnimations({
       start: "center 90%",
       end: "bottom center",
       scrub: true,
+      // markers: true
     },
   });
 
@@ -109,7 +110,7 @@ export function gsapAnimations({
     duration: 1
   });
   tlWordWeb.to(word.current, {
-    yPercent: -30,
+    yPercent: -20,
     duration: 1,
   });
   tlCircleChallenge.to(circleChallenge.current, {

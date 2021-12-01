@@ -9,12 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Projects({ title, subTitle, projectsArray, sliceNumber }) {
   const twoProjects = projectsArray.slice(0, sliceNumber);
-  // console.log(twoProjects)
-  // useEffect(() => {
-  //   ScrollTrigger.refresh();
-  //   return () => ScrollTrigger.getAll().forEach((ST) => ST.kill());
-  // }, []);
-
   return (
     <section id="personal-work" className={`${styles.wrapperPadding}`}>
       <div className={styles.appContentPersonalProjectsHeader}>
@@ -35,10 +29,8 @@ function Projects({ title, subTitle, projectsArray, sliceNumber }) {
               <span className={styles.lineCustomLink}></span>
               <span className={styles.circleCustomLink}></span>
               <span
-                // ref={objRef.circleLinkRef}
                 className={styles.circleCustomLinkAnimate}
               >
-                {/* <img src={shadow} alt="" /> */}
               </span>
               <Link className={styles.moreLink} to="/proyectos">
                 Más proyectos
@@ -86,9 +78,9 @@ function ProjectsChild({ work }) {
               </p>
             ))}
 
-            <div className={styles.fragmentCode}>
+            {/* <div className={styles.fragmentCode}>
               <img src={work.imgCode} alt="" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

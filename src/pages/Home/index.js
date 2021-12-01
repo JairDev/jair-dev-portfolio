@@ -21,14 +21,11 @@ import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
 import bxlGit from "@iconify/icons-bx/bxl-git";
 
 import phone3 from "../../assets/hero-phone5.png";
-import photoProfile from "../../assets/foto-perfil.png";
+// import photoProfile from "../../assets/foto-perfil.png";
 import phoneChallenge from "../../assets/phone-challenge-2.png";
 import ArrowIcon from "../../assets/arrow.svg";
-import shadow from "../../assets/shadow-ball.png";
-import shadowBlue from "../../assets/shadow-ball-blue.png";
-import blurry from "../../assets/blurry.png";
 import styles from "./Home.module.css";
-import Button from "components/Button/Button";
+// import Button from "components/Button/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -58,7 +55,7 @@ function Home() {
 
   useEffect(() => {
     const nodeParent = document.querySelectorAll("[data-height]");
-    // smoothScroll("#container");
+    smoothScroll("#container");
     gsap.timeline({
       scrollTrigger: {
         trigger: ["[data-phone]"],
@@ -99,9 +96,6 @@ function Home() {
 
   return (
     <>
-      {/* <span ref={objRef.animateBallHero} className={styles.scrollBefore}>
-        <img src={shadow} alt="" />
-      </span> */}
       <section
         className={`${styles.wrapperPadding} ${styles.appContentHero}`}
         id={"wrapper-padding"}
@@ -170,7 +164,7 @@ function Home() {
         className={`${styles.wrapperPadding} ${styles.appContentAboutMe}`}
       >
         <div className={styles.appContentAboutMeHeader}>
-          <div
+          {/* <div
             ref={objRef.animatePhoto}
             className={styles.appContentAboutMePhoto}
           >
@@ -180,7 +174,7 @@ function Home() {
               src={photoProfile}
               alt="Foto de perfil"
             />
-          </div>
+          </div> */}
           <div className={styles.appContentAboutMeTitle}>
             <h2
               data-text="text"
@@ -203,6 +197,24 @@ function Home() {
             <span className={styles.lineBottomAbout}></span>
             <span className={styles.lineLeftAbout}></span>
             <p
+              data-text="text"
+              className={`${styles.text} ${styles.pDescription}`}
+            >
+              Hola me llamo Alfredo Moscoso, tengo conocimientos en tecnologías para el desarrollo
+              web como ReactJs, Javascript, Sass, Css3, Html5.
+            </p>
+            <p
+              data-text="text"
+              className={`${styles.text} ${styles.pDescription}`}
+            >
+              Trato de estar al día con las nuevas tecnologías, pero consciente
+              de que es un ecosistema muy grande, donde "cada día" aparece un
+              nuevo framework o librería, por eso en este momento, estoy
+              enfocado en cimentar mis conocimientos en React, partiendo de una
+              base sólida en Javascript, pero siempre dispuesto a aprender una
+              nueva herramienta.
+            </p>
+            {/* <p
               data-text="text"
               className={`${styles.text} ${styles.pDescription}`}
             >
@@ -245,7 +257,7 @@ function Home() {
               className={`${styles.text} ${styles.pDescription} ${styles.footerDescription}`}
             >
               ¡ Un gusto, saludos !
-            </p>
+            </p> */}
             <div className={styles.contentButtonContactAbout}>
               <div className={styles.contentButtonFormAbout}>
                 <ul>
@@ -293,9 +305,6 @@ function Home() {
           id="challenges"
           className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
         >
-          {/* <span ref={objRef.circleChallenge} className={styles.circleChallenge}>
-            <img src={shadowBlue} alt="" />
-          </span> */}
           <div className={styles.appContentChallengesHeader}>
             <div className={styles.appContentChallengesTitle}>
               <h2 data-text="text" className={styles.spanChallengeName}>
@@ -376,12 +385,6 @@ function Home() {
             <div className={styles.contentLinesCustomLink}>
               <span className={styles.lineCustomLink}></span>
               <span className={styles.circleCustomLink}></span>
-              {/* <span
-                ref={objRef.circleLinkRef}
-                className={styles.circleCustomLinkAnimate}
-              >
-                <img src={shadow} alt="" />
-              </span> */}
               <Link className={styles.moreLink} to="/desafios">
                 Más desafíos
               </Link>

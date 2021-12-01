@@ -3,7 +3,6 @@ import memory from "../assets/memory-tablet.png";
 import workDessert from "../assets/desert-tablet.png";
 import imgCode from "../assets/personal-projects-code-s.png";
 import imgCodeHoc from "../assets/personal-projects-code-hoc.png";
-// import tablet from "../assets/tablet.png";
 import room from "../assets/room-homepage.png";
 
 export const socialMedia = [
@@ -58,39 +57,44 @@ export const personalProjects = [
     dataDescription: [
       {
         paragraph: `React y otras librerías similares están pensadas para facilitar la creación de interfaces web, móvil, etc;
-        aumentando la productividad, al acelerar el proceso de desarrollo. En la etapa de aprendizaje de React, nos vamos topando con conceptos más avanzados
-        a medida que avanzamos.`,
+        aumentando la productividad, al acelerar el proceso de desarrollo.`,
       },
       {
-        paragraph: `En esta aplicación que consiste en mostrar criptomonedas en tendencia, buscar 
-        criptomonedas de tu preferencia o leer noticias actualizadas referente al mundo crypto, tenía
-        dos componentes similares en cuanto a funcionalidad y la manera en que dependían de un valor para
-        mostrar datos en la interfaz.`,
-      },
-      {
-        paragraph: `Un primer componente, que renderiza la tabla con información sobre monedas, depende de
-        la entrada del usuario y de una función que toma esos datos, actualiza una variable de estado
-        y se renderiza la moneda.`,
-      },
-      {
-        paragraph: `Un segundo componente, que renderiza las noticias actuales sobre criptomonedas, que también
-        depende de una entrada del usuario y la misma funcionalidad que el primer componente. En la documentación
-        de React, se habla de los componentes de orden superior, recordemos que React es una librería construida
-        en JavaScript, donde existen las funciones de orden superior, (funciones que reciben otras funciones
-        como argumentos)`,
-      },
-      {
-        paragraph: `En React un componente de orden superior, es una función que recibe un componente como
-        argumento y devuelve un nuevo componente. Un componente de orden superior me permite definir estos
-        datos y/o funciones en un mismo lugar, para luego compartirlos con otros componentes, reutilizando
-        esa función y también poder crear flexibilidad en el código. (Todo esto ocurrió en una etapa posterior de 
-        refactorización)`,
-      },
-      {
-        paragraph: `Como pueden ver en este fragmento, el componente de orden superior devuelve un nuevo
-        componente, transformado mediante las props (propiedades) que se le pasan. En este caso, comparten
-        la misma variable de estado y la función, pero su label es diferente.`,
-      },
+        paragraph: `Nos permite, por ejemplo, reutilizar componentes de interfaz en nuestros sitios web,
+        en esta aplicación puedo reutilizar un componente input a lo largo de mi sitio web, en este caso,
+        se utiliza para buscar una criptomoneda en el gráfico o en otra sección de la web para buscar
+        noticias referentes a las criptomonedas.`
+      }
+      // {
+      //   paragraph: `En esta aplicación que consiste en mostrar criptomonedas en tendencia, buscar 
+      //   criptomonedas de tu preferencia o leer noticias actualizadas referente al mundo crypto, tenía
+      //   dos componentes similares en cuanto a funcionalidad y la manera en que dependían de un valor para
+      //   mostrar datos en la interfaz.`,
+      // },
+      // {
+      //   paragraph: `Un primer componente, que renderiza la tabla con información sobre monedas, depende de
+      //   la entrada del usuario y de una función que toma esos datos, actualiza una variable de estado
+      //   y se renderiza la moneda.`,
+      // },
+      // {
+      //   paragraph: `Un segundo componente, que renderiza las noticias actuales sobre criptomonedas, que también
+      //   depende de una entrada del usuario y la misma funcionalidad que el primer componente. En la documentación
+      //   de React, se habla de los componentes de orden superior, recordemos que React es una librería construida
+      //   en JavaScript, donde existen las funciones de orden superior, (funciones que reciben otras funciones
+      //   como argumentos)`,
+      // },
+      // {
+      //   paragraph: `En React un componente de orden superior, es una función que recibe un componente como
+      //   argumento y devuelve un nuevo componente. Un componente de orden superior me permite definir estos
+      //   datos y/o funciones en un mismo lugar, para luego compartirlos con otros componentes, reutilizando
+      //   esa función y también poder crear flexibilidad en el código. (Todo esto ocurrió en una etapa posterior de 
+      //   refactorización)`,
+      // },
+      // {
+      //   paragraph: `Como pueden ver en este fragmento, el componente de orden superior devuelve un nuevo
+      //   componente, transformado mediante las props (propiedades) que se le pasan. En este caso, comparten
+      //   la misma variable de estado y la función, pero su label es diferente.`,
+      // },
     ],
   },
   {
@@ -103,12 +107,10 @@ export const personalProjects = [
     dataDescription: [
       {
         paragraph: `Realizando esta app, pude ver algunas particularidades de React, por ejemplo, el trabajar
-        con formularios y entradas de usuario. La mayoría de las veces cuando trabajamos con formularios
-        y entradas del usuario, queremos hacer algo con esos datos (valores), enviar un correo, mostrar algo
-        en nuestra interfaz, etc.`,
+        con formularios y entradas de usuario.`,
       },
       {
-        paragraph: `Para esto React nos proporciona una técnica llamada "componentes controlados",
+        paragraph: `React nos proporciona una técnica llamada "componentes controlados",
         recordemos que en React para actualizar algún elemento de la interfaz, lo hacemos actualizando el estado,
         React al "notar" un cambio en el estado actualiza la interfaz en consecuencia.`,
       },
@@ -116,15 +118,8 @@ export const personalProjects = [
         paragraph: `
         Lo que hacemos entonces es determinar que el estado de React sea la única "fuente de verdad", 
         de esta manera los componentes que rendericen un formulario, tienen el control sobre lo que pasa 
-        en ese formulario. El atributo value del elemento input, al tener como valor la variable de estado "value",
-        el valor del input estará controlado por el estado de React, pudiendo así pasar ese valor a otros componentes
-        u otros elementos de nuestra interfaz. 
-        `,
-      },
-      {
-        paragraph: `Vean aquí, este componente está renderizando un formulario, 
-        el estado de este componente es la fuente de verdad para ese formulario, tomo ese valor (variable de estado)
-        actualizado por un evento onChange y mediante el evento submit paso esos datos a una función en otro componente para hacer la búsqueda de un postre.`,
+        en ese formulario. 
+        `
       },
     ],
   },

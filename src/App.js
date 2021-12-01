@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Home from "pages/Home";
 import Layout from "pages/Layout/Layout";
 import Challenge from "components/Challenge/Challenge";
-import "./assets/coin.png";
-import "./assets/desert.png";
 import "./assets/css.svg";
 import "./assets/git.svg";
 import "./assets/html.svg";
