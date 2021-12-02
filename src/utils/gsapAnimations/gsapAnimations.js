@@ -50,9 +50,9 @@ export function gsapAnimations({
   });
   const tlWordWeb = gsap.timeline({
     scrollTrigger: {
-      trigger: "[data-text]",
-      start: "center 90%",
-      end: "bottom center",
+      trigger: "[data-wordweb]",
+      start: "center 100%",
+      end: "bottom 10%",
       scrub: true,
       // markers: true
     },
@@ -67,21 +67,21 @@ export function gsapAnimations({
     },
   });
 
-  gsap.utils.toArray("[data-text]").forEach((item) => {
-    const tlText = gsap.timeline({
-      scrollTrigger: {
-        trigger: item,
-        start: "top 98%",
-        end: "center 80%",
-        scrub: true,
-        // markers: true
-      },
-    });
-    tlText.from(item, {
-      opacity: 0,
-      yPercent: 5,
-    });
-  });
+  // gsap.utils.toArray("[data-text]").forEach((item) => {
+  //   const tlText = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: item,
+  //       start: "top 98%",
+  //       end: "center 80%",
+  //       scrub: true,
+  //       // markers: true
+  //     },
+  //   });
+  //   tlText.from(item, {
+  //     opacity: 0,
+  //     yPercent: 5,
+  //   });
+  // });
 
   const tlCode = gsap.timeline({
     scrollTrigger: {
@@ -110,7 +110,7 @@ export function gsapAnimations({
     duration: 1
   });
   tlWordWeb.to(word.current, {
-    yPercent: -20,
+    yPercent: -200,
     duration: 1,
   });
   tlCircleChallenge.to(circleChallenge.current, {

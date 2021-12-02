@@ -55,7 +55,7 @@ function Home() {
 
   useEffect(() => {
     const nodeParent = document.querySelectorAll("[data-height]");
-    smoothScroll("#container");
+    // smoothScroll("#container");
     gsap.timeline({
       scrollTrigger: {
         trigger: ["[data-phone]"],
@@ -141,6 +141,7 @@ function Home() {
                 Interaction
               </span>
               <span
+                data-wordweb="wordweb"
                 ref={objRef.word}
                 className={`${styles.wordsHero} ${styles.bottomLeft}`}
               >
@@ -190,15 +191,14 @@ function Home() {
             >
               Hola me llamo Alfredo Moscoso, tengo conocimientos en tecnologías
               para el desarrollo web como ReactJs, Javascript, Sass, Css3,
-              Html5.
+              Html5, Git.
             </p>
             <p
               data-text="text"
               className={`${styles.text} ${styles.pDescription}`}
             >
               Trato de estar al día con las nuevas tecnologías, pero consciente
-              de que es un ecosistema muy grande, donde "cada día" aparece un
-              nuevo framework o librería, por eso en este momento, estoy
+              de que es un ecosistema muy grande, por eso en este momento estoy
               enfocado en cimentar mis conocimientos en React, partiendo de una
               base sólida en Javascript, pero siempre dispuesto a aprender una
               nueva herramienta.

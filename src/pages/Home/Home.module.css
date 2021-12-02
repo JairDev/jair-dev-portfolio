@@ -178,7 +178,7 @@
   top: 30%;
   left: -10%;
   font-size: calc(1vw + 3em);
-  opacity: 0.1;
+  /* opacity: 0.1; */
 }
 
 .wordsHero.bottomRight {
@@ -188,7 +188,8 @@
 }
 
 .wordsHero.bottomLeft {
-  bottom: -40%;
+  /* border: 2px solid red; */
+  bottom: -80vh;
   left: -70%;
   font-size: calc(10vw + 1em);
   z-index: 50;
@@ -884,6 +885,9 @@
     font-size: var(--text-button-small);
   }
 
+  .appContentScrollArrow {
+    top: 80vh;
+  }
   .appRightContentHero {
     width: 55%;
   }

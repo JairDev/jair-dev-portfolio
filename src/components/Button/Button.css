@@ -75,7 +75,7 @@
   transition: all ease-in 0.4s;
 }
 .link.hero {
-  color: var(--body-color);
+  color: #ffffff;
 }
 
 .link.about {
