@@ -934,14 +934,27 @@
     font-size: 18px;
   }
 
+  .wrapperContentChallenge {
+    flex-direction: row;
+  }
+
   .appLeftContentChallenge {
     width: 60%;
   }
 
   .appRightContentChallenge {
+    padding: 0;
     display: flex;
+    width: 40%;
   }
 
+  .appRightContentChallengeImg {
+    width: 50%;
+    height: 100%;
+  }
+  .contentImgPhone {
+    /* position: absolute; */
+  }
   .wrapperCodeImg {
     width: 70%;
   }

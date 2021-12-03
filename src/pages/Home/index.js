@@ -55,16 +55,16 @@ function Home() {
 
   useEffect(() => {
     const nodeParent = document.querySelectorAll("[data-height]");
-    // smoothScroll("#container");
-    // gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ["[data-phone]"],
-    //     pin: true,
-    //     start: "center 30%",
-    //     end: "top -=550",
-    //     scrub: true,
-    //   },
-    // });
+    smoothScroll("#container");
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ["[data-phone]"],
+        pin: true,
+        start: "center 30%",
+        end: "top -=550",
+        scrub: true,
+      },
+    });
 
     gsap.utils.toArray("[data-img]").forEach((img, i) => {
       const arr = [...nodeParent][i];
