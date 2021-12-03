@@ -26,6 +26,11 @@
   border-bottom: 1px solid var(--accent-color);
 }
 
+.contentPersonalProject {
+  /* border: 2px solid red; */
+  padding-bottom: 10vh;
+}
+
 .contentPersonalProjectFlex {
   display: flex;
   flex-direction: column;
@@ -114,6 +119,7 @@
   width: 100%;
 }
 .codeImgPersonalProjects {
+
   padding-top: 5vh;
 }
 
@@ -124,7 +130,7 @@
 .contentMoreLink {
   display: flex;
   justify-content: center;
-  /* padding-top: 10vh; */
+  padding-top: 10vh;
   position: relative;
 }
 
