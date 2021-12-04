@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { smoothScroll } from "utils/smoothScroll";
 import { gsapAnimations } from "utils/gsapAnimations/gsapAnimations";
 import { Icon } from "@iconify/react";
 
@@ -21,7 +20,6 @@ import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
 import bxlGit from "@iconify/icons-bx/bxl-git";
 
 import phone3 from "../../assets/hero-phone5.png";
-// import photoProfile from "../../assets/foto-perfil.png";
 import phoneChallenge from "../../assets/phone-challenge-2.png";
 import ArrowIcon from "../../assets/arrow.svg";
 import styles from "./Home.module.css";
@@ -38,6 +36,27 @@ const svgIcons = [
   { name: "Html5", svg: bxlHtml5 },
   { name: "Git", svg: bxlGit },
 ];
+const setClass = (direction) => {
+  if (direction < 0 && window.scrollY <= 0) {
+    gsap.to("#nav-hidden", {
+      backgroundColor: "var(--transparent-color)",
+      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, 0)",
+      duration: 0.5,
+    });
+  } else if (direction >= 1) {
+    gsap.to("#nav-hidden", {
+      yPercent: -200,
+      duration: 0.5,
+    });
+  } else {
+    gsap.to("#nav-hidden", {
+      backgroundColor: "var(--body-color)",
+      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, .2)",
+      yPercent: 0,
+      duration: 0.5,
+    });
+  }
+};
 
 function Home() {
   const objRef = {
@@ -54,35 +73,17 @@ function Home() {
   };
 
   useEffect(() => {
-    const nodeParent = document.querySelectorAll("[data-height]");
-    smoothScroll("#container");
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: ["[data-phone]"],
-        pin: true,
-        start: "center 30%",
-        end: "top -=550",
-        scrub: true,
-      },
-    });
-
-    gsap.utils.toArray("[data-img]").forEach((img, i) => {
-      const arr = [...nodeParent][i];
-      console.log(arr);
-      const sum = arr.clientHeight - arr.clientHeight / 3;
-      if (window.innerWidth > 860) {
-        gsap.to(img, {
-          scrollTrigger: {
-            trigger: img,
-            pin: true,
-            start: "top 20%",
-            end: "+=" + sum,
-            scrub: true,
-            // markers: true,
-          },
-        });
-      }
-    });
+    if (window.innerWidth > 860) {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ["[data-phone]"],
+          pin: true,
+          start: "center 30%",
+          end: "top -=550",
+          scrub: true,
+        },
+      });
+    }
     gsapAnimations(objRef);
 
     gsap.utils.toArray("[data-link]").forEach((link) => {
@@ -91,6 +92,11 @@ function Home() {
         gsap.to(window, { duration: 0.3, scrollTo: scroll });
         e.preventDefault();
       });
+    });
+    ScrollTrigger.create({
+      onUpdate: (self) => {
+        setClass(self.direction);
+      },
     });
   }, [objRef]);
 
@@ -110,13 +116,6 @@ function Home() {
                 id="trigger-button"
                 className={styles.contentButtonContact}
               >
-                {/* <div className={styles.contentButtonForm}>
-                  <div className={styles.contactButton}>
-                    <a href="#contact" data-link="link">
-                      Contáctame
-                    </a>
-                  </div>
-                </div> */}
                 <Button classButton="hero" />
               </div>
             </div>
@@ -239,14 +238,12 @@ function Home() {
           className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
         >
           <div className={styles.appContentChallengesHeader}>
-            <div className={styles.appContentChallengesTitle}>
-              <h2 data-text="text" className={styles.spanChallengeName}>
-                Desafíos
-              </h2>
-              <h4 data-text="text" className={styles.h2FrontendName}>
-                Frontend
-              </h4>
-            </div>
+            <h2 data-text="text" className={styles.spanChallengeName}>
+              Desafíos
+            </h2>
+            <h4 data-text="text" className={styles.h2FrontendName}>
+              Frontend
+            </h4>
           </div>
 
           <div className={styles.wrapperContentChallenge}>

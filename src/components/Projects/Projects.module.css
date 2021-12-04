@@ -5,7 +5,7 @@
 
 .appContentPersonalProjectsHeader {
   color: var(--primary-text);
-  padding-top: 30vh;
+  padding-top: var(--section-header-spaces);
 }
 
 .spanWorkName {
@@ -33,12 +33,13 @@
 
 .contentPersonalProjectFlex {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
 }
 
 .contentTitleProject h3 {
-  padding: 15vh 0;
+  /* padding: 15vh 0; */
+  padding-top: 10vh;
 }
 
 .contentTitleProject h3 {
@@ -49,8 +50,9 @@
 }
 
 .contentPersonalProjectImg {
-  justify-content: flex-end;
+  /* border: 2px solid red; */
   align-self: flex-start;
+  padding-top: 10vh;
   position: relative;
   width: 100%;
 }
@@ -84,7 +86,7 @@
 
 .contentPersonalProjectDescription {
   width: 100%;
-  padding-right: 5vw;
+  /* padding-right: 5vw; */
 }
 
 .pDescriptionPersonal {
@@ -130,7 +132,7 @@
 .contentMoreLink {
   display: flex;
   justify-content: center;
-  padding-top: 10vh;
+  padding-top: 20vh;
   position: relative;
 }
 
@@ -224,7 +226,7 @@
 @media only screen and (min-width: 860px) {
   .contentPersonalProjectFlex {
     flex-direction: row-reverse;
-    padding-bottom: 30vh;
+    padding-bottom: 20vh;
   }
 
   .contentPersonalProjectDescription {

@@ -20,7 +20,8 @@
   --sub-title-font: "Saira";
   --letter-spacing: 1px;
   --line-height: 170%;
-
+  /* space */
+  --section-header-spaces: 20vh;
 }
 
 * {
