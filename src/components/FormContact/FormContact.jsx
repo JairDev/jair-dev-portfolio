@@ -51,7 +51,6 @@ function FormContact() {
         setTimeout(() => {
           spanStatusRef.current.classList.remove(styles.send);
         }, 500);
-        // console.log("SUCCESS!");
       },
       function (error) {
         setButtonState("¡ Mensaje no enviado !");
@@ -103,17 +102,38 @@ function FormContact() {
           <div className={styles.contentInput}>
             <span>Correo</span>
             <input
+              // type="email"
               placeholder={"Eg. correo@JhonDoe"}
               name="userEmail"
-              {...register("userEmail", { required: true })}
+              {...register("userEmail", {
+                required: true,
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "Enter a valid e-mail address",
+                },
+              })}
             ></input>
             <p className={styles.required}>
+              {errors.userEmail?.type === "pattern" && (
+                <ErrorMessage
+                  errors={errors}
+                  name="userEmail"
+                  render={({ messages }) => {
+                    console.log("messages", errors);
+                    return messages
+                      ? Object.entries(messages).map(([type, message]) => (
+                          <p key={type}>{errors.userEmail.message}</p>
+                        ))
+                      : null;
+                  }}
+                />
+              )}
               {errors.userEmail?.type === "required" && (
                 <ErrorMessage
                   errors={errors}
                   name="userEmail"
                   render={({ messages }) => {
-                    console.log("messages", messages);
+                    console.log("messages", errors);
                     return messages
                       ? Object.entries(messages).map(([type, message]) => (
                           <p key={type}>{"Este campo es requerido *"}</p>
