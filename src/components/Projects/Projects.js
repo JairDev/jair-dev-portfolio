@@ -10,7 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 function Projects({ title, subTitle, projectsArray, sliceNumber }) {
   const twoProjects = projectsArray.slice(0, sliceNumber);
   return (
-    <section id="personal-work" className={`${styles.wrapperPadding}`}>
+    // <section id="personal-work" className={`${styles.wrapperPadding}`}>
+    <>
       <div className={styles.appContentPersonalProjectsHeader}>
         <h2 data-text="text" className={styles.spanWorkName}>
           {title}
@@ -34,7 +35,8 @@ function Projects({ title, subTitle, projectsArray, sliceNumber }) {
           </div>
         </div>
       </div>
-    </section>
+      </>
+    // </section>
   );
 }
 

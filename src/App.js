@@ -21,7 +21,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Layout>
+        <h1 className="mantenimiento">En matenimiento</h1>
+        {/* <Layout>
           <Switch>
             <Route path="/proyectos">
               <Challenge
@@ -46,7 +47,7 @@ function App() {
               <Home />
             </Route>
           </Switch>
-        </Layout>
+        </Layout> */}
       </div>
     </Router>
   );

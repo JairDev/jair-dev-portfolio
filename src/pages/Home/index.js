@@ -188,19 +188,13 @@ function Home() {
               data-text="text"
               className={`${styles.text} ${styles.pDescription}`}
             >
-              Hola me llamo Alfredo Moscoso, tengo conocimientos en tecnologías
-              para el desarrollo web como ReactJs, Javascript, Sass, Css3,
-              Html5, Git.
+              Hola me llamo Alfredo Moscoso, soy Frontend Developer 
             </p>
             <p
               data-text="text"
               className={`${styles.text} ${styles.pDescription}`}
             >
-              Trato de estar al día con las nuevas tecnologías, pero consciente
-              de que es un ecosistema muy grande, por eso en este momento estoy
-              enfocado en cimentar mis conocimientos en React, partiendo de una
-              base sólida en Javascript, pero siempre dispuesto a aprender una
-              nueva herramienta.
+              
             </p>
             <Button classButton="about" />
           </div>
@@ -231,103 +225,104 @@ function Home() {
           </div>
         </div>
       </section>
+      <section id="personal-work" className={`${styles.wrapperPadding}`}>
+        <Projects
+          projectsArray={personalProjects}
+          title={"Proyectos"}
+          subTitle={"Personales"}
+          sliceNumber={2}
+        />
+      </section>
 
-      {
-        <section
-          id="challenges"
-          className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
-        >
-          <div className={styles.appContentChallengesHeader}>
-            <h2 data-text="text" className={styles.spanChallengeName}>
-              Desafíos
-            </h2>
-            <h4 data-text="text" className={styles.h2FrontendName}>
-              Frontend
-            </h4>
-          </div>
+      <section
+        id="challenges"
+        className={`${styles.wrapperPadding} ${styles.appContentChallenges}`}
+      >
+        <div className={styles.appContentChallengesHeader}>
+          <h2 data-text="text" className={styles.spanChallengeName}>
+            Desafíos
+          </h2>
+          <h4 data-text="text" className={styles.h2FrontendName}>
+            Frontend
+          </h4>
+        </div>
 
-          <div className={styles.wrapperContentChallenge}>
-            <div className={styles.appLeftContentChallenge}>
-              <div className={styles.challengesSubTitle}>
-                <h3 data-text="text" className={styles.h3Challenge}>
-                  Busco mejorar mis habilidades como desarrollador frontend, a
-                  través de la práctica, ya sea construyendo proyectos
-                  personales o participando en desafíos frontend !
-                </h3>
-              </div>
-              <div className={styles.challengeDescription}>
-                <span data-text="text">
-                  Desafío: Crear una aplicación de tareas pendientes
-                </span>
-                <span data-text="text">Dificultad: Intermedio</span>
-                <span data-text="text">Fuente: frontendmentor.io</span>
-              </div>
-              <div className={styles.challengeMyExplanation}>
-                <p data-text="text" className={styles.pMyExplanation}>
-                  Encuentro estos desafíos interesantes, ya que a través de
-                  ellos, puedo mejorar mis habilidades, tratando de cumplir con
-                  los retos de la manera más cercana posible en cuanto a diseño
-                  y funcionalidad se refiere.
-                </p>
-
-                <p data-text="text" className={styles.pMyExplanation}>
-                  Aplicaciones "to-do" hay muchas, pero este reto llamó mi
-                  atención, porque pedía incluir una funcionalidad de "arrastrar
-                  y soltar" las tareas para intercambiar su orden, no había
-                  realizado esa funcionalidad en otros proyectos, así que tomé
-                  el reto.
-                </p>
-                <p data-text="text" className={styles.pMyExplanation}>
-                  En el proceso de construcción de dicha característica en la
-                  aplicación, pude conocer eventos de arrastrar y soltar como,
-                  dragstart, drop, dragover, dragend, entre otros, eventos que
-                  permiten de forma nativa poder arrastrar, soltar y reordenar
-                  elementos en el DOM.
-                </p>
-              </div>
+        <div className={styles.wrapperContentChallenge}>
+          <div className={styles.appLeftContentChallenge}>
+            <div className={styles.challengesSubTitle}>
+              <h3 data-text="text" className={styles.h3Challenge}>
+                Busco mejorar mis habilidades como desarrollador frontend, a
+                través de la práctica, ya sea construyendo proyectos personales
+                o participando en desafíos frontend !
+              </h3>
             </div>
-            <div className={styles.appRightContentChallenge}>
-              <div className={styles.appRightContentChallengeImg}>
-                <div className={styles.contentLineChallenges}>
-                  <span
-                    className={`${styles.lineChallenge} ${styles.horizontal}`}
-                  ></span>
-                  <span
-                    className={`${styles.lineChallenge} ${styles.vertical}`}
-                  ></span>
-                </div>
-                <div
-                  data-phone="data-phone"
-                  ref={objRef.phoneRef}
-                  className={styles.contentImgPhone}
-                >
-                  <img src={phoneChallenge} alt="" />
-                  <IconSocial
-                    urlGithub={"https://github.com/JairDev/to-do-app"}
-                    urlLive={"https://todo-list-app-300dev.netlify.app"}
-                    fontSizeIcon="23px"
-                  />
-                </div>
-              </div>
+            <div className={styles.challengeDescription}>
+              <span data-text="text">
+                Desafío: Crear una aplicación de tareas pendientes
+              </span>
+              <span data-text="text">Dificultad: Intermedio</span>
+              <span data-text="text">Fuente: frontendmentor.io</span>
+            </div>
+            <div className={styles.challengeMyExplanation}>
+              <p data-text="text" className={styles.pMyExplanation}>
+                Encuentro estos desafíos interesantes, ya que a través de ellos,
+                puedo mejorar mis habilidades, tratando de cumplir con los retos
+                de la manera más cercana posible en cuanto a diseño y
+                funcionalidad se refiere.
+              </p>
+
+              <p data-text="text" className={styles.pMyExplanation}>
+                Aplicaciones "to-do" hay muchas, pero este reto llamó mi
+                atención, porque pedía incluir una funcionalidad de "arrastrar y
+                soltar" las tareas para intercambiar su orden, no había
+                realizado esa funcionalidad en otros proyectos, así que tomé el
+                reto.
+              </p>
+              <p data-text="text" className={styles.pMyExplanation}>
+                En el proceso de construcción de dicha característica en la
+                aplicación, pude conocer eventos de arrastrar y soltar como,
+                dragstart, drop, dragover, dragend, entre otros, eventos que
+                permiten de forma nativa poder arrastrar, soltar y reordenar
+                elementos en el DOM.
+              </p>
             </div>
           </div>
-          <div className={styles.contentMoreLink}>
-            <div className={styles.contentLinesCustomLink}>
-              <span className={styles.lineCustomLink}></span>
-              <span className={styles.circleCustomLink}></span>
-              <Link className={styles.moreLink} to="/desafios">
-                Más desafíos
-              </Link>
+          <div className={styles.appRightContentChallenge}>
+            <div className={styles.appRightContentChallengeImg}>
+              <div className={styles.contentLineChallenges}>
+                <span
+                  className={`${styles.lineChallenge} ${styles.horizontal}`}
+                ></span>
+                <span
+                  className={`${styles.lineChallenge} ${styles.vertical}`}
+                ></span>
+              </div>
+              <div
+                data-phone="data-phone"
+                ref={objRef.phoneRef}
+                className={styles.contentImgPhone}
+              >
+                <img src={phoneChallenge} alt="" />
+                <IconSocial
+                  urlGithub={"https://github.com/JairDev/to-do-app"}
+                  urlLive={"https://todo-list-app-300dev.netlify.app"}
+                  fontSizeIcon="23px"
+                />
+              </div>
             </div>
           </div>
-        </section>
-      }
-      <Projects
-        projectsArray={personalProjects}
-        title={"Proyectos"}
-        subTitle={"Personales"}
-        sliceNumber={2}
-      />
+        </div>
+        <div className={styles.contentMoreLink}>
+          <div className={styles.contentLinesCustomLink}>
+            <span className={styles.lineCustomLink}></span>
+            <span className={styles.circleCustomLink}></span>
+            <Link className={styles.moreLink} to="/desafios">
+              Más desafíos
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className={`${styles.wrapperPadding}`}>
         <FormContact />
       </section>
