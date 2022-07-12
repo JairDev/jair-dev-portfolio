@@ -251,50 +251,13 @@ function Home() {
                 <span data-text="text">Fuente: Aerolab</span>
               </div>
               <div className={styles.challengeMyExplanation}>
-                <h3>Criterios</h3>
+
                 <p data-text="text" className={styles.pMyExplanation}>
-                  Los usuarios tienen una cantidad indeterminada de puntos
-                  acumulados, y cada producto vale una cantidad fija de puntos.
+                  En este desafió se proporcionó un diseño y una API para el
+                  desarrollo de una app funcional, el desafío consistía en crear
+                  una vista de catálogo para una aplicación de programa de
+                  fidelización.
                 </p>
-                <ol>
-                  <li className={styles.criteriaChallenges}>Cada producto debe tener un precio visible en puntos.</li>
-                  <li className={styles.criteriaChallenges}>
-                    El usuario debe poder ordenar los productos por precio, de
-                    mayor a menor, y viceversa.
-                  </li>
-                  <li className={styles.criteriaChallenges}>
-                    El usuario debería poder ver cuántos puntos tiene en su
-                    cuenta.
-                  </li>
-                  <li className={styles.criteriaChallenges}>
-                    Debe haber una forma clara para que el usuario distinga los
-                    productos que puede canjear de los que no puede.
-                  </li>
-                  <li className={styles.criteriaChallenges}>
-                    Un botón "Canjear" debe estar disponible para aquellos
-                    productos que el usuario tiene suficientes puntos para
-                    reclamar.
-                  </li>
-                  <li className={styles.criteriaChallenges}>
-                    Una opción de "Canjear ahora" debería aparecer cuando el
-                    usuario interactúa con un producto que tiene suficientes
-                    puntos para reclamar.
-                  </li>
-                  <li className={styles.criteriaChallenges}>
-                    Cuando el usuario no tiene suficientes puntos para un
-                    producto, debería poder ver cuántos puntos más necesita para
-                    reclamarlo.
-                  </li>
-                  <li className={styles.criteriaChallenges}>
-                    El usuario no debería poder canjear un producto para el que
-                    no tenga suficientes puntos.
-                  </li>
-                  <li className={styles.criteriaChallenges}>
-                    Cuando el usuario hace clic en el botón Canjear ahora, el
-                    sistema debe deducir automáticamente el precio del artículo
-                    de los puntos de los usuarios.
-                  </li>
-                </ol>
                 <p data-text="text" className={styles.pMyExplanation}></p>
               </div>
             </div>
@@ -315,8 +278,8 @@ function Home() {
                 >
                   <img src={phoneChallenge} alt="" />
                   <IconSocial
-                    urlGithub={"https://github.com/JairDev/to-do-app"}
-                    urlLive={"https://todo-list-app-300dev.netlify.app"}
+                    urlGithub={"https://github.com/JairDev/aerolab-coding-challenge"}
+                    urlLive={"https://aerolab-coding-challenges.vercel.app/"}
                     fontSizeIcon="23px"
                   />
                 </div>
