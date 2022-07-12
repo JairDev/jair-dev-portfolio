@@ -1,15 +1,25 @@
 .personalProjectsExternalLink {
+  /* border: 2px solid red; */
   position: absolute;
   top: 100%;
   right: 0;
-  z-index: 100;
+  z-index: 50;
+}
+
+.personalProjectsExternalLink:hover .contentIconExLinkProjects {
+  transform: translate(-7px, 7px);
+}
+
+.personalProjectsExternalLink:hover .contentIconGithubProjects  {
+  transform: translate(7px, -7px);
 }
 
 .contentIconExLinkProjects,
 .contentIconGithubProjects {
   border-radius: 8px;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.5rem .8rem;
+  transition: all ease .2s;
 }
 .contentIconGithubProjects {
   background-color: var(--primary-color);
@@ -17,9 +27,12 @@
   bottom: 80%;
   right: -10%;
   margin-left: 1rem;
+  z-index: 10;
 }
 
 .contentIconExLinkProjects {
   background-color: var(--accent-color);
   margin-right: 1rem;
+  position: relative;
+  z-index: 5;
 }

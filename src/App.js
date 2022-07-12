@@ -14,6 +14,8 @@ import "./assets/sass.svg";
 import "./App.css";
 import { personalProjects, challenges } from "../src/data/info-portfolio";
 import Projects from "components/Projects/Projects";
+import MoreProjects from "pages/MoreProjects/MoreProjects";
+// import Projects from "components/Projects/Projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,18 +23,26 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1 className="mantenimiento">En matenimiento</h1>
-        {/* <Layout>
+        {/* <h1 className="mantenimiento">En matenimiento</h1> */}
+        <Layout>
           <Switch>
             <Route path="/proyectos">
-              <Challenge
+              {/* <Challenge
                 data={personalProjects}
                 title={"Proyectos"}
                 subTitle={"Personales"}
                 sliceStart={2}
                 sliceEnd={4}
                 showTitle={false}
-              />
+              /> */}
+              {/* <Projects
+                projectsArray={personalProjects}
+                title={"Proyectos"}
+                subTitle={"Personales"}
+                sliceStart={2}
+                sliceEnd={4}
+              /> */}
+              <MoreProjects/>
             </Route>
             <Route path="/desafios">
               <Challenge
@@ -47,7 +57,7 @@ function App() {
               <Home />
             </Route>
           </Switch>
-        </Layout> */}
+        </Layout>
       </div>
     </Router>
   );

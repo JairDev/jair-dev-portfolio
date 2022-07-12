@@ -36,9 +36,9 @@
   border-bottom: 1px solid var(--accent-color);
 }
 
-.contentPersonalProject {
+.contentPersonalProject:first-child {
   /* border: 2px solid red; */
-  padding-bottom: 10vh;
+  padding-bottom: 6rem;
 }
 
 .contentPersonalProjectFlex {
@@ -60,7 +60,6 @@
 }
 
 .contentPersonalProjectImg {
-  /* border: 2px solid red; */
   align-self: flex-start;
   padding-top: 10vh;
   position: relative;
@@ -236,7 +235,7 @@
 @media only screen and (min-width: 860px) {
   .contentPersonalProjectFlex {
     flex-direction: row-reverse;
-    padding-bottom: 20vh;
+    /* padding-bottom: 20vh; */
   }
 
   .contentPersonalProjectDescription {

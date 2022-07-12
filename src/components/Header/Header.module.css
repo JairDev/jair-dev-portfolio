@@ -1,6 +1,14 @@
+#nav-hidden {
+  /* border: 2px solid red; */
+}
+
 .appContentNav {
+  background-color: var(--transparent-color);
+  /* border: 2px solid red; */
+  
   padding: 0vh 5vw;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 100;
 }

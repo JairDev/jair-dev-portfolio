@@ -13,13 +13,15 @@
   --primary-text: #2A2A2A;
   --title-font-size: calc(4vw + 2em);
   --sub-title-font-size: calc(4vw + 1em);
-  --paragraph-font-size: calc(1vw + .9em);
+  /* --paragraph-font-size: calc(1vw + .9em); */
+  --paragraph-font-size: clamp(16px, 2vw, 18px);
   --text-button-small: calc(1vw + 0.3em);
   --text-button-big: calc(1vw + 0.8em);
   --title-font: "Saira";
   --sub-title-font: "Saira";
   --letter-spacing: 1px;
   --line-height: 170%;
+  --line-height-list: 200%;
   /* space */
   --section-header-spaces: 20vh;
 }
@@ -33,8 +35,10 @@
 
 #container {
   overflow: hidden;
+  width: 100%;
   /* border: 2px solid red; */
   /* max-width: 1280px; */
+  /* padding: 0 5vw; */
 }
 
 html {
@@ -52,13 +56,15 @@ li {
 
 .App {
   background-color: var(--body-color);
-  display: flex;
+  /* border: 2px solid blue; */
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   position: relative;
   font-family: "Roboto", sans-serif;
 }
+
 /* .soon {
   display: flex;
   justify-content: center;

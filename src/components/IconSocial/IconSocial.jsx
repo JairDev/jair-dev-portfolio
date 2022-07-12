@@ -6,7 +6,7 @@ import styles from "./IconSocial.module.css"
 
 function IconSocial({urlGithub, urlLive, fontSizeIcon}) {
   return (
-    <div className={styles.personalProjectsExternalLink}>
+    <div className={`${styles.personalProjectsExternalLink} translate-icon`}>
       <div className={styles.contentIconGithubProjects}>
         <a
           href={urlGithub}

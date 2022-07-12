@@ -137,17 +137,15 @@
   width: 0;
   height: 0;
   transform: translate(-50%, -50%) scale(1);
-  transition: all ease-in 0.4s;
+  transition: all ease-in 0.3s;
 }
 
 .contentButtonForm:hover::before {
-  /* opacity: 1; */
   width: 200px;
   height: 200px;
 }
 
 .contactButton {
-  /* border: 2px solid black; */
   border: none;
   background: none;
   border-radius: 50px;
@@ -157,18 +155,18 @@
   font-family: var(--title-font);
   font-weight: 600;
   letter-spacing: var(--letter-spacing);
-  /* text-transform: uppercase; */
   padding: 0.6rem 1.8rem;
   position: relative;
   z-index: 10;
 }
 
 .contentSocial {
-  /* border: 2px solid red; */
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 8vh;
+  position: relative;
+  z-index: 50;
 }
 
 .socialItem {
@@ -190,7 +188,6 @@
 }
 
 .labelSocial {
-  /* border: 1px solid red; */
   color: var(--primary-text);
   font-family: var(--title-font);
   margin-top: 1vh;

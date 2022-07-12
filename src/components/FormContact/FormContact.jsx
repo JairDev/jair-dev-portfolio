@@ -9,6 +9,7 @@ import githubFill from "@iconify/icons-akar-icons/github-fill";
 import linkedinFill from "@iconify/icons-akar-icons/linkedin-fill";
 import twitterFill from "@iconify/icons-akar-icons/twitter-fill";
 import telegramFill from "@iconify/icons-akar-icons/telegram-fill";
+import Button from "components/Button/Button";
 
 const socialIcons = [
   { name: githubFill, label: "Github", url: "https://github.com/JairDev" },
@@ -173,7 +174,8 @@ function FormContact() {
               {buttonState}
             </span>
             <div className={styles.contentButtonForm}>
-              <button className={styles.contactButton}>Enviar</button>
+              {/* <button className={styles.contactButton}>Enviar</button> */}
+              <Button classButton="contact-form" textLink="Enviar" />
             </div>
           </div>
         </form>
@@ -183,7 +185,7 @@ function FormContact() {
               <a href={icon.url} target="_blank" rel="noopener noreferrer">
                 <Icon
                   icon={icon.name}
-                  style={{ fontSize: "40px", color: "#2A2A2A" }}
+                  style={{ fontSize: "32px", color: "#2A2A2A" }}
                 />
                 <span className={styles.labelSocial}>{icon.label}</span>
               </a>

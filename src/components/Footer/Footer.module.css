@@ -1,0 +1,24 @@
+.wrapperPadding {
+  padding: 0 5vw;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.wrapperMaxWidth {
+  /* border: 2px solid red; */
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+}
+
+.contact::before {
+  /* border: 5px solid red; */
+  content: "";
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+}

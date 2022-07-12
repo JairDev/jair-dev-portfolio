@@ -4,6 +4,12 @@ import workDessert from "../assets/desert-tablet.png";
 import imgCode from "../assets/personal-projects-code-s.png";
 import imgCodeHoc from "../assets/personal-projects-code-hoc.png";
 import room from "../assets/room-homepage.png";
+import bxlReact from "@iconify/icons-bx/bxl-react";
+import bxlJavascript from "@iconify/icons-bx/bxl-javascript";
+import bxlSass from "@iconify/icons-bx/bxl-sass";
+import bxlCss3 from "@iconify/icons-bx/bxl-css3";
+import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
+import bxlGit from "@iconify/icons-bx/bxl-git";
 
 export const socialMedia = [
   {
@@ -46,6 +52,15 @@ export const users = [
   },
 ];
 
+export const svgIcons = [
+  { name: "React", svg: bxlReact },
+  { name: "Javascript", svg: bxlJavascript },
+  { name: "Sass", svg: bxlSass },
+  { name: "Css3", svg: bxlCss3 },
+  { name: "Html5", svg: bxlHtml5 },
+  { name: "Git", svg: bxlGit },
+];
+
 export const personalProjects = [
   {
     id: "id1",
@@ -63,10 +78,10 @@ export const personalProjects = [
         paragraph: `Nos permite, por ejemplo, reutilizar componentes de interfaz en nuestros sitios web,
         en esta aplicación puedo reutilizar un componente input a lo largo de mi sitio web, en este caso,
         se utiliza para buscar una criptomoneda en el gráfico o en otra sección de la web para buscar
-        noticias referentes a las criptomonedas.`
-      }
+        noticias referentes a las criptomonedas.`,
+      },
       // {
-      //   paragraph: `En esta aplicación que consiste en mostrar criptomonedas en tendencia, buscar 
+      //   paragraph: `En esta aplicación que consiste en mostrar criptomonedas en tendencia, buscar
       //   criptomonedas de tu preferencia o leer noticias actualizadas referente al mundo crypto, tenía
       //   dos componentes similares en cuanto a funcionalidad y la manera en que dependían de un valor para
       //   mostrar datos en la interfaz.`,
@@ -87,7 +102,7 @@ export const personalProjects = [
       //   paragraph: `En React un componente de orden superior, es una función que recibe un componente como
       //   argumento y devuelve un nuevo componente. Un componente de orden superior me permite definir estos
       //   datos y/o funciones en un mismo lugar, para luego compartirlos con otros componentes, reutilizando
-      //   esa función y también poder crear flexibilidad en el código. (Todo esto ocurrió en una etapa posterior de 
+      //   esa función y también poder crear flexibilidad en el código. (Todo esto ocurrió en una etapa posterior de
       //   refactorización)`,
       // },
       // {
@@ -119,7 +134,7 @@ export const personalProjects = [
         Lo que hacemos entonces es determinar que el estado de React sea la única "fuente de verdad", 
         de esta manera los componentes que rendericen un formulario, tienen el control sobre lo que pasa 
         en ese formulario. 
-        `
+        `,
       },
     ],
   },
@@ -136,18 +151,23 @@ export const personalProjects = [
     imgSrcApp: memory,
     linkGit: "https://github.com/JairDev/memory-game",
     linkDemo: "https://memorybrain.netlify.com/",
-    dataDescription: {
-      paragraph:`Desafía tu memoria, con el juego de memoria mas desafiante jamas creado.`,
-    },
+    dataDescription: [
+      {
+        paragraph: `Desafía tu memoria, con el juego de memoria mas desafiante jamas creado.`,
+      },
+    ],
   },
-  // {
-  //   name: "Timer",
-  //   imgSrcApp: tablet,
-  //   linkGit: "https://github.com/JairDev/training-timer-and-chronometer",
-  //   linkDemo: "https://trainingtimerapp.netlify.com/",
-  //   description:
-  //     "App para llevar el control de tiempo y series en tus ejercicios",
-  // },
+  {
+    name: "Timer",
+    imgSrcApp: memory,
+    linkGit: "https://github.com/JairDev/training-timer-and-chronometer",
+    linkDemo: "https://trainingtimerapp.netlify.com/",
+    dataDescription: [
+      {
+        paragraph: `App para llevar el control de tiempo y series en tus ejercicios.`,
+      },
+    ],
+  },
 ];
 
 export const challenges = [

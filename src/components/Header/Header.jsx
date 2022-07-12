@@ -3,6 +3,30 @@ import { Link, useLocation } from "react-router-dom";
 import NavIcon from "../../assets/nav-bar-icon.svg";
 import NavIconClose from "../../assets/nav-bar-close.svg";
 import styles from "./Header.module.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+const setClass = (direction) => {
+  if (window.scrollY <= 0) {
+    gsap.to("#nav-hidden", {
+      backgroundColor: "rgba(255, 255, 255, 0)",
+      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, 0)",
+      duration: 0.2,
+    });
+  } else if (direction >= 1) {
+    gsap.to("#nav-hidden", {
+      opacity: 0,
+      duration: 0.2,
+    });
+  } else {
+    gsap.to("#nav-hidden", {
+      backgroundColor: "rgba(231, 232, 239, 1)",
+      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, 0.2)",
+      duration: 0.2,
+      opacity: 1,
+    });
+  }
+};
 
 function Header() {
   let state = false;
@@ -28,6 +52,11 @@ function Header() {
     } else {
       setShowName(true);
     }
+    ScrollTrigger.create({
+      onUpdate: (self) => {
+        setClass(self.direction);
+      },
+    });
   }, [location.pathname]);
 
   const handleClick = (e) => {
