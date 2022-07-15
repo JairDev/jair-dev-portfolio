@@ -1,10 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import NavIcon from "../../assets/nav-bar-icon.svg";
-import NavIconClose from "../../assets/nav-bar-close.svg";
-import styles from "./Header.module.css";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import { Link, useLocation } from "react-router-dom";
+
+import NavIcon from "../../assets/nav-bar-icon.svg";
+import NavIconClose from "../../assets/nav-bar-close.svg";
+
+import styles from "./Header.module.css";
 
 const setClass = (direction) => {
   if (window.scrollY <= 0) {
@@ -45,7 +49,6 @@ function Header() {
       location.pathname === "/desafios" ||
       location.pathname === "/proyectos"
     ) {
-      console.log("render");
       setShowName(false);
       logoRef.current.style.opacity = "1";
       parentIcon.current.style.opacity = "0";
@@ -121,20 +124,20 @@ function Header() {
             </li>
             <li className={styles.liLink}>
               <a
-                href="#challenges"
-                data-link="link"
-                className={styles.itemLink}
-              >
-                Desafios Frontend
-              </a>
-            </li>
-            <li className={styles.liLink}>
-              <a
                 href="#personal-work"
                 data-link="link"
                 className={styles.itemLink}
               >
                 Proyectos Personales
+              </a>
+            </li>
+            <li className={styles.liLink}>
+              <a
+                href="#challenges"
+                data-link="link"
+                className={styles.itemLink}
+              >
+                Desafíos Frontend
               </a>
             </li>
             <li className={styles.liLink}>

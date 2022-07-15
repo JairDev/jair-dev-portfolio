@@ -11,8 +11,8 @@
   --light-accent-color: #BEA6FF;
   /* --primary-text: #212121; */
   --primary-text: #2A2A2A;
-  --title-font-size: calc(4vw + 2em);
-  --sub-title-font-size: calc(4vw + 1em);
+  --title-font-size: clamp(1rem, 10vw, 4rem);
+  --sub-title-font-size: clamp(1rem, 10vw, 3rem);
   /* --paragraph-font-size: calc(1vw + .9em); */
   --paragraph-font-size: clamp(16px, 2vw, 18px);
   --text-button-small: calc(1vw + 0.3em);

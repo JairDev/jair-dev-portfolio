@@ -2,38 +2,16 @@
   border: 5px solid black;
   position: relative;
   padding: 0 5vw;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
 }
 
-.wrapperPadding > div {
-  /* border: 3px solid red;
-  width: 100%;
-  max-width: 1200px; */
-}
-
-.appContentPersonalProjectsHeader {
-  color: var(--primary-text);
-  padding-top: var(--section-header-spaces);
-}
-
-.spanWorkName {
-  font-size: var(--title-font-size);
-  font-family: var(--title-font);
-  letter-spacing: var(--letter-spacing);
-}
-
-.h2WorkName {
-  font-size: var(--sub-title-font-size);
-  font-family: var(--title-font);
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-.contentPersonalProject:first-child {
+.contentPersonalProject {
+  /* border: 2px solid red; */
+  padding: 12rem 0;
   border-bottom: 1px solid var(--accent-color);
+}
+
+.contentPersonalProject + .contentPersonalProject {
+  border-bottom: none;
 }
 
 .contentPersonalProject:first-child {
@@ -48,22 +26,17 @@
 }
 
 .contentTitleProject h3 {
-  /* padding: 15vh 0; */
-  padding-top: 10vh;
-}
-
-.contentTitleProject h3 {
   color: var(--primary-text);
   font-family: var(--title-font);
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: var(--letter-spacing);
 }
 
 .contentPersonalProjectImg {
   align-self: flex-start;
-  padding-top: 10vh;
   position: relative;
   width: 100%;
+  margin-top: 3rem;
 }
 
 .contentImgTablet {
@@ -95,21 +68,26 @@
 
 .contentPersonalProjectDescription {
   width: 100%;
-  /* padding-right: 5vw; */
+}
+
+.challengeDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.challengeDescription span {
+  font-size: 20px;
+  font-family: var(--title-font);
+  font-weight: 500;
+  line-height: var(--line-height);
 }
 
 .pDescriptionPersonal {
   font-family: var(--title-font);
   font-size: var(--paragraph-font-size);
   letter-spacing: var(--letter-spacing);
-}
+  margin-top: 2.5rem;
 
-.pDescriptionPersonal:not(.pDescriptionPersonal:first-child) {
-  padding-top: 5vh;
-}
-
-.pDescriptionPersonal:first-child {
-  padding-top: 8vh;
 }
 
 .contentProjectImg {
@@ -243,6 +221,7 @@
   }
 
   .contentPersonalProjectImg {
+    margin-top: .4rem;
     width: 40%;
   }
 

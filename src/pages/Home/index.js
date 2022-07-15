@@ -1,43 +1,38 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { gsapAnimations } from "utils/gsapAnimations/gsapAnimations";
-import { Icon } from "@iconify/react";
 
+import { Icon } from "@iconify/react";
 import Projects from "components/Projects/Projects";
-import FormContact from "components/FormContact/FormContact";
+import Button from "components/Button/Button";
+import IconSocial from "components/IconSocial/IconSocial";
+
+import phone3 from "../../assets/hero-phone5.png";
+import phoneChallenge from "../../assets/aerolab-screen.png";
+import ArrowIcon from "../../assets/arrow.svg";
+import blob from "../../assets/blob.svg"
 
 import { personalProjects, svgIcons } from "../../data/info-portfolio";
 
-import phone3 from "../../assets/hero-phone5.png";
-// import phoneChallenge from "../../assets/phone-challenge-2.png";
-import phoneChallenge from "../../assets/aerolab-screen.png";
-import ArrowIcon from "../../assets/arrow.svg";
 import styles from "./Home.module.css";
-import Button from "components/Button/Button";
-import IconSocial from "components/IconSocial/IconSocial";
-import Footer from "components/Footer/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
 function Home() {
   const objRef = {
-    animateBallHero: useRef(null),
     word: useRef(null),
-    h2Name: useRef(null),
-    circleChallenge: useRef(null),
-    phoneRef: useRef(null),
-    codeImgRef: useRef(null),
-    circleLinkRef: useRef(null),
-    triggerButton: useRef(null),
-    animatePhoto: useRef(null),
-    layerPhoto: useRef(null),
+    heroImage: useRef(null)
   };
 
+  const projects = personalProjects.slice(0, 2);
+
   useEffect(() => {
+    window.scrollTo(0, 0)
     if (window.innerWidth > 860) {
       gsap.timeline({
         scrollTrigger: {
@@ -87,7 +82,7 @@ function Home() {
               </div>
             </div>
             <div className={styles.appRightContentHero}>
-              <div className={styles.appRightContentHeroImg}>
+              <div ref={objRef.heroImage} data-heroimage="heroimage" className={styles.appRightContentHeroImg}>
                 <span className={`${styles.wordsHero} ${styles.top}`}>
                   Responsive Design
                 </span>
@@ -114,7 +109,9 @@ function Home() {
                 />
               </div>
             </div>
-            <span className={styles.backgroundSectionLeft}></span>
+            <span className={styles.backgroundSectionLeft}>
+              <img src={blob} alt="" />
+            </span>
             <span className={styles.backgroundSectionLeftTwo}></span>
           </div>
         </div>
@@ -127,12 +124,12 @@ function Home() {
         <div className={styles.wrapperMaxWidth}>
           <div className={styles.appContentAboutMeHeader}>
             <div className={styles.appContentAboutMeTitle}>
-              <h2
+              <h3
                 data-text="text"
                 className={`${styles.text} ${styles.spanName}`}
               >
                 Hola,
-              </h2>
+              </h3>
               <h4
                 data-text="text"
                 ref={objRef.h2Name}
@@ -145,7 +142,6 @@ function Home() {
           <div className={styles.appContentAboutMeDescription}>
             <div className={styles.wrapperAboutMeDescription}>
               <span className={styles.lineRightAbout}></span>
-              <span className={styles.lineBottomAbout}></span>
               <span className={styles.lineLeftAbout}></span>
               <p
                 data-text="text"
@@ -153,7 +149,7 @@ function Home() {
               >
                 Hola, me llamo Alfredo Moscoso, soy desarrollador web, tengo
                 experiencia en proyectos personales manejando tecnologías como,
-                ReactJs, Javascript, Sass, Css3, Html5, Git.
+                ReactJs, Javascript, Redux, Sass, Css3, Html5, Git, Styled Components.
               </p>
               <p
                 data-text="text"
@@ -161,12 +157,11 @@ function Home() {
               >
                 Del desarrollo web me entusiasma la interacción que pueda
                 lograrse entre el producto que se desarrolle y el usuario final,
-                ya se mediante una página web, un aplicación web, que satisfaga
-                alguna necesidad, me motiva estar en constante aprendizaje y
-                poder lograr buenos fundamentos en programación para ser un
-                mejor profesional, enfocado en aplicar las mejores prácticas en
-                el desarrollo web frontend como responsive design, html
-                semántico, accesibilidad.
+                ya sea mediante una página web, alguna aplicación web, que
+                satisfaga alguna necesidad, me motiva estar en constante
+                aprendizaje y poder lograr buenos fundamentos en programación
+                para ser un mejor profesional, enfocado en aplicar las mejores
+                prácticas en el desarrollo web.
               </p>
 
               <p
@@ -189,9 +184,11 @@ function Home() {
             <h3 data-text="text" className={styles.h3Skills}>
               Habilidades Actuales
             </h3>
+                <Icon icon="file-icons:styledcomponents" style={{ fontSize: "64px" }} />
             <div className={styles.contentSkills}>
               <ul className={styles.contentItemSkills}>
                 <div className={styles.flexSkills}>
+
                   {svgIcons.map((icon) => (
                     <div className={styles.contentSkillsLabel} key={icon.name}>
                       <li data-text="text" className={styles.itemSkills}>
@@ -208,13 +205,25 @@ function Home() {
       </section>
       <section id="personal-work" className={`${styles.wrapperPadding}`}>
         <div className={styles.wrapperMaxWidth}>
-          <Projects
-            projectsArray={personalProjects}
-            title={"Proyectos"}
-            subTitle={"Personales"}
-            sliceStart={0}
-            sliceEnd={2}
-          />
+          <div className={styles.appContentPersonalProjectsHeader}>
+            <h2 data-text="text" className={styles.spanWorkName}>
+              Proyectos
+            </h2>
+            <h4 data-text="text" className={styles.h2WorkName}>
+              Personales
+            </h4>
+          </div>
+          {projects.map((item) => (
+            <Projects
+              key={item.name}
+              id={item.id}
+              name={item.name}
+              imgSrcApp={item.imgSrcApp}
+              linkGit={item.linkGit}
+              linkDemo={item.linkDemo}
+              dataDescription={item.dataDescription}
+            />
+          ))}
           <div className={styles.contentMoreLink}>
             <div className={styles.contentLinesCustomLink}>
               <span className={styles.lineCustomLink}></span>
@@ -233,9 +242,9 @@ function Home() {
       >
         <div className={styles.wrapperMaxWidth}>
           <div className={styles.appContentChallengesHeader}>
-            <h2 data-text="text" className={styles.spanChallengeName}>
+            <h3 data-text="text" className={styles.spanChallengeName}>
               Desafíos
-            </h2>
+            </h3>
             <h4 data-text="text" className={styles.h2FrontendName}>
               Frontend
             </h4>
@@ -251,7 +260,6 @@ function Home() {
                 <span data-text="text">Fuente: Aerolab</span>
               </div>
               <div className={styles.challengeMyExplanation}>
-
                 <p data-text="text" className={styles.pMyExplanation}>
                   En este desafió se proporcionó un diseño y una API para el
                   desarrollo de una app funcional, el desafío consistía en crear
@@ -278,7 +286,9 @@ function Home() {
                 >
                   <img src={phoneChallenge} alt="" />
                   <IconSocial
-                    urlGithub={"https://github.com/JairDev/aerolab-coding-challenge"}
+                    urlGithub={
+                      "https://github.com/JairDev/aerolab-coding-challenge"
+                    }
                     urlLive={"https://aerolab-coding-challenges.vercel.app/"}
                     fontSizeIcon="23px"
                   />

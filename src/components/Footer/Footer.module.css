@@ -12,6 +12,10 @@
   height: 100%;
 }
 
+.contact {
+  overflow: hidden;
+}
+
 .contact::before {
   /* border: 5px solid red; */
   content: "";

@@ -4,12 +4,7 @@
   position: relative;
 }
 .contentButtonContact.about {
-  padding: 6rem;
-}
-
-.contentButtonContact.contact-form{
-  /* padding: 0rem; */
-  /* border: 2px solid black; */
+  margin: 6rem 0rem;
 }
 
 .contentButton {

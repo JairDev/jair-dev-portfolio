@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./FormatContact.module.css";
-import { Icon } from "@iconify/react";
-import emailjs from "emailjs-com";
+
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
+import emailjs from "emailjs-com";
 
+import { Icon } from "@iconify/react";
 import githubFill from "@iconify/icons-akar-icons/github-fill";
 import linkedinFill from "@iconify/icons-akar-icons/linkedin-fill";
 import twitterFill from "@iconify/icons-akar-icons/twitter-fill";
 import telegramFill from "@iconify/icons-akar-icons/telegram-fill";
-import Button from "components/Button/Button";
+
+import styles from "./FormatContact.module.css";
 
 const socialIcons = [
   { name: githubFill, label: "Github", url: "https://github.com/JairDev" },
@@ -31,6 +32,7 @@ function FormContact() {
     register,
     formState: { errors },
     handleSubmit,
+    onChange
   } = useForm({
     criteriaMode: "all",
   });
@@ -40,6 +42,7 @@ function FormContact() {
   });
 
   const onSubmit = (e) => {
+    console.log(e)
     setButtonState("Enviando...");
     send = !send;
     if (send) {
@@ -174,8 +177,7 @@ function FormContact() {
               {buttonState}
             </span>
             <div className={styles.contentButtonForm}>
-              {/* <button className={styles.contactButton}>Enviar</button> */}
-              <Button classButton="contact-form" textLink="Enviar" />
+              <button className={styles.contactButton}>Enviar</button>
             </div>
           </div>
         </form>

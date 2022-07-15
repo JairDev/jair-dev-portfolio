@@ -6,6 +6,7 @@ import linkOut from "@iconify/icons-akar-icons/link-out";
 import githubFill from "@iconify/icons-akar-icons/github-fill";
 import styles from "./Challenge.module.css";
 import FormContact from "components/FormContact/FormContact";
+import IconSocial from "components/IconSocial/IconSocial";
 
 function Challenge({
   data,
@@ -35,9 +36,6 @@ function Challenge({
           <ChallengeChild key={work.name} work={work} showTitle={showTitle} />
         ))}
       </div>
-      <section id="contact" className={`${styles.wrapperPadding}`}>
-        <FormContact />
-      </section>
     </section>
   );
 }
@@ -59,30 +57,11 @@ function ChallengeChild({ work, showTitle }) {
               <img src={work.imgSrcApp} alt="" />
             </div>
             <div className={styles.personalProjectsExternalLink}>
-              <div className={styles.contentIconGithubProjects}>
-                <a
-                  href={work.linkGit}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon
-                    icon={githubFill}
-                    style={{ fontSize: "24px", color: "#ffffff" }}
-                  />
-                </a>
-              </div>
-              <div className={styles.contentIconExLinkProjects}>
-                <a
-                  href={work.linkDemo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon
-                    icon={linkOut}
-                    style={{ fontSize: "24px", color: "#ffffff" }}
-                  />
-                </a>
-              </div>
+              <IconSocial
+                urlGithub={work.linkGit}
+                urlLive={work.linkDemo}
+                fontSizeIcon="24px"
+              />
             </div>
           </div>
         </div>

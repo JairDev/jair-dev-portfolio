@@ -2,18 +2,16 @@ import React, { useEffect } from "react";
 
 import Projects from "components/Projects/Projects";
 
-import { personalProjects } from "data/info-portfolio";
+import { challenges } from "data/info-portfolio";
 
-import styles from "./MoreProjects.module.css";
+import styles from "./MoreChallenges.module.css";
 
-function MoreProjects() {
-  const projects = personalProjects.slice(2);
-
+function MoreChallenges() {
+  const projects = challenges;
   useEffect(() => {
-    // console.log("efffe")
+    console.log("efffe")
     window.scrollTo(0, 0)
   }) 
-  
   return (
     <section id="personal-work" className={`${styles.wrapperPadding}`}>
       <div className={styles.wrapperMaxWidth}>
@@ -26,6 +24,10 @@ function MoreProjects() {
             linkGit={item.linkGit}
             linkDemo={item.linkDemo}
             dataDescription={item.dataDescription}
+            challenge={item.challenge}
+            difficulty={item.difficulty}
+            source={item.source}
+            isChallege={true}
           />
         ))}
       </div>
@@ -33,4 +35,4 @@ function MoreProjects() {
   );
 }
 
-export default MoreProjects;
+export default MoreChallenges;

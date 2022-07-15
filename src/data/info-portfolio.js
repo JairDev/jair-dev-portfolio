@@ -1,15 +1,18 @@
-import workCoin from "../assets/coin-tablet.png";
-import memory from "../assets/memory-tablet.png";
-import workDessert from "../assets/desert-tablet.png";
+import workCoin from "../assets/coin-mac.webp";
+import workDessert from "../assets/desert-mac.webp";
+import memory from "../assets/memory-mac.webp";
+import room from "../assets/room-mac.webp";
+import todo from "../assets/todo-mac.webp";
+import timer from "../assets/timer-mac.webp";
 import imgCode from "../assets/personal-projects-code-s.png";
 import imgCodeHoc from "../assets/personal-projects-code-hoc.png";
-import room from "../assets/room-homepage.png";
 import bxlReact from "@iconify/icons-bx/bxl-react";
 import bxlJavascript from "@iconify/icons-bx/bxl-javascript";
 import bxlSass from "@iconify/icons-bx/bxl-sass";
 import bxlCss3 from "@iconify/icons-bx/bxl-css3";
 import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
 import bxlGit from "@iconify/icons-bx/bxl-git";
+// import styledcomponentsIcon from '@iconify/icons-file-icons/styledcomponents';
 
 export const socialMedia = [
   {
@@ -59,6 +62,7 @@ export const svgIcons = [
   { name: "Css3", svg: bxlCss3 },
   { name: "Html5", svg: bxlHtml5 },
   { name: "Git", svg: bxlGit },
+  { name: "Styled Components", svg: "file-icons:styledcomponents"}
 ];
 
 export const personalProjects = [
@@ -80,36 +84,6 @@ export const personalProjects = [
         se utiliza para buscar una criptomoneda en el gráfico o en otra sección de la web para buscar
         noticias referentes a las criptomonedas.`,
       },
-      // {
-      //   paragraph: `En esta aplicación que consiste en mostrar criptomonedas en tendencia, buscar
-      //   criptomonedas de tu preferencia o leer noticias actualizadas referente al mundo crypto, tenía
-      //   dos componentes similares en cuanto a funcionalidad y la manera en que dependían de un valor para
-      //   mostrar datos en la interfaz.`,
-      // },
-      // {
-      //   paragraph: `Un primer componente, que renderiza la tabla con información sobre monedas, depende de
-      //   la entrada del usuario y de una función que toma esos datos, actualiza una variable de estado
-      //   y se renderiza la moneda.`,
-      // },
-      // {
-      //   paragraph: `Un segundo componente, que renderiza las noticias actuales sobre criptomonedas, que también
-      //   depende de una entrada del usuario y la misma funcionalidad que el primer componente. En la documentación
-      //   de React, se habla de los componentes de orden superior, recordemos que React es una librería construida
-      //   en JavaScript, donde existen las funciones de orden superior, (funciones que reciben otras funciones
-      //   como argumentos)`,
-      // },
-      // {
-      //   paragraph: `En React un componente de orden superior, es una función que recibe un componente como
-      //   argumento y devuelve un nuevo componente. Un componente de orden superior me permite definir estos
-      //   datos y/o funciones en un mismo lugar, para luego compartirlos con otros componentes, reutilizando
-      //   esa función y también poder crear flexibilidad en el código. (Todo esto ocurrió en una etapa posterior de
-      //   refactorización)`,
-      // },
-      // {
-      //   paragraph: `Como pueden ver en este fragmento, el componente de orden superior devuelve un nuevo
-      //   componente, transformado mediante las props (propiedades) que se le pasan. En este caso, comparten
-      //   la misma variable de estado y la función, pero su label es diferente.`,
-      // },
     ],
   },
   {
@@ -138,14 +112,6 @@ export const personalProjects = [
       },
     ],
   },
-  // {
-  //   name: "Recipes",
-  //   imgSrcApp: tablet,
-  //   linkGit: "https://github.com/JairDev/recipe-app",
-  //   linkDemo: "https://tasterecipes.netlify.com/",
-  //   description:
-  //     "Encuentra las mejores recetas, guarda tu favorita o crea tu propia receta",
-  // },
   {
     name: "Memory",
     imgSrcApp: memory,
@@ -153,13 +119,13 @@ export const personalProjects = [
     linkDemo: "https://memorybrain.netlify.com/",
     dataDescription: [
       {
-        paragraph: `Desafía tu memoria, con el juego de memoria mas desafiante jamas creado.`,
+        paragraph: `Desafía tu memoria, con el juego de memoria mas desafiante jamás creado.`,
       },
     ],
   },
   {
     name: "Timer",
-    imgSrcApp: memory,
+    imgSrcApp: timer,
     linkGit: "https://github.com/JairDev/training-timer-and-chronometer",
     linkDemo: "https://trainingtimerapp.netlify.com/",
     dataDescription: [
@@ -176,8 +142,28 @@ export const challenges = [
     imgSrcApp: room,
     linkGit: "https://github.com/JairDev/room-homepage",
     linkDemo: "https://coolrooms.netlify.app/",
-    desafio: "Construir página de inicio de comercio electrónico",
-    dificultad: "Intermedio",
-    fuente: "https://www.frontendmentor.io/",
+    challenge: "Construir página de inicio de comercio electrónico.",
+    difficulty: "Intermedio",
+    source: "https://www.frontendmentor.io/",
+    dataDescription: [
+      {
+        paragraph: `El desafío consistía en construir esta página de inicio de comercio electrónico y hacer que se vea lo más cerca posible del diseño.`,
+      },
+    ],
+  },
+  {
+    name: "Todo app",
+    imgSrcApp: todo,
+    linkGit: "https://github.com/JairDev/to-do-app",
+    linkDemo: "https://todo-list-app-300dev.netlify.app/",
+    challenge:
+      "Construir aplicación aplicación de todo.",
+    difficulty: "Intermedio",
+    source: "https://www.frontendmentor.io/",
+    dataDescription: [
+      {
+        paragraph: `En este desafío se construyó una app de todo con una funcionalidad de reordenar los elementos.`,
+      },
+    ],
   },
 ];

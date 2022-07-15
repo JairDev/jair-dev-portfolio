@@ -1,7 +1,9 @@
 import React from "react";
+
 import { Icon } from "@iconify/react";
 import linkOut from "@iconify/icons-akar-icons/link-out";
 import githubFill from "@iconify/icons-akar-icons/github-fill";
+
 import styles from "./IconSocial.module.css"
 
 function IconSocial({urlGithub, urlLive, fontSizeIcon}) {
