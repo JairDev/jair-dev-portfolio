@@ -1,3 +1,19 @@
+.blob {
+  /* border-radius: 50%; */
+  /* background: red; */
+  position: fixed;
+  top: -500px;
+  left: -500px;
+  width: 2000px;
+  height: 2000px;
+  z-index: 100;
+}
+
+.blob img {
+  width: 100%;
+  height: 100%;
+}
+
 .wrapperPadding {
   display: flex;
   justify-content: center;

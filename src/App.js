@@ -1,9 +1,11 @@
 import React from "react";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import { AnimatePresence } from "framer-motion/dist/framer-motion";
 
 import Home from "pages/Home";
 import Layout from "pages/Layout/Layout";
@@ -15,25 +17,20 @@ import "./App.css";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const location = useLocation();
   return (
-    <Router>
-      <div className="App">
-        {/* <h1 className="mantenimiento">En matenimiento</h1> */}
-        <Layout>
-          <Switch>
-            <Route path="/proyectos">
-              <MoreProjects/>
-            </Route>
-            <Route path="/desafios">
-              <MoreChallenges/>
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </Layout>
-      </div>
-    </Router>
+    <div className="App">
+      {/* <h1 className="mantenimiento">En matenimiento</h1> */}
+      <Layout>
+        <AnimatePresence>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/proyectos" element={<MoreProjects />} />
+            <Route path="/desafios" element={<MoreChallenges />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </AnimatePresence>
+      </Layout>
+    </div>
   );
 }
 

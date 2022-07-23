@@ -12,57 +12,18 @@ import bxlSass from "@iconify/icons-bx/bxl-sass";
 import bxlCss3 from "@iconify/icons-bx/bxl-css3";
 import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
 import bxlGit from "@iconify/icons-bx/bxl-git";
-// import styledcomponentsIcon from '@iconify/icons-file-icons/styledcomponents';
-
-export const socialMedia = [
-  {
-    name: "Github",
-    iconClass: "icon-github",
-    source: "https://github.com/JairDev",
-  },
-  {
-    name: "Linkedin",
-    iconClass: "icon-linkedin",
-    source: "https://www.linkedin.com/in/frontend-alfredo-moscoso/",
-  },
-  {
-    name: "Twitter",
-    iconClass: "icon-twitter",
-    source: "https://twitter.com/JairDevep",
-  },
-  { name: "Gmail", iconClass: "icon-mail4", source: "https://gmail.com" },
-];
-
-export const skills = [
-  { name: "ReactJs", iconClass: "icon-react" },
-  { name: "JavaScript", iconClass: "icon-javascript" },
-  { name: "CSS3", iconClass: "icon-css3" },
-  { name: "HTML5", iconClass: "icon-html-five" },
-];
-
-export const tools = [
-  { name: "Git", iconClass: "icon-git" },
-  { name: "Sass", iconClass: "icon-sass" },
-  { name: "Photoshop", iconClass: "icon-adobephotoshop" },
-];
-
-export const users = [
-  {
-    name: "Alfredo",
-    lastName: "Moscoso",
-    occupation: "FrontEnd-Developer",
-    photo: "img",
-  },
-];
+import styledcomponentsIcon from "@iconify/icons-file-icons/styledcomponents";
+import reduxFill from "@iconify/icons-akar-icons/redux-fill";
 
 export const svgIcons = [
   { name: "React", svg: bxlReact },
   { name: "Javascript", svg: bxlJavascript },
+  { name: "Redux", svg: reduxFill },
   { name: "Sass", svg: bxlSass },
   { name: "Css3", svg: bxlCss3 },
   { name: "Html5", svg: bxlHtml5 },
   { name: "Git", svg: bxlGit },
-  { name: "Styled Components", svg: "file-icons:styledcomponents"}
+  { name: "Styled Components", svg: styledcomponentsIcon },
 ];
 
 export const personalProjects = [
@@ -156,8 +117,7 @@ export const challenges = [
     imgSrcApp: todo,
     linkGit: "https://github.com/JairDev/to-do-app",
     linkDemo: "https://todo-list-app-300dev.netlify.app/",
-    challenge:
-      "Construir aplicación aplicación de todo.",
+    challenge: "Construir aplicación aplicación de todo.",
     difficulty: "Intermedio",
     source: "https://www.frontendmentor.io/",
     dataDescription: [

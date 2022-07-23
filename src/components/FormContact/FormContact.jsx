@@ -32,17 +32,15 @@ function FormContact() {
     register,
     formState: { errors },
     handleSubmit,
-    onChange
   } = useForm({
     criteriaMode: "all",
   });
-
   useEffect(() => {
     emailjs.init("user_DC5x2D3wdrEpBolyqO9Yr");
   });
 
   const onSubmit = (e) => {
-    console.log(e)
+    console.log(e);
     setButtonState("Enviando...");
     send = !send;
     if (send) {
@@ -94,7 +92,7 @@ function FormContact() {
                     console.log("messages", messages);
                     return messages
                       ? Object.entries(messages).map(([type, message]) => (
-                          <p key={type}>{"Este campo es requerido *"}</p>
+                          <span key={type}>{"Este campo es requerido *"}</span>
                         ))
                       : null;
                   }}
@@ -113,7 +111,7 @@ function FormContact() {
                 required: true,
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: "Enter a valid e-mail address",
+                  message: "Ingresa un correo electrónico válido",
                 },
               })}
             ></input>
@@ -126,7 +124,7 @@ function FormContact() {
                     console.log("messages", errors);
                     return messages
                       ? Object.entries(messages).map(([type, message]) => (
-                          <p key={type}>{errors.userEmail.message}</p>
+                          <span key={type}>{errors.userEmail.message}</span>
                         ))
                       : null;
                   }}
@@ -140,7 +138,7 @@ function FormContact() {
                     console.log("messages", errors);
                     return messages
                       ? Object.entries(messages).map(([type, message]) => (
-                          <p key={type}>{"Este campo es requerido *"}</p>
+                          <span key={type}>{"Este campo es requerido *"}</span>
                         ))
                       : null;
                   }}
@@ -153,10 +151,12 @@ function FormContact() {
             <textarea
               placeholder={"Nos gustaría..."}
               name="message"
-              {...register("message")}
+              {...register("message", {
+                required: true,
+              })}
             />
             <p className={styles.required}>
-              {errors.fromName?.type === "required" && (
+              {errors.message?.type === "required" && (
                 <ErrorMessage
                   errors={errors}
                   name="message"
@@ -164,7 +164,7 @@ function FormContact() {
                     console.log("messages", messages);
                     return messages
                       ? Object.entries(messages).map(([type, message]) => (
-                          <p key={type}>{"Este campo es requerido"}</p>
+                          <span key={type}>{"Este campo es requerido"}</span>
                         ))
                       : null;
                   }}

@@ -97,6 +97,10 @@ function Header() {
               Inicio
               {/* {showName ? "Alfredo Moscoso" : "Inicio"} */}
             </Link>
+
+            {/* <Link className={styles.logoName} to="/proyectos">
+              Proyectos
+            </Link> */}
           </div>
         </div>
         <div id="parent-icon" ref={parentIcon} className={styles.iconNav}>

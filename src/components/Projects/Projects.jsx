@@ -1,13 +1,8 @@
-import React from "react";
-
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
 
 import IconSocial from "components/IconSocial/IconSocial";
 
 import * as styles from "./Projects.module.css";
-
-gsap.registerPlugin(ScrollTrigger);
 
 function Projects({
   id,
@@ -21,19 +16,28 @@ function Projects({
   source,
   isChallege = false,
 }) {
+  const refMoveElement = useRef();
+  const refParentHeight = useRef();
+  const refImage = useRef();
   return (
     <>
       <div id={id} className={styles.contentPersonalProject}>
-        <div className={styles.contentPersonalProjectFlex}>
-          <div className={styles.contentPersonalProjectImg}>
-            <div>
+        <div
+          ref={refParentHeight}
+          className={styles.contentPersonalProjectFlex}
+        >
+          <div
+            className={styles.contentPersonalProjectImg}
+            ref={refMoveElement}
+          >
+            <div ref={refImage} className={styles.wrapperImage}>
               <img src={imgSrcApp} alt="" />
+              <IconSocial
+                urlGithub={linkGit}
+                urlLive={linkDemo}
+                fontSizeIcon="24px"
+              />
             </div>
-            <IconSocial
-              urlGithub={linkGit}
-              urlLive={linkDemo}
-              fontSizeIcon="24px"
-            />
           </div>
           <div
             data-height="parent-paragraph"
