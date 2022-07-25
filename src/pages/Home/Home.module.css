@@ -123,7 +123,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 85vh;
+  top: calc(100vh - 120px);
   margin-left: 3rem;
 }
 
@@ -180,17 +180,25 @@
 .backgroundSectionLeft {
   display: block;
   position: absolute;
-  top: -25%;
+  top: 0%;
   left: 0;
+  width: 100vw;
   height: 100vh;
   opacity: 1;
   z-index: 2;
 }
 
+.backgroundSectionLeft img {
+  min-width: 50%;
+  min-height: 100%;
+}
+
 /* About //////////////////*/
 
 .appContentAboutMe {
+  position: relative;
   overflow: hidden;
+  z-index: 50;
 }
 
 .appContentAboutMeHeader {
@@ -198,7 +206,6 @@
   justify-content: flex-end;
   padding-top: var(--section-header-spaces);
   position: relative;
-  z-index: 100;
 }
 
 .appContentAboutMeTitle {
@@ -239,7 +246,6 @@
 .appContentAboutMeDescription {
   display: flex;
   justify-content: center;
-  /* padding-top: 10vh; */
   margin-top: 3rem;
 }
 
@@ -643,7 +649,7 @@
   background-color: var(--accent-color);
   display: block;
   position: absolute;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .lineCustomLink {

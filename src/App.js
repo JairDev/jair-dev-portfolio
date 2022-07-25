@@ -5,8 +5,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { AnimatePresence } from "framer-motion/dist/framer-motion";
-
 import Home from "pages/Home";
 import Layout from "pages/Layout/Layout";
 import MoreProjects from "pages/MoreProjects/MoreProjects";
@@ -22,13 +20,11 @@ function App() {
     <div className="App">
       {/* <h1 className="mantenimiento">En matenimiento</h1> */}
       <Layout>
-        <AnimatePresence>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/proyectos" element={<MoreProjects />} />
-            <Route path="/desafios" element={<MoreChallenges />} />
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </AnimatePresence>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/proyectos" element={<MoreProjects />} />
+          <Route path="/desafios" element={<MoreChallenges />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
       </Layout>
     </div>
   );

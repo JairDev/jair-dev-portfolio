@@ -9,7 +9,6 @@ import styles from "./MoreChallenges.module.css";
 function MoreChallenges() {
   const projects = challenges;
   useEffect(() => {
-    console.log("efffe")
     window.scrollTo(0, 0)
   }) 
   return (

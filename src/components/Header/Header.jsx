@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,6 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import NavIcon from "../../assets/nav-bar-icon.svg";
 import NavIconClose from "../../assets/nav-bar-close.svg";
+
 
 import styles from "./Header.module.css";
 
@@ -40,7 +41,6 @@ function Header() {
   const parentIcon = useRef(null);
   const logoRef = useRef(null);
   const location = useLocation();
-  let [showName, setShowName] = useState(true);
 
   useEffect(() => {
     logoRef.current.style.opacity = "0";
@@ -49,11 +49,8 @@ function Header() {
       location.pathname === "/desafios" ||
       location.pathname === "/proyectos"
     ) {
-      setShowName(false);
       logoRef.current.style.opacity = "1";
       parentIcon.current.style.opacity = "0";
-    } else {
-      setShowName(true);
     }
     ScrollTrigger.create({
       onUpdate: (self) => {
@@ -65,19 +62,15 @@ function Header() {
   const handleClick = (e) => {
     state = !state;
     const parent = e.target;
-    const clickIcon = parent.closest("#parent-icon");
     const clickLinks = parent.closest("#ul-content-li");
-
-    if (clickIcon) {
-      if (state) {
-        menuStyle.current.classList.add(styles.show);
-        iconOpenRef.current.firstChild.classList.add(styles.noOpen);
-        iconCloseRef.current.firstChild.classList.add(styles.open);
-      } else {
-        menuStyle.current.classList.remove(styles.show);
-        iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
-        iconCloseRef.current.firstChild.classList.remove(styles.open);
-      }
+    if (state) {
+      menuStyle.current.classList.add(styles.show);
+      iconOpenRef.current.firstChild.classList.add(styles.noOpen);
+      iconCloseRef.current.firstChild.classList.add(styles.open);
+    } else {
+      menuStyle.current.classList.remove(styles.show);
+      iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
+      iconCloseRef.current.firstChild.classList.remove(styles.open);
     }
     if (clickLinks) {
       menuStyle.current.classList.remove(styles.show);
@@ -95,12 +88,7 @@ function Header() {
           <div className="app-nav-logo">
             <Link ref={logoRef} className={styles.logoName} to="/">
               Inicio
-              {/* {showName ? "Alfredo Moscoso" : "Inicio"} */}
             </Link>
-
-            {/* <Link className={styles.logoName} to="/proyectos">
-              Proyectos
-            </Link> */}
           </div>
         </div>
         <div id="parent-icon" ref={parentIcon} className={styles.iconNav}>
@@ -150,7 +138,8 @@ function Header() {
               </a>
             </li>
           </ul>
-          <span className={styles.backMenuStyle}></span>
+          <span className={styles.backMenuStyle}>
+          </span>
         </div>
       </nav>
     </header>

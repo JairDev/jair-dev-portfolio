@@ -1,16 +1,6 @@
 import gsap from "gsap";
 
-export function gsapAnimations({ word, heroImage }) {
-  // gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: phoneRef.current,
-  //     pin: true,
-  //     start: "center 30%",
-  //     end: "top -=550",
-  //     scrub: true,
-  //   },
-  // });
-
+export function gsapAnimations({ word, rotateText }) {
   const tlWordWeb = gsap.timeline({
     scrollTrigger: {
       trigger: "[data-wordweb]",
@@ -20,32 +10,16 @@ export function gsapAnimations({ word, heroImage }) {
       // markers: true,
     },
   });
-  const tlHeroImage = gsap.timeline({
+
+  const tlRotateText = gsap.timeline({
     scrollTrigger: {
-      trigger: "[data-heroimage]",
-      start: "center 40%",
-      end: "bottom 10%",
+      trigger: "[data-rotate-text]",
+      start: "+=180px 100%",
+      end: "bottom 0%",
       scrub: true,
       // markers: true,
     },
   });
-
-  // gsap.utils.toArray("[data-text]").forEach((item) => {
-  //   const tlText = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: item,
-  //       start: "top 98%",
-  //       end: "center 80%",
-  //       scrub: true,
-  //       // markers: true
-  //     },
-  //   });
-  //   tlText.from(item, {
-  //     opacity: 0,
-  //     yPercent: 5,
-  //   });
-  // });
-
   //animations////////////////
 
   tlWordWeb.to(word.current, {
@@ -53,10 +27,9 @@ export function gsapAnimations({ word, heroImage }) {
     duration: 10,
     ease: "sine.out",
   });
-
-  // tlHeroImage.to(heroImage.current, {
-  //   yPercent: 15,
-  //   duration: 10,
-  //   ease: "sine.out",
-  // });
+  tlRotateText.to(rotateText.current, {
+    rotation: 360 * 0.2,
+    duration: 0.5,
+    ease: "sine.out",
+  });
 }

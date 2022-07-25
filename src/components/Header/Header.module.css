@@ -1,11 +1,5 @@
-#nav-hidden {
-  /* border: 2px solid red; */
-}
-
 .appContentNav {
   background-color: var(--transparent-color);
-  /* border: 2px solid red; */
-  
   padding: 0vh 5vw;
   position: fixed;
   top: 0;
@@ -39,7 +33,6 @@
   height: 100%;
 }
 
-
 .logoName {
   color: var(--primary-text);
   font-size: calc(1vw + 0.7em);
@@ -58,8 +51,8 @@
   height: 100vh;
   opacity: 1;
   padding-left: 3vw;
-  transform: translateX(120%);
-  transition: all 0.3s linear;
+  transform: translateX(200%);
+  transition: all 0.3s ease-in-out;
 }
 
 .appContentNavLinks.show {
@@ -68,14 +61,15 @@
 }
 
 .backMenuStyle {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  background: #7c4dff;
+  box-shadow: -8px -1px 45px -11px rgba(38, 17, 107, 0.3);
   position: absolute;
   top: 0;
-  right: -10%;
+  /* right: -50%; */
   width: 100%;
   height: 100%;
   transform: skew(-15deg);
-  transform-origin: right;
   transition: all 0.4s linear;
   z-index: 1;
 }
@@ -94,8 +88,24 @@
   color: var(--body-color);
   font-family: var(--title-font);
   font-size: calc(1.3vw + 1em);
+  position: relative;
 }
 
+.itemLink::before {
+  content: "";
+  border-bottom: 1px solid var(--body-color);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.2s ease-in;
+}
+
+.itemLink:hover::before {
+  transform: scaleX(1);
+}
 .iconNav {
   border-radius: 50%;
   width: 60px;

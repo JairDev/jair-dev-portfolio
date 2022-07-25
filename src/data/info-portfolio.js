@@ -4,8 +4,6 @@ import memory from "../assets/memory-mac.webp";
 import room from "../assets/room-mac.webp";
 import todo from "../assets/todo-mac.webp";
 import timer from "../assets/timer-mac.webp";
-import imgCode from "../assets/personal-projects-code-s.png";
-import imgCodeHoc from "../assets/personal-projects-code-hoc.png";
 import bxlReact from "@iconify/icons-bx/bxl-react";
 import bxlJavascript from "@iconify/icons-bx/bxl-javascript";
 import bxlSass from "@iconify/icons-bx/bxl-sass";
@@ -31,7 +29,6 @@ export const personalProjects = [
     id: "id1",
     name: "Coin Market App",
     imgSrcApp: workCoin,
-    imgCode: imgCodeHoc,
     linkGit: "https://github.com/JairDev/coin-market-info-",
     linkDemo: "https://coin-market-info.vercel.app/",
     dataDescription: [
@@ -51,7 +48,6 @@ export const personalProjects = [
     id: "id2",
     name: "Tasty dessert",
     imgSrcApp: workDessert,
-    imgCode: imgCode,
     linkGit: "https://github.com/JairDev/hot-food-app",
     linkDemo: "https://tastypie.netlify.app/",
     dataDescription: [
