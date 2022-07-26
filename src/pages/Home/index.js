@@ -138,7 +138,7 @@ function Home() {
           </div>
         </div>
       </section>
-
+      {/* 
       <section
         id="about-me"
         className={`${styles.wrapperPadding} ${styles.appContentAboutMe}`}
@@ -197,9 +197,9 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section
+      {/* <section
         className={`${styles.wrapperPadding} ${styles.appContentSkills}`}
       >
         <div className={styles.wrapperMaxWidth}>
@@ -223,8 +223,9 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
-      <section id="personal-work" className={`${styles.wrapperPadding}`}>
+      </section> */}
+
+      <section id="personal-work" className={`${styles.wrapperPadding} ${styles.projectsSection}`}>
         <div className={styles.wrapperMaxWidth}>
           <div className={styles.appContentPersonalProjectsHeader}>
             <h2 data-text="text" className={styles.spanWorkName}>
@@ -252,6 +253,32 @@ function Home() {
               <Link className={styles.moreLink} to="/proyectos">
                 Más proyectos
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className={`${styles.wrapperPadding} ${styles.appContentSkills}`}
+      >
+        <div className={styles.wrapperMaxWidth}>
+          <div className={styles.wrapperSkills}>
+            <h3 data-text="text" className={styles.h3Skills}>
+              Habilidades Actuales
+            </h3>
+            <div className={styles.contentSkills}>
+              <ul className={styles.contentItemSkills}>
+                <div className={styles.flexSkills}>
+                  {svgIcons.map((icon) => (
+                    <div className={styles.contentSkillsLabel} key={icon.name}>
+                      <li data-text="text" className={styles.itemSkills}>
+                        {<Icon icon={icon.svg} style={{ fontSize: "64px" }} />}
+                      </li>
+                      <span className={styles.labelSkills}>{icon.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </ul>
             </div>
           </div>
         </div>
@@ -324,6 +351,66 @@ function Home() {
               <Link className={styles.moreLink} to="/desafios">
                 Más desafíos
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about-me"
+        className={`${styles.wrapperPadding} ${styles.appContentAboutMe}`}
+      >
+        <div className={styles.wrapperMaxWidth}>
+          <div className={styles.appContentAboutMeHeader}>
+            <div className={styles.appContentAboutMeTitle}>
+              <h3
+                data-text="text"
+                className={`${styles.text} ${styles.spanName}`}
+              >
+                Hola,
+              </h3>
+              <h4
+                data-text="text"
+                ref={objRef.h2Name}
+                className={`${styles.text} ${styles.h2Name}`}
+              >
+                soy Alfredo
+              </h4>
+            </div>
+          </div>
+          <div className={styles.appContentAboutMeDescription}>
+            <div className={styles.wrapperAboutMeDescription}>
+              <span className={styles.lineRightAbout}></span>
+              <span className={styles.lineLeftAbout}></span>
+              <p
+                data-text="text"
+                className={`${styles.text} ${styles.pDescription}`}
+              >
+                Hola, me llamo Alfredo Moscoso, soy desarrollador web, tengo
+                experiencia en proyectos personales manejando tecnologías como,
+                ReactJs, Javascript, Redux, Sass, Css3, Html5, Git, Styled
+                Components.
+              </p>
+              <p
+                data-text="text"
+                className={`${styles.text} ${styles.pDescription}`}
+              >
+                Del desarrollo web me entusiasma la interacción que pueda
+                lograrse entre el producto que se desarrolle y el usuario final,
+                ya sea mediante una página web, alguna aplicación web, que
+                satisfaga alguna necesidad, me motiva estar en constante
+                aprendizaje y poder lograr buenos fundamentos en programación
+                para ser un mejor profesional, enfocado en aplicar las mejores
+                prácticas en el desarrollo web.
+              </p>
+
+              <p
+                data-text="text"
+                className={`${styles.text} ${styles.pDescription}`}
+              >
+                Saludos, espero verte pronto !
+              </p>
+              <Button classButton="about" textLink="Contáctame" />
             </div>
           </div>
         </div>

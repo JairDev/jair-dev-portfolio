@@ -8,7 +8,6 @@ import { Link, useLocation } from "react-router-dom";
 import NavIcon from "../../assets/nav-bar-icon.svg";
 import NavIconClose from "../../assets/nav-bar-close.svg";
 
-
 import styles from "./Header.module.css";
 
 const setClass = (direction) => {
@@ -40,6 +39,7 @@ function Header() {
   const iconCloseRef = useRef(null);
   const parentIcon = useRef(null);
   const logoRef = useRef(null);
+  const refContentLinks = useRef();
   const location = useLocation();
 
   useEffect(() => {
@@ -59,10 +59,8 @@ function Header() {
     });
   }, [location.pathname]);
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     state = !state;
-    const parent = e.target;
-    const clickLinks = parent.closest("#ul-content-li");
     if (state) {
       menuStyle.current.classList.add(styles.show);
       iconOpenRef.current.firstChild.classList.add(styles.noOpen);
@@ -72,18 +70,20 @@ function Header() {
       iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
       iconCloseRef.current.firstChild.classList.remove(styles.open);
     }
-    if (clickLinks) {
-      menuStyle.current.classList.remove(styles.show);
-      iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
-      iconCloseRef.current.firstChild.classList.remove(styles.open);
-    }
+  };
+
+  const handleClickLinks = () => {
+    state = !state;
+    menuStyle.current.classList.remove(styles.show);
+    iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
+    iconCloseRef.current.firstChild.classList.remove(styles.open);
   };
 
   return (
     <header id="nav-hidden" className={styles.appContentNav}>
       <span id="back-header" className={styles.spanBack}></span>
       <span id="nav-show" className={styles.spanStyleNav}></span>
-      <nav onClick={handleClick} className={styles.appNav}>
+      <nav className={styles.appNav}>
         <div className="app-content-nav-logo">
           <div className="app-nav-logo">
             <Link ref={logoRef} className={styles.logoName} to="/">
@@ -91,7 +91,15 @@ function Header() {
             </Link>
           </div>
         </div>
-        <div id="parent-icon" ref={parentIcon} className={styles.iconNav}>
+        <div
+          onClick={handleClick}
+          id="parent-icon"
+          ref={parentIcon}
+          className={styles.iconNav}
+        >
+          <svg width="100" height="100" viewBox="0 0 70 70">
+            <circle className={styles.path} cx="50%" cy="50%" r="30" />
+          </svg>
           <div
             id="open-click"
             ref={iconOpenRef}
@@ -108,7 +116,12 @@ function Header() {
           </div>
         </div>
         <div ref={menuStyle} className={styles.appContentNavLinks}>
-          <ul id="ul-content-li" className={styles.ulContentLinks}>
+          <ul
+            ref={refContentLinks}
+            onClick={handleClickLinks}
+            id="ul-content-li"
+            className={styles.ulContentLinks}
+          >
             <li className={styles.liLink}>
               <a href="#about-me" data-link="link" className={styles.itemLink}>
                 Conóceme
@@ -138,8 +151,7 @@ function Header() {
               </a>
             </li>
           </ul>
-          <span className={styles.backMenuStyle}>
-          </span>
+          <span className={styles.backMenuStyle}></span>
         </div>
       </nav>
     </header>
