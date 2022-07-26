@@ -67,7 +67,7 @@
 }
 
 .wordsHero {
-  color: var(--accent-color);
+  color: var(--light-prymary-color-hero);
   display: block;
   font-family: var(--title-font);
   font-weight: 600;
@@ -80,8 +80,7 @@
 }
 
 .wordsHero.top {
-  /* border: 2px solid red; */
-  color: var(--primary-color);
+  color: var(--light-prymary-color-hero);
   top: -50px;
   right: 150px;
   font-size: calc(1vw + 0.6em);
