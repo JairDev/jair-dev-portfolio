@@ -10,7 +10,12 @@ import NavIconClose from "../../assets/nav-bar-close.svg";
 
 import styles from "./Header.module.css";
 
-const setClass = (direction) => {
+const setClass = (direction, { menuStyle, iconOpenRef, iconCloseRef }) => {
+  if (menuStyle.current.className.includes("show")) {
+    menuStyle.current.classList.remove(styles.show);
+    iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
+    iconCloseRef.current.firstChild.classList.remove(styles.open);
+  }
   if (window.scrollY <= 0) {
     gsap.to("#nav-hidden", {
       backgroundColor: "rgba(255, 255, 255, 0)",
@@ -33,50 +38,52 @@ const setClass = (direction) => {
 };
 
 function Header() {
-  let state = false;
-  const menuStyle = useRef(null);
-  const iconOpenRef = useRef(null);
-  const iconCloseRef = useRef(null);
-  const parentIcon = useRef(null);
-  const logoRef = useRef(null);
-  const refContentLinks = useRef();
+  const refObject = {
+    menuStyle: useRef(null),
+    iconOpenRef: useRef(null),
+    iconCloseRef: useRef(null),
+    parentIcon: useRef(null),
+    logoRef: useRef(null),
+    refContentLinks: useRef(),
+  };
+
   const location = useLocation();
 
   useEffect(() => {
-    logoRef.current.style.opacity = "0";
-    parentIcon.current.style.opacity = "1";
+    refObject.logoRef.current.style.opacity = "0";
+    refObject.parentIcon.current.style.opacity = "1";
     if (
       location.pathname === "/desafios" ||
       location.pathname === "/proyectos"
     ) {
-      logoRef.current.style.opacity = "1";
-      parentIcon.current.style.opacity = "0";
+      refObject.logoRef.current.style.opacity = "1";
+      refObject.parentIcon.current.style.opacity = "0";
     }
     ScrollTrigger.create({
       onUpdate: (self) => {
-        setClass(self.direction);
+        setClass(self.direction, refObject);
       },
     });
-  }, [location.pathname]);
+  }, [location.pathname, refObject]);
 
   const handleClick = () => {
-    state = !state;
-    if (state) {
-      menuStyle.current.classList.add(styles.show);
-      iconOpenRef.current.firstChild.classList.add(styles.noOpen);
-      iconCloseRef.current.firstChild.classList.add(styles.open);
+    if (refObject.menuStyle.current.className.includes("show")) {
+      refObject.menuStyle.current.classList.remove(styles.show);
+      refObject.iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
+      refObject.iconCloseRef.current.firstChild.classList.remove(styles.open);
     } else {
-      menuStyle.current.classList.remove(styles.show);
-      iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
-      iconCloseRef.current.firstChild.classList.remove(styles.open);
+      refObject.menuStyle.current.classList.add(styles.show);
+      refObject.iconOpenRef.current.firstChild.classList.add(styles.noOpen);
+      refObject.iconCloseRef.current.firstChild.classList.add(styles.open);
     }
   };
 
   const handleClickLinks = () => {
-    state = !state;
-    menuStyle.current.classList.remove(styles.show);
-    iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
-    iconCloseRef.current.firstChild.classList.remove(styles.open);
+    if (refObject.menuStyle.current.className.includes("show")) {
+      refObject.menuStyle.current.classList.remove(styles.show);
+      refObject.iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
+      refObject.iconCloseRef.current.firstChild.classList.remove(styles.open);
+    }
   };
 
   return (
@@ -86,7 +93,7 @@ function Header() {
       <nav className={styles.appNav}>
         <div className="app-content-nav-logo">
           <div className="app-nav-logo">
-            <Link ref={logoRef} className={styles.logoName} to="/">
+            <Link ref={refObject.logoRef} className={styles.logoName} to="/">
               Inicio
             </Link>
           </div>
@@ -94,7 +101,7 @@ function Header() {
         <div
           onClick={handleClick}
           id="parent-icon"
-          ref={parentIcon}
+          ref={refObject.parentIcon}
           className={styles.iconNav}
         >
           <svg width="100" height="100" viewBox="0 0 70 70">
@@ -102,31 +109,30 @@ function Header() {
           </svg>
           <div
             id="open-click"
-            ref={iconOpenRef}
+            ref={refObject.iconOpenRef}
             className={styles.parentIconOpen}
           >
             <img src={NavIcon} alt="" />
           </div>
           <div
             id="close-click"
-            ref={iconCloseRef}
+            ref={refObject.iconCloseRef}
             className={styles.parentIconClose}
           >
             <img src={NavIconClose} alt="" />
           </div>
         </div>
-        <div ref={menuStyle} className={styles.appContentNavLinks}>
+        <div
+          id="content-nav-links"
+          ref={refObject.menuStyle}
+          className={styles.appContentNavLinks}
+        >
           <ul
-            ref={refContentLinks}
+            ref={refObject.refContentLinks}
             onClick={handleClickLinks}
             id="ul-content-li"
             className={styles.ulContentLinks}
           >
-            <li className={styles.liLink}>
-              <a href="#about-me" data-link="link" className={styles.itemLink}>
-                Conóceme
-              </a>
-            </li>
             <li className={styles.liLink}>
               <a
                 href="#personal-work"
@@ -136,6 +142,7 @@ function Header() {
                 Proyectos Personales
               </a>
             </li>
+
             <li className={styles.liLink}>
               <a
                 href="#challenges"
@@ -145,6 +152,12 @@ function Header() {
                 Desafíos Frontend
               </a>
             </li>
+            <li className={styles.liLink}>
+              <a href="#about-me" data-link="link" className={styles.itemLink}>
+                Conóceme
+              </a>
+            </li>
+
             <li className={styles.liLink}>
               <a href="#contact" data-link="link" className={styles.itemLink}>
                 Contacto
