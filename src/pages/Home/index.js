@@ -21,6 +21,7 @@ import blob from "../../assets/blob.svg";
 import { personalProjects, svgIcons } from "../../data/info-portfolio";
 
 import styles from "./Home.module.css";
+import { Helmet } from "react-helmet";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -65,6 +66,9 @@ function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>Alfredo Moscoso</title>
+      </Helmet>
       <section
         className={`${styles.wrapperPadding} ${styles.appContentHero}`}
         id={"wrapper-padding"}
@@ -225,7 +229,10 @@ function Home() {
         </div>
       </section> */}
 
-      <section id="personal-work" className={`${styles.wrapperPadding} ${styles.projectsSection}`}>
+      <section
+        id="personal-work"
+        className={`${styles.wrapperPadding} ${styles.projectsSection}`}
+      >
         <div className={styles.wrapperMaxWidth}>
           <div className={styles.appContentPersonalProjectsHeader}>
             <h2 data-text="text" className={styles.spanWorkName}>

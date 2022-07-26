@@ -5,6 +5,7 @@ import Projects from "components/Projects/Projects";
 import { personalProjects } from "data/info-portfolio";
 
 import styles from "./MoreProjects.module.css";
+import { Helmet } from "react-helmet";
 
 function MoreProjects() {
   const projects = personalProjects.slice(2);
@@ -15,6 +16,9 @@ function MoreProjects() {
 
   return (
     <>
+      <Helmet>
+        <title>Proyectos Presonales</title>
+      </Helmet>
       <section id="personal-work" className={`${styles.wrapperPadding}`}>
         <div className={styles.wrapperMaxWidth}>
           {projects.map((item) => (
