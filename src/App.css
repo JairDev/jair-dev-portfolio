@@ -1,7 +1,6 @@
 :root {
-  --body-color: rgba(231, 232, 239, 1);
+  --body-color: #e7e8ef;
   --white-color: #ffffff;
-  /* --body-color: #e7e8ef; */
   --transparent-color: rgba(255, 255, 255, 0);
   --primary-color: #3f51b5;
   --light-prymary-color: #c5cae9;
@@ -9,11 +8,9 @@
   --dark-primary-color: #303f9f;
   --accent-color: #7c4dff;
   --light-accent-color: #BEA6FF;
-  /* --primary-text: #212121; */
   --primary-text: #2A2A2A;
   --title-font-size: clamp(1rem, 10vw, 4rem);
   --sub-title-font-size: clamp(1rem, 10vw, 3rem);
-  /* --paragraph-font-size: calc(1vw + .9em); */
   --paragraph-font-size: clamp(16px, 2vw, 18px);
   --text-button-small: calc(1vw + 0.3em);
   --text-button-big: calc(1vw + 0.8em);

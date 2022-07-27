@@ -1,17 +1,11 @@
 import React from "react";
 
-import "./Button.css";
+import styles from "./Button.module.css";
 
-function Button({ classButton, textLink }) {
+function Button({ classButton, children }) {
   return (
-    <div className={`contentButtonContact ${classButton}`}>
-      <div className={`contentButton ${classButton}`}>
-        <div className="button">
-          <a className={`link ${classButton}`} href="#contact" data-link="link">
-            {textLink}
-          </a>
-        </div>
-      </div>
+    <div className={`${styles.contentButton} ${styles[classButton]}`}>
+      <button className={`${styles.button} ${styles[classButton]}`}>{children}</button>
     </div>
   );
 }

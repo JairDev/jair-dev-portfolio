@@ -1,0 +1,46 @@
+.contentButton {
+  border-radius: 50px;
+  align-self: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.button {
+  border: none;
+  background: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--body-color);
+  font-size: 16px;
+  font-family: var(--title-font);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing);
+  position: relative;
+  z-index: 10;
+}
+
+.button.contactButton {
+  padding: 0.6rem 1.8rem;
+}
+
+.contentButton.hero {
+  border: 2px solid #ffffff;
+}
+
+.contentButton::before {
+  content: "";
+  border-radius: 50px;
+  background-color: #683edb;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all ease-out 0.2s;
+}
+
+.contentButton:hover::before {
+  width: 200px;
+  height: 200px;
+}

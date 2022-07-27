@@ -11,6 +11,7 @@ import twitterFill from "@iconify/icons-akar-icons/twitter-fill";
 import telegramFill from "@iconify/icons-akar-icons/telegram-fill";
 
 import styles from "./FormatContact.module.css";
+import Button from "components/Button/Button";
 
 const socialIcons = [
   { name: githubFill, label: "Github", url: "https://github.com/JairDev" },
@@ -89,7 +90,6 @@ function FormContact() {
                   errors={errors}
                   name="fromName"
                   render={({ messages }) => {
-                    console.log("messages", messages);
                     return messages
                       ? Object.entries(messages).map(([type, message]) => (
                           <span key={type}>{"Este campo es requerido *"}</span>
@@ -135,7 +135,6 @@ function FormContact() {
                   errors={errors}
                   name="userEmail"
                   render={({ messages }) => {
-                    console.log("messages", errors);
                     return messages
                       ? Object.entries(messages).map(([type, message]) => (
                           <span key={type}>{"Este campo es requerido *"}</span>
@@ -161,7 +160,6 @@ function FormContact() {
                   errors={errors}
                   name="message"
                   render={({ messages }) => {
-                    console.log("messages", messages);
                     return messages
                       ? Object.entries(messages).map(([type, message]) => (
                           <span key={type}>{"Este campo es requerido"}</span>
@@ -177,7 +175,9 @@ function FormContact() {
               {buttonState}
             </span>
             <div className={styles.contentButtonForm}>
-              <button className={styles.contactButton}>Enviar</button>
+              <Button classButton="contactButton">
+                Enviar
+              </Button>
             </div>
           </div>
         </form>

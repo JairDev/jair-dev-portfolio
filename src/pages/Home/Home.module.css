@@ -49,6 +49,21 @@
   margin-top: 0.5rem;
 }
 
+.contentButtonContact {
+  align-self: flex-start;
+  position: relative;
+}
+
+.link.hero {
+  color: #ffffff;
+  display: block;
+  padding: 0.6rem 1.8rem;
+}
+
+.link.contact-form {
+  color: var(--body-color);
+}
+
 .appRightContentHero {
   display: flex;
   align-items: center;
