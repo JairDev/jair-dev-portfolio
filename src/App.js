@@ -18,7 +18,6 @@ function App() {
   const location = useLocation();
   return (
     <div className="App">
-      {/* <h1 className="mantenimiento">En matenimiento</h1> */}
       <Layout>
         <Routes location={location} key={location.pathname}>
           <Route path="/proyectos" element={<MoreProjects />} />
