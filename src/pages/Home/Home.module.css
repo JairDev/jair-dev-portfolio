@@ -197,8 +197,6 @@
 }
 
 .appContentAboutMeHeader {
-  display: flex;
-  justify-content: flex-end;
   padding-top: var(--section-header-spaces);
   position: relative;
 }
@@ -214,7 +212,7 @@
   background-color: var(--accent-color);
   position: absolute;
   bottom: 0;
-  right: -30%;
+  right: -40%;
   width: 100%;
   height: 4px;
 }
@@ -234,7 +232,7 @@
   font-family: var(--title-font);
   font-weight: 500;
   letter-spacing: var(--letter-spacing);
-  text-align: end;
+  padding-left: 15vw;
   margin-top: 0.5rem;
 }
 

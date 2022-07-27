@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.b11ebc55.chunk.css",
+    "main.css": "/static/css/main.06012210.chunk.css",
     "main.js": "/static/js/main.aef57a66.chunk.js",
     "main.js.map": "/static/js/main.aef57a66.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.4893279b.js",
@@ -8,9 +8,9 @@
     "static/js/2.366eefb3.chunk.js": "/static/js/2.366eefb3.chunk.js",
     "static/js/2.366eefb3.chunk.js.map": "/static/js/2.366eefb3.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.22f89cec3df201d3cbf3103e7ff96472.js": "/precache-manifest.22f89cec3df201d3cbf3103e7ff96472.js",
+    "precache-manifest.6716acb7efa450e2bbc743cb84cb28d0.js": "/precache-manifest.6716acb7efa450e2bbc743cb84cb28d0.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.b11ebc55.chunk.css.map": "/static/css/main.b11ebc55.chunk.css.map",
+    "static/css/main.06012210.chunk.css.map": "/static/css/main.06012210.chunk.css.map",
     "static/js/2.366eefb3.chunk.js.LICENSE.txt": "/static/js/2.366eefb3.chunk.js.LICENSE.txt",
     "static/media/aerolab-screen.png": "/static/media/aerolab-screen.e7a2351e.png",
     "static/media/arrow.svg": "/static/media/arrow.784c123c.svg",
@@ -28,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.4893279b.js",
     "static/js/2.366eefb3.chunk.js",
-    "static/css/main.b11ebc55.chunk.css",
+    "static/css/main.06012210.chunk.css",
     "static/js/main.aef57a66.chunk.js"
   ]
 }
