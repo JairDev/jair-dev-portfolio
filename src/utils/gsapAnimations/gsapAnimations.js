@@ -7,7 +7,7 @@ export function gsapAnimations({ word, rotateText }) {
       start: "center 80%",
       end: "bottom -=100",
       scrub: true,
-      markers: true,
+      // markers: true,
     },
   });
 
