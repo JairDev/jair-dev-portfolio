@@ -41,7 +41,10 @@
 }
 
 .wrapperImage {
-  position: relative;
+  border-radius: 14px;
+  filter: drop-shadow(8px 8px 20px rgba(106, 109, 131, 0.4));
+  overflow: hidden;
+  z-index: 10;
 }
 
 .contentImgTablet {
@@ -53,11 +56,9 @@
 }
 
 .contentPersonalProjectImg img {
-  border-radius: 14px;
   width: 100%;
-  position: relative;
-  filter: drop-shadow(8px 8px 20px rgba(106, 109, 131, 0.4));
-  z-index: 10;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
 }
 
 .backImgPersonal {

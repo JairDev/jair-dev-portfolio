@@ -31,13 +31,13 @@ function Projects({
             ref={refMoveElement}
           >
             <div ref={refImage} className={styles.wrapperImage}>
-              <img src={imgSrcApp} alt="" />
+              <img src={imgSrcApp} width="854" height="480" alt={name} />
+            </div>
               <IconSocial
                 urlGithub={linkGit}
                 urlLive={linkDemo}
                 fontSizeIcon="24px"
               />
-            </div>
           </div>
           <div
             data-height="parent-paragraph"

@@ -17,7 +17,7 @@ function MoreProjects() {
   return (
     <>
       <Helmet>
-        <title>Proyectos Presonales</title>
+        <title>Proyectos Personales</title>
       </Helmet>
       <section id="personal-work" className={`${styles.wrapperPadding}`}>
         <div className={styles.wrapperMaxWidth}>
