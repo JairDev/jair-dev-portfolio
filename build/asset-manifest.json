@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.63a0b9cb.chunk.css",
+    "main.js": "/static/js/main.a6f42222.chunk.js",
+    "main.js.map": "/static/js/main.a6f42222.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4893279b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4893279b.js.map",
+    "static/js/2.e4c11528.chunk.js": "/static/js/2.e4c11528.chunk.js",
+    "static/js/2.e4c11528.chunk.js.map": "/static/js/2.e4c11528.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d6c9a30fee46eac3b82872c24719760d.js": "/precache-manifest.d6c9a30fee46eac3b82872c24719760d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.63a0b9cb.chunk.css.map": "/static/css/main.63a0b9cb.chunk.css.map",
+    "static/js/2.e4c11528.chunk.js.LICENSE.txt": "/static/js/2.e4c11528.chunk.js.LICENSE.txt",
+    "static/media/aerolab-screen.png": "/static/media/aerolab-screen.e7a2351e.png",
+    "static/media/arrow.svg": "/static/media/arrow.784c123c.svg",
+    "static/media/blob.svg": "/static/media/blob.1fd1b54c.svg",
+    "static/media/coin-mac.webp": "/static/media/coin-mac.93c113d6.webp",
+    "static/media/desert-mac.webp": "/static/media/desert-mac.4f653052.webp",
+    "static/media/hero-phone5.png": "/static/media/hero-phone5.c4723b9f.png",
+    "static/media/memory-mac.webp": "/static/media/memory-mac.5eb2cf93.webp",
+    "static/media/nav-bar-close.svg": "/static/media/nav-bar-close.43bee770.svg",
+    "static/media/nav-bar-icon.svg": "/static/media/nav-bar-icon.f396aee0.svg",
+    "static/media/room-mac.webp": "/static/media/room-mac.47263f7f.webp",
+    "static/media/timer-mac.webp": "/static/media/timer-mac.08fbb6ff.webp",
+    "static/media/todo-mac.webp": "/static/media/todo-mac.5d3f6f3a.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4893279b.js",
+    "static/js/2.e4c11528.chunk.js",
+    "static/css/main.63a0b9cb.chunk.css",
+    "static/js/main.a6f42222.chunk.js"
+  ]
+}
