@@ -62,7 +62,7 @@ function Home() {
     });
 
     const circleType = new CircleType(refCircleText.current);
-    circleType.radius();
+    circleType.radius(40);
   }, [objRef]);
 
   return (
@@ -258,7 +258,7 @@ function Home() {
                   ref={objRef.phoneRef}
                   className={styles.contentImgPhone}
                 >
-                  <img src={phoneChallenge} alt="" />
+                  <img src={phoneChallenge} width="390" alt="792" />
                   <IconSocial
                     urlGithub={
                       "https://github.com/JairDev/aerolab-coding-challenge"

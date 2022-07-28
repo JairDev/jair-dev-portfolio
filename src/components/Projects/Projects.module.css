@@ -42,7 +42,7 @@
 
 .wrapperImage {
   border-radius: 14px;
-  filter: drop-shadow(8px 8px 20px rgba(106, 109, 131, 0.4));
+  filter: drop-shadow(8px 8px 20px rgba(106, 109, 131, 0.3));
   overflow: hidden;
   z-index: 10;
 }
@@ -58,7 +58,6 @@
 .contentPersonalProjectImg img {
   width: 100%;
   height: auto;
-  aspect-ratio: attr(width) / attr(height);
 }
 
 .backImgPersonal {
