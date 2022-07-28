@@ -113,14 +113,14 @@ function Header() {
             ref={refObject.iconOpenRef}
             className={styles.parentIconOpen}
           >
-            <img src={NavIcon} alt="" />
+            <img src={NavIcon} width="32" height="32" alt="" />
           </div>
           <div
             id="close-click"
             ref={refObject.iconCloseRef}
             className={styles.parentIconClose}
           >
-            <img src={NavIconClose} alt="" />
+            <img src={NavIconClose} width="32" height="32" alt="" />
           </div>
         </div>
         <div
