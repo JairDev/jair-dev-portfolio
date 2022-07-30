@@ -1,6 +1,6 @@
 .appContentNav {
   background-color: var(--transparent-color);
-  padding: 1vh 5vw;
+  padding: .5rem 5vw;
   position: fixed;
   top: 0;
   width: 100%;
@@ -104,6 +104,7 @@
 }
 
 .iconNav {
+  /* background: red; */
   border-radius: 50%;
   width: 60px;
   height: 60px;

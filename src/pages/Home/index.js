@@ -74,6 +74,9 @@ function Home() {
         className={`${styles.wrapperPadding} ${styles.appContentHero}`}
         id={"wrapper-padding"}
       >
+        <span className={styles.backgroundSectionLeft}>
+          <img src={blob} alt="" />
+        </span>
         <div className={styles.wrapperMaxWidth}>
           <div className={styles.wrapperContentHero}>
             <div className={styles.appLeftContentHero}>
@@ -86,7 +89,11 @@ function Home() {
                   className={styles.contentButtonContact}
                 >
                   <Button classButton="hero">
-                    <a className={`${styles.link} ${styles.hero}`} href="#contact" data-link="link">
+                    <a
+                      className={`${styles.link} ${styles.hero}`}
+                      href="#contact"
+                      data-link="link"
+                    >
                       Contáctame
                     </a>
                   </Button>
@@ -126,24 +133,20 @@ function Home() {
                 <span className={`${styles.wordsHero} ${styles.bottomRight}`}>
                   Interaction
                 </span>
-                <span
-                  ref={objRef.word}
-                  className={`${styles.wordsHero} ${styles.bottomLeft}`}
-                  data-wordweb="wordweb"
-                >
-                  Web
-                </span>
                 <img
                   className={styles.heroImg}
                   src={phone3}
                   alt="teléfono con imagen"
                 />
               </div>
+              <span
+                  ref={objRef.word}
+                  className={`${styles.wordsHero} ${styles.bottomLeft}`}
+                  data-wordweb="wordweb"
+                >
+                  Web
+                </span>
             </div>
-            <span className={styles.backgroundSectionLeft}>
-              <img src={blob} alt="" />
-            </span>
-            <span className={styles.backgroundSectionLeftTwo}></span>
           </div>
         </div>
       </section>

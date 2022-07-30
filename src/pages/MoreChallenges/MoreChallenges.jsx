@@ -19,6 +19,14 @@ function MoreChallenges() {
       </Helmet>
       <section id="personal-work" className={`${styles.wrapperPadding}`}>
         <div className={styles.wrapperMaxWidth}>
+          <div className={styles.appContentChallengesHeader}>
+            <h3 data-text="text" className={styles.spanChallengeName}>
+              Desafíos
+            </h3>
+            <h4 data-text="text" className={styles.h2FrontendName}>
+              Frontend
+            </h4>
+          </div>
           {projects.map((item) => (
             <Projects
               key={item.name}

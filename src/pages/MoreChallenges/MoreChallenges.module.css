@@ -1,11 +1,32 @@
 .wrapperPadding {
   display: flex;
   justify-content: center;
-  padding: 0 5vw;
+  padding: 8rem 5vw 0 5vw;
+
 }
 
 .wrapperMaxWidth {
   width: 100%;
   max-width: 1280px;
   height: 100%;
+}
+
+.appContentChallengesHeader {
+  color: var(--primary-text);
+  justify-content: space-between;
+}
+
+.spanChallengeName {
+  font-size: var(--title-font-size);
+  font-family: var(--title-font);
+  letter-spacing: var(--letter-spacing);
+}
+
+.h2FrontendName {
+  font-size: var(--sub-title-font-size);
+  font-family: var(--title-font);
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding-left: 15vw;
+  margin-top: 0.5rem;
 }

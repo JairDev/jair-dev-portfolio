@@ -5,7 +5,7 @@ export function gsapAnimations({ word, rotateText }) {
     scrollTrigger: {
       trigger: "[data-wordweb]",
       start: "center 80%",
-      end: "bottom -=100",
+      end: "bottom 10%",
       scrub: true,
       // markers: true,
     },
@@ -23,7 +23,7 @@ export function gsapAnimations({ word, rotateText }) {
   //animations////////////////
 
   tlWordWeb.to(word.current, {
-    yPercent: 150,
+    yPercent: 100,
     duration: 10,
     ease: "sine.out",
   });

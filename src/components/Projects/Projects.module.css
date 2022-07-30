@@ -5,16 +5,24 @@
 }
 
 .contentPersonalProject {
-  padding: 12rem 0;
+  /* border: 1px solid red; */
+  /* border: 1px solid red; */
+  /* padding: 12rem 0; */
+  /* padding: 144px 0; */
+  padding: 7rem 0 ;
   border-bottom: 1px solid var(--accent-color);
 }
 
 .contentPersonalProject + .contentPersonalProject {
   border-bottom: none;
+  /* padding: 144px 0 0 0; */
+  padding: 7rem 0 0 0;
+
 }
 
 .contentPersonalProject:first-child {
-  padding-bottom: 6rem;
+  /* border: 1px solid green; */
+  /* padding-bottom: 6rem; */
 }
 
 .contentPersonalProjectFlex {

@@ -1,8 +1,10 @@
 .wrapperPadding {
-  padding: 0 5vw;
+  /* border: 1px solid red; */
+  padding: 0 5vw 4rem 5vw;
   display: flex;
   justify-content: center;
   position: relative;
+  margin-top: 8rem;
 }
 
 .wrapperMaxWidth {

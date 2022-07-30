@@ -14,7 +14,7 @@
 .appContentFooterFormContact {
   display: flex;
   justify-content: center;
-  padding: 30vh 0 10vh;
+  /* padding: 30vh 0 10vh; */
   position: relative;
 }
 

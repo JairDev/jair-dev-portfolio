@@ -21,6 +21,14 @@ function MoreProjects() {
       </Helmet>
       <section id="personal-work" className={`${styles.wrapperPadding}`}>
         <div className={styles.wrapperMaxWidth}>
+          <div className={styles.appContentPersonalProjectsHeader}>
+            <h2 data-text="text" className={styles.spanWorkName}>
+              Proyectos
+            </h2>
+            <h4 data-text="text" className={styles.h2WorkName}>
+              Personales
+            </h4>
+          </div>
           {projects.map((item) => (
             <Projects
               key={item.name}
