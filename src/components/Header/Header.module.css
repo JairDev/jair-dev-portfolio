@@ -1,6 +1,6 @@
 .appContentNav {
   background-color: var(--transparent-color);
-  padding: .5rem 5vw;
+  padding: 0.5rem 5vw;
   position: fixed;
   top: 0;
   width: 100%;
@@ -115,7 +115,7 @@
   position: relative;
   color: var(--body-color);
   z-index: 200;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .path {
@@ -140,13 +140,13 @@
   background: red;
 } */
 
-.iconNav:hover .path {
+/* .iconNav:hover .path {
   stroke-dashoffset: -188;
 }
 
 .iconNav:hover .pathLayer {
   stroke-dashoffset: 0;
-}
+} */
 
 .parentIconOpen {
   z-index: 10;
@@ -215,15 +215,12 @@
   }
 }
 
+@media (hover: hover) {
+  .iconNav:hover .path {
+    stroke-dashoffset: -188;
+  }
 
-/* @media (hover: hover) {
-  .iconNav:hover {
-    background: red;
+  .iconNav:hover .pathLayer {
+    stroke-dashoffset: 0;
   }
 }
-
-@media (any-hover: hover) {
-  .iconNav:hover {
-    background: yellow;
-  }
-} */

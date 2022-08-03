@@ -108,6 +108,7 @@ function Header() {
             <circle className={styles.path} cx="50%" cy="50%" r="30" />
             <circle className={styles.pathLayer} cx="50%" cy="50%" r="30" />
           </svg>
+          
           <div
             id="open-click"
             ref={refObject.iconOpenRef}

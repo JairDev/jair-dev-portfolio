@@ -25,7 +25,7 @@
 }
 
 .appLeftContentHero {
-  padding-top: 4rem;
+  padding-top: 6rem;
   position: relative;
   z-index: 30;
 }
@@ -755,6 +755,11 @@
 }
 
 @media only screen and (min-width: 860px) {
+  .appLeftContentHero {
+    padding-top: 4rem;
+
+  }
+  
   .appLeftContentHeroRole {
     justify-content: start;
   }
