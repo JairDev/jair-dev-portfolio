@@ -115,6 +115,7 @@
   position: relative;
   color: var(--body-color);
   z-index: 200;
+  transition: all .3s ease-in-out;
 }
 
 .path {
@@ -133,6 +134,10 @@
   stroke-dashoffset: 188;
   stroke-dasharray: 188;
   transition: all 0.4s ease-in-out;
+}
+
+.iconNav:hover {
+  background: red;
 }
 
 .iconNav:hover .path {
@@ -207,5 +212,12 @@
   }
   .appContentNavLinks {
     width: 30vw;
+  }
+}
+
+
+@media (hover: hover) { /* when supported */
+  .iconNav:hover {
+    background: red;
   }
 }

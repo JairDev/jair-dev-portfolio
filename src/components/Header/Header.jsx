@@ -104,10 +104,10 @@ function Header() {
           ref={refObject.parentIcon}
           className={styles.iconNav}
         >
-          <svg width="60" height="60" viewBox="0 0 63 63">
+          {/* <svg width="60" height="60" viewBox="0 0 63 63">
             <circle className={styles.path} cx="50%" cy="50%" r="30" />
             <circle className={styles.pathLayer} cx="50%" cy="50%" r="30" />
-          </svg>
+          </svg> */}
           <div
             id="open-click"
             ref={refObject.iconOpenRef}

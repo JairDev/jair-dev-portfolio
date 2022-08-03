@@ -46,8 +46,9 @@ function Home() {
           trigger: ["[data-phone]"],
           pin: true,
           start: "center 30%",
-          end: "top -=550",
+          end: "top -=250",
           scrub: true,
+          // markers: true
         },
       });
     }
