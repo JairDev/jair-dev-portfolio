@@ -136,9 +136,9 @@
   transition: all 0.4s ease-in-out;
 }
 
-.iconNav:hover {
+/* .iconNav:hover {
   background: red;
-}
+} */
 
 .iconNav:hover .path {
   stroke-dashoffset: -188;
@@ -216,8 +216,14 @@
 }
 
 
-@media (hover: hover) { /* when supported */
+/* @media (hover: hover) {
   .iconNav:hover {
     background: red;
   }
 }
+
+@media (any-hover: hover) {
+  .iconNav:hover {
+    background: yellow;
+  }
+} */
