@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0ee106144fda6c781744d25d79dc9ce1",
+    "revision": "cc38ecfe7eafc6e9a9f4343a70240bfb",
     "url": "/index.html"
   },
   {
-    "revision": "52d7460f326007e5820b",
-    "url": "/static/css/main.ae6bda6e.chunk.css"
+    "revision": "158bd7fee662bc601fef",
+    "url": "/static/css/main.3a086e79.chunk.css"
   },
   {
     "revision": "7764d8b421622a963a95",
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.07de1772.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "52d7460f326007e5820b",
-    "url": "/static/js/main.7a2b63ae.chunk.js"
+    "revision": "158bd7fee662bc601fef",
+    "url": "/static/js/main.2fe5de22.chunk.js"
   },
   {
     "revision": "55d52d96087d10ab93bc",
     "url": "/static/js/runtime-main.4893279b.js"
   },
   {
-    "revision": "e7a2351eb0e70644d4b74626eca071b1",
-    "url": "/static/media/aerolab-screen.e7a2351e.png"
+    "revision": "8253e789c11ed1c7c810e5ed8e7e73ec",
+    "url": "/static/media/aerolab-screen.8253e789.webp"
   },
   {
     "revision": "784c123c8d465d1871cb912194bc6a58",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/desert-mac.4f653052.webp"
   },
   {
-    "revision": "c4723b9f3b6e7ff6aedb97e2938adc05",
-    "url": "/static/media/hero-phone5.c4723b9f.png"
+    "revision": "85ef5cd0798a6559fa2aba7321b64564",
+    "url": "/static/media/hero-phone5.85ef5cd0.webp"
   },
   {
     "revision": "5eb2cf93ce9901f1ee73f61e54ab1a2f",

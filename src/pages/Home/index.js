@@ -13,8 +13,8 @@ import Projects from "components/Projects/Projects";
 import Button from "components/Button/Button";
 import IconSocial from "components/IconSocial/IconSocial";
 
-import phone3 from "../../assets/hero-phone5.png";
-import phoneChallenge from "../../assets/aerolab-screen.png";
+import phone3 from "../../assets/hero-phone5.webp";
+import phoneChallenge from "../../assets/aerolab-screen.webp";
 import ArrowIcon from "../../assets/arrow.svg";
 import blob from "../../assets/blob.svg";
 
@@ -141,12 +141,71 @@ function Home() {
                 />
               </div>
               <span
-                  ref={objRef.word}
-                  className={`${styles.wordsHero} ${styles.bottomLeft}`}
-                  data-wordweb="wordweb"
-                >
-                  Web
-                </span>
+                ref={objRef.word}
+                className={`${styles.wordsHero} ${styles.bottomLeft}`}
+                data-wordweb="wordweb"
+              >
+                Web
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about-me"
+        className={`${styles.wrapperPadding} ${styles.appContentAboutMe}`}
+      >
+        <div className={styles.wrapperMaxWidth}>
+          <div className={styles.appContentAboutMeHeader}>
+            <div className={styles.appContentAboutMeTitle}>
+              <h3
+                data-text="text"
+                className={`${styles.text} ${styles.spanName}`}
+              >
+                Hola,
+              </h3>
+              <h4
+                data-text="text"
+                ref={objRef.h2Name}
+                className={`${styles.text} ${styles.h2Name}`}
+              >
+                soy Alfredo
+              </h4>
+            </div>
+          </div>
+          <div className={styles.appContentAboutMeDescription}>
+            <div className={styles.wrapperAboutMeDescription}>
+              <span className={styles.lineRightAbout}></span>
+              <span className={styles.lineLeftAbout}></span>
+              <p
+                data-text="text"
+                className={`${styles.text} ${styles.pDescription}`}
+              >
+                Hola, me llamo Alfredo Moscoso, soy desarrollador web, tengo
+                experiencia en proyectos personales manejando tecnologías como,
+                ReactJs, Javascript, Redux, Sass, Css3, Html5, Git, Styled
+                Components.
+              </p>
+              <p
+                data-text="text"
+                className={`${styles.text} ${styles.pDescription}`}
+              >
+                Del desarrollo web me entusiasma la interacción que pueda
+                lograrse entre el producto que se desarrolle y el usuario final,
+                ya sea mediante una página web, alguna aplicación web, que
+                satisfaga alguna necesidad, me motiva estar en constante
+                aprendizaje y poder lograr buenos fundamentos en programación
+                para ser un mejor profesional, enfocado en aplicar las mejores
+                prácticas en el desarrollo web.
+              </p>
+
+              <p
+                data-text="text"
+                className={`${styles.text} ${styles.pDescription}`}
+              >
+                Saludos, espero verte pronto !
+              </p>
             </div>
           </div>
         </div>
@@ -281,65 +340,6 @@ function Home() {
               <Link className={styles.moreLink} to="/desafios">
                 Más desafíos
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="about-me"
-        className={`${styles.wrapperPadding} ${styles.appContentAboutMe}`}
-      >
-        <div className={styles.wrapperMaxWidth}>
-          <div className={styles.appContentAboutMeHeader}>
-            <div className={styles.appContentAboutMeTitle}>
-              <h3
-                data-text="text"
-                className={`${styles.text} ${styles.spanName}`}
-              >
-                Hola,
-              </h3>
-              <h4
-                data-text="text"
-                ref={objRef.h2Name}
-                className={`${styles.text} ${styles.h2Name}`}
-              >
-                soy Alfredo
-              </h4>
-            </div>
-          </div>
-          <div className={styles.appContentAboutMeDescription}>
-            <div className={styles.wrapperAboutMeDescription}>
-              <span className={styles.lineRightAbout}></span>
-              <span className={styles.lineLeftAbout}></span>
-              <p
-                data-text="text"
-                className={`${styles.text} ${styles.pDescription}`}
-              >
-                Hola, me llamo Alfredo Moscoso, soy desarrollador web, tengo
-                experiencia en proyectos personales manejando tecnologías como,
-                ReactJs, Javascript, Redux, Sass, Css3, Html5, Git, Styled
-                Components.
-              </p>
-              <p
-                data-text="text"
-                className={`${styles.text} ${styles.pDescription}`}
-              >
-                Del desarrollo web me entusiasma la interacción que pueda
-                lograrse entre el producto que se desarrolle y el usuario final,
-                ya sea mediante una página web, alguna aplicación web, que
-                satisfaga alguna necesidad, me motiva estar en constante
-                aprendizaje y poder lograr buenos fundamentos en programación
-                para ser un mejor profesional, enfocado en aplicar las mejores
-                prácticas en el desarrollo web.
-              </p>
-
-              <p
-                data-text="text"
-                className={`${styles.text} ${styles.pDescription}`}
-              >
-                Saludos, espero verte pronto !
-              </p>
             </div>
           </div>
         </div>

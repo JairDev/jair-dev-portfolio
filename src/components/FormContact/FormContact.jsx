@@ -18,7 +18,7 @@ const socialIcons = [
   {
     name: linkedinFill,
     label: "Linkedin",
-    url: "https://www.linkedin.com/in/frontend-alfredo-moscoso/",
+    url: "https://www.linkedin.com/in/alfredomoscosofrontend",
   },
   { name: twitterFill, label: "Twitter", url: "https://twitter.com/JairDevep" },
   { name: telegramFill, label: "Telegram", url: "https://t.me/jairdev" },

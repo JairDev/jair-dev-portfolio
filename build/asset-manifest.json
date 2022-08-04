@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.ae6bda6e.chunk.css",
-    "main.js": "/static/js/main.7a2b63ae.chunk.js",
-    "main.js.map": "/static/js/main.7a2b63ae.chunk.js.map",
+    "main.css": "/static/css/main.3a086e79.chunk.css",
+    "main.js": "/static/js/main.2fe5de22.chunk.js",
+    "main.js.map": "/static/js/main.2fe5de22.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.4893279b.js",
     "runtime-main.js.map": "/static/js/runtime-main.4893279b.js.map",
     "static/js/2.07de1772.chunk.js": "/static/js/2.07de1772.chunk.js",
     "static/js/2.07de1772.chunk.js.map": "/static/js/2.07de1772.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.7c425c847e57f1561ebc809969b13f2a.js": "/precache-manifest.7c425c847e57f1561ebc809969b13f2a.js",
+    "precache-manifest.0c1b76bf601c20a684a6eab115fe5691.js": "/precache-manifest.0c1b76bf601c20a684a6eab115fe5691.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.ae6bda6e.chunk.css.map": "/static/css/main.ae6bda6e.chunk.css.map",
+    "static/css/main.3a086e79.chunk.css.map": "/static/css/main.3a086e79.chunk.css.map",
     "static/js/2.07de1772.chunk.js.LICENSE.txt": "/static/js/2.07de1772.chunk.js.LICENSE.txt",
-    "static/media/aerolab-screen.png": "/static/media/aerolab-screen.e7a2351e.png",
+    "static/media/aerolab-screen.webp": "/static/media/aerolab-screen.8253e789.webp",
     "static/media/arrow.svg": "/static/media/arrow.784c123c.svg",
     "static/media/blob.svg": "/static/media/blob.1fd1b54c.svg",
     "static/media/coin-mac.webp": "/static/media/coin-mac.93c113d6.webp",
     "static/media/desert-mac.webp": "/static/media/desert-mac.4f653052.webp",
-    "static/media/hero-phone5.png": "/static/media/hero-phone5.c4723b9f.png",
+    "static/media/hero-phone5.webp": "/static/media/hero-phone5.85ef5cd0.webp",
     "static/media/memory-mac.webp": "/static/media/memory-mac.5eb2cf93.webp",
     "static/media/nav-bar-close.svg": "/static/media/nav-bar-close.43bee770.svg",
     "static/media/nav-bar-icon.svg": "/static/media/nav-bar-icon.f396aee0.svg",
@@ -28,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.4893279b.js",
     "static/js/2.07de1772.chunk.js",
-    "static/css/main.ae6bda6e.chunk.css",
-    "static/js/main.7a2b63ae.chunk.js"
+    "static/css/main.3a086e79.chunk.css",
+    "static/js/main.2fe5de22.chunk.js"
   ]
 }
