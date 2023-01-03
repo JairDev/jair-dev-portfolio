@@ -1,5 +1,7 @@
 .appContentNav {
   background-color: var(--transparent-color);
+  display: flex;
+  justify-content: center;
   padding: 0.5rem 5vw;
   position: fixed;
   top: 0;
@@ -22,6 +24,8 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  width: 100%;
+  max-width: 100%;
   z-index: 10;
 }
 

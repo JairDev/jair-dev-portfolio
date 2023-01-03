@@ -27,6 +27,7 @@
 .appLeftContentHero {
   padding-top: 6rem;
   position: relative;
+  width: 100%;
   z-index: 30;
 }
 
@@ -71,10 +72,10 @@
 
 .appRightContentHero {
   display: none;
-  align-items: center;
-  justify-content: flex-end;
+  /* align-items: center; */
+  /* justify-content: flex-end; */
   right: 0;
-  padding-top: 8rem;
+  /* padding: 8rem; */
   height: 100%;
   overflow: hidden;
   z-index: 20;
@@ -82,7 +83,7 @@
 
 .appRightContentHeroImg {
   position: relative;
-  width: 80%;
+  /* width: 80%; */
 }
 
 .wordsHero {
@@ -133,7 +134,7 @@
 .heroImg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0;
 }
 
@@ -318,7 +319,6 @@
   font-weight: bold;
   letter-spacing: 2px;
 }
-
 
 /* skills */
 
@@ -756,10 +756,11 @@
 
 @media only screen and (min-width: 860px) {
   .appLeftContentHero {
+    /* border: 1px solid red; */
     padding-top: 4rem;
-
+    /* width: 50%; */
   }
-  
+
   .appLeftContentHeroRole {
     justify-content: start;
   }
@@ -770,11 +771,16 @@
 
   .appRightContentHero {
     display: flex;
+    /* border: 1px solid blue; */
+    /* width: 50%; */
   }
 
   .heroImg {
+    /* border: 1px solid red; */
+    display: none;
     opacity: 1;
     filter: drop-shadow(1px 5px 1px rgba(27, 16, 54, 0.144));
+    max-width: 100%;
   }
 
   .role,
@@ -830,5 +836,36 @@
 
   .socialItem {
     width: 5%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .appLeftContentHero {
+    width: 50%;
+  }
+
+  .appRightContentHero {
+    display: flex;
+    /* border: 1px solid blue; */
+    width: 50%;
+  }
+  .heroImg {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 2224px) {
+  .appLeftContentHero {
+    width: 50%;
+  }
+
+  .appRightContentHero {
+    display: flex;
+    /* border: 1px solid blue; */
+    width: 50%;
+  }
+  .heroImg {
+    display: block;
+    transform: scale(1.5);
   }
 }

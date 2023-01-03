@@ -18,7 +18,7 @@ const socialIcons = [
   {
     name: linkedinFill,
     label: "Linkedin",
-    url: "https://www.linkedin.com/in/alfredomoscosofrontend",
+    url: "https://www.linkedin.com/in/alfredo-moscoso-desarrollador-frontend/",
   },
   { name: twitterFill, label: "Twitter", url: "https://twitter.com/JairDevep" },
   { name: telegramFill, label: "Telegram", url: "https://t.me/jairdev" },
@@ -175,9 +175,7 @@ function FormContact() {
               {buttonState}
             </span>
             <div className={styles.contentButtonForm}>
-              <Button classButton="contactButton">
-                Enviar
-              </Button>
+              <Button classButton="contactButton">Enviar</Button>
             </div>
           </div>
         </form>
