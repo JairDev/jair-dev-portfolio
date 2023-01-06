@@ -56,6 +56,7 @@
   opacity: 1;
   transform: translateX(120%);
   transition: all 0.3s ease-in-out;
+  z-index: 30;
 }
 
 .appContentNavLinks.show {
@@ -107,8 +108,24 @@
   transform: scaleX(1);
 }
 
+.parentMenu {
+  padding-top: 1rem;
+  position: relative;
+  z-index: 100;
+}
+
+.iconNaCoord {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
 .iconNav {
-  /* background: red; */
+  --x: 0;
+  --y: 0;
+
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -118,8 +135,10 @@
   justify-content: center;
   position: relative;
   color: var(--body-color);
-  z-index: 200;
-  transition: all 0.3s ease-in-out;
+  transform: translate(var(--x), var(--y));
+
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.84);
+  z-index: 50;
 }
 
 .path {
@@ -168,6 +187,10 @@
   width: 32px;
   opacity: 1;
   position: relative;
+}
+
+.parentIconClose {
+  z-index: 200;
 }
 
 .parentIconClose img,

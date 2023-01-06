@@ -1,39 +1,22 @@
 import React, { useEffect, useRef } from "react";
 
-import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Link, useLocation } from "react-router-dom";
+
+import { motion, useScroll } from "framer-motion/dist/framer-motion";
 
 import NavIcon from "../../assets/nav-bar-icon.svg";
 import NavIconClose from "../../assets/nav-bar-close.svg";
 
 import styles from "./Header.module.css";
+import { useState } from "react";
 
 const setClass = (direction, { menuStyle, iconOpenRef, iconCloseRef }) => {
   if (menuStyle.current.className.includes("show")) {
     menuStyle.current.classList.remove(styles.show);
     iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
     iconCloseRef.current.firstChild.classList.remove(styles.open);
-  }
-  if (window.scrollY <= 0) {
-    gsap.to("#nav-hidden", {
-      backgroundColor: "rgba(255, 255, 255, 0)",
-      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, 0)",
-      duration: 0.2,
-    });
-  } else if (direction >= 1) {
-    gsap.to("#nav-hidden", {
-      opacity: 0,
-      duration: 0.2,
-    });
-  } else {
-    gsap.to("#nav-hidden", {
-      backgroundColor: "rgba(231, 232, 239, 1)",
-      boxShadow: "0px 4px 20px 8px rgba(177, 181, 202, 0.2)",
-      duration: 0.2,
-      opacity: 1,
-    });
   }
 };
 
@@ -45,8 +28,11 @@ function Header() {
     parentIcon: useRef(null),
     logoRef: useRef(null),
     refContentLinks: useRef(),
+    parentMove: useRef(),
   };
 
+  const [yVisibility, setYVisibility] = useState(0);
+  const { scrollY } = useScroll();
   const location = useLocation();
 
   useEffect(() => {
@@ -64,7 +50,11 @@ function Header() {
         setClass(self.direction, refObject);
       },
     });
-  }, [location.pathname, refObject]);
+
+    return scrollY.onChange((latest) => {
+      setYVisibility(latest);
+    });
+  }, [location.pathname, refObject, scrollY]);
 
   const handleClick = () => {
     if (refObject.menuStyle.current.className.includes("show")) {
@@ -86,6 +76,21 @@ function Header() {
     }
   };
 
+  const handleMouseMove = (e) => {
+    const coords = refObject.parentIcon.current.getBoundingClientRect();
+    const xCoord = e.clientX - (coords.left + Math.floor(coords.width / 2));
+    const yCoord = e.clientY - (coords.top + Math.floor(coords.height / 2));
+    if (refObject.parentIcon.current) {
+      refObject.parentIcon.current.style.setProperty("--x", `${xCoord}px`);
+      refObject.parentIcon.current.style.setProperty("--y", `${yCoord}px`);
+    }
+  };
+
+  const handleMouseLeave = (e) => {
+    refObject.parentIcon.current.style.setProperty("--x", `${0}px`);
+    refObject.parentIcon.current.style.setProperty("--y", `${0}px`);
+  };
+
   return (
     <header id="nav-hidden" className={styles.appContentNav}>
       <span id="back-header" className={styles.spanBack}></span>
@@ -98,31 +103,39 @@ function Header() {
             </Link>
           </div>
         </div>
-        <div
-          onClick={handleClick}
-          id="parent-icon"
-          ref={refObject.parentIcon}
-          className={styles.iconNav}
-        >
-          <svg width="60" height="60" viewBox="0 0 63 63">
-            <circle className={styles.path} cx="50%" cy="50%" r="30" />
-            <circle className={styles.pathLayer} cx="50%" cy="50%" r="30" />
-          </svg>
-          
-          <div
-            id="open-click"
-            ref={refObject.iconOpenRef}
-            className={styles.parentIconOpen}
+        <div onClick={handleClick} className={styles.parentMenu}>
+          <motion.div
+            animate={{ opacity: yVisibility >= 200 ? 1 : 0 }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className={styles.iconNaCoord}
           >
-            <img src={NavIcon} width="32" height="32" alt="" />
-          </div>
-          <div
-            id="close-click"
-            ref={refObject.iconCloseRef}
-            className={styles.parentIconClose}
-          >
-            <img src={NavIconClose} width="32" height="32" alt="" />
-          </div>
+            <div
+              id="parent-icon"
+              ref={refObject.parentIcon}
+              className={styles.iconNav}
+            >
+              <svg width="60" height="60" viewBox="0 0 63 63">
+                <circle className={styles.path} cx="50%" cy="50%" r="30" />
+                <circle className={styles.pathLayer} cx="50%" cy="50%" r="30" />
+              </svg>
+
+              <div
+                id="open-click"
+                ref={refObject.iconOpenRef}
+                className={styles.parentIconOpen}
+              >
+                <img src={NavIcon} width="32" height="32" alt="" />
+              </div>
+              <div
+                id="close-click"
+                ref={refObject.iconCloseRef}
+                className={styles.parentIconClose}
+              >
+                <img src={NavIconClose} width="32" height="32" alt="" />
+              </div>
+            </div>
+          </motion.div>
         </div>
         <div
           id="content-nav-links"
