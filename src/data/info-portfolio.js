@@ -12,21 +12,24 @@ import bxlHtml5 from "@iconify/icons-bx/bxl-html5";
 import bxlGit from "@iconify/icons-bx/bxl-git";
 import styledcomponentsIcon from "@iconify/icons-file-icons/styledcomponents";
 import reduxFill from "@iconify/icons-akar-icons/redux-fill";
+import nextjsFill from "@iconify/icons-akar-icons/nextjs-fill";
+import tailwindIcon from "@iconify/icons-file-icons/tailwind";
 
 export const svgIcons = [
-  { name: "React", svg: bxlReact },
   { name: "Javascript", svg: bxlJavascript },
+  { name: "React", svg: bxlReact },
+  { name: "NextJs", svg: nextjsFill },
   { name: "Redux", svg: reduxFill },
+  { name: "Tailwindcss", svg: tailwindIcon },
+  { name: "Styled Components", svg: styledcomponentsIcon },
   { name: "Sass", svg: bxlSass },
   { name: "Css3", svg: bxlCss3 },
   { name: "Html5", svg: bxlHtml5 },
   { name: "Git", svg: bxlGit },
-  { name: "Styled Components", svg: styledcomponentsIcon },
 ];
 
 export const personalProjects = [
   {
-    id: "id1",
     name: "Coin Market App",
     imgSrcApp: workCoin,
     linkGit: "https://github.com/JairDev/coin-market-info-",
@@ -45,7 +48,6 @@ export const personalProjects = [
     ],
   },
   {
-    id: "id2",
     name: "Tasty dessert",
     imgSrcApp: workDessert,
     linkGit: "https://github.com/JairDev/hot-food-app",

@@ -48,7 +48,7 @@ function Home() {
           start: "center 30%",
           end: "top -=250",
           scrub: true,
-          // markers: true
+          // markers: true,
         },
       });
     }
@@ -184,8 +184,8 @@ function Home() {
               >
                 Hola, me llamo Alfredo Moscoso, soy desarrollador web, tengo
                 experiencia en proyectos personales manejando tecnologías como,
-                ReactJs, Javascript, Redux, Sass, Css3, Html5, Git, Styled
-                Components.
+                ReactJs, Nextjs, Javascript, Redux, Styled Components,
+                Tailwindcss, Sass, Css3, Html5, Git.
               </p>
               <p
                 data-text="text"
@@ -227,7 +227,6 @@ function Home() {
           {projects.map((item) => (
             <Projects
               key={item.name}
-              id={item.id}
               name={item.name}
               imgSrcApp={item.imgSrcApp}
               linkGit={item.linkGit}

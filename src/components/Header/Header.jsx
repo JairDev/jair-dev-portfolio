@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from "react";
 
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import { Link, useLocation } from "react-router-dom";
 
-import { motion, useScroll } from "framer-motion/dist/framer-motion";
+import { gsap } from "gsap";
 
 import NavIcon from "../../assets/nav-bar-icon.svg";
 import NavIconClose from "../../assets/nav-bar-close.svg";
@@ -12,17 +10,10 @@ import NavIconClose from "../../assets/nav-bar-close.svg";
 import styles from "./Header.module.css";
 import { useState } from "react";
 
-const setClass = (direction, { menuStyle, iconOpenRef, iconCloseRef }) => {
-  if (menuStyle.current.className.includes("show")) {
-    menuStyle.current.classList.remove(styles.show);
-    iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
-    iconCloseRef.current.firstChild.classList.remove(styles.open);
-  }
-};
-
 function Header() {
   const refObject = {
     menuStyle: useRef(null),
+    menu: useRef(null),
     iconOpenRef: useRef(null),
     iconCloseRef: useRef(null),
     parentIcon: useRef(null),
@@ -31,8 +22,7 @@ function Header() {
     parentMove: useRef(),
   };
 
-  const [yVisibility, setYVisibility] = useState(0);
-  const { scrollY } = useScroll();
+  const [showNav, setShowNav] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -45,35 +35,40 @@ function Header() {
       refObject.logoRef.current.style.opacity = "1";
       refObject.parentIcon.current.style.opacity = "0";
     }
-    ScrollTrigger.create({
-      onUpdate: (self) => {
-        setClass(self.direction, refObject);
+
+    gsap.to(refObject.menu.current, {
+      scrollTrigger: {
+        start: "5% 30%",
+        end: "top -=450",
+        scrub: true,
+        markers: true,
       },
+      autoAlpha: 1,
     });
+  }, [location.pathname, refObject]);
 
-    return scrollY.onChange((latest) => {
-      setYVisibility(latest);
-    });
-  }, [location.pathname, refObject, scrollY]);
-
-  const handleClick = () => {
-    if (refObject.menuStyle.current.className.includes("show")) {
-      refObject.menuStyle.current.classList.remove(styles.show);
-      refObject.iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
-      refObject.iconCloseRef.current.firstChild.classList.remove(styles.open);
-    } else {
+  useEffect(() => {
+    if (showNav) {
+      console.log("show");
       refObject.menuStyle.current.classList.add(styles.show);
       refObject.iconOpenRef.current.firstChild.classList.add(styles.noOpen);
       refObject.iconCloseRef.current.firstChild.classList.add(styles.open);
-    }
-  };
-
-  const handleClickLinks = () => {
-    if (refObject.menuStyle.current.className.includes("show")) {
+    } else {
       refObject.menuStyle.current.classList.remove(styles.show);
       refObject.iconOpenRef.current.firstChild.classList.remove(styles.noOpen);
       refObject.iconCloseRef.current.firstChild.classList.remove(styles.open);
     }
+  }, [
+    refObject.iconCloseRef,
+    refObject.iconOpenRef,
+    refObject.menuStyle,
+    showNav,
+  ]);
+
+  const handleClick = () => setShowNav(!showNav);
+
+  const handleClickLinks = () => {
+    setShowNav(!showNav);
   };
 
   const handleMouseMove = (e) => {
@@ -92,7 +87,11 @@ function Header() {
   };
 
   return (
-    <header id="nav-hidden" className={styles.appContentNav}>
+    <header
+      id="nav-hidden"
+      // ref={refObject.menu}
+      className={styles.appContentNav}
+    >
       <span id="back-header" className={styles.spanBack}></span>
       <span id="nav-show" className={styles.spanStyleNav}></span>
       <nav className={styles.appNav}>
@@ -103,9 +102,14 @@ function Header() {
             </Link>
           </div>
         </div>
-        <div onClick={handleClick} className={styles.parentMenu}>
-          <motion.div
-            animate={{ opacity: yVisibility >= 200 ? 1 : 0 }}
+        <div
+          ref={refObject.menu}
+          onClick={handleClick}
+          className={styles.parentMenu}
+        >
+          <div
+            // animate={{ opacity: yVisibility >= 200 ? 1 : 0 }}
+            // ref={refObject.menu}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             className={styles.iconNaCoord}
@@ -135,7 +139,7 @@ function Header() {
                 <img src={NavIconClose} width="32" height="32" alt="" />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
         <div
           id="content-nav-links"
@@ -179,7 +183,6 @@ function Header() {
               </a>
             </li>
           </ul>
-          <span className={styles.backMenuStyle}></span>
         </div>
       </nav>
     </header>
