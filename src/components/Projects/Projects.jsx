@@ -15,6 +15,7 @@ function Projects({
   difficulty,
   source,
   isChallege = false,
+  stack,
 }) {
   const refMoveElement = useRef();
   const refParentHeight = useRef();
@@ -33,11 +34,11 @@ function Projects({
             <div ref={refImage} className={styles.wrapperImage}>
               <img src={imgSrcApp} width="854" height="480" alt={name} />
             </div>
-              <IconSocial
-                urlGithub={linkGit}
-                urlLive={linkDemo}
-                fontSizeIcon="24px"
-              />
+            <IconSocial
+              urlGithub={linkGit}
+              urlLive={linkDemo}
+              fontSizeIcon="24px"
+            />
           </div>
           <div
             data-height="parent-paragraph"
@@ -45,6 +46,13 @@ function Projects({
           >
             <div className={styles.contentTitleProject}>
               <h3>{name}</h3>
+              <div className={styles.contentStack}>
+                {stack.map((st) => (
+                  <span key={st} className={styles.stack}>
+                    {st}
+                  </span>
+                ))}
+              </div>
             </div>
             {isChallege ? (
               <>

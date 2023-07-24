@@ -399,6 +399,17 @@
 
 /* challenges */
 
+.contentStack {
+  color: var(--primary-text);
+  font-family: var(--title-font);
+  padding-top: 8px;
+  opacity: 0.8;
+}
+
+.stack:not(.stack:first-child) {
+  margin-left: 8px;
+}
+
 .circleChallenge {
   background-color: var(--primary-color);
   border-radius: 50%;
@@ -461,10 +472,22 @@
 }
 
 .challengeDescription span {
-  font-size: 20px;
   font-family: var(--title-font);
-  font-weight: 500;
   line-height: var(--line-height);
+}
+
+.boldText {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.contentChallengeInfo:not(.contentChallengeInfo:first-child) {
+  margin-top: 4px;
+}
+
+.challengeInfo {
+  font-size: 18px;
+  margin-left: 8px;
 }
 
 .challengeDescription span:last-child {

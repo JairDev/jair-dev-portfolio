@@ -41,7 +41,6 @@ function Header() {
         start: "5% 30%",
         end: "top -=450",
         scrub: true,
-        markers: true,
       },
       autoAlpha: 1,
     });

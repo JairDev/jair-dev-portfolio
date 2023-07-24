@@ -35,6 +35,7 @@ function MoreChallenges() {
               imgSrcApp={item.imgSrcApp}
               linkGit={item.linkGit}
               linkDemo={item.linkDemo}
+              stack={item.stack}
               dataDescription={item.dataDescription}
               challenge={item.challenge}
               difficulty={item.difficulty}

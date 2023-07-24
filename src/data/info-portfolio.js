@@ -34,16 +34,15 @@ export const personalProjects = [
     imgSrcApp: workCoin,
     linkGit: "https://github.com/JairDev/coin-market-info-",
     linkDemo: "https://coin-market-info.vercel.app/",
+    stack: ["Reactjs"],
     dataDescription: [
       {
-        paragraph: `React y otras librerías similares están pensadas para facilitar la creación de interfaces web, móvil, etc;
-        aumentando la productividad, al acelerar el proceso de desarrollo.`,
+        paragraph: `Aplicación web para crear un portafolio de criptomonedas, puedes agregar y/o eliminar
+        las criptomonedas de tu preferencia a un gráfico para hacer seguimiento de tus criptos favoritas`,
       },
       {
-        paragraph: `Nos permite, por ejemplo, reutilizar componentes de interfaz en nuestros sitios web,
-        en esta aplicación puedo reutilizar un componente input a lo largo de mi sitio web, en este caso,
-        se utiliza para buscar una criptomoneda en el gráfico o en otra sección de la web para buscar
-        noticias referentes a las criptomonedas.`,
+        paragraph: `Tambien tienes una sección de noticias, para estar al tanto de las últimas noticias 
+        sobre el mundo cripto`,
       },
     ],
   },
@@ -52,22 +51,11 @@ export const personalProjects = [
     imgSrcApp: workDessert,
     linkGit: "https://github.com/JairDev/hot-food-app",
     linkDemo: "https://tastypie.netlify.app/",
+    stack: ["Reactjs", "Redux", "Taildwincss"],
     dataDescription: [
       {
-        paragraph: `Realizando esta app, pude ver algunas particularidades de React, por ejemplo, el trabajar
-        con formularios y entradas de usuario.`,
-      },
-      {
-        paragraph: `React nos proporciona una técnica llamada "componentes controlados",
-        recordemos que en React para actualizar algún elemento de la interfaz, lo hacemos actualizando el estado,
-        React al "notar" un cambio en el estado actualiza la interfaz en consecuencia.`,
-      },
-      {
-        paragraph: `
-        Lo que hacemos entonces es determinar que el estado de React sea la única "fuente de verdad", 
-        de esta manera los componentes que rendericen un formulario, tienen el control sobre lo que pasa 
-        en ese formulario. 
-        `,
+        paragraph: `Aplicación web sobre postres en venta, con funcionalidad de carro de compra, puedes agregar
+        artículos al carro de compras, editar la cantidad de artículos, entre otras funcionalidades.`,
       },
     ],
   },
@@ -76,6 +64,7 @@ export const personalProjects = [
     imgSrcApp: memory,
     linkGit: "https://github.com/JairDev/memory-game",
     linkDemo: "https://memorybrain.netlify.com/",
+    stack: ["Reactjs", "Typescript"],
     dataDescription: [
       {
         paragraph: `Desafía tu memoria, con el juego de memoria mas desafiante jamás creado.`,
@@ -101,6 +90,7 @@ export const challenges = [
     imgSrcApp: room,
     linkGit: "https://github.com/JairDev/room-homepage",
     linkDemo: "https://coolrooms.netlify.app/",
+    stack: ["Reactjs"],
     challenge: "Construir página de inicio de comercio electrónico.",
     difficulty: "Intermedio",
     source: "https://www.frontendmentor.io/",
@@ -115,6 +105,7 @@ export const challenges = [
     imgSrcApp: todo,
     linkGit: "https://github.com/JairDev/to-do-app",
     linkDemo: "https://todo-list-app-300dev.netlify.app/",
+    stack: ["Reactjs"],
     challenge: "Construir aplicación aplicación de todo.",
     difficulty: "Intermedio",
     source: "https://www.frontendmentor.io/",

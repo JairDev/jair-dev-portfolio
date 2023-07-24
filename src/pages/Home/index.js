@@ -48,7 +48,6 @@ function Home() {
           start: "center 30%",
           end: "top -=250",
           scrub: true,
-          // markers: true,
         },
       });
     }
@@ -231,6 +230,7 @@ function Home() {
               imgSrcApp={item.imgSrcApp}
               linkGit={item.linkGit}
               linkDemo={item.linkDemo}
+              stack={item.stack}
               dataDescription={item.dataDescription}
             />
           ))}
@@ -289,11 +289,24 @@ function Home() {
           <div className={styles.wrapperContentChallenge}>
             <div className={styles.appLeftContentChallenge}>
               <div className={styles.challengeDescription}>
-                <span data-text="text">
-                  Desafío: Crear una vista de catálogo para una aplicación de
-                  programa de fidelización.
-                </span>
-                <span data-text="text">Fuente: Aerolab</span>
+                <div className={styles.contentChallengeInfo}>
+                  <span className={styles.boldText}>Desafío:</span>
+                  <span className={styles.challengeInfo} data-text="text">
+                    Crear una vista de catálogo para una aplicación de programa
+                    de fidelización.
+                  </span>
+                </div>
+                <div className={styles.contentChallengeInfo}>
+                  <span className={styles.boldText}>Fuente:</span>
+                  <span className={styles.challengeInfo} data-text="text">
+                    Aerolab
+                  </span>
+                </div>
+                <div>
+                  <div className={styles.contentStack}>
+                    <span className={styles.stack}>Reactjs</span>
+                  </div>
+                </div>
               </div>
               <div className={styles.challengeMyExplanation}>
                 <p data-text="text" className={styles.pMyExplanation}>
