@@ -18,6 +18,8 @@ import phoneChallenge from "../../assets/aerolab-screen.webp";
 import ArrowIcon from "../../assets/arrow.svg";
 import blob from "../../assets/blob.svg";
 
+import CV from "../../assets/CV.pdf";
+
 import { personalProjects, svgIcons } from "../../data/info-portfolio";
 
 import styles from "./Home.module.css";
@@ -95,6 +97,15 @@ function Home() {
                       data-link="link"
                     >
                       Contáctame
+                    </a>
+                  </Button>
+                  <Button classButton="hero">
+                    <a
+                      className={`${styles.link} ${styles.hero}`}
+                      href={CV}
+                      data-link="link"
+                    >
+                      CV
                     </a>
                   </Button>
                 </div>
@@ -304,7 +315,7 @@ function Home() {
                 </div>
                 <div>
                   <div className={styles.contentStack}>
-                    <span className={styles.stack}>Reactjs</span>
+                    <span className={styles.stack}>Reactjs ContextApi</span>
                   </div>
                 </div>
               </div>

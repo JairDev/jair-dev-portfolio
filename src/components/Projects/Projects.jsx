@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import IconSocial from "components/IconSocial/IconSocial";
 
-import * as styles from "./Projects.module.css";
+import styles from "./Projects.module.css";
 
 function Projects({
   id,
@@ -32,7 +32,17 @@ function Projects({
             ref={refMoveElement}
           >
             <div ref={refImage} className={styles.wrapperImage}>
-              <img src={imgSrcApp} width="854" height="480" alt={name} />
+              <picture>
+                <source srcSet={imgSrcApp.medium} media="(min-width: 768px)" />
+                <img
+                  src={imgSrcApp.small}
+                  decoding="async"
+                  loading="lazy"
+                  alt={name}
+                  width="600"
+                  height="400"
+                />
+              </picture>
             </div>
             <IconSocial
               urlGithub={linkGit}
@@ -47,7 +57,7 @@ function Projects({
             <div className={styles.contentTitleProject}>
               <h3>{name}</h3>
               <div className={styles.contentStack}>
-                {stack.map((st) => (
+                {stack?.map((st) => (
                   <span key={st} className={styles.stack}>
                     {st}
                   </span>

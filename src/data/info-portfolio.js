@@ -1,9 +1,21 @@
-import workCoin from "../assets/coin-mac.webp";
-import workDessert from "../assets/desert-mac.webp";
-import memory from "../assets/memory-mac.webp";
-import room from "../assets/room-mac.webp";
-import todo from "../assets/todo-mac.webp";
-import timer from "../assets/timer-mac.webp";
+import coinTrackerLaptopSmall from "../assets/portfolio-track/coin-laptop-small.webp";
+import coinTrackerLaptopMedium from "../assets/portfolio-track/coin-laptop-medium.webp";
+
+import dessertLaptopSmall from "../assets/dessert-app/dessert-laptop-small.webp";
+import dessertLaptopMedium from "../assets/dessert-app/dessert-laptop-medium.webp";
+
+import memoryLaptopSmall from "../assets/memory-game/memory-laptop-small.webp";
+import memoryLaptopMedium from "../assets/memory-game/memory-laptop-medium.webp";
+
+import timerLaptopSmall from "../assets/timer-app/timer-laptop-small.webp";
+import timerLaptopMedium from "../assets/timer-app/timer-laptop-medium.webp";
+
+import roomLaptopSmall from "../assets/room-app/room-laptop-small.webp";
+import roomLaptopMedium from "../assets/room-app/room-laptop-medium.webp";
+
+import todoLaptopSmall from "../assets/todo-app/todo-laptop-small.webp";
+import todoLaptopMedium from "../assets/todo-app/todo-laptop-medium.webp";
+
 import bxlReact from "@iconify/icons-bx/bxl-react";
 import bxlJavascript from "@iconify/icons-bx/bxl-javascript";
 import bxlSass from "@iconify/icons-bx/bxl-sass";
@@ -30,25 +42,34 @@ export const svgIcons = [
 
 export const personalProjects = [
   {
-    name: "Coin Market App",
-    imgSrcApp: workCoin,
-    linkGit: "https://github.com/JairDev/coin-market-info-",
-    linkDemo: "https://coin-market-info.vercel.app/",
-    stack: ["Reactjs"],
+    name: "Coin Market Track",
+    imgSrcApp: {
+      small: coinTrackerLaptopSmall,
+      medium: coinTrackerLaptopMedium,
+    },
+    linkGit: "https://github.com/JairDev/portfolio-tracker",
+    linkDemo: "https://portfoliotrack.vercel.app/home",
+    stack: ["Nextjs", "MUI", "API", "Nodejs", "Mongodb"],
     dataDescription: [
       {
         paragraph: `Aplicación web para crear un portafolio de criptomonedas, puedes agregar y/o eliminar
-        las criptomonedas de tu preferencia a un gráfico para hacer seguimiento de tus criptos favoritas`,
+        las criptomonedas de tu preferencia a un gráfico para hacer seguimiento de tus cripto-activos favoritas`,
       },
       {
-        paragraph: `Tambien tienes una sección de noticias, para estar al tanto de las últimas noticias 
-        sobre el mundo cripto`,
+        paragraph: `Tomé un diseño para llevarlo a código, amplié el diseño para agregar funcionalidades de inicio de sesión,
+        registro de usuario, entre otros.`,
+      },
+      {
+        paragraph: `Escribí el código de la lógica para hacer la conexión entre el frontend y el backend`,
       },
     ],
   },
   {
     name: "Tasty dessert",
-    imgSrcApp: workDessert,
+    imgSrcApp: {
+      small: dessertLaptopSmall,
+      medium: dessertLaptopMedium,
+    },
     linkGit: "https://github.com/JairDev/hot-food-app",
     linkDemo: "https://tastypie.netlify.app/",
     stack: ["Reactjs", "Redux", "Taildwincss"],
@@ -61,10 +82,13 @@ export const personalProjects = [
   },
   {
     name: "Memory",
-    imgSrcApp: memory,
+    imgSrcApp: {
+      small: memoryLaptopSmall,
+      medium: memoryLaptopMedium,
+    },
     linkGit: "https://github.com/JairDev/memory-game",
     linkDemo: "https://memorybrain.netlify.com/",
-    stack: ["Reactjs", "Typescript"],
+    stack: ["Javascript"],
     dataDescription: [
       {
         paragraph: `Desafía tu memoria, con el juego de memoria mas desafiante jamás creado.`,
@@ -73,7 +97,10 @@ export const personalProjects = [
   },
   {
     name: "Timer",
-    imgSrcApp: timer,
+    imgSrcApp: {
+      small: timerLaptopSmall,
+      medium: timerLaptopMedium,
+    },
     linkGit: "https://github.com/JairDev/training-timer-and-chronometer",
     linkDemo: "https://trainingtimerapp.netlify.com/",
     dataDescription: [
@@ -87,7 +114,10 @@ export const personalProjects = [
 export const challenges = [
   {
     name: "Room homepage",
-    imgSrcApp: room,
+    imgSrcApp: {
+      small: roomLaptopSmall,
+      medium: roomLaptopMedium,
+    },
     linkGit: "https://github.com/JairDev/room-homepage",
     linkDemo: "https://coolrooms.netlify.app/",
     stack: ["Reactjs"],
@@ -102,7 +132,10 @@ export const challenges = [
   },
   {
     name: "Todo app",
-    imgSrcApp: todo,
+    imgSrcApp: {
+      small: todoLaptopSmall,
+      medium: todoLaptopMedium,
+    },
     linkGit: "https://github.com/JairDev/to-do-app",
     linkDemo: "https://todo-list-app-300dev.netlify.app/",
     stack: ["Reactjs"],
