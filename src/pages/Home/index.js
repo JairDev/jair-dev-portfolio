@@ -99,7 +99,7 @@ function Home() {
                       Contáctame
                     </a>
                   </Button>
-                  <Button classButton="hero">
+                  <Button classButton="heroCv">
                     <a
                       className={`${styles.link} ${styles.hero}`}
                       href={CV}
