@@ -24,13 +24,15 @@
 }
 
 .contentButton.hero {
-  /* border: 2px solid #ffffff; */
   background-color: #2d176b;
 }
 
 .contentButton.heroCv {
   border: 1px solid #ffffff;
-  /* background-color: #2d176b; */
+}
+
+.contentButton.heroCv button {
+  width: 100%;
 }
 
 .contentButton::before {

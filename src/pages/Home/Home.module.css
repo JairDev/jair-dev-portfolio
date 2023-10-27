@@ -56,7 +56,8 @@
 
 .contentButtonContact {
   /* border: 1px solid red; */
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   align-self: flex-start;
   position: relative;

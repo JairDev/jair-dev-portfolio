@@ -10,7 +10,7 @@
   transform: translate(-7px, 7px);
 }
 
-.personalProjectsExternalLink:hover .contentIconGithubProjects  {
+.personalProjectsExternalLink:hover .contentIconGithubProjects {
   transform: translate(7px, -7px);
 }
 
@@ -18,8 +18,13 @@
 .contentIconGithubProjects {
   border-radius: 8px;
   cursor: pointer;
-  padding: 0.5rem .8rem;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
+}
+
+.contentIconExLinkProjects a,
+.contentIconGithubProjects a {
+  display: block;
+  padding: 0.5rem 0.8rem;
 }
 .contentIconGithubProjects {
   background-color: var(--primary-color);
