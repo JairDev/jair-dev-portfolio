@@ -802,8 +802,8 @@
   }
 
   .heroImg {
-    /* border: 1px solid red; */
-    display: none;
+    border: 1px solid red;
+    /* display: none; */
     opacity: 1;
     filter: drop-shadow(1px 5px 1px rgba(27, 16, 54, 0.144));
     max-width: 100%;
