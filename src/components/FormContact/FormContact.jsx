@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 import { Icon } from "@iconify/react";
 import githubFill from "@iconify/icons-akar-icons/github-fill";
@@ -37,11 +37,11 @@ function FormContact() {
     criteriaMode: "all",
   });
   useEffect(() => {
-    emailjs.init("user_DC5x2D3wdrEpBolyqO9Yr");
+    emailjs.init("QQDER6PZw0GDyGhYI");
   });
 
   const onSubmit = (e) => {
-    console.log(e);
+    // console.log(e);
     setButtonState("Enviando...");
     send = !send;
     if (send) {
