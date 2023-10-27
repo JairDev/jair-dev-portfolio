@@ -26,6 +26,8 @@ import styledcomponentsIcon from "@iconify/icons-file-icons/styledcomponents";
 import reduxFill from "@iconify/icons-akar-icons/redux-fill";
 import nextjsFill from "@iconify/icons-akar-icons/nextjs-fill";
 import tailwindIcon from "@iconify/icons-file-icons/tailwind";
+import muiIcon from "@iconify/icons-simple-icons/mui";
+import figmaFill from "@iconify/icons-akar-icons/figma-fill";
 
 export const svgIcons = [
   { name: "Javascript", svg: bxlJavascript },
@@ -34,10 +36,12 @@ export const svgIcons = [
   { name: "Redux", svg: reduxFill },
   { name: "Tailwindcss", svg: tailwindIcon },
   { name: "Styled Components", svg: styledcomponentsIcon },
+  { name: "Mui", svg: muiIcon },
   { name: "Sass", svg: bxlSass },
   { name: "Css3", svg: bxlCss3 },
   { name: "Html5", svg: bxlHtml5 },
   { name: "Git", svg: bxlGit },
+  { name: "Figma", svg: figmaFill },
 ];
 
 export const personalProjects = [
