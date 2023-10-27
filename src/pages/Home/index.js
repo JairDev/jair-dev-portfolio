@@ -192,22 +192,25 @@ function Home() {
                 data-text="text"
                 className={`${styles.text} ${styles.pDescription}`}
               >
-                Hola, me llamo Alfredo Moscoso, soy desarrollador web, tengo
-                experiencia en proyectos personales manejando tecnologías como,
-                ReactJs, Nextjs, Javascript, Redux, Styled Components,
-                Tailwindcss, Sass, Css3, Html5, Git.
+                Hola, me llamo Alfredo Moscoso, como desarrollador web frontend,
+                me motiva crear experiencias de usuario únicas. Con una base
+                sólida en HTML, CSS y JavaScript, estoy ansioso por contribuir
+                con mis habilidades en un equipo de desarrollo. Conozco marcos
+                frontend modernos, como React y Next, y me mantengo
+                constantemente actualizado con las últimas prácticas de la
+                industria y las tecnologías.
               </p>
               <p
                 data-text="text"
                 className={`${styles.text} ${styles.pDescription}`}
               >
-                Del desarrollo web me entusiasma la interacción que pueda
-                lograrse entre el producto que se desarrolle y el usuario final,
-                ya sea mediante una página web, alguna aplicación web, que
-                satisfaga alguna necesidad, me motiva estar en constante
-                aprendizaje y poder lograr buenos fundamentos en programación
-                para ser un mejor profesional, enfocado en aplicar las mejores
-                prácticas en el desarrollo web.
+                Me distingue mi enorme interés por el aprendizaje y el
+                crecimiento continuo, abordo los desafíos con una mentalidad
+                positiva. La colaboración ayuda al intercambio de conocimientos
+                y la retroalimentación constructiva, me gustaría trabajar junto
+                a mentores experimentados y aportar nuevas perspectivas mientras
+                aprovecho la oportunidad de aprender y crecer como desarrollador
+                frontend.
               </p>
 
               <p
