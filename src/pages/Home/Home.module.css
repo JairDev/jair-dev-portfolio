@@ -782,9 +782,7 @@
 
 @media only screen and (min-width: 860px) {
   .appLeftContentHero {
-    /* border: 1px solid red; */
     padding-top: 4rem;
-    /* width: 50%; */
   }
 
   .appLeftContentHeroRole {
@@ -797,21 +795,6 @@
 
   .appRightContentHero {
     display: flex;
-    /* border: 1px solid blue; */
-    /* width: 50%; */
-  }
-
-  .heroImg {
-    border: 1px solid red;
-    /* display: none; */
-    opacity: 1;
-    filter: drop-shadow(1px 5px 1px rgba(27, 16, 54, 0.144));
-    max-width: 100%;
-  }
-
-  .role,
-  .h3Skills {
-    /* font-size: 67.77px; */
   }
 
   .lineRightAbout,
@@ -872,11 +855,12 @@
 
   .appRightContentHero {
     display: flex;
-    /* border: 1px solid blue; */
     width: 50%;
   }
   .heroImg {
-    display: block;
+    opacity: 1;
+    filter: drop-shadow(1px 5px 1px rgba(27, 16, 54, 0.144));
+    max-width: 100%;
   }
 }
 
@@ -887,7 +871,6 @@
 
   .appRightContentHero {
     display: flex;
-    /* border: 1px solid blue; */
     width: 50%;
   }
   .heroImg {
