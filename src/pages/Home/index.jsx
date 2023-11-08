@@ -65,12 +65,12 @@ function Home() {
 
     const circleType = new CircleType(refCircleText.current);
     circleType.radius(40);
-  }, [objRef]);
+  });
 
   return (
     <>
       <Helmet>
-        <title>Alfredo Moscoso</title>
+        <title>Frontend Developer</title>
       </Helmet>
       <section
         className={`${styles.wrapperPadding} ${styles.appContentHero}`}
@@ -83,8 +83,8 @@ function Home() {
           <div className={styles.wrapperContentHero}>
             <div className={styles.appLeftContentHero}>
               <div className={styles.appLeftContentHeroRole}>
-                <h1 className={styles.role}>Alfredo Moscoso</h1>
-                <h2 className={styles.subTitleRole}>Frontend Developer</h2>
+                <h1 className={styles.role}>Frontend Developer</h1>
+                {/* <h2 className={styles.subTitleRole}>Frontend Developer</h2> */}
                 <div
                   ref={objRef.triggerButton}
                   id="trigger-button"
