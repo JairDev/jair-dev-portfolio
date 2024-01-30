@@ -23,18 +23,6 @@
   padding: 0.6rem 1.8rem;
 }
 
-.contentButton.hero {
-  background-color: #2d176b;
-}
-
-.contentButton.heroCv {
-  border: 1px solid #ffffff;
-}
-
-.contentButton.heroCv button {
-  width: 100%;
-}
-
 .contentButton::before {
   content: "";
   border-radius: 50px;

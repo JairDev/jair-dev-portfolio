@@ -64,10 +64,25 @@
   margin-top: 2.5rem;
 }
 
-.link.hero {
-  color: #ffffff;
+.link.hero,
+.link.heroCv {
+  border-radius: 50px;
   display: block;
+  color: var(--body-color);
+  font-size: 16px;
+  font-family: var(--title-font);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing);
   padding: 0.6rem 1.8rem;
+}
+
+.link.hero {
+  background-color: #2d176b;
+}
+
+.link.heroCv {
+  border: 1px solid #ffffff;
+  text-align: center;
 }
 
 .link.contact-form {

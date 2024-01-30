@@ -90,24 +90,25 @@ function Home() {
                   id="trigger-button"
                   className={styles.contentButtonContact}
                 >
-                  <Button classButton="hero">
-                    <a
-                      className={`${styles.link} ${styles.hero}`}
-                      href="#contact"
-                      data-link="link"
-                    >
-                      Contáctame
-                    </a>
-                  </Button>
-                  <Button classButton="heroCv">
-                    <a
-                      className={`${styles.link} ${styles.hero}`}
-                      href={CV}
-                      data-link="link"
-                    >
-                      CV
-                    </a>
-                  </Button>
+                  {/* <Button classButton="hero"> */}
+                  <a
+                    className={`${styles.link} ${styles.hero}`}
+                    href="#contact"
+                    data-link="link"
+                  >
+                    Contáctame
+                  </a>
+                  {/* </Button> */}
+                  {/* <Button classButton="heroCv"> */}
+                  <a
+                    className={`${styles.link} ${styles.heroCv}`}
+                    href={CV}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    CV
+                  </a>
+                  {/* </Button> */}
                 </div>
               </div>
 
